@@ -38,13 +38,13 @@ public class HorizontalMovement : MonoBehaviour, IMovementComponent
         if(_direction.x != 0)
         {
             
-            _velocity.x = Mathf.SmoothDamp(_velocity.x, MovementData.maxVelocity * _direction.x, ref lastXVel, MovementData.sideAcceleration);
+            _velocity.x = Mathf.SmoothDamp(_velocity.x, MovementData.maxStrafeVelocity * _direction.x, ref lastXVel, MovementData.acelerationTime);
             
         }
         else
         {
             //print(lastXVel);
-            _velocity.x = Mathf.SmoothDamp(_velocity.x, 0, ref lastXVel, MovementData.decerelation);
+            _velocity.x = Mathf.SmoothDamp(_velocity.x, 0, ref lastXVel, MovementData.decerelationTime);
             
         }
         //lastXVel = 0;
@@ -57,14 +57,14 @@ public class HorizontalMovement : MonoBehaviour, IMovementComponent
         
         if(_direction.y != 0)
         {
-            float accelerateVariable = _direction.y > 1 ? MovementData.forwardAcceleration : MovementData.backwardAcceleration;
+            float velocityVariable = _direction.y > 1 ? MovementData.maxForwardVelocity : MovementData.maxBackVelocity;
 
-            _velocity.z = Mathf.SmoothDamp(_velocity.z, MovementData.maxVelocity *  _direction.y, ref xDec, accelerateVariable);
+            _velocity.z = Mathf.SmoothDamp(_velocity.z, velocityVariable *  _direction.y, ref xDec, MovementData.acelerationTime);
 
         }
         else
         {
-            _velocity.z = Mathf.SmoothDamp(_velocity.z, 0, ref xDec, MovementData.decerelation);
+            _velocity.z = Mathf.SmoothDamp(_velocity.z, 0, ref xDec, MovementData.decerelationTime);
         }
     }
 
@@ -79,7 +79,6 @@ public class HorizontalMovement : MonoBehaviour, IMovementComponent
         MovementVector = Vector3.zero;
         MovementVector += transform.forward * _velocity.z;
         MovementVector += transform.right * _velocity.x;
-        //MovementVector = new Vector3(_velocity.x * transform.right.normalized.x, _velocity.y * transform.forward.y, _velocity.z * transform.forward.normalized.z);
     }
 
     private void OnDrawGizmos() {

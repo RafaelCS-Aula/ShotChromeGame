@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3454cdaba2e8664395c5924668c1cef, type: 3}
   m_Name: PlayerHorizontalMovement
   m_EditorClassIdentifier: 
-  forwardAcceleration: 10
-  backwardAcceleration: 10
-  sideAcceleration: 23.86
-  decerelation: 0
-  maxVelocity: 57.19
+  maxForwardVelocity: 5
+  maxBackVelocity: 5
+  maxStrafeVelocity: 5
+  acelerationTime: 0.25
+  decerelationTime: 0.5
+  currentVelocity: {x: -0.29405972, y: 0, z: -0.0000016772698}

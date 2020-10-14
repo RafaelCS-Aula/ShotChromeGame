@@ -5,11 +5,12 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "MovementData/HorizontalMovement", fileName = "HorizontalMovementStats")]
 public class LateralMovementStats : ScriptableObject
 {
-    public float forwardAcceleration;
-    public float backwardAcceleration;
-    public float sideAcceleration;
-    public float decerelation;
-    public float maxVelocity;
+    public float maxForwardVelocity;
+    public float maxBackVelocity;
+    public float maxStrafeVelocity;
+    public float acelerationTime;
+    public float decerelationTime;
+    
 
     public Vector3 currentVelocity;
 
