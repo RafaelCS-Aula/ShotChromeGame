@@ -24,15 +24,19 @@ public class CharacterMover : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        _motionVector = Vector3.zero;
         for (int i = 0; i < _movementComps.Length; i++)
         {
-            _motionVector += _movementComps[i].VectorComponent;
-            _motionVector.x *= _movementComps[i].VectorFactor.x;
-            _motionVector.y *= _movementComps[i].VectorFactor.y;
-            _motionVector.z *= _movementComps[i].VectorFactor.z;
+            _motionVector += _movementComps[i].MovementVector;
+            _motionVector.x *= _movementComps[i].FactorVector.x;
+            _motionVector.y *= _movementComps[i].FactorVector.y;
+            _motionVector.z *= _movementComps[i].FactorVector.z;
         }
 
-        _myController.Move(_motionVector);
+        //print(_movementComps.Length);
+       // print(_motionVector);
+        _myController.Move(_motionVector * Time.deltaTime);
+        
 
     }
 
