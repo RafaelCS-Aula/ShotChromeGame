@@ -35,6 +35,7 @@ public class CharacterMover : MonoBehaviour
 
         //print(_movementComps.Length);
        // print(_motionVector);
+
         _myController.Move(_motionVector * Time.deltaTime);
         
 
