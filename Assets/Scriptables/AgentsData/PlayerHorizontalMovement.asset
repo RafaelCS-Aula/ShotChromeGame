@@ -16,5 +16,5 @@ MonoBehaviour:
   maxBackVelocity: 5
   maxStrafeVelocity: 5
   acelerationTime: 0.25
-  decerelationTime: 0.5
-  currentVelocity: {x: -0.29405972, y: 0, z: -0.0000016772698}
+  decerelationTime: 0.1
+  currentVelocity: {x: -0.00632473, y: 0, z: 0.006746623}
