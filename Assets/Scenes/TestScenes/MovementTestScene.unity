@@ -1321,6 +1321,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d70d1979b9b3834bbc4eab2058d32f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sideAirControl: 0.6
+  frontAirControl: 1
   groundLayer: 8
   jumpAceleration: 15
 --- !u!1 &1554215264
