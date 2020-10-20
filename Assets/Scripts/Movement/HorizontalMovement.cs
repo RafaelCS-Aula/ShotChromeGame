@@ -76,9 +76,7 @@ public class HorizontalMovement : MonoBehaviour, IMovementComponent
         AccelerateZ();
         MovementData.currentVelocity = _velocity;
         FactorVector = Vector3.one;
-        MovementVector = Vector3.zero;
-        MovementVector += transform.forward * _velocity.z;
-        MovementVector += transform.right * _velocity.x;
+        MovementVector = _velocity;
     }
 
     private void OnDrawGizmos() {

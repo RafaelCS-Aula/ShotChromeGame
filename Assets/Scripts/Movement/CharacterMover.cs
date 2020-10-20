@@ -35,8 +35,12 @@ public class CharacterMover : MonoBehaviour
 
         //print(_movementComps.Length);
        // print(_motionVector);
+        Vector3 finalMotion = Vector3.zero;
+        finalMotion += transform.right * _motionVector.x;
+        finalMotion += transform.forward * _motionVector.z;
+        finalMotion += transform.up * _motionVector.y;
 
-        _myController.Move(_motionVector * Time.deltaTime);
+        _myController.Move(finalMotion * Time.deltaTime);
         
 
     }
