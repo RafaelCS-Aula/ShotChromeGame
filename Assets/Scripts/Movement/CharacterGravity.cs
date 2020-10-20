@@ -2,18 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterGravity : MonoBehaviour, IMovementComponent
+public class CharacterGravity : MonoBehaviour, IMovementComponent, IUseGround
 {
-    public float timeToTerminal;
-    public float gravityValue;
-    public float terminalVelocity;
+    [SerializeField]
+    private float sideAirControl = 1;
 
-    private float _timeFalling;
+    [SerializeField]
+    private float frontAirControl = 1;
+
+    [SerializeField]
+    private float gravityAceleration;
+
+    [SerializeField]
+    private float terminalVelocity;
+    private float _timeFalling = 0;
     private Vector3 _mov; 
     public bool useEngineGravity = false;
+
     public Vector3 MovementVector {get; set;}
     public Vector3 FactorVector {get; set;}
-    float vel;
+
+    [SerializeField]
+    private int groundLayer;
+    public int CollisionLayer {get => groundLayer;}
+    public bool touchingGround {get; set;}
+
     private void Awake() 
     {
         FactorVector = Vector3.one;    
@@ -21,16 +34,41 @@ public class CharacterGravity : MonoBehaviour, IMovementComponent
     }
     private void Update()
     {   
-
-        Fall();
+        
+        if(!touchingGround)
+        {
+            
+            Fall();
+            
+        }
+        else
+        {
+            _mov.y = 0;
+            _timeFalling = 0;
+        }
+            
         MovementVector = _mov;
+        print(_mov.y);
+        
+
     }
 
     public void Fall()
     {
-        _timeFalling += Time.deltaTime;
-        _mov.y = gravityValue * _timeFalling;
-        _mov.y = Mathf.Clamp(_mov.y, gravityValue, terminalVelocity);
+        float fallForce = 
+         useEngineGravity ? Physics.gravity.y : gravityAceleration;
 
+        _timeFalling += Time.deltaTime;
+        fallForce *= _timeFalling;
+        
+
+        if(fallForce >= terminalVelocity)
+            fallForce = terminalVelocity;
+            
+        //print(fallForce);
+        FactorVector = new Vector3(sideAirControl, 1, frontAirControl);
+        _mov.y = -fallForce;
     }
+
+
 }

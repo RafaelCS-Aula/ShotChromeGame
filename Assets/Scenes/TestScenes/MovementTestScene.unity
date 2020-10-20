@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 21053021}
   - component: {fileID: 21053020}
   - component: {fileID: 21053019}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1191,6 +1191,7 @@ GameObject:
   - component: {fileID: 1312549393}
   - component: {fileID: 1312549395}
   - component: {fileID: 1312549396}
+  - component: {fileID: 1312549397}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1224,7 +1225,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312549390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.82, y: 7.27, z: 0}
+  m_LocalPosition: {x: -12.82, y: 4.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 742322589}
@@ -1287,10 +1288,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a55006a3da034d249998c00b5e957d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToTerminal: 0
-  gravityValue: 5
-  terminalVelocity: 0
+  sideAirControl: 1
+  frontAirControl: 1
+  groundCollisionLayer: 0
+  gravityAceleration: 50
+  terminalVelocity: 60
   useEngineGravity: 0
+  groundLayer: 8
+--- !u!114 &1312549397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312549390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba0507c703877164e9acb16bb9a178ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feetPosition: {x: 0, y: -0.8, z: 0}
+  feetRadius: 0.44
 --- !u!1 &1554215264
 GameObject:
   m_ObjectHideFlags: 0
