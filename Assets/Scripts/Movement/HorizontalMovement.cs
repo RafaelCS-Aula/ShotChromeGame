@@ -1,15 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RoboRyanTron.Unite2017.Variables;
 
 public class HorizontalMovement : MonoBehaviour, IMovementComponent
 {
     public Vector3 MovementVector {get; set;}
     public Vector3 FactorVector {get; set;}
 
-    [SerializeField] 
+    /*[SerializeField] 
     private LateralMovementStats movementStats;
-    public LateralMovementStats MovementData {get => movementStats;}
+    public LateralMovementStats MovementData {get => movementStats;}*/
+
+    [SerializeField]
+    private FloatReference maxStrafeVelocity;
+
+    [SerializeField]
+    private FloatReference acelerationTime;
+
+   [SerializeField]
+    private FloatReference decelerationTime;
+
+    [SerializeField]
+    private FloatReference maxForwardVelocity;
+
+    [SerializeField]
+    private FloatReference maxBackVelocity;
+
+
+
+
 
     private float _acceleration;
     private Vector3 _velocity = new Vector3();
@@ -38,13 +58,13 @@ public class HorizontalMovement : MonoBehaviour, IMovementComponent
         if(_direction.x != 0)
         {
             
-            _velocity.x = Mathf.SmoothDamp(_velocity.x, MovementData.maxStrafeVelocity * _direction.x, ref lastXVel, MovementData.acelerationTime);
+            _velocity.x = Mathf.SmoothDamp(_velocity.x, maxStrafeVelocity.Value * _direction.x, ref lastXVel, acelerationTime.Value);
             
         }
         else
         {
             //print(lastXVel);
-            _velocity.x = Mathf.SmoothDamp(_velocity.x, 0, ref lastXVel, MovementData.decerelationTime);
+            _velocity.x = Mathf.SmoothDamp(_velocity.x, 0, ref lastXVel, decelerationTime.Value);
             
         }
         //lastXVel = 0;
@@ -57,14 +77,14 @@ public class HorizontalMovement : MonoBehaviour, IMovementComponent
         
         if(_direction.y != 0)
         {
-            float velocityVariable = _direction.y > 1 ? MovementData.maxForwardVelocity : MovementData.maxBackVelocity;
+            float velocityVariable = _direction.y > 1 ? maxForwardVelocity.Value : maxBackVelocity.Value;
 
-            _velocity.z = Mathf.SmoothDamp(_velocity.z, velocityVariable *  _direction.y, ref xDec, MovementData.acelerationTime);
+            _velocity.z = Mathf.SmoothDamp(_velocity.z, velocityVariable *  _direction.y, ref xDec, acelerationTime.Value);
 
         }
         else
         {
-            _velocity.z = Mathf.SmoothDamp(_velocity.z, 0, ref xDec, MovementData.decerelationTime);
+            _velocity.z = Mathf.SmoothDamp(_velocity.z, 0, ref xDec, decelerationTime.Value);
         }
     }
 
@@ -74,7 +94,6 @@ public class HorizontalMovement : MonoBehaviour, IMovementComponent
         GetInput();
         AccelerateX();
         AccelerateZ();
-        MovementData.currentVelocity = _velocity;
         FactorVector = Vector3.one;
         MovementVector = _velocity;
     }
