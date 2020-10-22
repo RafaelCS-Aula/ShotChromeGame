@@ -10,7 +10,7 @@ public class GroundCheck : MonoBehaviour
     [SerializeField]
     private float feetRadius;
     private IUseGround[] _groundRequesters;
-
+    
     // Start is called before the first frame update
     void Awake()
     {
@@ -24,26 +24,30 @@ public class GroundCheck : MonoBehaviour
     {
         for (int i = 0; i < _groundRequesters.Length; i++)
         {
-            _groundRequesters[i].touchingGround =
-                CheckGround(_groundRequesters[i].CollisionLayer);        
+            if((_groundRequesters[i] as MonoBehaviour).enabled)
+                _groundRequesters[i].touchingGround =
+                    CheckGround(_groundRequesters[i].CollisionLayer);        
            // print(_groundRequesters[i].touchingGround);
         }
     }
 
     private bool CheckGround(int layer)
     {
+    
         Vector3 pos = feetPosition + transform.localPosition;
 
         // Bit shift the layers to the desired one
         Collider[] collisions = 
             Physics.OverlapSphere(pos, feetRadius, 1 << layer);
         return collisions.Length > 0 ;
+        
     }
 
     private void OnDrawGizmos() 
     {
         Gizmos.color = Color.cyan;
         Gizmos.DrawSphere(feetPosition + transform.localPosition, feetRadius);
+        
 
     }
 
