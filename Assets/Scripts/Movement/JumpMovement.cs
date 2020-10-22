@@ -36,28 +36,28 @@ public class JumpMovement : MonoBehaviour, IMovementComponent, IUseGround
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         input = Input.GetAxisRaw("Jump");
 
-        if(input != 0)
+        if(input != 0 && touchingGround)
         {
-            if(touchingGround)
-            {
-                Jump();
-            }
+            
+            Jump();
 
         }
-        else if(input == 0 && touchingGround)
+        else if(touchingGround)
         {
+            
             _fact.x = 1;
             _fact.z = 1;
             _mov.y = 0;
         }
+
         
-  
-        MovementVector = _mov;
-        FactorVector = _fact;
+        
+            MovementVector = _mov;
+            FactorVector = _fact;        
         
     }
 
@@ -72,5 +72,6 @@ public class JumpMovement : MonoBehaviour, IMovementComponent, IUseGround
         _fact.x = sideAirControl;
         _fact.z = frontAirControl;
         _mov.y = jumpAceleration;
+        
     }
 }

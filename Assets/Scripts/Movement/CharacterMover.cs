@@ -22,7 +22,7 @@ public class CharacterMover : MonoBehaviour
         
     
     // Update is called once per frame
-    private void Update()
+    private void FixedUpdate()
     {
         _motionVector = Vector3.zero;
         for (int i = 0; i < _movementComps.Length; i++)
@@ -40,6 +40,7 @@ public class CharacterMover : MonoBehaviour
         finalMotion += transform.forward * _motionVector.z;
         finalMotion += transform.up * _motionVector.y;
 
+       // print(finalMotion);
         _myController.Move(finalMotion * Time.deltaTime);
         
 

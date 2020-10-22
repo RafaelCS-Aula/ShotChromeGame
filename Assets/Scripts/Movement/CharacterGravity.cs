@@ -32,7 +32,7 @@ public class CharacterGravity : MonoBehaviour, IMovementComponent, IUseGround
         FactorVector = Vector3.one;    
         MovementVector = Vector3.zero;
     }
-    private void Update()
+    private void FixedUpdate()
     {   
         
         if(!touchingGround)
@@ -45,10 +45,13 @@ public class CharacterGravity : MonoBehaviour, IMovementComponent, IUseGround
         {
             _mov.y = 0;
             _timeFalling = 0;
+            Vector3 fac = FactorVector;
+            fac.y = 0;
+            FactorVector = fac;
         }
             
         MovementVector = _mov;
-        print(_mov.y);
+        //print(_mov.y);
         
 
     }
