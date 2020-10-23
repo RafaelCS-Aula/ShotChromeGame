@@ -5,6 +5,12 @@
 // Date:   10/04/17
 // ----------------------------------------------------------------------------
 
+/// -----------------
+/// Altered by Rafael Castro e Silva.
+/// 
+/// 22/10/2020
+/// ----------------
+
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -26,10 +32,10 @@ namespace RoboRyanTron.Unite2017.Variables
         public FloatVariable Variable;
 
         [Tooltip("Minimum value of the Variable that is mapped to the curve.")]
-        public FloatReference Min;
+        public DatabaseReference<float> Min;
 
         [Tooltip("Maximum value of the Variable that is mapped to the curve.")]
-        public FloatReference Max;
+        public DatabaseReference<float> Max;
 
         [Tooltip("Curve to evaluate in order to look up a final value to send as the parameter.\n" +
                  "T=0 is when Variable == Min\n" +

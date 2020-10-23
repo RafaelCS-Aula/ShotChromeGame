@@ -5,20 +5,13 @@
 // Date:   10/04/17
 // ----------------------------------------------------------------------------
 
+/// -----------------
+/// Altered by Rafael Castro e Silva.
+/// 
+/// 22/10/2020
+/// ----------------
 using UnityEngine;
 
-namespace RoboRyanTron.Unite2017.Variables
-{
     [CreateAssetMenu]
-    public class StringVariable : ScriptableObject
-    {
-        [SerializeField]
-        private string value = "";
-
-        public string Value
-        {
-            get { return value; }
-            set { this.value = value; }
-        }
-    }
-}
+    public class StringVariable : DatabaseVariable<string>
+    {}

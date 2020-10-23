@@ -5,6 +5,12 @@
 // Date:   10/04/17
 // ----------------------------------------------------------------------------
 
+/// -----------------
+/// Altered by Rafael Castro e Silva.
+/// 
+/// 22/10/2020
+/// ----------------
+
 using UnityEngine;
 
 namespace RoboRyanTron.Unite2017.Variables
@@ -15,11 +21,11 @@ namespace RoboRyanTron.Unite2017.Variables
 
         public FloatVariable Variable;
 
-        public FloatReference LowThreshold;
+        public DatabaseReference<float> LowThreshold;
 
         private void Update()
         {
-            if (Variable.Value < LowThreshold)
+            if (Variable.Value < LowThreshold.Value)
             {
                 if (!AudioSource.isPlaying)
                     AudioSource.Play();

@@ -5,35 +5,38 @@
 // Date:   10/04/17
 // ----------------------------------------------------------------------------
 
+/// -----------------
+/// Altered by Rafael Castro e Silva.
+/// 
+/// 22/10/2020
+/// ----------------
+
 using System;
 
-namespace RoboRyanTron.Unite2017.Variables
-{
     [Serializable]
-    public class FloatReference
+    public class DatabaseReference<T>
     {
         // Altered to initialise to false
         public bool UseConstant = false;
-        public float ConstantValue;
-        public FloatVariable Variable;
+        public T ConstantValue;
+        public DatabaseVariable<T> Variable;
 
-        public FloatReference()
-        { }
+        public DatabaseReference()
+        {   }
 
-        public FloatReference(float value)
+        public DatabaseReference(T value)
         {
             UseConstant = true;
             ConstantValue = value;
         }
 
-        public float Value
+        public T Value
         {
             get { return UseConstant ? ConstantValue : Variable.Value; }
         }
 
-        public static implicit operator float(FloatReference reference)
+        /*public static implicit operator S(T reference)
         {
             return reference.Value;
-        }
+        }*/
     }
-}

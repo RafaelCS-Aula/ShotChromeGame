@@ -8,8 +8,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace RoboRyanTron.Unite2017.Variables
-{
+
     [CustomPropertyDrawer(typeof(FloatReference))]
     public class FloatReferenceDrawer : PropertyDrawer
     {
@@ -65,4 +64,3 @@ namespace RoboRyanTron.Unite2017.Variables
             EditorGUI.EndProperty();
         }
     }
-}

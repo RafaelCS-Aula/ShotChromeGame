@@ -5,6 +5,12 @@
 // Date:   10/04/17
 // ----------------------------------------------------------------------------
 
+/// -----------------
+/// Altered by Rafael Castro e Silva.
+/// 
+/// 22/10/2020
+/// ----------------
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,13 +23,13 @@ namespace RoboRyanTron.Unite2017.Variables
     public class ImageFillSetter : MonoBehaviour
     {
         [Tooltip("Value to use as the current ")]
-        public FloatReference Variable;
+        public DatabaseReference<float> Variable;
 
         [Tooltip("Min value that Variable to have no fill on Image.")]
-        public FloatReference Min;
+        public DatabaseReference<float> Min;
 
         [Tooltip("Max value that Variable can be to fill Image.")]
-        public FloatReference Max;
+        public DatabaseReference<float> Max;
 
         [Tooltip("Image to set the fill amount on." )]
         public Image Image;
@@ -31,7 +37,7 @@ namespace RoboRyanTron.Unite2017.Variables
         private void Update()
         {
             Image.fillAmount = Mathf.Clamp01(
-                Mathf.InverseLerp(Min, Max, Variable));
+                Mathf.InverseLerp(Min.Value, Max.Value, Variable.Value));
         }
     }
 }

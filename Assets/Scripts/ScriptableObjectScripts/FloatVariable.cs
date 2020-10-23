@@ -8,13 +8,13 @@
 /// -----------------
 /// Altered by Rafael Castro e Silva.
 /// 
-/// 2020
+/// 22/10/2020
 /// ----------------
 
 using UnityEngine;
 
     [CreateAssetMenu]
-    public class FloatVariable : DatabaseVariable
+    public class FloatVariable : DatabaseVariable<float>
     {
         [SerializeField]
         private float floatValue;
