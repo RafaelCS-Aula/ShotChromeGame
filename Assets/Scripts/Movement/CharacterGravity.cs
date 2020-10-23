@@ -2,13 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterGravity : MonoBehaviour, IMovementComponent, IUseGround
+public class CharacterGravity : VerticalMovementBase
 {
-    [SerializeField]
-    private float sideAirControl = 1;
-
-    [SerializeField]
-    private float frontAirControl = 1;
 
     [SerializeField]
     private float gravityAceleration;
@@ -16,16 +11,7 @@ public class CharacterGravity : MonoBehaviour, IMovementComponent, IUseGround
     [SerializeField]
     private float terminalVelocity;
     private float _timeFalling = 0;
-    private Vector3 _mov; 
     public bool useEngineGravity = false;
-
-    public Vector3 MovementVector {get; set;}
-    public Vector3 FactorVector {get; set;}
-
-    [SerializeField]
-    private int groundLayer;
-    public int CollisionLayer {get => groundLayer;}
-    public bool touchingGround {get; set;}
 
     private void Awake() 
     {
@@ -35,7 +21,7 @@ public class CharacterGravity : MonoBehaviour, IMovementComponent, IUseGround
     private void FixedUpdate()
     {   
         
-        if(!touchingGround)
+        /*if(!touchingNonSpecialGround && !touchingSpecialGround)
         {
             
             Fall();
@@ -48,7 +34,7 @@ public class CharacterGravity : MonoBehaviour, IMovementComponent, IUseGround
             Vector3 fac = FactorVector;
             fac.y = 0;
             FactorVector = fac;
-        }
+        }*/
             
         MovementVector = _mov;
         //print(_mov.y);
@@ -69,7 +55,7 @@ public class CharacterGravity : MonoBehaviour, IMovementComponent, IUseGround
             fallForce = terminalVelocity;
             
         //print(fallForce);
-        FactorVector = new Vector3(sideAirControl, 1, frontAirControl);
+        FactorVector = new Vector3(sideAirControl.Value, 1, frontAirControl.Value);
         _mov.y = -fallForce;
     }
 

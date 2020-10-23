@@ -32,10 +32,10 @@ namespace RoboRyanTron.Unite2017.Variables
         public FloatVariable Variable;
 
         [Tooltip("Minimum value of the Variable that is mapped to the curve.")]
-        public DatabaseReference<float> Min;
+        public FloatVariable Min;
 
         [Tooltip("Maximum value of the Variable that is mapped to the curve.")]
-        public DatabaseReference<float> Max;
+        public FloatVariable Max;
 
         [Tooltip("Curve to evaluate in order to look up a final value to send as the parameter.\n" +
                  "T=0 is when Variable == Min\n" +

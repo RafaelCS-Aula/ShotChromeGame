@@ -16,29 +16,13 @@ using UnityEngine;
     [CreateAssetMenu]
     public class FloatVariable : DatabaseVariable<float>
     {
-        [SerializeField]
-        private float floatValue;
-
-        public float Value {get => floatValue; 
-        private set => value = floatValue;}
-
-        public void SetValue(float value)
-        {
-            floatValue = value;
-        }
-
-        public void SetValue(FloatVariable value)
-        {
-            floatValue = value.Value;
-        }
-
         public void ApplyChange(float amount)
         {
-            floatValue += amount;
+            variableValue += amount;
         }
 
         public void ApplyChange(FloatVariable amount)
         {
-            floatValue += amount.Value;
+            variableValue += amount.Value;
         }
     }

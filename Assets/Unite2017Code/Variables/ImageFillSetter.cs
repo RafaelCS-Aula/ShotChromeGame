@@ -23,13 +23,13 @@ namespace RoboRyanTron.Unite2017.Variables
     public class ImageFillSetter : MonoBehaviour
     {
         [Tooltip("Value to use as the current ")]
-        public DatabaseReference<float> Variable;
+        public FloatVariable Variable;
 
         [Tooltip("Min value that Variable to have no fill on Image.")]
-        public DatabaseReference<float> Min;
+        public FloatVariable Min;
 
         [Tooltip("Max value that Variable can be to fill Image.")]
-        public DatabaseReference<float> Max;
+        public FloatVariable Max;
 
         [Tooltip("Image to set the fill amount on." )]
         public Image Image;

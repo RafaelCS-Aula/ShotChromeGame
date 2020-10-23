@@ -1187,12 +1187,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1312549392}
   - component: {fileID: 1312549391}
-  - component: {fileID: 1312549397}
   - component: {fileID: 1312549394}
-  - component: {fileID: 1312549396}
   - component: {fileID: 1312549393}
   - component: {fileID: 1312549395}
   - component: {fileID: 1312549398}
+  - component: {fileID: 1312549396}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1246,26 +1245,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb08780b7829dd24b8b452e7811b25e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxStrafeVelocity:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: 49e3a90d7217d8a46b8e2af166641408, type: 2}
-  acelerationTime:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: c97b62cdfacad034c94e20a86823bafd, type: 2}
-  decelerationTime:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: b676b5aec6f4f5b4abb5495cd55b75d0, type: 2}
-  maxForwardVelocity:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: 52c782b1bf7d08d499ba50a082a5da76, type: 2}
-  maxBackVelocity:
-    UseConstant: 0
-    ConstantValue: 90
-    Variable: {fileID: 11400000, guid: 3709695f03d29734cbeed71848959628, type: 2}
+  maxStrafeVelocity: {fileID: 11400000, guid: c97b62cdfacad034c94e20a86823bafd, type: 2}
+  acelerationTime: {fileID: 0}
+  decelerationTime: {fileID: 0}
+  maxForwardVelocity: {fileID: 0}
+  maxBackVelocity: {fileID: 0}
+  stringData: {fileID: 0}
 --- !u!114 &1312549394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1308,26 +1293,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a55006a3da034d249998c00b5e957d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideAirControl: 1
-  frontAirControl: 1
-  gravityAceleration: 50
-  terminalVelocity: 60
+  feetPosition: {x: 0, y: -0.61, z: 0}
+  feetRadius: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  sideAirControl: {fileID: 0}
+  frontAirControl: {fileID: 0}
+  gravityAceleration: 0
+  terminalVelocity: 0
   useEngineGravity: 0
-  groundLayer: 8
---- !u!114 &1312549397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1312549390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba0507c703877164e9acb16bb9a178ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  feetPosition: {x: 0, y: -0.64, z: 0}
-  feetRadius: 0.61
 --- !u!114 &1312549398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1340,9 +1315,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d70d1979b9b3834bbc4eab2058d32f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideAirControl: 0.6
-  frontAirControl: 1
-  groundLayer: 8
+  feetPosition: {x: 0, y: -0.58, z: 0}
+  feetRadius: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  sideAirControl: {fileID: 0}
+  frontAirControl: {fileID: 0}
   jumpAceleration: 15
 --- !u!1 &1554215264
 GameObject:

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using RoboRyanTron.Unite2017.Variables;
+using NaughtyAttributes;
 
 public class HorizontalMovement : MonoBehaviour, IMovementComponent
 {
@@ -12,23 +12,24 @@ public class HorizontalMovement : MonoBehaviour, IMovementComponent
     private LateralMovementStats movementStats;
     public LateralMovementStats MovementData {get => movementStats;}*/
 
+    [Expandable]
     [SerializeField]
-    private FloatReference maxStrafeVelocity;
+    private FloatVariable maxStrafeVelocity;
 
     [SerializeField]
-    private FloatReference acelerationTime;
+    private FloatVariable acelerationTime;
 
    [SerializeField]
-    private FloatReference decelerationTime;
+    private FloatVariable decelerationTime;
 
     [SerializeField]
-    private FloatReference maxForwardVelocity;
+    private FloatVariable maxForwardVelocity;
 
     [SerializeField]
-    private FloatReference maxBackVelocity;
+    private FloatVariable maxBackVelocity;
 
 
-
+    public StringVariable stringData;
 
 
     private float _acceleration;

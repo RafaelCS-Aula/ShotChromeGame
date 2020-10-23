@@ -2,31 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpMovement : MonoBehaviour, IMovementComponent, IUseGround
+public class JumpMovement : VerticalMovementBase
 {
     
-    public Vector3 MovementVector {get; set;}
-    public Vector3 FactorVector {get; set;}
-
-    [SerializeField]
-    private float sideAirControl = 1;
-
-    [SerializeField]
-    private float frontAirControl = 1;
-
-    [SerializeField]
-    private int groundLayer;
-    public int CollisionLayer {get => groundLayer;}
-    public bool touchingGround {get; set;}
 
     /*[Tooltip("How long after the jump input will the character still jump")]
     [SerializeField] private float inputToleranceTime;
     private float _inputToleranceCounter;*/
-   
-    [SerializeField] private float jumpAceleration;
-    private float input;
-    private Vector3 _mov = Vector3.zero;
-    private Vector3 _fact = Vector3.one;
+    [SerializeField] 
+    private float jumpAceleration;
+
 
 
     // Start is called before the first frame update
@@ -40,19 +25,19 @@ public class JumpMovement : MonoBehaviour, IMovementComponent, IUseGround
     {
         input = Input.GetAxisRaw("Jump");
 
-        if(input != 0 && touchingGround)
+        /*if(input != 0 && touchingSpecialGround)
         {
             
             Jump();
 
         }
-        else if(touchingGround)
+        else if(touchingSpecialGround)
         {
             
             _fact.x = 1;
             _fact.z = 1;
             _mov.y = 0;
-        }
+        }*/
 
         
         
@@ -69,8 +54,8 @@ public class JumpMovement : MonoBehaviour, IMovementComponent, IUseGround
 
         }*/
         
-        _fact.x = sideAirControl;
-        _fact.z = frontAirControl;
+        _fact.x = sideAirControl.Value;
+        _fact.z = frontAirControl.Value;
         _mov.y = jumpAceleration;
         
     }

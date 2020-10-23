@@ -21,7 +21,7 @@ namespace RoboRyanTron.Unite2017.Variables
 
         public FloatVariable Variable;
 
-        public DatabaseReference<float> LowThreshold;
+        public FloatVariable LowThreshold;
 
         private void Update()
         {

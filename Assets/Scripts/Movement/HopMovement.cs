@@ -1,26 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RoboRyanTron.Unite2017.Variables;
 
-public class HopMovement : MonoBehaviour, IMovementComponent, IUseGround
+public class HopMovement : VerticalMovementBase
 {
-    public Vector3 MovementVector {get; set;}
-    public Vector3 FactorVector {get; set;}
-
-    [SerializeField]
-    private float sideAirControl = 1;
-
-    [SerializeField]
-    private float frontAirControl = 1;
-
-    [SerializeField]
-    private int groundLayer;
-    public int CollisionLayer {get => groundLayer;}
-    public bool touchingGround {get; set;}
-    private float input;
-    private Vector3 _mov = Vector3.zero;
-    private Vector3 _fact = Vector3.one;
-
+    
     [SerializeField]
     private float forwardHopForce;
     [SerializeField]
@@ -29,28 +14,29 @@ public class HopMovement : MonoBehaviour, IMovementComponent, IUseGround
     [SerializeField]
     private float landingDragDecelerationTime;
 
-    float z = 0;
+ 
     
     private void FixedUpdate() 
     {
-        print(touchingGround);
+        //print(touchingSpecialGround);
         input = Input.GetAxisRaw("Jump");
 
-        if(input != 0 && touchingGround)
+        /*if(input != 0 && touchingSpecialGround)
         {
   
             Hop();
             
 
         }
-        else if(touchingGround)
+        else if(touchingNonSpecialGround)
         {   
             _fact.x = 1;
             _fact.z = 1;
             _mov.y = 0;
             _mov.z = 
                 Mathf.SmoothDamp(_mov.z, 0, ref z, landingDragDecelerationTime);
-        }
+        }*/
+        
         
   
         MovementVector = _mov;
@@ -60,8 +46,8 @@ public class HopMovement : MonoBehaviour, IMovementComponent, IUseGround
 
     public void Hop()
     {
-        _fact.x = sideAirControl;
-        _fact.z = frontAirControl;
+        _fact.x = sideAirControl.Value;
+        _fact.z = frontAirControl.Value;
         _mov.y = upwardHopForce;
         _mov.z = forwardHopForce;
     }

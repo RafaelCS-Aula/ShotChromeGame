@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
-public class DatabaseVariable<T> : ScriptableObject
+public abstract class DatabaseVariable<T> : ScriptableObject
 {
 
     [SerializeField]
