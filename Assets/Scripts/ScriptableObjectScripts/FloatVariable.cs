@@ -25,4 +25,9 @@ using UnityEngine;
         {
             variableValue += amount.Value;
         }
+
+        public static implicit operator float(FloatVariable reference)
+        {
+            return reference.Value;
+        }
     }

@@ -14,4 +14,11 @@ using UnityEngine;
 
     [CreateAssetMenu]
     public class StringVariable : DatabaseVariable<string>
-    {}
+    {
+
+
+        public static implicit operator string(StringVariable reference)
+        {
+            return reference.Value;
+        }
+    }

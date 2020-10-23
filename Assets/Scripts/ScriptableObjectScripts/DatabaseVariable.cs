@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
+
 
 public abstract class DatabaseVariable<T> : ScriptableObject
 {
 
     [SerializeField]
-    [Multiline]
+    [ResizableTextArea]
     protected string DevDescription; 
 
     [SerializeField]
