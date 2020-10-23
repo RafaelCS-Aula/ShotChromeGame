@@ -1,15 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 public class CharacterGravity : VerticalMovementBase
 {
 
+    [Header("Gravity Settings")]
+    [HorizontalLine(color: EColor.Yellow)]
     [SerializeField]
-    private float gravityAceleration;
+    private FloatVariable gravityAceleration;
 
     [SerializeField]
-    private float terminalVelocity;
+    private FloatVariable terminalVelocity;
     private float _timeFalling = 0;
     public bool useEngineGravity = false;
 
@@ -21,7 +24,7 @@ public class CharacterGravity : VerticalMovementBase
     private void FixedUpdate()
     {   
         
-        /*if(!touchingNonSpecialGround && !touchingSpecialGround)
+        if(!TouchingGround())
         {
             
             Fall();
@@ -34,7 +37,7 @@ public class CharacterGravity : VerticalMovementBase
             Vector3 fac = FactorVector;
             fac.y = 0;
             FactorVector = fac;
-        }*/
+        }
             
         MovementVector = _mov;
         //print(_mov.y);
@@ -55,9 +58,11 @@ public class CharacterGravity : VerticalMovementBase
             fallForce = terminalVelocity;
             
         //print(fallForce);
-        FactorVector = new Vector3(sideAirControl.Value, 1, frontAirControl.Value);
+        FactorVector = new Vector3(sideAirControl, 1, frontAirControl);
         _mov.y = -fallForce;
     }
+
+
 
 
 }

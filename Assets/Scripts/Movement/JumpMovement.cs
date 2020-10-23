@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 public class JumpMovement : VerticalMovementBase
 {
@@ -9,6 +10,9 @@ public class JumpMovement : VerticalMovementBase
     /*[Tooltip("How long after the jump input will the character still jump")]
     [SerializeField] private float inputToleranceTime;
     private float _inputToleranceCounter;*/
+
+    [Header("Jump Settings")]
+    [HorizontalLine(color: EColor.Yellow)]
     [SerializeField] 
     private float jumpAceleration;
 
@@ -25,19 +29,19 @@ public class JumpMovement : VerticalMovementBase
     {
         input = Input.GetAxisRaw("Jump");
 
-        /*if(input != 0 && touchingSpecialGround)
+        if(input != 0 && TouchingGround())
         {
             
             Jump();
 
         }
-        else if(touchingSpecialGround)
+        else if(TouchingGround())
         {
             
             _fact.x = 1;
             _fact.z = 1;
             _mov.y = 0;
-        }*/
+        }
 
         
         

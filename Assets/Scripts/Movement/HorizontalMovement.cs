@@ -29,8 +29,6 @@ public class HorizontalMovement : MonoBehaviour, IMovementComponent
     private FloatVariable maxBackVelocity;
 
 
-    public StringVariable stringData;
-
 
     private float _acceleration;
     private Vector3 _velocity = new Vector3();
