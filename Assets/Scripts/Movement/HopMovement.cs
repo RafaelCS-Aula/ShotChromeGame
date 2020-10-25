@@ -68,7 +68,7 @@ public class HopMovement : VerticalMovementBase
 
     private bool TouchingHopSpot()
     {
-        return Physics.OverlapSphere(hopSpotDetectorPosition, hopSpotDetectorRadius, hoppingMask).Length > 0;
+        return Physics.OverlapSphere(transform.localPosition + hopSpotDetectorPosition, hopSpotDetectorRadius, hoppingMask).Length > 0;
     }
 
 

@@ -626,7 +626,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 742322588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1312549392}
@@ -790,7 +790,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744106414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.64, y: -0.03, z: 4.79}
+  m_LocalPosition: {x: -7.64, y: 1.53, z: 4.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1188,10 +1188,12 @@ GameObject:
   - component: {fileID: 1312549392}
   - component: {fileID: 1312549391}
   - component: {fileID: 1312549394}
+  - component: {fileID: 1312549396}
   - component: {fileID: 1312549393}
   - component: {fileID: 1312549395}
   - component: {fileID: 1312549398}
-  - component: {fileID: 1312549396}
+  - component: {fileID: 1312549397}
+  - component: {fileID: 1312549399}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1250,7 +1252,6 @@ MonoBehaviour:
   decelerationTime: {fileID: 0}
   maxForwardVelocity: {fileID: 0}
   maxBackVelocity: {fileID: 0}
-  stringData: {fileID: 0}
 --- !u!114 &1312549394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1293,16 +1294,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a55006a3da034d249998c00b5e957d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  feetPosition: {x: 0, y: -0.61, z: 0}
+  feetPosition: {fileID: 0}
   feetRadius: {fileID: 0}
+  sideAirControl: {fileID: 0}
+  frontAirControl: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
+  showGizmos: 0
+  gravityAceleration: {fileID: 0}
+  terminalVelocity: {fileID: 0}
+  useEngineGravity: 0
+--- !u!114 &1312549397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312549390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba7336d0b5a447e44869356555e56d8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feetPosition: {fileID: 0}
+  feetRadius: {fileID: 0}
   sideAirControl: {fileID: 0}
   frontAirControl: {fileID: 0}
-  gravityAceleration: 0
-  terminalVelocity: 0
-  useEngineGravity: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  showGizmos: 0
+  forwardHopForce: {fileID: 0}
+  upwardHopForce: {fileID: 0}
+  landingDragDecelerationTime: {fileID: 0}
+  hoppingMask:
+    serializedVersion: 2
+    m_Bits: 0
+  hopSpotDetectorRadius: {fileID: 0}
+  hopSpotDetectorPosition: {fileID: 0}
 --- !u!114 &1312549398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1315,14 +1345,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d70d1979b9b3834bbc4eab2058d32f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  feetPosition: {x: 0, y: -0.58, z: 0}
+  feetPosition: {fileID: 0}
   feetRadius: {fileID: 0}
+  sideAirControl: {fileID: 0}
+  frontAirControl: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
+  showGizmos: 0
+  jumpAceleration: 15
+--- !u!114 &1312549399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312549390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36057e00f4a4df146a6f2300649666cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feetPosition: {fileID: 0}
+  feetRadius: {fileID: 0}
   sideAirControl: {fileID: 0}
   frontAirControl: {fileID: 0}
-  jumpAceleration: 15
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  showGizmos: 0
+  currentVelocity: {fileID: 0}
+  velocityThreshold: {fileID: 0}
+  timeBeforeSlowDown: {fileID: 0}
+  crowdColliderLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  crowdDetectorRayLength: {fileID: 0}
 --- !u!1 &1554215264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1598,10 +1656,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2096273023}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.8892705, y: -0.03669062, z: 0.34358048, w: 0.2996736}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 33.931, y: 134.766, z: 170.239}
