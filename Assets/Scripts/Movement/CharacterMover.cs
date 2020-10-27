@@ -11,6 +11,9 @@ public class CharacterMover : MonoBehaviour
 
     private IMovementComponent[] _movementComps;
 
+    [SerializeField]
+    private Vector3Variable totalVelocity;
+
     // Start is called before the first frame update
     private void Awake() 
     {
@@ -40,8 +43,10 @@ public class CharacterMover : MonoBehaviour
         finalMotion += transform.forward * _motionVector.z;
         finalMotion += transform.up * _motionVector.y;
 
+        totalVelocity?.SetValue(finalMotion * Time.deltaTime);
        // print(finalMotion);
         _myController.Move(finalMotion * Time.deltaTime);
+
         
 
     }

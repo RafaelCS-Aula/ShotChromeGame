@@ -42,15 +42,19 @@ public class CrowdrunMovement : VerticalMovementBase
         {
 
             // slow down the runner
-            _mov.z = -slowDownAmount; 
+            _mov.z = -slowDownAmount * _slowDownTimer;
+            //_mov.z = Mathf.Clamp(_mov.z, 0, _forwardVelocity); 
+            if(_inContactComponent)
+            _inContactComponent.EvaluateVelocity(
+                currentVelocity.Value.magnitude);
 
         }
 
-        if(_inContactComponent)
-            _inContactComponent.EvaluateVelocity(
-                currentVelocity.Value.magnitude);
+        
         MovementVector = _mov;
         FactorVector = _fact;
+
+        print(_forwardVelocity);
     }
 
     private void ContactCrowd()
@@ -65,10 +69,10 @@ public class CrowdrunMovement : VerticalMovementBase
         if(contact)
         {
             
-
+           //print("contact");
             if(_crowdCollider != _rayhit.collider)
             {
-                if(Input.GetAxisRaw  ("Vertical") > 0)
+                if(Input.GetAxisRaw  ("Vertical") > 0 && _inContactComponent == null)
                 {
                     _slowDownTimer = 0;
                 }
@@ -89,8 +93,16 @@ public class CrowdrunMovement : VerticalMovementBase
         }
         else 
         {
+            _inContactComponent = null;
             _slowDownTimer = 0;
             return;
         }
+    }
+
+
+    private void OnDrawGizmos() 
+    {
+        if(showGizmos)
+            Gizmos.DrawLine(transform.localPosition + feetPosition, transform.localPosition + feetPosition.Value * crowdDetectorRayLength);    
     }
 }
