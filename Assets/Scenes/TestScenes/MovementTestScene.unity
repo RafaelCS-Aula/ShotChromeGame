@@ -498,7 +498,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 108467465}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.87, y: -0.03, z: -2.21}
+  m_LocalPosition: {x: 10.503643, y: -0.41, z: -2.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -593,7 +593,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691913788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.87, y: -0.03, z: 3.89}
+  m_LocalPosition: {x: 10.503643, y: -0.41, z: 3.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -697,10 +697,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnHorizontal: 0
   turnVertical: 1
-  horizontalSensitivity: 0
-  verticalSensitivity: 250
-  horizontalMaxAngle: 0
-  verticalMaxAngle: 90
+  horizontalSensitivity: {fileID: 0}
+  verticalSensitivity: {fileID: 11400000, guid: afb5320264e08c54bb5a2c9164038d66, type: 2}
+  horizontalMaxAngle: {fileID: 0}
+  verticalMaxAngle: {fileID: 11400000, guid: a25953b2ce5a4da47800e89c2c1e4275, type: 2}
 --- !u!1 &744106414
 GameObject:
   m_ObjectHideFlags: 0
@@ -981,7 +981,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861323081}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.7363563, y: -0.03, z: 9.4}
+  m_LocalPosition: {x: 7.37, y: -0.41, z: 9.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1227,7 +1227,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312549390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.82, y: 6.08, z: 0}
+  m_LocalPosition: {x: -13.16, y: 2.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 742322589}
@@ -1247,11 +1247,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb08780b7829dd24b8b452e7811b25e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxStrafeVelocity: {fileID: 11400000, guid: c97b62cdfacad034c94e20a86823bafd, type: 2}
-  acelerationTime: {fileID: 0}
-  decelerationTime: {fileID: 0}
-  maxForwardVelocity: {fileID: 0}
-  maxBackVelocity: {fileID: 0}
+  maxStrafeVelocity: {fileID: 11400000, guid: 49e3a90d7217d8a46b8e2af166641408, type: 2}
+  acelerationTime: {fileID: 11400000, guid: c97b62cdfacad034c94e20a86823bafd, type: 2}
+  decelerationTime: {fileID: 11400000, guid: b676b5aec6f4f5b4abb5495cd55b75d0, type: 2}
+  maxForwardVelocity: {fileID: 11400000, guid: 52c782b1bf7d08d499ba50a082a5da76, type: 2}
+  maxBackVelocity: {fileID: 11400000, guid: 3709695f03d29734cbeed71848959628, type: 2}
 --- !u!114 &1312549394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1264,6 +1264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499726adc3f693f4ea430275c7e1fba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalVelocity: {fileID: 11400000, guid: 27e94b4e7fd2fa54eb569af7e73b257a, type: 2}
 --- !u!114 &1312549395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1278,10 +1279,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnHorizontal: 1
   turnVertical: 0
-  horizontalSensitivity: 250
-  verticalSensitivity: 0
-  horizontalMaxAngle: 0
-  verticalMaxAngle: 0
+  horizontalSensitivity: {fileID: 11400000, guid: be55c369303e38042bec9e7d1de15a56, type: 2}
+  verticalSensitivity: {fileID: 0}
+  horizontalMaxAngle: {fileID: 11400000, guid: c6a8186dead907442bc05c4e2319a789, type: 2}
+  verticalMaxAngle: {fileID: 0}
 --- !u!114 &1312549396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1294,16 +1295,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a55006a3da034d249998c00b5e957d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  feetPosition: {fileID: 0}
-  feetRadius: {fileID: 0}
-  sideAirControl: {fileID: 0}
-  frontAirControl: {fileID: 0}
+  feetPosition: {fileID: 11400000, guid: a56ffafb605f7ba4db48bd64c51d0e8e, type: 2}
+  feetRadius: {fileID: 11400000, guid: c0c53cf09878a30409744c6de1ae0cde, type: 2}
+  sideAirControl: {fileID: 11400000, guid: bf3a82a27ff0c9f4d8a6fe8460be314a, type: 2}
+  frontAirControl: {fileID: 11400000, guid: 4b5da82bf89d211409ea6a8afb843bdf, type: 2}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
-  showGizmos: 0
-  gravityAceleration: {fileID: 0}
-  terminalVelocity: {fileID: 0}
+    m_Bits: 256
+  showGizmos: 1
+  gravityAceleration: {fileID: 11400000, guid: d2d28db5ff88b4245bc422e6e9a107b8, type: 2}
+  terminalVelocity: {fileID: 11400000, guid: 53e83416ea21c2c498d8e5bfb57d9d77, type: 2}
   useEngineGravity: 0
 --- !u!114 &1312549397
 MonoBehaviour:
@@ -1317,22 +1318,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba7336d0b5a447e44869356555e56d8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  feetPosition: {fileID: 0}
-  feetRadius: {fileID: 0}
-  sideAirControl: {fileID: 0}
-  frontAirControl: {fileID: 0}
+  feetPosition: {fileID: 11400000, guid: a56ffafb605f7ba4db48bd64c51d0e8e, type: 2}
+  feetRadius: {fileID: 11400000, guid: c0c53cf09878a30409744c6de1ae0cde, type: 2}
+  sideAirControl: {fileID: 11400000, guid: c6580f69479a014429fc60b49f49bf0a, type: 2}
+  frontAirControl: {fileID: 11400000, guid: b12d2483834fd6a4db026e2f84a7ae98, type: 2}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
   showGizmos: 0
-  forwardHopForce: {fileID: 0}
-  upwardHopForce: {fileID: 0}
-  landingDragDecelerationTime: {fileID: 0}
+  forwardHopForce: {fileID: 11400000, guid: 2d1a95fa834c45741b1a916c9d7fa30b, type: 2}
+  upwardHopForce: {fileID: 11400000, guid: b7fafdbea4a41e24390d599597a6868e, type: 2}
+  landingDragDecelerationTime: {fileID: 11400000, guid: 80e98824da4d04a4f843ceaae1f9de10, type: 2}
   hoppingMask:
     serializedVersion: 2
-    m_Bits: 0
-  hopSpotDetectorRadius: {fileID: 0}
-  hopSpotDetectorPosition: {fileID: 0}
+    m_Bits: 512
+  hopSpotDetectorRadius: {fileID: 11400000, guid: c0c53cf09878a30409744c6de1ae0cde, type: 2}
+  hopSpotDetectorPosition: {fileID: 11400000, guid: a56ffafb605f7ba4db48bd64c51d0e8e, type: 2}
 --- !u!114 &1312549398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1345,15 +1346,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d70d1979b9b3834bbc4eab2058d32f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  feetPosition: {fileID: 0}
-  feetRadius: {fileID: 0}
-  sideAirControl: {fileID: 0}
-  frontAirControl: {fileID: 0}
+  feetPosition: {fileID: 11400000, guid: a56ffafb605f7ba4db48bd64c51d0e8e, type: 2}
+  feetRadius: {fileID: 11400000, guid: c0c53cf09878a30409744c6de1ae0cde, type: 2}
+  sideAirControl: {fileID: 11400000, guid: bf3a82a27ff0c9f4d8a6fe8460be314a, type: 2}
+  frontAirControl: {fileID: 11400000, guid: 4b5da82bf89d211409ea6a8afb843bdf, type: 2}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   showGizmos: 0
-  jumpAceleration: 15
+  jumpAceleration: {fileID: 11400000, guid: 872525574b6f3764c8ee1ca0ea5d0af4, type: 2}
 --- !u!114 &1312549399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1366,21 +1367,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36057e00f4a4df146a6f2300649666cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  feetPosition: {fileID: 0}
-  feetRadius: {fileID: 0}
-  sideAirControl: {fileID: 0}
-  frontAirControl: {fileID: 0}
+  feetPosition: {fileID: 11400000, guid: a56ffafb605f7ba4db48bd64c51d0e8e, type: 2}
+  feetRadius: {fileID: 11400000, guid: c0c53cf09878a30409744c6de1ae0cde, type: 2}
+  sideAirControl: {fileID: 11400000, guid: c6580f69479a014429fc60b49f49bf0a, type: 2}
+  frontAirControl: {fileID: 11400000, guid: b12d2483834fd6a4db026e2f84a7ae98, type: 2}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
-  showGizmos: 0
-  currentVelocity: {fileID: 0}
-  velocityThreshold: {fileID: 0}
-  timeBeforeSlowDown: {fileID: 0}
+    m_Bits: 256
+  showGizmos: 1
+  currentVelocity: {fileID: 11400000, guid: 27e94b4e7fd2fa54eb569af7e73b257a, type: 2}
+  slowDownAmount: {fileID: 11400000, guid: 6cbb90d7b53f12048bb7679be6c24977, type: 2}
+  timeBeforeSlowDown: {fileID: 11400000, guid: 5d2a8f9b096a2dd4aba8662b51a986ff, type: 2}
   crowdColliderLayer:
     serializedVersion: 2
-    m_Bits: 0
-  crowdDetectorRayLength: {fileID: 0}
+    m_Bits: 512
+  crowdDetectorRayLength: {fileID: 11400000, guid: 24457d117fd60e74a929d3051f07a698, type: 2}
 --- !u!1 &1554215264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,7 +1566,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752136649}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.7363563, y: -0.03, z: 3.89}
+  m_LocalPosition: {x: 7.37, y: -0.41, z: 3.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff372f1f0aa9e294786c6797a88761c9, type: 3}
-  m_Name: GroundCollisionSphereRadius
+  m_Name: HopFrontAirControl
   m_EditorClassIdentifier: 
   DevDescription: 
-  variableValue: 0.58
+  variableValue: 1
