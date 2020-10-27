@@ -13,8 +13,10 @@ public class JumpMovement : VerticalMovementBase
 
     [Header("Jump Settings")]
     [HorizontalLine(color: EColor.Yellow)]
+
+    [Expandable]
     [SerializeField] 
-    private float jumpAceleration;
+    private FloatVariable jumpAceleration;
 
 
 

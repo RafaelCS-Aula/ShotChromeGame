@@ -16,15 +16,19 @@ public class HorizontalMovement : MonoBehaviour, IMovementComponent
     [SerializeField]
     private FloatVariable maxStrafeVelocity;
 
+    [Expandable]
     [SerializeField]
     private FloatVariable acelerationTime;
 
+    [Expandable]
    [SerializeField]
     private FloatVariable decelerationTime;
 
+    [Expandable]
     [SerializeField]
     private FloatVariable maxForwardVelocity;
 
+    [Expandable]
     [SerializeField]
     private FloatVariable maxBackVelocity;
 

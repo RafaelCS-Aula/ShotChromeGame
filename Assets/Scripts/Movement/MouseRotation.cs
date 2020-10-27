@@ -1,24 +1,56 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 public class MouseRotation : MonoBehaviour
 {
 
-    private float _mouseDeltaX;
-    private float _mouseDeltaY;
+    private float _mouseDeltaX = 0;
+    private float _mouseDeltaY = 0;
     private float _horizontalDelta;
     private float _verticalDelta;
     private Quaternion _startRotation;
+
+    //[ValidateInput("HasNeededHVars", "Input horizontal sensitivity and angle limit")]
     [SerializeField] private bool turnHorizontal;
+
+    //[ValidateInput("HasNeededVVars", "Input vertical sensitivity and angle limit")]
     [SerializeField] private bool turnVertical;
 
+    [ShowIf("turnHorizontal")]
+    [Expandable]
+    [SerializeField] private FloatVariable horizontalSensitivity;
 
-    [SerializeField] private float horizontalSensitivity;
-    [SerializeField] private float verticalSensitivity;
+    [ShowIf("turnVertical")]
+    [Expandable]
+    [SerializeField] private FloatVariable verticalSensitivity;
 
-    [SerializeField] private float horizontalMaxAngle = 0.0f;
-    [SerializeField] private float verticalMaxAngle = 0.0f;
+    [ShowIf("turnHorizontal")]
+    [Expandable]
+    [SerializeField] private FloatVariable horizontalMaxAngle;
+
+    [ShowIf("turnVertical")]
+    [Expandable]
+    [SerializeField] private FloatVariable verticalMaxAngle;
+
+#region Naughty Attributes helper methods
+    private bool HasNeededHVars()
+    {
+        if(turnHorizontal)
+        {
+            return (horizontalMaxAngle != null && horizontalSensitivity != null);
+        }
+        else
+           return true;
+    }
+    private bool HasNeededVVars()
+    {
+        if(turnVertical)
+            return (verticalMaxAngle != null && verticalSensitivity != null);
+        else return true;
+    }
+#endregion
 
 
     private void Start() 
@@ -28,25 +60,41 @@ public class MouseRotation : MonoBehaviour
     }
     void Update()
     {
-        _mouseDeltaX = 
+       // Apply trunign restrictions
+       if(turnHorizontal)
+       {
+           _mouseDeltaX = 
             Input.GetAxisRaw("Mouse X") * horizontalSensitivity * 
                 Time.deltaTime;
-        _mouseDeltaY = 
+            _horizontalDelta += _mouseDeltaX;
+            ApplyHorizontalRestrictions();
+            transform.Rotate(Vector3.up * _mouseDeltaX);
+       }
+
+        if(turnVertical)
+        {
+            _mouseDeltaY = 
             Input.GetAxisRaw("Mouse Y") * verticalSensitivity *
                 Time.deltaTime;
 
-        _horizontalDelta += _mouseDeltaX;
-        _verticalDelta += _mouseDeltaY;
+            _verticalDelta += _mouseDeltaY;
+            
+            ApplyVerticalRestrictions();
+            transform.Rotate(Vector3.left * _mouseDeltaY);
+        }
 
-       
-       // Apply trunign restrictions
+    }
+
+
+    private void ApplyHorizontalRestrictions()
+    {
         if(horizontalMaxAngle != 0)
         {
             if(_horizontalDelta > horizontalMaxAngle )
             {
-            _horizontalDelta = horizontalMaxAngle;
-            _mouseDeltaX = 0;
-            ClampHorizontalRotation(360 - horizontalMaxAngle);
+                _horizontalDelta = horizontalMaxAngle;
+                _mouseDeltaX = 0;
+                ClampHorizontalRotation(360 - horizontalMaxAngle);
             }
             else if(_horizontalDelta < -horizontalMaxAngle)
             {   
@@ -56,15 +104,18 @@ public class MouseRotation : MonoBehaviour
             }
 
         }
-       
-        //Debug.ClearDeveloperConsole();
+
+    }
+
+    private void ApplyVerticalRestrictions()
+    {
         if(verticalMaxAngle != 0)
         {
             if(_verticalDelta > verticalMaxAngle )
             {
-            _verticalDelta = verticalMaxAngle;
-            _mouseDeltaY = 0;
-            ClampVerticalRotation(360 - verticalMaxAngle);
+                _verticalDelta = verticalMaxAngle;
+                _mouseDeltaY = 0;
+                ClampVerticalRotation(360 - verticalMaxAngle);
             }
 
             else if(_verticalDelta < -verticalMaxAngle)
@@ -75,16 +126,8 @@ public class MouseRotation : MonoBehaviour
             }
 
         } 
-       
-
-        if(turnHorizontal)
-            transform.Rotate(Vector3.up * _mouseDeltaX);
-        if(turnVertical)
-            transform.Rotate(Vector3.left * _mouseDeltaY);
 
     }
-
-
     private void ClampHorizontalRotation(float degrees)
     {
         Vector3 rot = transform.eulerAngles;
