@@ -80,7 +80,7 @@ public class HorizontalMovement : MonoBehaviour, IMovementComponent
         
         if(_direction.y != 0)
         {
-            float velocityVariable = _direction.y > 1 ? maxForwardVelocity.Value : maxBackVelocity.Value;
+            float velocityVariable = _direction.y > 0 ? maxForwardVelocity.Value : maxBackVelocity;
 
             _velocity.z = Mathf.SmoothDamp(_velocity.z, velocityVariable *  _direction.y, ref xDec, acelerationTime.Value);
 
