@@ -11,17 +11,39 @@ public class CrowdAgent : MonoBehaviour
 
     [Expandable]
     [SerializeField] FloatVariable velocityThreshold;
+    [SerializeField] FloatVariable runnerMaxVelocity;
+
+    [Expandable]
+    [SerializeField] FloatVariable timeUntilColiderReset;
+
+    
+
+    private float _factoredThreshold;
 
     private void Awake()
     {
         _myCol = GetComponent<MeshCollider>();    
-
+        
+        
     }
     public void EvaluateVelocity(float velocity)
     {
-        if(velocity < velocityThreshold)
+        _factoredThreshold =
+             runnerMaxVelocity * velocityThreshold;
+
+        if(velocity < _factoredThreshold)
             _myCol.enabled = false;
         else
             _myCol.enabled = true;
+
+        StartCoroutine(ResetCollider());
     }
+
+    private IEnumerator ResetCollider()
+    {
+        yield return new WaitForSeconds(timeUntilColiderReset);
+        _myCol.enabled = true;
+        print("collider ON");
+        yield return null;
+    } 
 }

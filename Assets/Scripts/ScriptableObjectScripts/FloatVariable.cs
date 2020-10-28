@@ -16,6 +16,7 @@ using UnityEngine;
     [CreateAssetMenu]
     public class FloatVariable : DatabaseVariable<float>
     {
+        
         public void ApplyChange(float amount)
         {
             variableValue += amount;

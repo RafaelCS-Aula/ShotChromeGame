@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CrowdRunningSlowDown
   m_EditorClassIdentifier: 
   DevDescription: 
-  variableValue: 0
+  variableValue: 900

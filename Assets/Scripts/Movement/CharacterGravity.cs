@@ -48,17 +48,17 @@ public class CharacterGravity : VerticalMovementBase
     public void Fall()
     {
         float fallForce = 
-         useEngineGravity ? Physics.gravity.y : gravityAceleration;
+         useEngineGravity ? Physics.gravity.y : gravityAceleration.Value;
 
         _timeFalling += Time.deltaTime;
         fallForce *= _timeFalling;
         
 
-        if(fallForce >= terminalVelocity)
-            fallForce = terminalVelocity;
+        if(fallForce >= terminalVelocity.Value)
+            fallForce = terminalVelocity.Value;
             
         //print(fallForce);
-        FactorVector = new Vector3(sideAirControl, 1, frontAirControl);
+        FactorVector = new Vector3(sideAirControl.Value, 1, frontAirControl.Value);
         _mov.y = -fallForce;
     }
 

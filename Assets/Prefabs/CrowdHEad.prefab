@@ -59,3 +59,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocityThreshold: {fileID: 11400000, guid: 4b6698fc1632e314d9a092f4ff2d979f, type: 2}
+  runnerMaxVelocity: {fileID: 11400000, guid: 52c782b1bf7d08d499ba50a082a5da76, type: 2}
+  timeUntilColiderReset: {fileID: 11400000, guid: 3d519e569eee5e24cb8287b25caefe5e, type: 2}
