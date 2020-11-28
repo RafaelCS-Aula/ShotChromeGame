@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NaughtyAttributes;
+
 
 public class CharacterGravity : VerticalMovementBase
 {
 
     [Header("Gravity Settings")]
-    [HorizontalLine(color: EColor.Yellow)]
+
     [SerializeField]
     private FloatVariable gravityAceleration;
 

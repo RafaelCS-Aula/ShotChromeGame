@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NaughtyAttributes;
 
 public class MouseRotation : MonoBehaviour
 {
@@ -18,20 +17,20 @@ public class MouseRotation : MonoBehaviour
     //[ValidateInput("HasNeededVVars", "Input vertical sensitivity and angle limit")]
     [SerializeField] private bool turnVertical;
 
-    [ShowIf("turnHorizontal")]
-    [Expandable]
+    //[ShowIf("turnHorizontal")]
+   
     [SerializeField] private FloatVariable horizontalSensitivity;
 
-    [ShowIf("turnVertical")]
-    [Expandable]
+    //[ShowIf("turnVertical")]
+    
     [SerializeField] private FloatVariable verticalSensitivity;
 
-    [ShowIf("turnHorizontal")]
-    [Expandable]
+    //[ShowIf("turnHorizontal")]
+    
     [SerializeField] private FloatVariable horizontalMaxAngle;
 
-    [ShowIf("turnVertical")]
-    [Expandable]
+    //[ShowIf("turnVertical")]
+    
     [SerializeField] private FloatVariable verticalMaxAngle;
 
 #region Naughty Attributes helper methods

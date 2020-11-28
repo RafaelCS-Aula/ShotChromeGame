@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NaughtyAttributes;
 
 public abstract class VerticalMovementBase : MonoBehaviour, IMovementComponent
 {
@@ -10,16 +9,16 @@ public abstract class VerticalMovementBase : MonoBehaviour, IMovementComponent
     [Header("General Vertical Movement Settings")]
     
     [SerializeField]
-    [Expandable] protected Vector3Variable feetPosition;
+    protected Vector3Variable feetPosition;
 
     [SerializeField]
-    [Expandable] protected FloatVariable feetRadius;
+    protected FloatVariable feetRadius;
 
     [SerializeField]
-    [Expandable] protected FloatVariable  sideAirControl;
+    protected FloatVariable  sideAirControl;
 
     [SerializeField]
-    [Expandable] protected FloatVariable frontAirControl;
+    protected FloatVariable frontAirControl;
 
     public Vector3 MovementVector {get; set;}
     public Vector3 FactorVector {get; set;}

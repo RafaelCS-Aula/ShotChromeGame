@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NaughtyAttributes;
 
 public class JumpMovement : VerticalMovementBase
 {
@@ -12,9 +11,9 @@ public class JumpMovement : VerticalMovementBase
     private float _inputToleranceCounter;*/
 
     [Header("Jump Settings")]
-    [HorizontalLine(color: EColor.Yellow)]
+    
 
-    [Expandable]
+    
     [SerializeField] 
     private FloatVariable jumpAceleration;
 

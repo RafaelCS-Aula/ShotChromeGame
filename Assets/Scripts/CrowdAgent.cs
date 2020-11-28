@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NaughtyAttributes;
 
 [RequireComponent(typeof(MeshCollider))]
 public class CrowdAgent : MonoBehaviour
@@ -9,11 +8,10 @@ public class CrowdAgent : MonoBehaviour
 
     private Collider _myCol;
 
-    [Expandable]
+
     [SerializeField] FloatVariable velocityThreshold;
     [SerializeField] FloatVariable runnerMaxVelocity;
 
-    [Expandable]
     [SerializeField] FloatVariable timeUntilColiderReset;
 
     

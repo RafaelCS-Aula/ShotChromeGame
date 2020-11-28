@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NaughtyAttributes;
 
 public class HorizontalMovement : MonoBehaviour, IMovementComponent
 {
@@ -12,23 +11,23 @@ public class HorizontalMovement : MonoBehaviour, IMovementComponent
     private LateralMovementStats movementStats;
     public LateralMovementStats MovementData {get => movementStats;}*/
 
-    [Expandable]
+    
     [SerializeField]
     private FloatVariable maxStrafeVelocity;
 
-    [Expandable]
+    
     [SerializeField]
     private FloatVariable acelerationTime;
 
-    [Expandable]
+    
    [SerializeField]
     private FloatVariable decelerationTime;
 
-    [Expandable]
+    
     [SerializeField]
     private FloatVariable maxForwardVelocity;
 
-    [Expandable]
+   
     [SerializeField]
     private FloatVariable maxBackVelocity;
 

@@ -1,29 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NaughtyAttributes;
+
 
 public class CrowdrunMovement : VerticalMovementBase
 {
     [Header("Crowd Running")]
-    [HorizontalLine(color: EColor.Yellow)]
+   
     [SerializeField] Vector3Variable currentVelocity;
 
     private float _velocity {get => currentVelocity.Value.sqrMagnitude;}
 
-    [Expandable]
+
     [SerializeField] private FloatVariable slowDownAmount;
 
  
 
-    [Expandable]
+
     [SerializeField] FloatVariable timeBeforeSlowDown;
 
     private float _slowDownTimer = 0;
 
     [SerializeField] private LayerMask crowdColliderLayer;
 
-    [Expandable]
+
     [SerializeField] private FloatVariable crowdDetectorRayLength;
 
     private Collider _crowdCollider = null;

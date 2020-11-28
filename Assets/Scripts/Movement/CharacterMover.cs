@@ -12,7 +12,7 @@ public class CharacterMover : MonoBehaviour
     private IMovementComponent[] _movementComps;
 
     [SerializeField]
-    private Vector3Variable totalVelocity;
+    private Vector3Data totalVelocity;
 
     // Start is called before the first frame update
     private void Awake() 

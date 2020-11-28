@@ -1,30 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NaughtyAttributes;
 
 public class HopMovement : VerticalMovementBase
 {
     [Header("Hop Settings")]
-    [HorizontalLine(color: EColor.Yellow)]
     [SerializeField]
-    [Expandable] private FloatVariable forwardHopForce;
+    private FloatVariable forwardHopForce;
 
     [SerializeField]
-    [Expandable] private FloatVariable upwardHopForce;
+    private FloatVariable upwardHopForce;
 
     [SerializeField]
-    [Expandable] private FloatVariable landingDragDecelerationTime;
+    private FloatVariable landingDragDecelerationTime;
 
     [Header("Unique Collision Settings")]
     [SerializeField] 
     private LayerMask hoppingMask;
 
     [SerializeField]
-    [Expandable] private FloatVariable hopSpotDetectorRadius;
+    private FloatVariable hopSpotDetectorRadius;
 
     [SerializeField]
-    [Expandable] private Vector3Variable hopSpotDetectorPosition;
+    private Vector3Variable hopSpotDetectorPosition;
 
 
 
