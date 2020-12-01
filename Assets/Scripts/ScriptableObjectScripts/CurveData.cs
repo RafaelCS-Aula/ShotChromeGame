@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-    [CreateAssetMenu(menuName = "Game variables")]
+    [CreateAssetMenu(menuName = "Game variables/Curve")]
     public class CurveData : DatabaseVariable<AnimationCurve>
     {
 

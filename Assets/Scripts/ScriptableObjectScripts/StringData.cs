@@ -12,7 +12,7 @@
 /// ----------------
 using UnityEngine;
 
-    [CreateAssetMenu(menuName = "Game variables")]
+    [CreateAssetMenu(menuName = "Game variables/String")]
     public class StringData : DatabaseVariable<string>
     {
 

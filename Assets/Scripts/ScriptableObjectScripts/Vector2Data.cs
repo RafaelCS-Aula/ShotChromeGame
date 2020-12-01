@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-    [CreateAssetMenu(menuName = "Game variables")]
+    [CreateAssetMenu(menuName = "Game variables/Vector2")]
     public class Vector2Data : DatabaseVariable<Vector2>
     {
 

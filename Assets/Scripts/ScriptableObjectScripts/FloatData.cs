@@ -13,7 +13,7 @@
 
 using UnityEngine;
 
-    [CreateAssetMenu(menuName = "Game variables")]
+    [CreateAssetMenu(menuName = "Game variables/Float")]
     public class FloatData : DatabaseVariable<float>
     {
         
