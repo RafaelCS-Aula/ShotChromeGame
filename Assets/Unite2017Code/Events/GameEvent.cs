@@ -8,8 +8,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RoboRyanTron.Unite2017.Events
-{
+
     [CreateAssetMenu]
     public class GameEvent : ScriptableObject
     {
@@ -24,6 +23,11 @@ namespace RoboRyanTron.Unite2017.Events
             for(int i = eventListeners.Count -1; i >= 0; i--)
                 eventListeners[i].OnEventRaised();
         }
+        public void RaisePositionArg(Vector3 positionArg)
+        {
+            for(int i = eventListeners.Count -1; i >= 0; i--)
+                eventListeners[i].OnPositionEventRaised(positionArg);
+        }
 
         public void RegisterListener(GameEventListener listener)
         {
@@ -37,4 +41,3 @@ namespace RoboRyanTron.Unite2017.Events
                 eventListeners.Remove(listener);
         }
     }
-}
