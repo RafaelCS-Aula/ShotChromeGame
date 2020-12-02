@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[System.Serializable]
+public class StrikeEvent : UnityEvent<Vector3>{}
+
 public class ThunderStrike : MonoBehaviour
 {
     [SerializeField] private FloatVariable summonToStrikeDelay; 
     [SerializeField] private LayerMask impactLayer;
     [SerializeField] private UnityEvent OnSummonEvent;
-    [SerializeField] private UnityEvent<Vector3> OnStrikeEvent;
+    [SerializeField] private StrikeEvent OnStrikeEvent;
 
     public KeyCode summonKey;
     
@@ -63,7 +66,7 @@ public class ThunderStrike : MonoBehaviour
 
         RaycastHit strikeInfo;
         Physics.Raycast(origin, Vector3.down,out strikeInfo,_originHeight, impactLayer);
-        Debug.DrawRay(origin, Vector3.down,Color.yellow,2);
+        Debug.DrawLine(origin, strikeInfo.point,Color.yellow,2);
 
         Debug.DrawLine(new Vector3(strikeInfo.point.x + 1, strikeInfo.point.y + 1, strikeInfo.point.z), new Vector3(strikeInfo.point.x - 1, strikeInfo.point.y - 1, strikeInfo.point.z), Color.yellow, 3);
         Debug.DrawLine(new Vector3(strikeInfo.point.x + 1, strikeInfo.point.y - 1, strikeInfo.point.z), new Vector3(strikeInfo.point.x - 1, strikeInfo.point.y + 1, strikeInfo.point.z), Color.yellow, 3);
