@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f25694c1e7482b48a1ef7f715245d18, type: 3}
-  m_Name: SCFireRateModifier
+  m_Script: {fileID: 11500000, guid: dd3d8738b8c31aa4380b4cee9e909046, type: 3}
+  m_Name: Interact
   m_EditorClassIdentifier: 
-  DevDescription: Rate of Fire improvement when player is SuperCharged
-  variableValue: 3
+  DevDescription: 
+  variableValue: 102
