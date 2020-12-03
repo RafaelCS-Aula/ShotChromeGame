@@ -33,7 +33,7 @@ public class Shotgun : MonoBehaviour
 
         shotTimer -= Time.deltaTime;
 
-        if (Input.GetKey(shootInput) && shotTimer <= 0) Shoot();
+        if (Input.GetKeyDown(shootInput) && shotTimer <= 0) Shoot();
 
         print(shotTimer);
     }
