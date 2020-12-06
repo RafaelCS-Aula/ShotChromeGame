@@ -648,6 +648,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd6b2965397ff0b4c8dbf3d0738cc979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useEffectFallOff: 1
+  effectAmount:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
   maxRadius:
     UseInspectorValue: 1
     InspectorValue: 10
@@ -658,10 +663,6 @@ MonoBehaviour:
   fullyBlockedByLayers:
     serializedVersion: 2
     m_Bits: 256
-  effectValue:
-    UseInspectorValue: 1
-    InspectorValue: 3
-    Variable: {fileID: 0}
   effectFalloff:
     UseInspectorValue: 1
     InspectorValue:
@@ -689,6 +690,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     Variable: {fileID: 0}
+  oppa: 000000000000000000000000
 --- !u!114 &633213886
 MonoBehaviour:
   m_ObjectHideFlags: 0

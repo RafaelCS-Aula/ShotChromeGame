@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class AreaofEffect : MonoBehaviour
 {
     //[SerializeField] private bool isImmediate;
 
+    [SerializeField] private bool useEffectFallOff = true;
+
+    [SerializeField] private FloatVariable effectAmount;
     [SerializeField] private FloatVariable maxRadius;
     [SerializeField] private LayerMask affectedLayers;
     [SerializeField] private LayerMask fullyBlockedByLayers;
-
-    [SerializeField] private FloatVariable effectValue;
     [SerializeField] private CurveVariable effectFalloff;
-
 
     private Collider[] _insideArea;
     
@@ -42,10 +43,20 @@ public class AreaofEffect : MonoBehaviour
             }
                 
 
-            float hitEffect = distToHit / maxRadius;
+            
+            float effectModifier = 1; 
+            if(useEffectFallOff)
+            {
+                float hitEffect = distToHit / maxRadius;
+                effectModifier = effectFalloff.Value.Evaluate(hitEffect);
+
+            }
+                
+
+            float finalPower = effectModifier * effectAmount;
 
             //Debug
-            debugPoints.Add((c.ClosestPoint(center), true, effectFalloff.Value.Evaluate(hitEffect)));
+            debugPoints.Add((c.ClosestPoint(center), true, effectModifier));
 
             Debug.DrawLine(center, c.ClosestPoint(center), Color.yellow,4);
             print("bzzz");
