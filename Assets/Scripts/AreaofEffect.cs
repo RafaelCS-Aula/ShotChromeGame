@@ -7,6 +7,7 @@ public class AreaofEffect : MonoBehaviour
 {
     //[SerializeField] private bool isImmediate;
 
+    [SerializeField] private ResourceTypes AffectedResource;
     [SerializeField] private bool useEffectFallOff = true;
 
     [SerializeField] private FloatVariable effectAmount;
