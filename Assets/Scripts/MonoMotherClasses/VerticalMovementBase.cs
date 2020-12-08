@@ -34,28 +34,5 @@ public abstract class VerticalMovementBase : MonoBehaviour, IMovementComponent
 
 
 
-    
-
-    protected bool TouchingGround()
-    {
-    
-        Vector3 pos = feetPosition + transform.localPosition;
-        Collider[] collisions = 
-            Physics.OverlapSphere(pos, feetRadius.Value, groundLayer);
-        return collisions.Length > 0 ;
-        
-    }
-
-    protected void OnDrawGizmos() 
-    {
-        if(!showGizmos)
-            return;
-        float gRadius = feetRadius == null ? 0.0f : feetRadius.Value;
-        Gizmos.color = Color.cyan;
-
-        Gizmos.DrawSphere(feetPosition + transform.localPosition, gRadius);
-        
-        
-    }
 
 }

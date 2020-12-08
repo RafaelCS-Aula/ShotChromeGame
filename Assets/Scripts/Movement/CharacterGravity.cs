@@ -24,7 +24,7 @@ public class CharacterGravity : VerticalMovementBase
     private void FixedUpdate()
     {   
         
-        if(!TouchingGround())
+       /* if(!TouchingGround())
         {
             
             Fall();
@@ -37,7 +37,7 @@ public class CharacterGravity : VerticalMovementBase
             Vector3 fac = FactorVector;
             fac.y = 0;
             FactorVector = fac;
-        }
+        }*/
             
         MovementVector = _mov;
         //print(_mov.y);

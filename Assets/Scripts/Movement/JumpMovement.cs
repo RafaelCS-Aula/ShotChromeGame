@@ -30,7 +30,7 @@ public class JumpMovement : VerticalMovementBase
     {
         input = Input.GetAxisRaw("Jump");
 
-        if(input != 0 && TouchingGround())
+       /* if(input != 0 && TouchingGround())
         {
             
             Jump();
@@ -42,7 +42,7 @@ public class JumpMovement : VerticalMovementBase
             _fact.x = 1;
             _fact.z = 1;
             _mov.y = 0;
-        }
+        }*/
 
         
         

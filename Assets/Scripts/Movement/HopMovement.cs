@@ -33,7 +33,7 @@ public class HopMovement : VerticalMovementBase
         //print(touchingSpecialGround);
         input = Input.GetAxisRaw("Jump");
 
-        if(input != 0 && TouchingHopSpot())
+       /* if(input != 0 && TouchingHopSpot())
         {
   
             Hop();
@@ -47,7 +47,7 @@ public class HopMovement : VerticalMovementBase
             _mov.y = 0;
             _mov.z = 
                 Mathf.SmoothDamp(_mov.z, 0, ref z, landingDragDecelerationTime);
-        }
+        }*/
         
         
   
