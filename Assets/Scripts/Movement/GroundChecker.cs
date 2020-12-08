@@ -22,6 +22,14 @@ public class GroundChecker : MonoBehaviour
 
     [SerializeField] private LayerMask groundLayer;
 
+    [SerializeField] private bool showGizmos;
+
+    [ShowIf("showGizmos")]
+    [SerializeField] private Color gizmoColor;
+
+    [ShowIf("showGizmos")]
+    [Range(0,1)]
+    [SerializeField] private float gizmoTransparency;
     public bool OnGround()
     {
 
@@ -39,5 +47,22 @@ public class GroundChecker : MonoBehaviour
     public bool CheckRay(Vector3 origin, Vector3 direction, float range, LayerMask layer)
     {
         return Physics.Raycast(origin, direction, range, layer);
+    }
+
+    private void OnDrawGizmos() 
+    {
+        if(!showGizmos)
+            return;
+        float gRadius = sphereRadius;
+        float gRange = rayRange;
+        gizmoColor.a = gizmoTransparency;
+        Gizmos.color = gizmoColor;
+
+        if(!_useRay)
+            Gizmos.DrawSphere(origin + transform.localPosition, gRadius);
+        if(_useRay)
+            Gizmos.DrawLine(origin + transform.localPosition, origin + transform.localPosition + rayDirection.Value.normalized * rayRange);
+        
+        
     }
 }
