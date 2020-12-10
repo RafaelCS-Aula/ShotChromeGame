@@ -8,15 +8,15 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace RoboRyanTron.Unite2017.Events
-{
     public class GameEventListener : MonoBehaviour
     {
+
         [Tooltip("Event to register with.")]
         public GameEvent Event;
 
         [Tooltip("Response to invoke when Event is raised.")]
         public UnityEvent Response;
+        public UnityEvent<Vector3> PositionResponse;
 
         private void OnEnable()
         {
@@ -31,6 +31,10 @@ namespace RoboRyanTron.Unite2017.Events
         public void OnEventRaised()
         {
             Response.Invoke();
+           
+        }
+        public void OnPositionEventRaised(Vector3 eventPosition)
+        {
+            PositionResponse.Invoke(eventPosition);
         }
     }
-}
