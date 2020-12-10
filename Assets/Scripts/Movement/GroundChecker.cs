@@ -19,7 +19,6 @@ public class GroundChecker : MonoBehaviour
 
     [HideIf("_useRay")]
     [SerializeField] private FloatVariable sphereRadius;
-
     [SerializeField] private LayerMask groundLayer;
 
     [SerializeField] private bool showGizmos;
@@ -38,15 +37,31 @@ public class GroundChecker : MonoBehaviour
         else
             return CheckSphere(origin, sphereRadius, groundLayer);
 
+            
+
+    }
+
+    public bool OnGround(LayerMask layer)
+    {
+
+        if(_useRay)
+           return CheckRay(origin, rayDirection, rayRange, layer);
+        else
+            return CheckSphere(origin, sphereRadius, layer);
+
     }
 
     public bool CheckSphere(Vector3 origin, float radius, LayerMask layer)
     {
-        return (Physics.OverlapSphere(origin, radius, layer).Length > 0);
+        //print(Physics.OverlapSphere(origin, radius, layer).Length);
+        return (Physics.OverlapSphere(transform.localPosition + origin, radius, layer).Length > 0);
     }
     public bool CheckRay(Vector3 origin, Vector3 direction, float range, LayerMask layer)
     {
-        return Physics.Raycast(origin, direction, range, layer);
+        //RaycastHit hit;
+        //print( Physics.Raycast(origin, direction, out hit, range, layer));
+        //if(hit.collider != null)print(hit.collider.name);
+        return Physics.Raycast(transform.localPosition + origin, direction, range, layer);
     }
 
     private void OnDrawGizmos() 
