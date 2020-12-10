@@ -55,7 +55,9 @@ public class MouseRotation : MonoBehaviour
     private void Start() 
     {
         _startRotation = transform.rotation;
-      
+
+        //Dont let it go to build with it like this (recommended)
+        Cursor.lockState = CursorLockMode.Locked;
     }
     void Update()
     {
