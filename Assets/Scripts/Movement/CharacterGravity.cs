@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(GroundChecker))]
-public class CharacterGravity : VerticalMovementBase
+public class CharacterGravity : MovementBase
 {
 
     [Header("Gravity Settings")]
