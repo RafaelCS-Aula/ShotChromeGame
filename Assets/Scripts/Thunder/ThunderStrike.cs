@@ -13,6 +13,7 @@ public class ThunderStrike : MonoBehaviour
     [SerializeField] private UnityEvent OnSummonEvent;
     [SerializeField] private StrikeEvent OnStrikeEvent;
 
+    [SerializeField] private Transform originPoint;
     public KeyCode summonKey;
     
 
@@ -32,9 +33,9 @@ public class ThunderStrike : MonoBehaviour
         if(Input.GetKeyDown(summonKey))
         {
             RaycastHit hitInfo;
-            if(Physics.SphereCast(Camera.main.transform.position, 0.05f, Camera.main.transform.forward, out hitInfo, 1500, impactLayer))
+            if(Physics.SphereCast(originPoint.position, 0.05f, originPoint.forward, out hitInfo, 1500, impactLayer))
             {
-                Debug.DrawLine(Camera.main.transform.position, hitInfo.point, Color.green, 3);
+                Debug.DrawLine(originPoint.position, hitInfo.point, Color.green, 3);
                 StartCoroutine(SummonThunder(hitInfo.point));
 
             }
