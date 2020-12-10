@@ -1,17 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
-public class HorizontalMovement : MonoBehaviour, IMovementComponent
+public class HorizontalMovement : MovementBase
 {
-    public Vector3 MovementVector {get; set;}
-    public Vector3 FactorVector {get; set;}
 
-    /*[SerializeField] 
-    private LateralMovementStats movementStats;
-    public LateralMovementStats MovementData {get => movementStats;}*/
-
-    
     [SerializeField]
     private FloatVariable maxStrafeVelocity;
 
@@ -40,20 +34,36 @@ public class HorizontalMovement : MonoBehaviour, IMovementComponent
         float xDec = 0.0f;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         _velocity = Vector3.zero;
     }
-    //Temporary
-    private void GetInput()
+    
+    private void OnEnable()
     {
-        _direction.x = Mathf.Round(Input.GetAxisRaw("Horizontal"));
-        _direction.y = Mathf.Round(Input.GetAxisRaw("Vertical"));
+      
+      RegisterForInput();
+            
+    }
+
+    protected override void RegisterForInput()
+    {   
+        base.RegisterForInput();
+        if(UseInput)
+            InputHolder.InpDirection += GetDirection;
+        else if(!UseInput)
+            InputHolder.InpDirection -= GetDirection;
+    }
+
+    public void GetDirection(Vector2 directionVector)
+    {
+        _direction.x = directionVector.x;
+        _direction.y = directionVector.y;
         _direction.Normalize();
     }
 
 
-    public void AccelerateX()
+    private void AccelerateX()
     {  
         
         
@@ -74,7 +84,7 @@ public class HorizontalMovement : MonoBehaviour, IMovementComponent
     
     }
 
-    public void AccelerateZ()
+    private void AccelerateZ()
     {
         
         if(_direction.y != 0)
@@ -93,7 +103,6 @@ public class HorizontalMovement : MonoBehaviour, IMovementComponent
     // Update is called once per frame
     void Update()
     {
-        GetInput();
         AccelerateX();
         AccelerateZ();
         FactorVector = Vector3.one;

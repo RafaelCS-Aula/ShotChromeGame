@@ -2,47 +2,55 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpMovement : VerticalMovementBase
+[RequireComponent(typeof(GroundChecker))]
+public class JumpMovement : MovementBase
 {
-    
-
-    /*[Tooltip("How long after the jump input will the character still jump")]
-    [SerializeField] private float inputToleranceTime;
-    private float _inputToleranceCounter;*/
-
-    [Header("Jump Settings")]
-    
-
-    
+    private GroundChecker _GChecker;
     [SerializeField] 
     private FloatVariable jumpAceleration;
 
-
-
+    private bool _input;
     // Start is called before the first frame update
     void Start()
     {
        FactorVector = Vector3.one;
+       _GChecker = GetComponent<GroundChecker>();
     }
 
+    private void OnEnable()
+    {
+      
+      RegisterForInput();
+            
+    }
+
+    protected override void RegisterForInput()
+    {   
+        base.RegisterForInput();
+        if(UseInput)
+            InputHolder.InpJump += InputDown;
+        else if(!UseInput)
+            InputHolder.InpJump -= InputDown;
+    }
+   
+    private void InputDown(bool key) => _input = key;
     // Update is called once per frame
     void FixedUpdate()
     {
-       // input = Input.GetAxisRaw("Jump");
-
-       /* if(input != 0 && TouchingGround())
+        
+       if(_input && !_GChecker.OnGround())
         {
             
             Jump();
 
         }
-        else if(TouchingGround())
+        else if(_GChecker.OnGround())
         {
             
             _fact.x = 1;
             _fact.z = 1;
             _mov.y = 0;
-        }*/
+        }
 
         
         
@@ -58,10 +66,10 @@ public class JumpMovement : VerticalMovementBase
         {
 
         }*/
-   /*     
-        _fact.x = sideAirControl.Value;
-        _fact.z = frontAirControl.Value;
-       _mov.y = jumpAceleration; */
+      
+        //_fact.x = sideAirControl.Value;
+        //_fact.z = frontAirControl.Value;
+       _mov.y = jumpAceleration; 
         
     }
 }
