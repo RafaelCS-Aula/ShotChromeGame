@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using NaughtyAttributes;
 
 [System.Serializable]
 public class StrikeEvent : UnityEvent<Vector3>{}
@@ -14,36 +15,62 @@ public class ThunderStrike : InputReceiverBase
     [SerializeField] private StrikeEvent OnStrikeEvent;
 
     [SerializeField] private Transform originPoint;
-    public KeyCode summonKey;
-    
+
     private const float _originHeight = 1500;
 
+    private bool _input;
 
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private FloatVariable summonCoolDown;
+
+    private float _smnCooldownTimer;
+
+    private void OnEnable()
     {
-        
+      
+      RegisterForInput();
+
+      if(originPoint == null)
+        originPoint = transform;
     }
 
+    protected override void RegisterForInput()
+    {
+        base.RegisterForInput();
+
+        if(InputHolder == null) // There is no InputHolder
+            return;
+        
+        if(UseInput)
+            InputHolder.InpThunder += InputDown;
+        else if(!UseInput)
+            InputHolder.InpThunder -= InputDown;
+    }
+
+    private void InputDown(bool key) => _input = key;
     // Update is called once per frame
     void Update()
     {
+
         
-        if(Input.GetKeyDown(summonKey))
+        if(_input && UseInput && _smnCooldownTimer <= 0)
         {
+            
             RaycastHit hitInfo;
             if(Physics.SphereCast(originPoint.position, 0.05f, originPoint.forward, out hitInfo, 1500, impactLayer))
             {
                 Debug.DrawLine(originPoint.position, hitInfo.point, Color.green, 3);
+
+
                 StartCoroutine(SummonThunder(hitInfo.point));
 
             }
-
+            _smnCooldownTimer = summonCoolDown;
         }
 
+        _smnCooldownTimer -= Time.deltaTime;
     }
 
-
+    
     public IEnumerator SummonThunder(Vector3 landingSpot)
     {
         //DEBUG///////////////////////////
@@ -66,7 +93,7 @@ public class ThunderStrike : InputReceiverBase
         OnStrikeEvent.Invoke(strikeInfo.point);
 
 
-         ///DEBUG///////////////////////////////////////
+        ///DEBUG///////////////////////////////////////
         Debug.DrawLine(origin, strikeInfo.point,Color.yellow,2);
 
         Debug.DrawLine(new Vector3(strikeInfo.point.x + 1, strikeInfo.point.y + 1, strikeInfo.point.z), new Vector3(strikeInfo.point.x - 1, strikeInfo.point.y - 1, strikeInfo.point.z), Color.yellow, 3);
@@ -75,5 +102,9 @@ public class ThunderStrike : InputReceiverBase
 
         
     }
+
+    [Button]
+    private void TestSummonOnLocation() => 
+        StartCoroutine(SummonThunder(transform.position));
     
 }
