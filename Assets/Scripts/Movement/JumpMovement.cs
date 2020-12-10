@@ -28,7 +28,7 @@ public class JumpMovement : VerticalMovementBase
     // Update is called once per frame
     void FixedUpdate()
     {
-        input = Input.GetAxisRaw("Jump");
+       // input = Input.GetAxisRaw("Jump");
 
        /* if(input != 0 && TouchingGround())
         {
@@ -51,17 +51,17 @@ public class JumpMovement : VerticalMovementBase
         
     }
 
-    public void Jump()
+   public void Jump()
     {
         // TODO: Make the jump higher if jump key is held down
         /*if(!touchingGround && input != 0)
         {
 
         }*/
-        
+   /*     
         _fact.x = sideAirControl.Value;
         _fact.z = frontAirControl.Value;
-        _mov.y = jumpAceleration;
+       _mov.y = jumpAceleration; */
         
     }
 }

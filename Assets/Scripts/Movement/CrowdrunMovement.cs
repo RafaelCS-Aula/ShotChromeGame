@@ -38,7 +38,7 @@ public class CrowdrunMovement : VerticalMovementBase
     // Update is called once per frame
     void FixedUpdate()
     {
-        ContactCrowd();
+        //ContactCrowd();
 
         if(_slowDownTimer >= timeBeforeSlowDown?.Value)
         {
@@ -67,7 +67,7 @@ public class CrowdrunMovement : VerticalMovementBase
        // print(_velocity);
     }
 
-    private void ContactCrowd()
+    /*private void ContactCrowd()
     {
         
         bool contact;
@@ -110,12 +110,12 @@ public class CrowdrunMovement : VerticalMovementBase
             _slowDownTimer = 0;
             
         }
-    }
+    }*/
 
 
-    private new void OnDrawGizmos() 
+   /* private new void OnDrawGizmos() 
     {
         if(showGizmos)
             Gizmos.DrawLine(transform.localPosition + feetPosition, transform.localPosition + feetPosition.Value * crowdDetectorRayLength.Value);    
-    }
+    }*/
 }

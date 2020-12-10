@@ -31,7 +31,7 @@ public class HopMovement : VerticalMovementBase
     private void FixedUpdate() 
     {
         //print(touchingSpecialGround);
-        input = Input.GetAxisRaw("Jump");
+       // input = Input.GetAxisRaw("Jump");
 
        /* if(input != 0 && TouchingHopSpot())
         {
@@ -56,7 +56,7 @@ public class HopMovement : VerticalMovementBase
 
     }
 
-    public void Hop()
+   /* public void Hop()
     {
         _fact.x = sideAirControl.Value;
         _fact.z = frontAirControl.Value;
@@ -67,7 +67,7 @@ public class HopMovement : VerticalMovementBase
     private bool TouchingHopSpot()
     {
         return Physics.OverlapSphere(transform.localPosition + hopSpotDetectorPosition, hopSpotDetectorRadius, hoppingMask).Length > 0;
-    }
+    }*/
 
 
     
