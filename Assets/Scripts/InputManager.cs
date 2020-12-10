@@ -6,16 +6,16 @@ public class InputManager : MonoBehaviour
 {
 
     public delegate void TwoDAxis(Vector2 direction);
-    public delegate void KeyPress();
+    public delegate void KeyPress(bool keyDown);
 
     [SerializeField] private KeycodeVariable jumpKey;
     [SerializeField] private KeycodeVariable shootKey;
     [SerializeField] private KeycodeVariable thunderKey;
 
-    public TwoDAxis InpDirection;
-    public KeyPress InpJump;
-    public KeyPress InpShoot;
-    public KeyPress InpThunder;
+    public TwoDAxis InpDirection = delegate(Vector2 v){};
+    public KeyPress InpJump = delegate(bool b){};
+    public KeyPress InpShoot = delegate(bool b){};
+    public KeyPress InpThunder = delegate(bool b){};
 
     //[SerializeField] private StringVariable  
 
@@ -27,9 +27,9 @@ public class InputManager : MonoBehaviour
         _cardinalInputs.y = Mathf.Round(Input.GetAxisRaw("Vertical"));
         InpDirection.Invoke(_cardinalInputs);
 
-        if(Input.GetKey(jumpKey)) InpJump.Invoke();
-        if(Input.GetKey(shootKey)) InpShoot.Invoke();
-        if(Input.GetKey(thunderKey)) InpThunder.Invoke();
+        InpJump.Invoke(Input.GetKey(jumpKey));
+        InpShoot.Invoke(Input.GetKey(shootKey));
+        InpThunder.Invoke(Input.GetKey(thunderKey));
 
 
 
