@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(GroundChecker))]
-public class JumpMovement : MovementBase
+public class VerticalMovement : MovementBase
 {
-    private GroundChecker _GChecker;
+    [Header("Vertical Settings")]
+    
     [SerializeField] 
     private FloatVariable jumpAceleration;
 
     private bool _input;
+    private GroundChecker _GChecker;
     // Start is called before the first frame update
     void Start()
     {

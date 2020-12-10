@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputManager : MonoBehaviour
+public sealed class InputManager : MonoBehaviour
 {
 
     public delegate void TwoDAxis(Vector2 direction);

@@ -5,6 +5,13 @@ using NaughtyAttributes;
 
 public class HorizontalMovement : MovementBase
 {
+    [Header("Horizontal Movement Settings")]
+    [SerializeField]
+    private FloatVariable maxForwardVelocity;
+       
+    [SerializeField]
+    private FloatVariable maxBackVelocity;
+
 
     [SerializeField]
     private FloatVariable maxStrafeVelocity;
@@ -17,21 +24,11 @@ public class HorizontalMovement : MovementBase
    [SerializeField]
     private FloatVariable decelerationTime;
 
-    
-    [SerializeField]
-    private FloatVariable maxForwardVelocity;
-
-   
-    [SerializeField]
-    private FloatVariable maxBackVelocity;
-
-
-
     private float _acceleration;
     private Vector3 _velocity = new Vector3();
     private Vector2 _direction = new Vector3();
     float lastXVel = 0.0f;
-        float xDec = 0.0f;
+    float xDec = 0.0f;
 
     // Start is called before the first frame update
     private void Start()

@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(GroundChecker))]
-public class CharacterGravity : MovementBase
+public class CharacterGravity : MonoBehaviour, IMovementComponent
 {
+
+    public Vector3 MovementVector {get; set;}
+    public Vector3 FactorVector {get; set;}
+    private Vector3 _mov = Vector3.zero;
+    private Vector3 _fact = Vector3.one;
 
     [Header("Gravity Settings")]
 
@@ -23,6 +28,7 @@ public class CharacterGravity : MovementBase
 
     private void Awake() 
     {
+        
         _GChecker = GetComponent<GroundChecker>();
         FactorVector = Vector3.one;    
         MovementVector = Vector3.zero;
@@ -32,13 +38,13 @@ public class CharacterGravity : MovementBase
         
         if(!_GChecker.OnGround())
         {
-            print("airTime");
+           // print("airTime");
             StartCoroutine(ApplyGravity());
             
         }
         else
         {
-            print("groundTime!");
+            //print("groundTime!");
             StopCoroutine(ApplyGravity());
             
             _mov.y = 0;
@@ -53,23 +59,6 @@ public class CharacterGravity : MovementBase
         
     }
 
-    /*public void Fall()
-    {
-        float fallForce = 
-         useEngineGravity ? Physics.gravity.y : gravityAceleration.Value;
-
-        _timeFalling += Time.deltaTime;
-        fallForce *= _timeFalling;
-        
-
-        if(fallForce >= terminalVelocity.Value)
-            fallForce = terminalVelocity.Value;
-            
-        //print(fallForce);
-        FactorVector = new Vector3(sideAirControl.Value, 1, frontAirControl.Value);
-        _mov.y = -fallForce;
-    }*/
-
     public IEnumerator ApplyGravity()
     {
        /* if(_GChecker.OnGround())
@@ -77,7 +66,6 @@ public class CharacterGravity : MovementBase
         
         _timeFalling += Time.fixedDeltaTime;
         float fallVelocity = _fallForce * _timeFalling;
-       // print("falling x" + _timeFalling);
         _mov.y = -fallVelocity;
         yield return null;
     }

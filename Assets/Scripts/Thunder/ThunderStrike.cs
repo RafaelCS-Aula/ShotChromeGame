@@ -6,7 +6,7 @@ using UnityEngine.Events;
 [System.Serializable]
 public class StrikeEvent : UnityEvent<Vector3>{}
 
-public class ThunderStrike : MonoBehaviour
+public class ThunderStrike : InputReceiverBase
 {
     [SerializeField] private FloatVariable summonToStrikeDelay; 
     [SerializeField] private LayerMask impactLayer;
@@ -16,7 +16,6 @@ public class ThunderStrike : MonoBehaviour
     [SerializeField] private Transform originPoint;
     public KeyCode summonKey;
     
-
     private const float _originHeight = 1500;
 
 
@@ -44,18 +43,14 @@ public class ThunderStrike : MonoBehaviour
 
     }
 
-   /* public void SummonThunder(Vector3 landingSpot)
-    {
-        StartCoroutine(WaitUntilStrike());
-
-
-    }*/
 
     public IEnumerator SummonThunder(Vector3 landingSpot)
     {
+        //DEBUG///////////////////////////
         Debug.DrawLine(new Vector3(landingSpot.x + 1, landingSpot.y + 1, landingSpot.z), new Vector3(landingSpot.x - 1, landingSpot.y - 1, landingSpot.z), Color.red, 3);
         Debug.DrawLine(new Vector3(landingSpot.x + 1, landingSpot.y - 1, landingSpot.z), new Vector3(landingSpot.x - 1, landingSpot.y + 1, landingSpot.z), Color.red, 3);
-
+        //////////////////////////////////////////
+        
         if(summonToStrikeDelay > 0)
         {
             OnSummonEvent.Invoke();
@@ -67,12 +62,18 @@ public class ThunderStrike : MonoBehaviour
 
         RaycastHit strikeInfo;
         Physics.Raycast(origin, Vector3.down,out strikeInfo,_originHeight, impactLayer);
+
+        OnStrikeEvent.Invoke(strikeInfo.point);
+
+
+         ///DEBUG///////////////////////////////////////
         Debug.DrawLine(origin, strikeInfo.point,Color.yellow,2);
 
         Debug.DrawLine(new Vector3(strikeInfo.point.x + 1, strikeInfo.point.y + 1, strikeInfo.point.z), new Vector3(strikeInfo.point.x - 1, strikeInfo.point.y - 1, strikeInfo.point.z), Color.yellow, 3);
         Debug.DrawLine(new Vector3(strikeInfo.point.x + 1, strikeInfo.point.y - 1, strikeInfo.point.z), new Vector3(strikeInfo.point.x - 1, strikeInfo.point.y + 1, strikeInfo.point.z), Color.yellow, 3);
+         //////////////////////////////////////////
 
-        OnStrikeEvent.Invoke(strikeInfo.point);
+        
     }
     
 }
