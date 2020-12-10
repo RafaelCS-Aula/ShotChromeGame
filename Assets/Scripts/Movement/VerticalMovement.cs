@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(GroundChecker))]
+[RequireComponent(typeof(CharacterGravity))]
 public class VerticalMovement : MovementBase
 {
     [Header("Vertical Settings")]
     
     [SerializeField] 
-    private FloatVariable jumpAceleration;
+    private FloatVariable jumpForce;
+
+    [SerializeField] 
+    private FloatVariable leapForwardForce;
+    [SerializeField] 
+    private FloatVariable leapUpwardForce;
 
     private bool _input;
     private GroundChecker _GChecker;
@@ -43,7 +49,7 @@ public class VerticalMovement : MovementBase
        if(_input && _GChecker.OnGround())
         {
             
-            Jump();
+            Jump(jumpForce);
 
         }
         else if(_GChecker.OnGround())
@@ -52,16 +58,17 @@ public class VerticalMovement : MovementBase
             _fact.x = 1;
             _fact.z = 1;
             _mov.y = 0;
+            _mov.z = 0;
         }
 
         
         
             MovementVector = _mov;
-            FactorVector = _fact;        
+            FactorVector = _fact;
         
     }
 
-   public void Jump()
+    public void Jump(float jumpPower)
     {
         // TODO: Make the jump higher if jump key is held down
         /*if(!touchingGround && input != 0)
@@ -73,7 +80,22 @@ public class VerticalMovement : MovementBase
         //_fact.z = frontAirControl.Value;
 
         print("jump!");
-       _mov.y = jumpAceleration; 
+       _mov.y = jumpPower; 
         
+    }
+
+    public void Leap(float forwardPower, float upPower)
+    {
+        _mov.y = upPower;
+        _mov.z = forwardPower;
+    }
+
+    //TODO: Make a leap where you can just give it a point
+    //and it'll calc the forward force. 
+    public void LeapToPoint(Vector3 goalPoint)
+    {
+        float distToPoint = (goalPoint - transform.position).magnitude;
+        Vector3 dirToPoint = (goalPoint - transform.position).normalized;
+        // float forwardPower = 
     }
 }
