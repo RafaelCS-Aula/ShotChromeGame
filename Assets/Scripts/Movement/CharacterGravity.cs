@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 [RequireComponent(typeof(GroundChecker))]
 public class CharacterGravity : MonoBehaviour, IMovementComponent
@@ -13,15 +14,15 @@ public class CharacterGravity : MonoBehaviour, IMovementComponent
 
     [Header("Gravity Settings")]
 
+    [MinValue(0.01f)]
     [SerializeField]
-    private FloatVariable gravityAceleration;
+    private FloatVariable secondsToTerminalVelocity;
 
     [SerializeField]
     private FloatVariable terminalVelocity;
 
-    //[SerializeField] private CurveVariable 
     private float _timeFalling = 0;
-    private float _fallForce =>  useEngineGravity ? Physics.gravity.y : gravityAceleration.Value;
+    
     [SerializeField] private bool useEngineGravity = false;
 
     private GroundChecker _GChecker;
@@ -65,7 +66,16 @@ public class CharacterGravity : MonoBehaviour, IMovementComponent
             yield break;*/
         
         _timeFalling += Time.fixedDeltaTime;
-        float fallVelocity = _fallForce * _timeFalling;
+
+        
+        float fallVelocity = useEngineGravity ? 
+            (Physics.gravity.y * _timeFalling) : 
+            (terminalVelocity * (_timeFalling / secondsToTerminalVelocity));
+
+
+        if(fallVelocity > terminalVelocity)
+            fallVelocity = terminalVelocity;
+
         _mov.y = -fallVelocity;
         yield return null;
     }
