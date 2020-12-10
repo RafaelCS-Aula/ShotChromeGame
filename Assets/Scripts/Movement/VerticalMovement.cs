@@ -40,7 +40,7 @@ public class VerticalMovement : MovementBase
     void FixedUpdate()
     {
         
-       if(_input && !_GChecker.OnGround())
+       if(_input && _GChecker.OnGround())
         {
             
             Jump();
@@ -71,6 +71,8 @@ public class VerticalMovement : MovementBase
       
         //_fact.x = sideAirControl.Value;
         //_fact.z = frontAirControl.Value;
+
+        print("jump!");
        _mov.y = jumpAceleration; 
         
     }

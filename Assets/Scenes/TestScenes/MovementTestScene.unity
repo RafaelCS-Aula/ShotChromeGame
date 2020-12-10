@@ -217,103 +217,7 @@ Transform:
   m_LocalScale: {x: 7.3405, y: 1, z: 3.2139}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &312924508
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 312924512}
-  - component: {fileID: 312924511}
-  - component: {fileID: 312924510}
-  - component: {fileID: 312924509}
-  m_Layer: 8
-  m_Name: Plane (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!64 &312924509
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312924508}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &312924510
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312924508}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &312924511
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312924508}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &312924512
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312924508}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.37, y: 21.53, z: 10.07}
-  m_LocalScale: {x: 7.3405, y: 1, z: 3.2139}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &657125712
 GameObject:
@@ -409,7 +313,7 @@ Transform:
   m_LocalScale: {x: 7.3405, y: 1, z: 3.2139}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &742322588
 GameObject:
@@ -523,7 +427,7 @@ MonoBehaviour:
     Variable: {fileID: 0}
   verticalMaxAngle:
     UseInspectorValue: 1
-    InspectorValue: 0
+    InspectorValue: 90
     Variable: {fileID: 0}
 --- !u!1 &859307673
 GameObject:
@@ -630,13 +534,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1312549392}
+  - component: {fileID: 1312549398}
   - component: {fileID: 1312549395}
   - component: {fileID: 1312549391}
   - component: {fileID: 1312549394}
   - component: {fileID: 1312549396}
   - component: {fileID: 1312549397}
   - component: {fileID: 1312549393}
-  - component: {fileID: 1312549398}
+  - component: {fileID: 1312549399}
+  - component: {fileID: 1312549400}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -690,6 +596,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb08780b7829dd24b8b452e7811b25e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _useInput: 1
+  maxForwardVelocity:
+    UseInspectorValue: 1
+    InspectorValue: 10
+    Variable: {fileID: 0}
+  maxBackVelocity:
+    UseInspectorValue: 1
+    InspectorValue: 10
+    Variable: {fileID: 0}
   maxStrafeVelocity:
     UseInspectorValue: 1
     InspectorValue: 10
@@ -701,14 +616,6 @@ MonoBehaviour:
   decelerationTime:
     UseInspectorValue: 1
     InspectorValue: 0.1
-    Variable: {fileID: 0}
-  maxForwardVelocity:
-    UseInspectorValue: 1
-    InspectorValue: 10
-    Variable: {fileID: 0}
-  maxBackVelocity:
-    UseInspectorValue: 1
-    InspectorValue: 10
     Variable: {fileID: 0}
 --- !u!114 &1312549394
 MonoBehaviour:
@@ -739,7 +646,7 @@ MonoBehaviour:
   turnVertical: 0
   horizontalSensitivity:
     UseInspectorValue: 1
-    InspectorValue: 40
+    InspectorValue: 500
     Variable: {fileID: 0}
   verticalSensitivity:
     UseInspectorValue: 1
@@ -765,13 +672,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a55006a3da034d249998c00b5e957d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityAceleration:
+  secondsToTerminalVelocity:
     UseInspectorValue: 1
-    InspectorValue: 5
+    InspectorValue: 1
     Variable: {fileID: 0}
   terminalVelocity:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 20
     Variable: {fileID: 0}
   useEngineGravity: 0
 --- !u!114 &1312549397
@@ -799,7 +706,10 @@ MonoBehaviour:
     UseInspectorValue: 1
     InspectorValue: {x: 0, y: -1, z: 0}
     Variable: {fileID: 0}
-  sphereRadius: 0.5
+  sphereRadius:
+    UseInspectorValue: 1
+    InspectorValue: 1
+    Variable: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -818,38 +728,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b2376d157d8c54386570260f330a3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1956074344
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1956074346}
-  - component: {fileID: 1956074345}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1956074345
+  jumpKey:
+    UseInspectorValue: 1
+    InspectorValue: 32
+    Variable: {fileID: 0}
+  shootKey:
+    UseInspectorValue: 1
+    InspectorValue: 323
+    Variable: {fileID: 0}
+  thunderKey:
+    UseInspectorValue: 1
+    InspectorValue: 324
+    Variable: {fileID: 0}
+--- !u!114 &1312549399
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1956074344}
+  m_GameObject: {fileID: 1312549390}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cdbb0a1dcedf2e84a9381436b02b54f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _useInput: 1
   summonToStrikeDelay:
     UseInspectorValue: 1
-    InspectorValue: 0
+    InspectorValue: 0.4
     Variable: {fileID: 0}
   impactLayer:
     serializedVersion: 2
@@ -861,21 +767,27 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   originPoint: {fileID: 742322589}
-  summonKey: 32
---- !u!4 &1956074346
-Transform:
+  summonCoolDown:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
+--- !u!114 &1312549400
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1956074344}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.1, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 1312549390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79dfc23ee0966945a627ad364d48389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _useInput: 1
+  jumpAceleration:
+    UseInspectorValue: 1
+    InspectorValue: 10
+    Variable: {fileID: 0}
 --- !u!1 &2096273023
 GameObject:
   m_ObjectHideFlags: 0
