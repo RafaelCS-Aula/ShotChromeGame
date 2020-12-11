@@ -12,6 +12,8 @@ public class Shotgun : MonoBehaviour
 
     [SerializeField] KeycodeVariable shootInput;
 
+    [SerializeField] LayerMask layersToHit;
+
     [SerializeField] Transform shotOrigin;
 
     private List<Quaternion> pellets;
@@ -44,6 +46,15 @@ public class Shotgun : MonoBehaviour
         {
             pellets[i] = Random.rotation;
             Quaternion rotation = Quaternion.RotateTowards(shotOrigin.rotation, pellets[i], shotConeAngle);
+
+            RaycastHit hit;
+            if(Physics.Raycast(shotOrigin.position, rotation * Vector3.forward, out hit, Mathf.Infinity, layersToHit))
+            {
+                if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+                {
+
+                }
+            }
 
             Debug.DrawRay(shotOrigin.position, rotation * Vector3.forward, Color.red, 0.1f);
         }
