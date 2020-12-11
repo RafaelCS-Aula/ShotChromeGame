@@ -2,21 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+[RequireComponent(typeof(GroundChecker))]
 public class CrowdrunMovement : MovementBase
 {
     [Header("Crowd Running")]
    
+   private GroundChecker _GChecker;
     [SerializeField] Vector3Variable currentVelocity;
 
-    private float _velocity {get => currentVelocity.Value.sqrMagnitude;}
+    private float _velocity {get => (currentVelocity.Value.sqrMagnitude * 10);}
 
 
     [SerializeField] private FloatVariable slowDownAmount;
 
  
-
-
     [SerializeField] FloatVariable timeBeforeSlowDown;
 
     private float _slowDownTimer = 0;
@@ -35,10 +34,14 @@ public class CrowdrunMovement : MovementBase
 
     float slow;
 
+    private void Awake() {
+        _GChecker = GetComponent<GroundChecker>();
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
-        //ContactCrowd();
+        ContactCrowd();
 
         if(_slowDownTimer >= timeBeforeSlowDown?.Value)
         {
@@ -67,14 +70,11 @@ public class CrowdrunMovement : MovementBase
        // print(_velocity);
     }
 
-    /*private void ContactCrowd()
+    private void ContactCrowd()
     {
         
         bool contact;
-        contact = 
-            Physics.Raycast(
-                transform.localPosition + feetPosition, Vector3.down,
-                hitInfo: out _rayhit, crowdDetectorRayLength.Value, crowdColliderLayer);
+        contact = _GChecker.OnGround(crowdColliderLayer);
         
         if(contact)
         {
@@ -110,7 +110,7 @@ public class CrowdrunMovement : MovementBase
             _slowDownTimer = 0;
             
         }
-    }*/
+    }
 
 
    /* private new void OnDrawGizmos() 

@@ -30,6 +30,7 @@ public class HorizontalMovement : MovementBase
     float lastXVel = 0.0f;
     float xDec = 0.0f;
 
+    
     // Start is called before the first frame update
     private void Start()
     {
