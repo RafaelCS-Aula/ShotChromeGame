@@ -10,6 +10,9 @@ public class Shotgun : MonoBehaviour
     [SerializeField] FloatVariable defaultFireRate;
     [SerializeField] FloatVariable scfireRateModifier;
 
+    [SerializeField] FloatVariable maxPelletDamage;
+    [SerializeField] FloatVariable scfireRateModifier;
+
     [SerializeField] KeycodeVariable shootInput;
 
     [SerializeField] LayerMask layersToHit;
