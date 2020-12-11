@@ -515,6 +515,7 @@ GameObject:
   - component: {fileID: 633213886}
   - component: {fileID: 633213885}
   - component: {fileID: 633213887}
+  - component: {fileID: 633213888}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -599,13 +600,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdbb0a1dcedf2e84a9381436b02b54f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _useInput: 1
   summonToStrikeDelay:
     UseInspectorValue: 1
-    InspectorValue: 2
+    InspectorValue: 1
     Variable: {fileID: 0}
   impactLayer:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 256
   OnSummonEvent:
     m_PersistentCalls:
       m_Calls:
@@ -636,7 +638,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  summonKey: 32
+  originPoint: {fileID: 633213883}
+  summonCoolDown:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
 --- !u!114 &633213885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -760,6 +766,30 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     Variable: {fileID: 0}
+--- !u!114 &633213888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633213880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1b2376d157d8c54386570260f330a3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpKey:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
+  shootKey:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
+  thunderKey:
+    UseInspectorValue: 1
+    InspectorValue: 32
+    Variable: {fileID: 0}
 --- !u!1 &638246149
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,7 +897,7 @@ GameObject:
   - component: {fileID: 975089716}
   - component: {fileID: 975089715}
   - component: {fileID: 975089714}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1058,7 +1088,7 @@ GameObject:
   - component: {fileID: 1744322835}
   - component: {fileID: 1744322834}
   - component: {fileID: 1744322833}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

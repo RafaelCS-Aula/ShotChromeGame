@@ -341,13 +341,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 742322588}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalRotation: {x: -0, y: 0.89753073, z: -0, w: 0.44095206}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0.00000011920929}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1312549392}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 127.671, z: 0}
 --- !u!81 &742322590
 AudioListener:
   m_ObjectHideFlags: 0
@@ -576,7 +576,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312549390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.16, y: 5.82, z: 0}
+  m_LocalPosition: {x: -3.03, y: 1, z: 0.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 742322589}
@@ -762,14 +762,38 @@ MonoBehaviour:
     m_Bits: 256
   OnSummonEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 090db04ece57a5c42bf3085af73aa489, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnStrikeEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: b05cd052b7ec94f4f9c351a7d794cb33, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: RaisePositionArg
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   originPoint: {fileID: 742322589}
   summonCoolDown:
     UseInspectorValue: 1
-    InspectorValue: 0
+    InspectorValue: 1
     Variable: {fileID: 0}
 --- !u!114 &1312549400
 MonoBehaviour:
@@ -784,9 +808,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _useInput: 1
-  jumpAceleration:
+  jumpForce:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 0
+    Variable: {fileID: 0}
+  leapForwardForce:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
+  leapUpwardForce:
+    UseInspectorValue: 1
+    InspectorValue: 0
     Variable: {fileID: 0}
 --- !u!1 &2096273023
 GameObject:

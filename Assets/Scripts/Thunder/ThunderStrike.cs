@@ -104,7 +104,45 @@ public class ThunderStrike : InputReceiverBase
     }
 
     [Button]
-    private void TestSummonOnLocation() => 
-        StartCoroutine(SummonThunder(transform.position));
+    private void TestSummon()
+    {
+            RaycastHit hitInfo;
+            if(Physics.SphereCast(originPoint.position, 0.05f, originPoint.forward, out hitInfo, 1500, impactLayer))
+            {
+                Debug.DrawLine(originPoint.position, hitInfo.point, Color.green, 3);
+
+                
+
+                if(summonToStrikeDelay > 0)
+                {
+                    OnSummonEvent.Invoke();
+                }
+                
+
+            Vector3 origin = hitInfo.point;
+            origin.y += _originHeight;
+
+             //DEBUG///////////////////////////
+        Debug.DrawLine(new Vector3(hitInfo.point.x + 1, hitInfo.point.y + 1, hitInfo.point.z), new Vector3(hitInfo.point.x - 1, hitInfo.point.y - 1, hitInfo.point.z), Color.red, 3);
+        Debug.DrawLine(new Vector3(hitInfo.point.x + 1, hitInfo.point.y - 1, hitInfo.point.z), new Vector3(hitInfo.point.x - 1, hitInfo.point.y + 1, hitInfo.point.z), Color.red, 3);
+        //////////////////////////////////////////
+
+            RaycastHit strikeInfo;
+            Physics.Raycast(origin, Vector3.down,out strikeInfo,_originHeight, impactLayer);
+
+            OnStrikeEvent.Invoke(strikeInfo.point);
+
+            ///DEBUG///////////////////////////////////////
+        Debug.DrawLine(origin, strikeInfo.point,Color.yellow,2);
+
+        Debug.DrawLine(new Vector3(strikeInfo.point.x + 1, strikeInfo.point.y + 1, strikeInfo.point.z), new Vector3(strikeInfo.point.x - 1, strikeInfo.point.y - 1, strikeInfo.point.z), Color.yellow, 3);
+        Debug.DrawLine(new Vector3(strikeInfo.point.x + 1, strikeInfo.point.y - 1, strikeInfo.point.z), new Vector3(strikeInfo.point.x - 1, strikeInfo.point.y + 1, strikeInfo.point.z), Color.yellow, 3);
+         //////////////////////////////////////////
+            }    
+
+            
+        
+    }
+        
     
 }
