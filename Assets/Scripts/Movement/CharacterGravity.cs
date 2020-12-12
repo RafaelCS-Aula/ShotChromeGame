@@ -12,6 +12,10 @@ public class CharacterGravity : MonoBehaviour, IMovementComponent
     private Vector3 _mov = Vector3.zero;
     private Vector3 _fact = Vector3.one;
 
+    [HideInInspector]
+    public float gravitationalPull => 
+        terminalVelocity / secondsToTerminalVelocity;
+
     [Header("Gravity Settings")]
 
     [MinValue(0.01f)]
