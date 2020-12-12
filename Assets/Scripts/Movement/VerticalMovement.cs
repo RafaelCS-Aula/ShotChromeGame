@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 [RequireComponent(typeof(GroundChecker))]
 [RequireComponent(typeof(CharacterGravity))]
 public class VerticalMovement : MovementBase
 {
+    private GroundChecker _GChecker;
+    private CharacterGravity _cGrav;
+    private float _gravPull;
     [Header("Vertical Settings")]
     
     [SerializeField] 
@@ -17,12 +21,13 @@ public class VerticalMovement : MovementBase
     private FloatVariable leapUpwardForce;
 
     private bool _input;
-    private GroundChecker _GChecker;
+    
     // Start is called before the first frame update
     void Start()
     {
        FactorVector = Vector3.one;
        _GChecker = GetComponent<GroundChecker>();
+       _cGrav = GetComponent<CharacterGravity>();
     }
 
     private void OnEnable()
@@ -45,7 +50,7 @@ public class VerticalMovement : MovementBase
     // Update is called once per frame
     void FixedUpdate()
     {
-        
+        _gravPull = _cGrav.gravitationalPull;
        if(_input && _GChecker.OnGround())
         {
             
@@ -92,10 +97,26 @@ public class VerticalMovement : MovementBase
 
     //TODO: Make a leap where you can just give it a point
     //and it'll calc the forward force. 
-    public void LeapToPoint(Vector3 goalPoint)
+    
+    /*public void LeapToPoint(Vector3 goalPoint, float secondsToReach)
     {
         float distToPoint = (goalPoint - transform.position).magnitude;
         Vector3 dirToPoint = (goalPoint - transform.position).normalized;
-        // float forwardPower = 
+
+        Quaternion.LookRotation(dirToPoint, transform.up);
+
+        float forwardPower = distToPoint / secondsToReach;
+        float upPower = _gravPull;
+
+        _mov.y = upPower;
+        _mov.z = forwardPower;
+
     }
+
+    [Button]
+    private void TestLeapToPoint()
+    {
+       // _gravPull = GetComponent<CharacterGravity>().gravitationalPull;
+        LeapToPoint(Vector3.zero, 1);
+    }*/
 }
