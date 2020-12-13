@@ -159,6 +159,14 @@ MonoBehaviour:
     UseInspectorValue: 0
     InspectorValue: 0
     Variable: {fileID: 11400000, guid: 86102a97b29bb4f41928690c85523130, type: 2}
+  maxPelletDamage:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: 68ddb66b260f9f84f847d00f7f34d748, type: 2}
+  maxShotDistance:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: 11c7b74fef611d0428d97d6b78a60275, type: 2}
   shotConeAngle:
     UseInspectorValue: 0
     InspectorValue: 0
@@ -171,12 +179,27 @@ MonoBehaviour:
     UseInspectorValue: 0
     InspectorValue: 0
     Variable: {fileID: 11400000, guid: 0dd8dddc46bda6149b0d479543d95308, type: 2}
+  isSuperCharged:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: 006e1f5915136c546a0be6764b061696, type: 2}
   shootInput:
     UseInspectorValue: 0
     InspectorValue: 0
     Variable: {fileID: 11400000, guid: f30c2c4a5abd15741a801e92056694a7, type: 2}
-  shotOrigin: {fileID: 972363206}
-  isSuperCharged: 0
+  pelletDamageFalloff:
+    UseInspectorValue: 0
+    InspectorValue:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    Variable: {fileID: 11400000, guid: 8f925412a493d2a4c9ee870c411afa10, type: 2}
+  layersToHit:
+    serializedVersion: 2
+    m_Bits: 768
+  OnDamageEnemy: {fileID: 11400000, guid: ba13587760f0758439af7081a747a589, type: 2}
 --- !u!65 &334324328
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -471,13 +494,27 @@ GameObject:
   - component: {fileID: 1751976220}
   - component: {fileID: 1751976219}
   - component: {fileID: 1751976218}
-  m_Layer: 0
-  m_Name: Capsule
+  - component: {fileID: 1751976217}
+  - component: {fileID: 1751976222}
+  m_Layer: 9
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1751976217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751976216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7acdafdb8ecd854181cdd2144586736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &1751976218
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -487,7 +524,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1751976216}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -549,12 +586,46 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1751976216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.1, z: 0}
+  m_LocalPosition: {x: 0, y: 1.1, z: 2.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1751976222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751976216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e839e4c12473014b9b3d3faccc0f61d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: ba13587760f0758439af7081a747a589, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  PositionResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  DamageResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1751976217}
+        m_TargetAssemblyTypeName: JaguarHealth, Assembly-CSharp
+        m_MethodName: OnDamaged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2051498992
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,7 +638,7 @@ GameObject:
   - component: {fileID: 2051498995}
   - component: {fileID: 2051498994}
   - component: {fileID: 2051498993}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: IsSuperCharged
   m_EditorClassIdentifier: 
   DevDescription: 
-  variableValue: 0
+  variableValue: 1
