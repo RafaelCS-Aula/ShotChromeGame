@@ -39,8 +39,7 @@ public class HorizontalMovement : MovementBase
 
     [ShowIf("canCrowdRun")]
     [SerializeField] private LayerMask crowdColliderLayer;
-    private Collider _crowdCollider = null;
-    private CrowdAgent _inContactComponent = null;
+
 
     [ShowIf("canCrowdRun")]
     [SerializeField] private FloatVariable timeBeforeSlowDown;
@@ -51,6 +50,12 @@ public class HorizontalMovement : MovementBase
     [ShowIf("canCrowdRun")]
     [SerializeField] private CurveVariable slowDownCurve;
 
+    [ShowIf("canCrowdRun")]
+    [SerializeField] private FloatVariable crowdDecelerationTime;
+
+    private Collider _currentCrowdCollider = null;
+    private Collider _newCrowdCollider = null;
+    private CrowdAgent _inContactComponent = null;
     //[ShowIf("canCrowdRun")]
     //[SerializeField] private FloatVariable crowdDecelerationTime;
 
@@ -135,46 +140,60 @@ public class HorizontalMovement : MovementBase
     {
         if(canCrowdRun)
         {
-            _onCrowd = _GChecker.CheckRay(out _rayhit, crowdColliderLayer);
+            if(_GChecker.CheckRay(out _rayhit, crowdColliderLayer))
+                _newCrowdCollider = _rayhit.collider;
+            else
+                _newCrowdCollider = null;
+
+            _onCrowd = (_currentCrowdCollider || _newCrowdCollider);
+            if(_GChecker.OnGround())
+            {
+                _onCrowd = false;
+                _currentCrowdCollider = null;
+            }            
+           /* else //If I have begun crowd running, i only stop when on ground
+                _onCrowd = !_GChecker.OnGround();*/
+
             if(_onCrowd)
             {
-                CrowdContact(_rayhit.collider);
+                CrowdContact(_newCrowdCollider);
 
                 if(_inContactComponent)
                 {
                     // multiply by constant to make it more user friendly to    
                     // evaluate
                     _inContactComponent.EvaluateVelocity(
-                                        _velocity.magnitude * 10); 
+                                        (_velocity * _currentVelMod).magnitude * 10); 
                 }
                 
                 if(_slowDownTimer >= timeBeforeSlowDown.Value)
                 {
+                    // How much has it gone since the slowdown started
                     float currSlow = _slowDownTimer - timeBeforeSlowDown;
-                    slowDownCurve.Value.postWrapMode = WrapMode.Clamp;
+                    //slowDownCurve.Value.postWrapMode = WrapMode.Clamp;
+
+                    // Check the curve to get the modifier for the speed [0-1]
                     _currentVelMod = 
-                        crowdVelocityModifier * 
-                        slowDownCurve.Value.Evaluate(currSlow);
+                        crowdVelocityModifier + 
+                        slowDownCurve.Value.Evaluate(currSlow/crowdDecelerationTime);
+                   // print("VEL MOD:" + _currentVelMod);
                 }
+                else
+                    _currentVelMod = 1;
                 
             }
             else
             {
-                _crowdCollider = null;
                 _slowDownTimer = 0;
+                _currentVelMod = 1;
             }
 
 
 
         }
             
-   
-        
-
         AccelerateX();
         AccelerateZ();
-
-
 
         FactorVector = Vector3.one;
         MovementVector = _velocity * _currentVelMod;
@@ -183,24 +202,29 @@ public class HorizontalMovement : MovementBase
 
     private void CrowdContact(Collider contact)
     {
-        print(_crowdCollider != _rayhit.collider);
+        //print(_crowdCollider != _rayhit.collider);
            //print("contact");
-            if(_crowdCollider != _rayhit.collider)
+        if(contact == null)
+            return;
+           //New Head
+            if(_currentCrowdCollider != contact)
             {
-                //print("new colldier");
-                if(Input.GetAxisRaw  ("Vertical") > 0 && _crowdCollider == null)
+                print("new colldier");
+
+                //If going forward, and was not previously on a head
+                if(_currentCrowdCollider == null)
                 {
                     //print("new colldier, reset timer");
                     _slowDownTimer = 0;
                 }
                 // Might be performance intensive
                 _inContactComponent = 
-                    _rayhit.collider.GetComponent<CrowdAgent>();
-
-                _crowdCollider = _rayhit.collider;   
+                    contact.GetComponent<CrowdAgent>();
+                    _currentCrowdCollider = contact; 
+                 
             }
             _slowDownTimer += Time.deltaTime;
-            //print("increasing slowDownTimer");
+            //print(_slowDownTimer);
     }
     private void OnDrawGizmos() {
         //Gizmos.DrawLine(transform.position, transform.position + transform.forward);
