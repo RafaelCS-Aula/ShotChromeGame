@@ -20,9 +20,7 @@ public class Shotgun : MonoBehaviour
     [SerializeField] CurveVariable pelletDamageFalloff;
 
     [SerializeField] private LayerMask layersToHit;
-
-    [SerializeField] GameEvent OnDamageEnemy;
-#endregion
+    #endregion
 
     private List<Quaternion> pellets;
 
@@ -80,6 +78,8 @@ public class Shotgun : MonoBehaviour
                     //print("DAMAGE: " + dealtDamage);
 
                     EnemyHealth enemyHealth = hitInfo.transform.gameObject.GetComponent<EnemyHealth>();
+
+                    if (enemyHealth == null) enemyHealth = hitInfo.transform.gameObject.GetComponentInParent<EnemyHealth>();
 
                     enemyHealth.OnDamaged(dealtDamage);
                 }
