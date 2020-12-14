@@ -28,8 +28,13 @@ using UnityEngine;
             for(int i = eventListeners.Count -1; i >= 0; i--)
                 eventListeners[i].OnPositionEventRaised(positionArg);
         }
+        public void RaiseDamageArg(float damageArg)
+        {
+            for (int i = eventListeners.Count - 1; i >= 0; i--)
+                eventListeners[i].OnDamageEventRaised(damageArg);
+        }
 
-        public void RegisterListener(GameEventListener listener)
+    public void RegisterListener(GameEventListener listener)
         {
             if (!eventListeners.Contains(listener))
                 eventListeners.Add(listener);
