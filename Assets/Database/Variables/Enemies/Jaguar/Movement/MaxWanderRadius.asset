@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f25694c1e7482b48a1ef7f715245d18, type: 3}
-  m_Name: ShotConeAngle
+  m_Name: MaxWanderRadius
   m_EditorClassIdentifier: 
-  DevDescription: Angle (in Degrees) in which the pellets will spread
-  variableValue: 15
+  DevDescription: Maximum distance the unit can go from where the Wander state begins
+  variableValue: 20
