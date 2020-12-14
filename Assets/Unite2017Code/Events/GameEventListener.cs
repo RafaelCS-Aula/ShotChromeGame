@@ -17,6 +17,7 @@ using UnityEngine.Events;
         [Tooltip("Response to invoke when Event is raised.")]
         public UnityEvent Response;
         public UnityEvent<Vector3> PositionResponse;
+        public UnityEvent<float> DamageResponse;
 
         private void OnEnable()
         {
@@ -36,5 +37,10 @@ using UnityEngine.Events;
         public void OnPositionEventRaised(Vector3 eventPosition)
         {
             PositionResponse.Invoke(eventPosition);
+        }
+
+        public void OnDamageEventRaised(float damage)
+        {
+            DamageResponse.Invoke(damage);
         }
     }
