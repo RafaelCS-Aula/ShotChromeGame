@@ -7,6 +7,7 @@
 
 //-------------------------
 // Altered by Rafael Castro e Silva
+// Altered by Hugo Feliciano
 // 2020
 //-----------------------------
 
