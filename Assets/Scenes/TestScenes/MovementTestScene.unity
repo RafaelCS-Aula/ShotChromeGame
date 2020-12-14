@@ -172,7 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -340,7 +340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -508,7 +508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -676,7 +676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -844,7 +844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -1012,7 +1012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -1180,7 +1180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -1348,7 +1348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -1516,7 +1516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -1780,7 +1780,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -1948,7 +1948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -2116,7 +2116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -2284,7 +2284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -2452,7 +2452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -2620,7 +2620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -2788,7 +2788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -2956,7 +2956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -3124,7 +3124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -3292,7 +3292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -3460,7 +3460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -3628,7 +3628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -3796,7 +3796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -3964,7 +3964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -4132,7 +4132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -4300,7 +4300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -4468,7 +4468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -4636,7 +4636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -4804,7 +4804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -4972,7 +4972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -5140,7 +5140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -5308,7 +5308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -5476,7 +5476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -5644,7 +5644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -5812,7 +5812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -5980,7 +5980,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -6148,7 +6148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -6316,7 +6316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -6484,7 +6484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -6652,7 +6652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -6820,7 +6820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -6988,7 +6988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -7156,7 +7156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -7324,7 +7324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -7492,7 +7492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -7660,7 +7660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -7828,7 +7828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -8092,7 +8092,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -8260,7 +8260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -8428,7 +8428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -8596,7 +8596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -8764,7 +8764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -9046,7 +9046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -9214,7 +9214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -9382,7 +9382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -9550,7 +9550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -9718,7 +9718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -9886,7 +9886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -10054,7 +10054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -10222,7 +10222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -10390,7 +10390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -10654,7 +10654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -10822,7 +10822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -10990,7 +10990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -11158,7 +11158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -11326,7 +11326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -11494,7 +11494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -11662,7 +11662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -11830,7 +11830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -11998,7 +11998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -12166,7 +12166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -12334,7 +12334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -12502,7 +12502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -12670,7 +12670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -12838,7 +12838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -13006,7 +13006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -13174,7 +13174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -13342,7 +13342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -13510,7 +13510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -13678,7 +13678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -13846,7 +13846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -14014,7 +14014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -14182,7 +14182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -14350,7 +14350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -14518,7 +14518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -14686,7 +14686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -14854,7 +14854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -15022,7 +15022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -15190,7 +15190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -15358,7 +15358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -15575,11 +15575,11 @@ MonoBehaviour:
     m_Bits: 512
   timeBeforeSlowDown:
     UseInspectorValue: 1
-    InspectorValue: 0.3
+    InspectorValue: 1
     Variable: {fileID: 0}
   crowdVelocityModifier:
     UseInspectorValue: 1
-    InspectorValue: 0.3
+    InspectorValue: 0.1
     Variable: {fileID: 0}
   slowDownCurve:
     UseInspectorValue: 1
@@ -15596,8 +15596,8 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0.08801019
       - serializedVersion: 3
-        time: 1.0012817
-        value: 0
+        time: 1
+        value: 0.0047135274
         inSlope: -0.716908
         outSlope: -0.716908
         tangentMode: 0
@@ -15607,6 +15607,10 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    Variable: {fileID: 0}
+  crowdDecelerationTime:
+    UseInspectorValue: 1
+    InspectorValue: 0
     Variable: {fileID: 0}
 --- !u!114 &1312549394
 MonoBehaviour:
@@ -15860,7 +15864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -16028,7 +16032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -16196,7 +16200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -16364,7 +16368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -16532,7 +16536,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -16700,7 +16704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -16868,7 +16872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -17036,7 +17040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -17204,7 +17208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -17372,7 +17376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -17540,7 +17544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -17708,7 +17712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -17876,7 +17880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -18044,7 +18048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -18212,7 +18216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -18380,7 +18384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -18548,7 +18552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -18716,7 +18720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -18884,7 +18888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -19052,7 +19056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -19220,7 +19224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -19388,7 +19392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -19556,7 +19560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -19724,7 +19728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -19892,7 +19896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -20060,7 +20064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -20228,7 +20232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -20396,7 +20400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -20564,7 +20568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -20732,7 +20736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -20900,7 +20904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -21068,7 +21072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -21236,7 +21240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -21404,7 +21408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -21572,7 +21576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -21740,7 +21744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -21908,7 +21912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -22076,7 +22080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -22244,7 +22248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -22412,7 +22416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -22580,7 +22584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -22748,7 +22752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -22916,7 +22920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -23084,7 +23088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -23426,7 +23430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -23594,7 +23598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -23762,7 +23766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -23930,7 +23934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -24098,7 +24102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -24266,7 +24270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -24434,7 +24438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -24602,7 +24606,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -24862,7 +24866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -25030,7 +25034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
@@ -25198,7 +25202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityThreshold:
     UseInspectorValue: 1
-    InspectorValue: 10
+    InspectorValue: 40
     Variable: {fileID: 0}
   runnerMaxVelocity:
     UseInspectorValue: 1
