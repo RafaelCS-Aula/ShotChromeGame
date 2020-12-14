@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2825da4874d303748bdea370717ec146, type: 3}
-  m_Name: DamageFalloff
+  m_Script: {fileID: 11500000, guid: 8f25694c1e7482b48a1ef7f715245d18, type: 3}
+  m_Name: PlayerHP
   m_EditorClassIdentifier: 
   DevDescription: 
-  variableValue:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  variableValue: 0
