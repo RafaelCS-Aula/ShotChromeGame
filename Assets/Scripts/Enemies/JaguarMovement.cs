@@ -7,29 +7,28 @@ public class JaguarMovement : MonoBehaviour
     [SerializeField] private Transform target;
 
     #region Seek
-    [SerializeField] private float bodyMass;
-    [SerializeField] private float maxSeekVel;
-    [SerializeField] private float maxForce;
-    [SerializeField] private float seekDist;
+    [SerializeField] private FloatVariable seekSpeed;
+    [SerializeField] private FloatVariable seekDist;
     #endregion
 
     #region Wander
 
-    [SerializeField] private float wanderSpeed;
-    [SerializeField] private float dirChangeInterval;
-    [SerializeField] private float maxHeadingChange;
+    [SerializeField] private FloatVariable wanderSpeed;
+    [SerializeField] private FloatVariable dirChangeInterval;
+    [SerializeField] private FloatVariable maxDirChange;
 
     private Vector3 wanderOrigin;
-    [SerializeField] private float wanderRadius;
+    [SerializeField] private FloatVariable wanderRadius;
 
     private bool isWandering = false;
 
     private float dirChangeTimer;
 
-    private float heading;
     private Vector3 rotation = Vector3.zero;
 
     #endregion
+
+    [SerializeField] FloatVariable meleeAttackRange;
 
     private Vector3 vel;
 
@@ -46,20 +45,35 @@ public class JaguarMovement : MonoBehaviour
         float distToTarget = Vector3.Distance(target.position, transform.position);
 
         #region SeekDistanceRays
-        Vector3 dir1 = transform.forward.normalized;
-        Vector3 dir2 = -transform.forward.normalized;
-        Vector3 dir3 = transform.right.normalized;
-        Vector3 dir4 = -transform.right.normalized;
-        Debug.DrawRay(transform.position, dir1 * seekDist, Color.red);
-        Debug.DrawRay(transform.position, dir2 * seekDist, Color.red);
-        Debug.DrawRay(transform.position, dir3 * seekDist, Color.red);
-        Debug.DrawRay(transform.position, dir4 * seekDist, Color.red);
+        Vector3 sDir1 = transform.forward.normalized;
+        Vector3 sDir2 = -transform.forward.normalized;
+        Vector3 sDir3 = transform.right.normalized;
+        Vector3 sDir4 = -transform.right.normalized;
+        Debug.DrawRay(transform.position, sDir1 * seekDist, Color.red);
+        Debug.DrawRay(transform.position, sDir2 * seekDist, Color.red);
+        Debug.DrawRay(transform.position, sDir3 * seekDist, Color.red);
+        Debug.DrawRay(transform.position, sDir4 * seekDist, Color.red);
+        #endregion
+
+        #region MeleeDistanceRays
+        Vector3 mDir1 = transform.forward.normalized;
+        Vector3 mDir2 = -transform.forward.normalized;
+        Vector3 mDir3 = transform.right.normalized;
+        Vector3 mDir4 = -transform.right.normalized;
+        Debug.DrawRay(transform.position, mDir1 * meleeAttackRange, Color.blue);
+        Debug.DrawRay(transform.position, mDir2 * meleeAttackRange, Color.blue);
+        Debug.DrawRay(transform.position, mDir3 * meleeAttackRange, Color.blue);
+        Debug.DrawRay(transform.position, mDir4 * meleeAttackRange, Color.blue);
         #endregion
 
         if (distToTarget <= seekDist)
         {
-            Seek();
             if (isWandering != false) isWandering = false;
+
+            if (distToTarget > meleeAttackRange)
+            {
+                Seek();
+            }
         }
 
         else
@@ -78,13 +92,13 @@ public class JaguarMovement : MonoBehaviour
     private void Seek()
     {
         Vector3 wantedVel = target.position - transform.position;
-        wantedVel = wantedVel.normalized * maxSeekVel;
+        wantedVel = wantedVel.normalized * seekSpeed;
+
+        wantedVel = new Vector3(wantedVel.x, 0, wantedVel.z);
 
         Vector3 steering = wantedVel - vel;
 
-        steering = Vector3.ClampMagnitude(steering, maxForce) / bodyMass;
-
-        vel = Vector3.ClampMagnitude(vel + steering, maxSeekVel);
+        vel = Vector3.ClampMagnitude(vel + steering, seekSpeed);
         transform.position += new Vector3(vel.x, 0, vel.z) * Time.deltaTime;
         transform.forward = vel.normalized;
 
@@ -98,10 +112,10 @@ public class JaguarMovement : MonoBehaviour
 
         if (dirChangeTimer <= 0)
         {
-            float min = transform.eulerAngles.y - maxHeadingChange;
-            float max = transform.eulerAngles.y + maxHeadingChange;
-            heading = Random.Range(min, max);
-            rotation = new Vector3(0, heading, 0);
+            float min = transform.eulerAngles.y - maxDirChange;
+            float max = transform.eulerAngles.y + maxDirChange;
+            float dir = Random.Range(min, max);
+            rotation = new Vector3(0, dir, 0);
             dirChangeTimer = dirChangeInterval;
         }
 
