@@ -31,6 +31,7 @@ public class CharacterGravity : MonoBehaviour, IMovementComponent
 
     private GroundChecker _GChecker;
 
+    [SerializeField] private LayerMask gravStoppers;
     private void Awake() 
     {
         
@@ -41,7 +42,7 @@ public class CharacterGravity : MonoBehaviour, IMovementComponent
     private void FixedUpdate()
     {   
         
-        if(!_GChecker.OnGround())
+        if(!_GChecker.OnGround(gravStoppers))
         {
            // print("airTime");
             StartCoroutine(ApplyGravity());
@@ -83,6 +84,8 @@ public class CharacterGravity : MonoBehaviour, IMovementComponent
         _mov.y = -fallVelocity;
         yield return null;
     }
+
+    //public
 
 
 

@@ -170,7 +170,7 @@ public class HorizontalMovement : MovementBase
                 {
                     // How much has it gone since the slowdown started
                     float currSlow = _slowDownTimer - timeBeforeSlowDown;
-                    //slowDownCurve.Value.postWrapMode = WrapMode.Clamp;
+                
 
                     // Check the curve to get the modifier for the speed [0-1]
                     _currentVelMod = 
@@ -210,7 +210,7 @@ public class HorizontalMovement : MovementBase
             if(_currentCrowdCollider != contact)
             {
                 print("new colldier");
-
+                
                 //If going forward, and was not previously on a head
                 if(_currentCrowdCollider == null)
                 {

@@ -15,10 +15,30 @@ public class VerticalMovement : MovementBase
     [SerializeField] 
     private FloatVariable jumpForce;
 
+    
+
+
+    [Header("Crowd Hopping Settings")]
+    [SerializeField] private bool canCrowdHop;
+
+    [ShowIf("canCrowdHop")]
+    [SerializeField] private bool steppingOffHop;
+    
+    [ShowIf("canCrowdHop")]
     [SerializeField] 
-    private FloatVariable leapForwardForce;
+    private FloatVariable hopUpwardForce;
+    
+    [ShowIf("canCrowdHop")]
     [SerializeField] 
-    private FloatVariable leapUpwardForce;
+    private FloatVariable hopForwardForce;
+
+    private RaycastHit _rayhit;
+
+    [ShowIf("canCrowdHop")]
+    [SerializeField] private LayerMask hoppingLayer;
+
+    private Collider _currentCrowdCollider;
+    private Collider _newCrowdCollider;
 
     private bool _input;
     
@@ -50,6 +70,10 @@ public class VerticalMovement : MovementBase
     // Update is called once per frame
     void FixedUpdate()
     {
+
+        if(canCrowdHop)
+            CheckForCrowd();
+
         _gravPull = _cGrav.gravitationalPull;
        if(_input && _GChecker.OnGround())
         {
@@ -73,6 +97,7 @@ public class VerticalMovement : MovementBase
         
     }
 
+    
     public void Jump(float jumpPower)
     {
         // TODO: Make the jump higher if jump key is held down
@@ -119,4 +144,22 @@ public class VerticalMovement : MovementBase
        // _gravPull = GetComponent<CharacterGravity>().gravitationalPull;
         LeapToPoint(Vector3.zero, 1);
     }*/
+
+    private void CheckForCrowd()
+    {
+        if(_GChecker.CheckRay(out _rayhit, hoppingLayer))
+                _newCrowdCollider = _rayhit.collider;
+            else
+                _newCrowdCollider = null;
+        
+        // new head
+        if(_currentCrowdCollider != _newCrowdCollider)
+        {
+            print("new head");
+            Leap(hopForwardForce, hopUpwardForce);
+
+        }
+        _currentCrowdCollider = _newCrowdCollider;
+
+    }
 }
