@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using NaughtyAttributes;
 
 public class AreaofEffect : MonoBehaviour
 {
@@ -16,11 +16,30 @@ public class AreaofEffect : MonoBehaviour
     [SerializeField] private LayerMask fullyBlockedByLayers;
     [SerializeField] private CurveVariable effectFalloff;
 
+    [SerializeField] private bool showGizmos;
+
+    [ShowIf("showGizmos")]
+    [SerializeField] private Color gizmoColor;
+
+    [ShowIf("showGizmos")]
+    [Range(0,1)]
+    [SerializeField] private float gizmoTransparency;
+
     private Collider[] _insideArea;
-    
+
+    /// <summary>
+    /// Store the last colliders hit be the AoE and how affect they were
+    /// </summary>
+    /// <typeparam name="Collider"></typeparam>
+    /// <typeparam name="float"></typeparam>
+    /// <returns></returns>
+    public Dictionary<Collider, float> HitsAndAffect = 
+        new Dictionary<Collider, float>();
     
     public void ApplyAoE(Vector3 center)
     {
+        HitsAndAffect =
+             new Dictionary<Collider, float>();
         // Debug
         debugPoints = new List<(Vector3, bool, float)>();
         debugPoints.Add((center, true, effectFalloff.Value.Evaluate(0)));
@@ -56,11 +75,14 @@ public class AreaofEffect : MonoBehaviour
 
             float finalPower = effectModifier * effectAmount;
 
+            HitsAndAffect.Add(c, finalPower);
+            //print(HitsAndAffect.Count);
+
             //Debug
             debugPoints.Add((c.ClosestPoint(center), true, effectModifier));
 
             Debug.DrawLine(center, c.ClosestPoint(center), Color.yellow,4);
-            print("bzzz");
+            //print("bzzz");
             /////////////////
             
             //Get the Health component of the hit colliders and affect them.
@@ -69,9 +91,14 @@ public class AreaofEffect : MonoBehaviour
 
     }
 
+    
+
     private List<(Vector3 pos, bool hit, float eff)> debugPoints = 
     new List<(Vector3 pos, bool hit, float eff)>();
-    private void OnDrawGizmos() {
+    private void OnDrawGizmosSelected() 
+    {
+        if(!showGizmos)
+            return;
 
         if(debugPoints.Count > 0)
         {
@@ -86,6 +113,16 @@ public class AreaofEffect : MonoBehaviour
                 Gizmos.DrawSphere(debugPoints[i].pos, debugPoints[i].eff);
             }
         }
+
+        else
+        {
+            gizmoColor.a = gizmoTransparency;
+
+            Gizmos.color = gizmoColor;
+
+            Gizmos.DrawWireSphere(transform.position, maxRadius);
+        }
+            
         
 
     }

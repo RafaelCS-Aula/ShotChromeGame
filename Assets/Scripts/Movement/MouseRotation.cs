@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 public class MouseRotation : MonoBehaviour
 {
@@ -11,26 +12,22 @@ public class MouseRotation : MonoBehaviour
     private float _verticalDelta;
     private Quaternion _startRotation;
 
-    //[ValidateInput("HasNeededHVars", "Input horizontal sensitivity and angle limit")]
+    [ValidateInput("HasNeededHVars", "Input horizontal sensitivity and angle limit")]
     [SerializeField] private bool turnHorizontal;
 
-    //[ValidateInput("HasNeededVVars", "Input vertical sensitivity and angle limit")]
+    [ValidateInput("HasNeededVVars", "Input vertical sensitivity and angle limit")]
     [SerializeField] private bool turnVertical;
 
-    //[ShowIf("turnHorizontal")]
-   
+    [ShowIf("turnHorizontal")]
     [SerializeField] private FloatVariable horizontalSensitivity;
 
-    //[ShowIf("turnVertical")]
-    
+    [ShowIf("turnVertical")]
     [SerializeField] private FloatVariable verticalSensitivity;
 
-    //[ShowIf("turnHorizontal")]
-    
+    [ShowIf("turnHorizontal")]
     [SerializeField] private FloatVariable horizontalMaxAngle;
 
-    //[ShowIf("turnVertical")]
-    
+    [ShowIf("turnVertical")]
     [SerializeField] private FloatVariable verticalMaxAngle;
 
 #region Naughty Attributes helper methods
@@ -55,7 +52,9 @@ public class MouseRotation : MonoBehaviour
     private void Start() 
     {
         _startRotation = transform.rotation;
-      
+
+        //Dont let it go to build with it like this (recommended)
+        Cursor.lockState = CursorLockMode.Locked;
     }
     void Update()
     {

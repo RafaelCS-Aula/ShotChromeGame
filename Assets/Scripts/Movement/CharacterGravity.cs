@@ -1,66 +1,91 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
-
-public class CharacterGravity : VerticalMovementBase
+[RequireComponent(typeof(GroundChecker))]
+public class CharacterGravity : MonoBehaviour, IMovementComponent
 {
+
+    public Vector3 MovementVector {get; set;}
+    public Vector3 FactorVector {get; set;}
+    private Vector3 _mov = Vector3.zero;
+    private Vector3 _fact = Vector3.one;
+
+    [HideInInspector]
+    public float gravitationalPull => 
+        terminalVelocity / secondsToTerminalVelocity;
 
     [Header("Gravity Settings")]
 
+    [MinValue(0.01f)]
     [SerializeField]
-    private FloatVariable gravityAceleration;
+    private FloatVariable secondsToTerminalVelocity;
 
     [SerializeField]
     private FloatVariable terminalVelocity;
-    private float _timeFalling = 0;
-    public bool useEngineGravity = false;
 
+    private float _timeFalling = 0;
+    
+    [SerializeField] private bool useEngineGravity = false;
+
+    private GroundChecker _GChecker;
+
+    [SerializeField] private LayerMask gravStoppers;
     private void Awake() 
     {
+        
+        _GChecker = GetComponent<GroundChecker>();
         FactorVector = Vector3.one;    
         MovementVector = Vector3.zero;
     }
     private void FixedUpdate()
     {   
         
-        if(!TouchingGround())
+        if(!_GChecker.OnGround(gravStoppers))
         {
-            
-            Fall();
+           // print("airTime");
+            StartCoroutine(ApplyGravity());
             
         }
         else
         {
+            //print("groundTime!");
+            StopCoroutine(ApplyGravity());
+            
             _mov.y = 0;
             _timeFalling = 0;
-            Vector3 fac = FactorVector;
-            fac.y = 0;
-            FactorVector = fac;
+   
         }
-            
-        MovementVector = _mov;
-        //print(_mov.y);
-        
 
+        Vector3 fac = FactorVector;
+        FactorVector = fac;
+        MovementVector = _mov;  
+        
+        
     }
 
-    public void Fall()
+    public IEnumerator ApplyGravity()
     {
-        float fallForce = 
-         useEngineGravity ? Physics.gravity.y : gravityAceleration.Value;
-
-        _timeFalling += Time.deltaTime;
-        fallForce *= _timeFalling;
+       /* if(_GChecker.OnGround())
+            yield break;*/
         
+        _timeFalling += Time.fixedDeltaTime;
 
-        if(fallForce >= terminalVelocity.Value)
-            fallForce = terminalVelocity.Value;
-            
-        //print(fallForce);
-        FactorVector = new Vector3(sideAirControl.Value, 1, frontAirControl.Value);
-        _mov.y = -fallForce;
+        
+        float fallVelocity = useEngineGravity ? 
+            (Physics.gravity.y * _timeFalling) : 
+            (terminalVelocity * (_timeFalling / secondsToTerminalVelocity));
+
+
+        if(fallVelocity > terminalVelocity)
+            fallVelocity = terminalVelocity;
+
+        _mov.y = -fallVelocity;
+        yield return null;
     }
+
+    //public
 
 
 
