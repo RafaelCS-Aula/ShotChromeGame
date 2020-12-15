@@ -39,8 +39,6 @@ public class VerticalMovement : MovementBase
 
     private Collider _currentCrowdCollider;
     private Collider _newCrowdCollider;
-
-    private bool _input;
     
     // Start is called before the first frame update
     void Start()
