@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using NaughtyAttributes;
 
 public class Shotgun : InputReceiverBase
 {
     #region InspectorVars
+
+    [Foldout("Events")]
+    [SerializeField] private UnityEvent OnShootEvent;
+
     [SerializeField] IntVariable pelletsPerShot;
 
     [SerializeField] FloatVariable maxPelletDamage;
@@ -62,6 +67,7 @@ public class Shotgun : InputReceiverBase
     [Button("Test Shoot")]
     private void Shoot()
     {
+        OnShootEvent.Invoke();
         int numberOfHits = 0;
 
         for (int i = 0; i < pellets.Count; i++)

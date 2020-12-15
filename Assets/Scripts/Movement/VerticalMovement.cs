@@ -1,12 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using NaughtyAttributes;
 
 [RequireComponent(typeof(GroundChecker))]
 [RequireComponent(typeof(CharacterGravity))]
 public class VerticalMovement : MovementBase
 {
+    [Foldout("Events")]
+    [SerializeField] private UnityEvent OnHopEvent;
+    [Foldout("Events")]
+    [SerializeField] private UnityEvent OnJumpEvent;
+    [Foldout("Events")]
+    [SerializeField] private UnityEvent OnLandEvent;
+
     private GroundChecker _GChecker;
     private CharacterGravity _cGrav;
     private float _gravPull;
@@ -81,6 +89,9 @@ public class VerticalMovement : MovementBase
         }
         else if(_GChecker.OnGround())
         {
+            // Was moving vertically before hitting ground
+            if(_mov.y != 0)
+                OnLandEvent.Invoke();
             
             _fact.x = 1;
             _fact.z = 1;
@@ -98,6 +109,7 @@ public class VerticalMovement : MovementBase
     
     public void Jump(float jumpPower)
     {
+        OnJumpEvent.Invoke();
         // TODO: Make the jump higher if jump key is held down
         /*if(!touchingGround && input != 0)
         {
@@ -154,6 +166,7 @@ public class VerticalMovement : MovementBase
         if(_currentCrowdCollider != _newCrowdCollider)
         {
             print("new head");
+            OnHopEvent.Invoke();
             Leap(hopForwardForce, hopUpwardForce);
 
         }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
-
+using UnityEngine.Events;
 [RequireComponent(typeof(GroundChecker))]
 public class HorizontalMovement : MovementBase
 {
@@ -12,6 +12,10 @@ public class HorizontalMovement : MovementBase
     float xDec = 0.0f;
 
     private GroundChecker _GChecker;
+
+    [Foldout("Events")]
+    [SerializeField] private UnityEvent OnTouchHeadEvent;
+    
     
     [Header("Horizontal Movement Settings")]
     [SerializeField]
@@ -210,7 +214,7 @@ public class HorizontalMovement : MovementBase
             if(_currentCrowdCollider != contact)
             {
                 print("new colldier");
-                
+                OnTouchHeadEvent.Invoke();
                 //If going forward, and was not previously on a head
                 if(_currentCrowdCollider == null)
                 {
