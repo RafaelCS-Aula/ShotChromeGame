@@ -38,7 +38,6 @@ public class FlyerProjectile : MonoBehaviour
         {
             if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
-                print("PLAYER, DESTROY");
                 damageEvent.RaiseDamageArg(damage);
             }
             Destroy(gameObject);

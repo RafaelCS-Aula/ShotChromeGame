@@ -141,7 +141,7 @@ public class JaguarMovement : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(wanderOrigin, 1);
+        //Gizmos.color = Color.yellow;
+        //Gizmos.DrawSphere(wanderOrigin, 1);
     }
 }

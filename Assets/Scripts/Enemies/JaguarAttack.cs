@@ -33,6 +33,6 @@ public class JaguarAttack : MonoBehaviour
     private void Attack()
     {
         attackTimer = attackInterval;
-        
+        DamagePlayer.RaiseDamageArg(attackDamage);
     }
 }

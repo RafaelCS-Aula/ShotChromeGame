@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    private float Health = 100;
+    [SerializeField] FloatVariable MaxHealth;
+    private float health = 100;
+
+    private void Start()
+    {
+        health = MaxHealth;
+    }
     private void Update()
     {
-        if (Health <= 0) Destroy(gameObject);
+        if (health <= 0) Destroy(gameObject);
     }
 
     public void OnDamaged(float damage)
     {
-        Health -= damage;
-        print(Health);
+        health -= damage;
+        print(health);
     }
 }
