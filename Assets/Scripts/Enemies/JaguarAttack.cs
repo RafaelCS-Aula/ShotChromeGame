@@ -8,7 +8,7 @@ public class JaguarAttack : MonoBehaviour
 
     [SerializeField] FloatVariable attackDamage;
     [SerializeField] FloatVariable attackInterval;
-    [SerializeField] FloatVariable meleeRange;
+    [SerializeField] FloatVariable attackRange;
 
     [SerializeField] GameEvent DamagePlayer;
 
@@ -26,13 +26,13 @@ public class JaguarAttack : MonoBehaviour
 
         float distToTarget = Vector3.Distance(transform.position, target.position);
 
-        if (distToTarget <= meleeRange && attackTimer <= 0) Attack();
+        if (distToTarget <= attackRange && attackTimer <= 0) Attack();
 
     }
 
     private void Attack()
     {
         attackTimer = attackInterval;
-        DamagePlayer.RaiseDamageArg(attackDamage.Value);
+        
     }
 }

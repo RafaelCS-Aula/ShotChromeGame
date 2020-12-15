@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f25694c1e7482b48a1ef7f715245d18, type: 3}
-  m_Name: MaxDirectionChange
+  m_Name: JaguarAttackInterval
   m_EditorClassIdentifier: 
-  DevDescription: Maximum change in direction when on Wander state
-  variableValue: 60
+  DevDescription: How long before the unit can attack again
+  variableValue: 1.5
