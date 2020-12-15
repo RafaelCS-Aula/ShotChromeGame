@@ -51,14 +51,14 @@ public class AreaofEffect : MonoBehaviour
         HitsAndAffect =
              new Dictionary<Collider, float>();
 
-             print("boom");
+             //print("boom");
         // Debug
         debugPoints = new List<(Vector3, bool, float)>();
         debugPoints.Add((center, true, effectFalloff.Value.Evaluate(0)));
         //////////
-        print("From AoE: Radius - " + maxRadius.Value );
+        //print("From AoE: Radius - " + maxRadius.Value );
         _insideArea = Physics.OverlapSphere(center, maxRadius, affectedLayers);
-        print(_insideArea.Length);
+        //print(_insideArea.Length);
         foreach(Collider c in _insideArea)
         {
             Vector3 dirToHit;
@@ -73,7 +73,7 @@ public class AreaofEffect : MonoBehaviour
             {
                 if(showGizmos)
                     Debug.DrawLine(center, wallHit.point, gizmoBlockedColor,4);
-                        print("hit wall");
+                        //print("hit wall");
                 continue;
             }
                 
@@ -98,13 +98,19 @@ public class AreaofEffect : MonoBehaviour
 
             if(showGizmos)
                 Debug.DrawLine(center, c.ClosestPoint(center), gizmoHitColor,4);
-            print(debugPoints.Count);
+
+             //print(debugPoints.Count);
             /////////////////
             
             //Get the Health component of the hit colliders and affect them.
 
         }
-
+        foreach (var hit in HitsAndAffect)
+        {
+            EnemyHealth enemyHealth = hit.Key.transform.gameObject.GetComponent<EnemyHealth>();
+            if (enemyHealth == null) enemyHealth = hit.Key.transform.gameObject.GetComponentInParent<EnemyHealth>();
+            enemyHealth.OnDamaged(hit.Value);
+        }
     }
 
     
@@ -119,7 +125,7 @@ public class AreaofEffect : MonoBehaviour
         
         if(debugPoints.Count > 0)
         {
-            Gizmos.DrawSphere(debugPoints[0].pos, maxRadius);    
+            //Gizmos.DrawSphere(debugPoints[0].pos, maxRadius);    
             for (int i = 1; i < debugPoints.Count; i++)
             {
                 if(debugPoints[i].hit)
@@ -127,7 +133,7 @@ public class AreaofEffect : MonoBehaviour
                 else
                     Gizmos.color = gizmoBlockedColor;
                 
-                Gizmos.DrawWireSphere(debugPoints[i].pos, debugPoints[i].eff);
+                //Gizmos.DrawWireSphere(debugPoints[i].pos, debugPoints[i].eff);
             }
         }
 

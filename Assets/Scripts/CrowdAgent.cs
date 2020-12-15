@@ -49,7 +49,8 @@ public class CrowdAgent : MonoBehaviour
 
     private void Awake()
     {
-        _myCol = GetComponent<Collider>();   
+        _myCol = GetComponentInParent<Collider>();
+
         if(useProximityEffects)
         {
             _friendSearchAoE = GetComponent<AreaofEffect>();
@@ -115,7 +116,7 @@ public class CrowdAgent : MonoBehaviour
             return;
         _friendSearchAoE.ApplyAoE(transform.position);
         _friendsNear = _friendSearchAoE.HitsAndAffect.Count;
-        print("called friend search");
+        //print("called friend search");
 
     }
 

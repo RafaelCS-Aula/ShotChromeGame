@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 472223884595511762}
   - component: {fileID: 472223884595511761}
   - component: {fileID: 472223884595511763}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Thunder Summoner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,17 +48,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpKey:
-    UseInspectorValue: 1
+    UseInspectorValue: 0
     InspectorValue: 0
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 91176998c755d734ab27d73fb8b85289, type: 2}
   shootKey:
-    UseInspectorValue: 1
+    UseInspectorValue: 0
     InspectorValue: 0
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: f30c2c4a5abd15741a801e92056694a7, type: 2}
   thunderKey:
-    UseInspectorValue: 1
+    UseInspectorValue: 0
     InspectorValue: 32
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 165d2f42e1d139242ad2a3297eec1fc9, type: 2}
 --- !u!114 &472223884595511760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,10 +121,10 @@ MonoBehaviour:
   impactLayer:
     serializedVersion: 2
     m_Bits: 256
-  originPoint: {fileID: 472223884595511767}
+  originPoint: {fileID: 0}
   summonCoolDown:
     UseInspectorValue: 1
-    InspectorValue: 0
+    InspectorValue: 1
     Variable: {fileID: 0}
 --- !u!114 &472223884595511762
 MonoBehaviour:
@@ -315,7 +315,25 @@ MonoBehaviour:
     UseInspectorValue: 1
     InspectorValue:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
