@@ -515,6 +515,7 @@ GameObject:
   - component: {fileID: 633213886}
   - component: {fileID: 633213885}
   - component: {fileID: 633213888}
+  - component: {fileID: 633213887}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -636,7 +637,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   originPoint: {fileID: 633213883}
   summonCoolDown:
     UseInspectorValue: 1
@@ -661,9 +662,9 @@ MonoBehaviour:
     InspectorValue: 0
     Variable: {fileID: 0}
   maxRadius:
-    UseInspectorValue: 1
+    UseInspectorValue: 0
     InspectorValue: 10
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 2d38d342517318d47b47e2a85efca121, type: 2}
   affectedLayers:
     serializedVersion: 2
     m_Bits: 512
@@ -697,6 +698,9 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     Variable: {fileID: 0}
+  showGizmos: 1
+  gizmoColor: {r: 0.5377358, g: 0.18161371, b: 0.012682447, a: 1}
+  gizmoTransparency: 1
 --- !u!114 &633213886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -712,7 +716,19 @@ MonoBehaviour:
   Event: {fileID: 11400000, guid: b05cd052b7ec94f4f9c351a7d794cb33, type: 2}
   Response:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 633213887}
+        m_TargetAssemblyTypeName: ThunderPower, Assembly-CSharp
+        m_MethodName: EvaluatePower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   PositionResponse:
     m_PersistentCalls:
       m_Calls:
@@ -727,7 +743,133 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
+  DamageResponse:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &633213887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633213880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32c755478ca3164fb039178dee8f405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxPower:
+    UseInspectorValue: 1
+    InspectorValue: 20
+    Variable: {fileID: 0}
+  currentPower:
+    UseInspectorValue: 1
+    InspectorValue: 20
+    Variable: {fileID: 11400000, guid: acab311c951432448842d576a5e833e4, type: 2}
+  currentRadius: {fileID: 11400000, guid: 2d38d342517318d47b47e2a85efca121, type: 2}
+  currentAmmo: {fileID: 11400000, guid: f0312276924fa4447b4a3fae4c79b600, type: 2}
+  readRadiusKeysDirectly: 0
+  radiusCurve:
+    UseInspectorValue: 1
+    InspectorValue:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 10
+        outSlope: 10
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 10
+        inSlope: 10
+        outSlope: 10
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    Variable: {fileID: 0}
+  readAmmoKeysDirectly: 0
+  ammoCurve:
+    UseInspectorValue: 1
+    InspectorValue:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    Variable: {fileID: 0}
+  ReplenishmentCurve:
+    UseInspectorValue: 1
+    InspectorValue:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: -2.498065
+        outSlope: -2.498065
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.40030983
+        value: 0
+        inSlope: -2.498065
+        outSlope: Infinity
+        tangentMode: 101
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7003329
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.0023498535
+        inSlope: Infinity
+        outSlope: 0
+        tangentMode: 7
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    Variable: {fileID: 0}
 --- !u!114 &633213888
 MonoBehaviour:
   m_ObjectHideFlags: 0

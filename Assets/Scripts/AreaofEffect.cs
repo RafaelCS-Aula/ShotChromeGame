@@ -40,12 +40,15 @@ public class AreaofEffect : MonoBehaviour
     {
         HitsAndAffect =
              new Dictionary<Collider, float>();
+
+             print("boom");
         // Debug
         debugPoints = new List<(Vector3, bool, float)>();
         debugPoints.Add((center, true, effectFalloff.Value.Evaluate(0)));
         //////////
-
+        print("From AoE: Radius - " + maxRadius.Value );
         _insideArea = Physics.OverlapSphere(center, maxRadius, affectedLayers);
+        print(_insideArea.Length);
         foreach(Collider c in _insideArea)
         {
             Vector3 dirToHit;
@@ -59,6 +62,7 @@ public class AreaofEffect : MonoBehaviour
             if(Physics.SphereCast(center,1,dirToHit,out wallHit,distToHit,fullyBlockedByLayers))
             {
                 Debug.DrawLine(center, wallHit.point, Color.red,4);
+                print("hit wall");
                 continue;
             }
                 
@@ -82,7 +86,7 @@ public class AreaofEffect : MonoBehaviour
             debugPoints.Add((c.ClosestPoint(center), true, effectModifier));
 
             Debug.DrawLine(center, c.ClosestPoint(center), Color.yellow,4);
-            //print("bzzz");
+            print(debugPoints.Count);
             /////////////////
             
             //Get the Health component of the hit colliders and affect them.
@@ -113,7 +117,6 @@ public class AreaofEffect : MonoBehaviour
                 Gizmos.DrawSphere(debugPoints[i].pos, debugPoints[i].eff);
             }
         }
-
         else
         {
             gizmoColor.a = gizmoTransparency;
