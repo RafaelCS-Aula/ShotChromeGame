@@ -170,6 +170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -403,6 +406,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -636,6 +642,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -869,6 +878,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -1102,6 +1114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -1335,6 +1350,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -1568,6 +1586,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -1801,6 +1822,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -2034,6 +2058,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -2363,6 +2390,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -2596,6 +2626,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -2829,6 +2862,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -3062,6 +3098,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -3295,6 +3334,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -3528,6 +3570,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -3761,6 +3806,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -3994,6 +4042,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -4227,6 +4278,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -4460,6 +4514,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -4693,6 +4750,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -4926,6 +4986,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -5159,6 +5222,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -5392,6 +5458,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -5625,6 +5694,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -5858,6 +5930,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -6091,6 +6166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -6324,6 +6402,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -6557,6 +6638,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -6790,6 +6874,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -7023,6 +7110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -7256,6 +7346,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -7489,6 +7582,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -7722,6 +7818,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -7960,6 +8059,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -8193,6 +8295,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -8426,6 +8531,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -8659,6 +8767,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -8892,6 +9003,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -9125,6 +9239,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -9358,6 +9475,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -9591,6 +9711,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -9824,6 +9947,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -10057,6 +10183,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -10290,6 +10419,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -10523,6 +10655,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -10852,6 +10987,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -11085,6 +11223,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -11318,6 +11459,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -11551,6 +11695,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -11784,6 +11931,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -12131,6 +12281,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -12364,6 +12517,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -12597,6 +12753,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -12830,6 +12989,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -13063,6 +13225,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -13296,6 +13461,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -13529,6 +13697,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -13762,6 +13933,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -13995,6 +14169,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -14324,6 +14501,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -14557,6 +14737,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -14790,6 +14973,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -15023,6 +15209,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -15256,6 +15445,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -15489,6 +15681,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -15722,6 +15917,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -15955,6 +16153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -16188,6 +16389,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -16421,6 +16625,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -16654,6 +16861,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -16887,6 +17097,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -17120,6 +17333,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -17353,6 +17569,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -17586,6 +17805,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -17819,6 +18041,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -18052,6 +18277,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -18285,6 +18513,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -18518,6 +18749,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -18751,6 +18985,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -18984,6 +19221,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -19217,6 +19457,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -19450,6 +19693,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -19683,6 +19929,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -19916,6 +20165,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -20149,6 +20401,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -20382,6 +20637,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -20615,6 +20873,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -20848,6 +21109,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -21229,11 +21493,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   secondsToTerminalVelocity:
     UseInspectorValue: 1
-    InspectorValue: 1
+    InspectorValue: 2
     Variable: {fileID: 0}
   terminalVelocity:
     UseInspectorValue: 1
-    InspectorValue: 20
+    InspectorValue: 40
     Variable: {fileID: 0}
   useEngineGravity: 0
   gravStoppers:
@@ -21389,6 +21653,10 @@ MonoBehaviour:
     UseInspectorValue: 1
     InspectorValue: 0
     Variable: {fileID: 0}
+  hopJumpForce:
+    UseInspectorValue: 1
+    InspectorValue: 13
+    Variable: {fileID: 0}
   hoppingLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -21439,6 +21707,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -21672,6 +21943,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -21905,6 +22179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -22138,6 +22415,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -22371,6 +22651,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -22604,6 +22887,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -22837,6 +23123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -23070,6 +23359,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -23303,6 +23595,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -23536,6 +23831,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -23769,6 +24067,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -24002,6 +24303,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -24235,6 +24539,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -24468,6 +24775,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -24701,6 +25011,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -24934,6 +25247,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -25167,6 +25483,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -25400,6 +25719,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -25633,6 +25955,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -25866,6 +26191,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -26099,6 +26427,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -26332,6 +26663,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -26565,6 +26899,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -26798,6 +27135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -27031,6 +27371,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -27264,6 +27607,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -27497,6 +27843,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -27730,6 +28079,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -27963,6 +28315,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -28196,6 +28551,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -28429,6 +28787,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -28662,6 +29023,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -28895,6 +29259,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -29128,6 +29495,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -29361,6 +29731,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -29594,6 +29967,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -29827,6 +30203,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -30060,6 +30439,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -30293,6 +30675,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -30526,6 +30911,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -30759,6 +31147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -30992,6 +31383,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -31225,6 +31619,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -31458,6 +31855,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -31865,6 +32265,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -32098,6 +32501,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -32331,6 +32737,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -32564,6 +32973,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -32797,6 +33209,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -33030,6 +33445,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -33263,6 +33681,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -33496,6 +33917,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -33821,6 +34245,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -34054,6 +34481,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -34287,6 +34717,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
   useProximityEffects: 0
   velocityThreshold:
     UseInspectorValue: 1
@@ -34480,6 +34913,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1958417277}
     m_Modifications:
+    - target: {fileID: 2672311149054204977, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
+      propertyPath: useProximityEffects
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2672311149054204978, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -34527,6 +34964,22 @@ PrefabInstance:
     - target: {fileID: 2672311149054204979, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
       propertyPath: m_Name
       value: CrowdAgent
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672311149054204988, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
+      propertyPath: showGizmos
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672311149054204988, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
+      propertyPath: gizmoTransparency
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672311149054204988, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
+      propertyPath: gizmoHitColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672311149054204988, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
+      propertyPath: maxRadius.InspectorValue
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
