@@ -1,16 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using NaughtyAttributes;
 
 
 public class CrowdAgent : MonoBehaviour
 {
 
-    
+    [Foldout("Events")]
+    [SerializeField] private UnityEvent OnExpireRunnerEvent;
     private Collider _myCol;
     private AreaofEffect _friendSearchAoE;
-
 
     [SerializeField] private bool useProximityEffects;
 
@@ -90,6 +91,7 @@ public class CrowdAgent : MonoBehaviour
                     if(a)
                     {
                         a._allowRunner = false;
+                        a.OnExpireRunnerEvent.Invoke();
                         a.StartCoroutine(ResetCollider());
                     }
                     
@@ -133,6 +135,7 @@ public class CrowdAgent : MonoBehaviour
 
     private void OnDrawGizmos() 
     {
+        
         gizmoDefaultColor.a = gizmoTransparency;
        // gizmoSteppedOnColor. = gizmoTransparency;
         gizmoDisabledColor.a = gizmoTransparency;

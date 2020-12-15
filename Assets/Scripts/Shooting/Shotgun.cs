@@ -64,7 +64,7 @@ public class Shotgun : InputReceiverBase
             Shoot();
     }
 
-    [Button("Test Shoot")]
+    //[Button("Test Shoot")]
     private void Shoot()
     {
         OnShootEvent.Invoke();
@@ -73,7 +73,8 @@ public class Shotgun : InputReceiverBase
         for (int i = 0; i < pellets.Count; i++)
         {
             RaycastHit hitInfo;
-
+            
+            //TODO: Remove hard connection to main camera
             Quaternion originR = Camera.main.transform.rotation;
             Vector3 originP = Camera.main.transform.position;
             originP = new Vector3(originP.x, originP.y, originP.z + Camera.main.nearClipPlane);
