@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JaguarMovement : MonoBehaviour
+public class FlyerMovement : MonoBehaviour
 {
     [SerializeField] private Transform target;
 
+    [SerializeField] FloatVariable flyingHeight;
+
     #region Seek
     [SerializeField] private FloatVariable seekSpeed;
-    [SerializeField] private FloatVariable seekDist;
+    [SerializeField] private FloatVariable maxSeekLateralDist;
+    [SerializeField] private FloatVariable minSeekLateralDist;
     #endregion
 
     #region Wander
@@ -27,14 +30,13 @@ public class JaguarMovement : MonoBehaviour
     private Vector3 rotation = Vector3.zero;
 
     #endregion
-
-    [SerializeField] FloatVariable attackRange;
-
+    
     private Vector3 vel;
-
 
     private void Start()
     {
+        transform.position = new Vector3(transform.position.x, flyingHeight, transform.position.z);
+
         vel = Vector3.zero;
 
         dirChangeTimer = 0;
@@ -44,33 +46,37 @@ public class JaguarMovement : MonoBehaviour
     {
         float distToTarget = Vector3.Distance(target.position, transform.position);
 
+        Vector3 targetSameHeight = new Vector3(target.position.x, transform.position.y, target.position.z);
+
+        float distToTargetHeight = Vector3.Distance(targetSameHeight, transform.position);
+
         #region SeekDistanceRays
         Vector3 sDir1 = transform.forward.normalized;
         Vector3 sDir2 = -transform.forward.normalized;
-        Vector3 sDir3 = transform.right.normalized;
-        Vector3 sDir4 = -transform.right.normalized;
-        Debug.DrawRay(transform.position, sDir1 * seekDist, Color.red);
-        Debug.DrawRay(transform.position, sDir2 * seekDist, Color.red);
-        Debug.DrawRay(transform.position, sDir3 * seekDist, Color.red);
-        Debug.DrawRay(transform.position, sDir4 * seekDist, Color.red);
+        Vector3 sDir3 = transform.up.normalized;
+        Vector3 sDir4 = -transform.up.normalized;
+        Debug.DrawRay(transform.position, sDir1 * maxSeekLateralDist, Color.red);
+        Debug.DrawRay(transform.position, sDir2 * maxSeekLateralDist, Color.red);
+        Debug.DrawRay(transform.position, sDir3 * maxSeekLateralDist, Color.red);
+        Debug.DrawRay(transform.position, sDir4 * maxSeekLateralDist, Color.red);
         #endregion
 
         #region MeleeDistanceRays
         Vector3 mDir1 = transform.forward.normalized;
         Vector3 mDir2 = -transform.forward.normalized;
-        Vector3 mDir3 = transform.right.normalized;
-        Vector3 mDir4 = -transform.right.normalized;
-        Debug.DrawRay(transform.position, mDir1 * attackRange, Color.blue);
-        Debug.DrawRay(transform.position, mDir2 * attackRange, Color.blue);
-        Debug.DrawRay(transform.position, mDir3 * attackRange, Color.blue);
-        Debug.DrawRay(transform.position, mDir4 * attackRange, Color.blue);
+        Vector3 mDir3 = transform.up.normalized;
+        Vector3 mDir4 = -transform.up.normalized;
+        Debug.DrawRay(transform.position, mDir1 * minSeekLateralDist, Color.blue);
+        Debug.DrawRay(transform.position, mDir2 * minSeekLateralDist, Color.blue);
+        Debug.DrawRay(transform.position, mDir3 * minSeekLateralDist, Color.blue);
+        Debug.DrawRay(transform.position, mDir4 * minSeekLateralDist, Color.blue);
         #endregion
 
-        if (distToTarget <= seekDist)
+        if (distToTargetHeight <= maxSeekLateralDist && distToTarget >= minSeekLateralDist)
         {
             if (isWandering != false) isWandering = false;
 
-            if (distToTarget > attackRange)
+            if (distToTargetHeight > minSeekLateralDist)
             {
                 Seek();
             }
@@ -91,17 +97,18 @@ public class JaguarMovement : MonoBehaviour
 
     private void Seek()
     {
-        Vector3 wantedVel = target.position - transform.position;
+        Vector3 wantedPos = new Vector3(target.position.x, flyingHeight, target.position.z);
+
+        Vector3 wantedVel = wantedPos - transform.position;
         wantedVel = wantedVel.normalized * seekSpeed;
 
         wantedVel = new Vector3(wantedVel.x, 0, wantedVel.z);
-
         Vector3 steering = wantedVel - vel;
 
         vel = Vector3.ClampMagnitude(vel + steering, seekSpeed);
         transform.position += new Vector3(vel.x, 0, vel.z) * Time.deltaTime;
         
-        if (vel != Vector3.zero) transform.forward = vel.normalized;
+        if (vel != Vector3.zero)transform.forward = vel.normalized;
 
         Debug.DrawRay(transform.position, vel.normalized * 2, Color.green);
         Debug.DrawRay(transform.position, wantedVel.normalized * 2, Color.magenta);
@@ -122,7 +129,7 @@ public class JaguarMovement : MonoBehaviour
 
         if (rotation.y < 0) rotation = Vector3.zero;
 
-        transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, rotation, Time.deltaTime* dirChangeInterval);
+        transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, rotation, Time.deltaTime * dirChangeInterval);
         Vector3 move = transform.forward * wanderSpeed;
         transform.position += move * Time.deltaTime;
 
