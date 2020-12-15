@@ -19,6 +19,7 @@ public abstract class InputReceiverBase : MonoBehaviour, ISeekInput
     [SerializeField] protected bool _useInput;
     public bool UseInput {get => _useInput; set => value = _useInput;}
 
+    protected bool _input;
     
     protected virtual void RegisterForInput()
     {

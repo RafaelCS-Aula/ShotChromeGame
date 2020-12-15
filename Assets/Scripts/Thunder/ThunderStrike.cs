@@ -9,16 +9,19 @@ public class StrikeEvent : UnityEvent<Vector3>{}
 
 public class ThunderStrike : InputReceiverBase
 {
+    
+
+    [Foldout("Events")]
+    [SerializeField] private UnityEvent OnSummonEvent;
+    [Foldout("Events")]
+    [SerializeField] private StrikeEvent OnStrikeEvent;
+
     [SerializeField] private FloatVariable summonToStrikeDelay; 
     [SerializeField] private LayerMask impactLayer;
-    [SerializeField] private UnityEvent OnSummonEvent;
-    [SerializeField] private StrikeEvent OnStrikeEvent;
 
     [SerializeField] private Transform originPoint;
 
     private const float _originHeight = 1500;
-
-    private bool _input;
 
     [SerializeField] private FloatVariable summonCoolDown;
 

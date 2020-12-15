@@ -19,7 +19,9 @@ public class AreaofEffect : MonoBehaviour
     [SerializeField] private bool showGizmos;
 
     [ShowIf("showGizmos")]
-    [SerializeField] private Color gizmoColor;
+    [SerializeField] private Color gizmoHitColor;
+    [ShowIf("showGizmos")]
+    [SerializeField] private Color gizmoBlockedColor;
 
     [ShowIf("showGizmos")]
     [Range(0,1)]
@@ -40,12 +42,15 @@ public class AreaofEffect : MonoBehaviour
     {
         HitsAndAffect =
              new Dictionary<Collider, float>();
+
+             print("boom");
         // Debug
         debugPoints = new List<(Vector3, bool, float)>();
         debugPoints.Add((center, true, effectFalloff.Value.Evaluate(0)));
         //////////
-
+        print("From AoE: Radius - " + maxRadius.Value );
         _insideArea = Physics.OverlapSphere(center, maxRadius, affectedLayers);
+        print(_insideArea.Length);
         foreach(Collider c in _insideArea)
         {
             Vector3 dirToHit;
@@ -58,7 +63,9 @@ public class AreaofEffect : MonoBehaviour
             RaycastHit wallHit;
             if(Physics.SphereCast(center,1,dirToHit,out wallHit,distToHit,fullyBlockedByLayers))
             {
-                Debug.DrawLine(center, wallHit.point, Color.red,4);
+                if(showGizmos)
+                    Debug.DrawLine(center, wallHit.point, gizmoBlockedColor,4);
+                        print("hit wall");
                 continue;
             }
                 
@@ -81,8 +88,9 @@ public class AreaofEffect : MonoBehaviour
             //Debug
             debugPoints.Add((c.ClosestPoint(center), true, effectModifier));
 
-            Debug.DrawLine(center, c.ClosestPoint(center), Color.yellow,4);
-            //print("bzzz");
+            if(showGizmos)
+                Debug.DrawLine(center, c.ClosestPoint(center), gizmoHitColor,4);
+            print(debugPoints.Count);
             /////////////////
             
             //Get the Health component of the hit colliders and affect them.
@@ -99,29 +107,22 @@ public class AreaofEffect : MonoBehaviour
     {
         if(!showGizmos)
             return;
-
+        gizmoHitColor.a = gizmoTransparency;
+        
         if(debugPoints.Count > 0)
         {
-            Gizmos.DrawWireSphere(debugPoints[0].pos, maxRadius);
+            Gizmos.DrawSphere(debugPoints[0].pos, maxRadius);    
             for (int i = 1; i < debugPoints.Count; i++)
             {
                 if(debugPoints[i].hit)
-                    Gizmos.color = Color.yellow;
+                    Gizmos.color = gizmoHitColor;
                 else
-                    Gizmos.color = Color.red;
+                    Gizmos.color = gizmoBlockedColor;
                 
-                Gizmos.DrawSphere(debugPoints[i].pos, debugPoints[i].eff);
+                Gizmos.DrawWireSphere(debugPoints[i].pos, debugPoints[i].eff);
             }
         }
 
-        else
-        {
-            gizmoColor.a = gizmoTransparency;
-
-            Gizmos.color = gizmoColor;
-
-            Gizmos.DrawWireSphere(transform.position, maxRadius);
-        }
             
         
 

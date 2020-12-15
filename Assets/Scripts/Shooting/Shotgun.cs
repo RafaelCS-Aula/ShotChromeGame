@@ -1,10 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using NaughtyAttributes;
 
-public class Shotgun : MonoBehaviour
+public class Shotgun : InputReceiverBase
 {
     #region InspectorVars
+
+    [Foldout("Events")]
+    [SerializeField] private UnityEvent OnShootEvent;
+
     [SerializeField] IntVariable pelletsPerShot;
 
     [SerializeField] FloatVariable maxPelletDamage;
@@ -14,8 +20,6 @@ public class Shotgun : MonoBehaviour
     [SerializeField] FloatVariable scfireRateModifier;
 
     [SerializeField] BoolVariable isSuperCharged;
-
-    [SerializeField] KeycodeVariable shootInput;
 
     [SerializeField] CurveVariable pelletDamageFalloff;
 
@@ -27,32 +31,50 @@ public class Shotgun : MonoBehaviour
     private float shotInterval;
     private float shotTimer;
 
-    private LayerMask enemyLayer;
+    [SerializeField] private LayerMask enemyLayer;
 
+
+    protected override void RegisterForInput()
+    {
+        base.RegisterForInput();
+        if(UseInput)
+            InputHolder.InpShoot += InputDown;
+        else if(!UseInput)
+            InputHolder.InpShoot -= InputDown;
+    }
+
+    private void InputDown(bool key) => _input = key;
     private void Awake()
     {
         pellets = new List<Quaternion>(new Quaternion[pelletsPerShot]);
         shotTimer = 0;
-        enemyLayer = LayerMask.NameToLayer("Enemy");
     }
 
     private void Update()
     {
         shotInterval = GetShotInterval();
 
-        if (shotTimer > 0) shotTimer -= Time.deltaTime;
+        if (_input && shotTimer > 0) shotTimer -= Time.deltaTime;
 
-        if (Input.GetKeyDown(shootInput) && shotTimer <= 0) Shoot();
     }
 
+    private void TryToShoot()
+    {
+        if(shotTimer <= 0) 
+            Shoot();
+    }
+
+    //[Button("Test Shoot")]
     private void Shoot()
     {
+        OnShootEvent.Invoke();
         int numberOfHits = 0;
 
         for (int i = 0; i < pellets.Count; i++)
         {
             RaycastHit hitInfo;
-
+            
+            //TODO: Remove hard connection to main camera
             Quaternion originR = Camera.main.transform.rotation;
             Vector3 originP = Camera.main.transform.position;
             originP = new Vector3(originP.x, originP.y, originP.z + Camera.main.nearClipPlane);
