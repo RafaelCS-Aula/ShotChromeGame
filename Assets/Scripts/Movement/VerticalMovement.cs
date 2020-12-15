@@ -40,6 +40,14 @@ public class VerticalMovement : MovementBase
     [SerializeField] 
     private FloatVariable hopForwardForce;
 
+    [ShowIf("canCrowdHop")]
+    [SerializeField] 
+    private FloatVariable hopLeapUpForce;
+
+    [ShowIf("canCrowdHop")]
+    [SerializeField] 
+    private FloatVariable hopLeapForwardForce;
+
     private RaycastHit _rayhit;
 
     [ShowIf("canCrowdHop")]
@@ -167,7 +175,10 @@ public class VerticalMovement : MovementBase
         {
             print("new head");
             OnHopEvent.Invoke();
-            Leap(hopForwardForce, hopUpwardForce);
+            if(_input)
+                Leap(hopLeapForwardForce, hopLeapUpForce);
+            else
+                Leap(hopForwardForce, hopUpwardForce);
 
         }
         _currentCrowdCollider = _newCrowdCollider;
