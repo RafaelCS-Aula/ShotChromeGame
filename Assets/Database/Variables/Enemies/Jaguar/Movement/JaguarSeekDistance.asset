@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: JaguarSeekDistance
   m_EditorClassIdentifier: 
   DevDescription: Distance in which the unit will start the Seek state
-  variableValue: 10
+  variableValue: 25

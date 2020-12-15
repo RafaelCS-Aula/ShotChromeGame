@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: JaguarDirectionChangeInterval
   m_EditorClassIdentifier: 
   DevDescription: How long between every change of direction when on Wander state
-  variableValue: 1
+  variableValue: 5

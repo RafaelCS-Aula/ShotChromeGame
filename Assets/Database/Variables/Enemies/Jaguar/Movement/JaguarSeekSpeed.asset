@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: JaguarSeekSpeed
   m_EditorClassIdentifier: 
   DevDescription: Unit speed when on Seek state
-  variableValue: 2
+  variableValue: 20
