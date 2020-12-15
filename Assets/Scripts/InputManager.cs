@@ -28,7 +28,7 @@ public sealed class InputManager : MonoBehaviour
         InpDirection.Invoke(_cardinalInputs);
 
         InpJump.Invoke(Input.GetKey(jumpKey));
-        InpShoot.Invoke(Input.GetKey(shootKey));
+        InpShoot.Invoke(Input.GetKeyDown(shootKey));
         InpThunder.Invoke(Input.GetKey(thunderKey));
 
 

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6493709729378717135
+--- !u!1 &2972285508808646481
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,139 +8,106 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6493709729378717122}
-  - component: {fileID: 6493709729136293367}
-  - component: {fileID: 6493709729378717134}
-  - component: {fileID: 1930468617908264476}
+  - component: {fileID: 2972285508808646483}
+  - component: {fileID: 2972285508808646482}
+  - component: {fileID: 3455174961997311218}
+  - component: {fileID: 359841165671420245}
   m_Layer: 0
-  m_Name: ShotGunShooter
+  m_Name: PlayerHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6493709729378717122
+--- !u!4 &2972285508808646483
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6493709729378717135}
+  m_GameObject: {fileID: 2972285508808646481}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.010020445, y: 0.041705627, z: 0.10865287}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6493709729136293367
+--- !u!114 &2972285508808646482
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6493709729378717135}
+  m_GameObject: {fileID: 2972285508808646481}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1b2376d157d8c54386570260f330a3a, type: 3}
+  m_Script: {fileID: 11500000, guid: 619347424883fe04784fd0c0b9b84838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpKey:
+  MaxPlayerHP:
     UseInspectorValue: 0
     InspectorValue: 0
-    Variable: {fileID: 11400000, guid: 91176998c755d734ab27d73fb8b85289, type: 2}
-  shootKey:
-    UseInspectorValue: 0
-    InspectorValue: 0
-    Variable: {fileID: 11400000, guid: f30c2c4a5abd15741a801e92056694a7, type: 2}
-  thunderKey:
-    UseInspectorValue: 0
-    InspectorValue: 0
-    Variable: {fileID: 11400000, guid: 165d2f42e1d139242ad2a3297eec1fc9, type: 2}
---- !u!114 &6493709729378717134
+    Variable: {fileID: 11400000, guid: d45d761ca0ee2ce449dbc5e380017e3c, type: 2}
+  PlayerHP: {fileID: 11400000, guid: b78d3a7b10555dc4d93832de30c422cd, type: 2}
+--- !u!114 &3455174961997311218
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6493709729378717135}
+  m_GameObject: {fileID: 2972285508808646481}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02edcd17b6ced67429419e2c9e314390, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e839e4c12473014b9b3d3faccc0f61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _useInput: 1
-  OnShootEvent:
+  Event: {fileID: 11400000, guid: 8252108987d608d428fc4e8e1ed6e974, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  PositionResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  DamageResponse:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1930468617908264476}
+      - m_Target: {fileID: 2972285508808646482}
+        m_TargetAssemblyTypeName: PlayerHealth, Assembly-CSharp
+        m_MethodName: GetDamaged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 359841165671420245}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 3dfcfbb99beb7f448bb1337042663a6b, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: 574a18be230761a4a8afe93fc2d31109, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  pelletsPerShot:
-    UseInspectorValue: 0
-    InspectorValue: 0
-    Variable: {fileID: 11400000, guid: 86102a97b29bb4f41928690c85523130, type: 2}
-  maxPelletDamage:
-    UseInspectorValue: 0
-    InspectorValue: 0
-    Variable: {fileID: 11400000, guid: 68ddb66b260f9f84f847d00f7f34d748, type: 2}
-  maxShotDistance:
-    UseInspectorValue: 0
-    InspectorValue: 0
-    Variable: {fileID: 11400000, guid: 11c7b74fef611d0428d97d6b78a60275, type: 2}
-  shotConeAngle:
-    UseInspectorValue: 0
-    InspectorValue: 0
-    Variable: {fileID: 11400000, guid: 951e3c4660db94746ac358114a775a76, type: 2}
-  defaultFireRate:
-    UseInspectorValue: 0
-    InspectorValue: 0
-    Variable: {fileID: 11400000, guid: 4cf95ec09ad1a7b449e88f919d9160a0, type: 2}
-  scfireRateModifier:
-    UseInspectorValue: 0
-    InspectorValue: 0
-    Variable: {fileID: 11400000, guid: 0dd8dddc46bda6149b0d479543d95308, type: 2}
-  isSuperCharged:
-    UseInspectorValue: 0
-    InspectorValue: 0
-    Variable: {fileID: 11400000, guid: 006e1f5915136c546a0be6764b061696, type: 2}
-  pelletDamageFalloff:
-    UseInspectorValue: 0
-    InspectorValue:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    Variable: {fileID: 11400000, guid: 8f925412a493d2a4c9ee870c411afa10, type: 2}
-  cameraShotOrigin: {fileID: 0}
-  layersToHit:
-    serializedVersion: 2
-    m_Bits: 768
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 512
---- !u!82 &1930468617908264476
+--- !u!82 &359841165671420245
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6493709729378717135}
+  m_GameObject: {fileID: 2972285508808646481}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

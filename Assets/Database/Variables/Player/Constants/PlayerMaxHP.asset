@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fbfa991bdad19a45a24e2e39d849577, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f25694c1e7482b48a1ef7f715245d18, type: 3}
   m_Name: PlayerMaxHP
   m_EditorClassIdentifier: 
   DevDescription: 
-  variableValue: 0
+  variableValue: 100
