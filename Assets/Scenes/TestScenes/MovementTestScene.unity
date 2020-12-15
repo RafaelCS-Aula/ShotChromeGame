@@ -353,7 +353,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &14636433
 GameObject:
@@ -585,7 +586,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &20564642
 GameObject:
@@ -817,7 +819,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &48994050
 GameObject:
@@ -1049,7 +1052,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &54118027
 GameObject:
@@ -1281,7 +1285,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &62951785
 GameObject:
@@ -1513,7 +1518,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &67246092
 GameObject:
@@ -1745,7 +1751,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &96526212
 GameObject:
@@ -1977,7 +1984,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &97611568
 GameObject:
@@ -2209,7 +2217,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &98433461
 GameObject:
@@ -2537,7 +2546,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &135432782
 GameObject:
@@ -2769,7 +2779,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &145950466
 GameObject:
@@ -3001,7 +3012,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &168496482
 GameObject:
@@ -3233,7 +3245,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &172558326
 GameObject:
@@ -3465,7 +3478,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &214715051
 GameObject:
@@ -3697,7 +3711,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &222827952
 GameObject:
@@ -3929,7 +3944,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &229442855
 GameObject:
@@ -4161,7 +4177,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &292557371
 GameObject:
@@ -4393,7 +4410,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &296636704
 GameObject:
@@ -4625,7 +4643,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &299328832
 GameObject:
@@ -4857,7 +4876,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &304517123
 GameObject:
@@ -5089,7 +5109,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &304792275
 GameObject:
@@ -5321,7 +5342,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &311367164
 GameObject:
@@ -5553,7 +5575,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &326647452
 GameObject:
@@ -5785,7 +5808,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &334875266
 GameObject:
@@ -6017,7 +6041,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &341066372
 GameObject:
@@ -6249,7 +6274,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &347653961
 GameObject:
@@ -6481,7 +6507,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &393593333
 GameObject:
@@ -6713,7 +6740,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &418240985
 GameObject:
@@ -6945,7 +6973,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &420559617
 GameObject:
@@ -7177,7 +7206,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &431439875
 GameObject:
@@ -7409,7 +7439,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &441241082
 GameObject:
@@ -7641,7 +7672,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &441907166
 GameObject:
@@ -7873,240 +7905,14 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
---- !u!1 &450297380
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 450297381}
-  - component: {fileID: 450297386}
-  - component: {fileID: 450297385}
-  - component: {fileID: 450297383}
-  - component: {fileID: 450297382}
-  - component: {fileID: 450297387}
-  m_Layer: 9
-  m_Name: Cube (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &450297381
+--- !u!4 &450297381 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 2672311149054204978, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
+  m_PrefabInstance: {fileID: 2672311149485613591}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 450297380}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.332, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1958417277}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &450297382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 450297380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  useProximityEffects: 0
-  velocityThreshold:
-    UseInspectorValue: 1
-    InspectorValue: 40
-    Variable: {fileID: 0}
-  timeUntilColiderReset:
-    UseInspectorValue: 1
-    InspectorValue: 3
-    Variable: {fileID: 0}
-  maxFriendsForEffect:
-    UseInspectorValue: 1
-    InspectorValue: 10
-    Variable: {fileID: 0}
-  tresholdCrowdDensityCurve:
-    UseInspectorValue: 1
-    InspectorValue:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 2
-        outSlope: 2
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    Variable: {fileID: 0}
-  showGizmos: 1
-  gizmoDefaultColor: {r: 0.15819688, g: 0.6947105, b: 0.745283, a: 1}
-  gizmoSteppedOnColor:
-    serializedVersion: 2
-    key0: {r: 0.92502797, g: 1, b: 0, a: 1}
-    key1: {r: 0.46293166, g: 0.9528302, b: 0.5615774, a: 1}
-    key2: {r: 0.9433962, g: 0.022249907, b: 0.022249907, a: 1}
-    key3: {r: 0.48567107, g: 0.6856457, b: 0.9622642, a: 1}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 53970
-    ctime2: 65535
-    ctime3: 54356
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 47224
-    atime3: 65535
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_NumColorKeys: 3
-    m_NumAlphaKeys: 2
-  gizmoDisabledColor: {r: 0.047169805, g: 0.000667496, b: 0.000667496, a: 1}
-  gizmoTransparency: 1
---- !u!64 &450297383
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 450297380}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &450297385
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 450297380}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &450297386
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 450297380}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &450297387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 450297380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd6b2965397ff0b4c8dbf3d0738cc979, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AffectedResource: 0
-  useEffectFallOff: 0
-  effectAmount:
-    UseInspectorValue: 1
-    InspectorValue: 0
-    Variable: {fileID: 0}
-  maxRadius:
-    UseInspectorValue: 1
-    InspectorValue: 3
-    Variable: {fileID: 0}
-  affectedLayers:
-    serializedVersion: 2
-    m_Bits: 512
-  fullyBlockedByLayers:
-    serializedVersion: 2
-    m_Bits: 256
-  effectFalloff:
-    UseInspectorValue: 1
-    InspectorValue:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0.99178493
-        outSlope: 0.99178493
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    Variable: {fileID: 0}
-  showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
-  gizmoTransparency: 0
 --- !u!1 &462766211
 GameObject:
   m_ObjectHideFlags: 0
@@ -8337,7 +8143,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &466188967
 GameObject:
@@ -8569,7 +8376,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &469107478
 GameObject:
@@ -8801,7 +8609,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &508677869
 GameObject:
@@ -9033,7 +8842,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &513146230
 GameObject:
@@ -9265,7 +9075,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &526146618
 GameObject:
@@ -9497,7 +9308,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &535065099
 GameObject:
@@ -9729,7 +9541,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 1, g: 1, b: 1, a: 0.394}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0.394
 --- !u!1 &578423332
 GameObject:
@@ -9961,7 +9774,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &598656990
 GameObject:
@@ -10193,7 +10007,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &600767065
 GameObject:
@@ -10425,7 +10240,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &643451681
 GameObject:
@@ -10657,7 +10473,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &652050943
 GameObject:
@@ -10889,7 +10706,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &657125712
 GameObject:
@@ -11217,7 +11035,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &679506999
 GameObject:
@@ -11449,7 +11268,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &685794234
 GameObject:
@@ -11681,7 +11501,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &699261569
 GameObject:
@@ -11913,7 +11734,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &721249544
 GameObject:
@@ -12145,7 +11967,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &742322588
 GameObject:
@@ -12491,7 +12314,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &767298601
 GameObject:
@@ -12723,7 +12547,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &780446973
 GameObject:
@@ -12955,7 +12780,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &797322576
 GameObject:
@@ -13187,7 +13013,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &811084156
 GameObject:
@@ -13419,7 +13246,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &815232988
 GameObject:
@@ -13651,7 +13479,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &821460551
 GameObject:
@@ -13883,7 +13712,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &824472745
 GameObject:
@@ -14115,7 +13945,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &827068069
 GameObject:
@@ -14347,7 +14178,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &859307673
 GameObject:
@@ -14675,7 +14507,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &864630791
 GameObject:
@@ -14907,7 +14740,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &900599792
 GameObject:
@@ -15139,7 +14973,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &927048336
 GameObject:
@@ -15371,7 +15206,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &929584979
 GameObject:
@@ -15603,7 +15439,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &930405953
 GameObject:
@@ -15835,7 +15672,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &944478356
 GameObject:
@@ -16067,7 +15905,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &945026280
 GameObject:
@@ -16299,7 +16138,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &950541898
 GameObject:
@@ -16531,7 +16371,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &950688590
 GameObject:
@@ -16763,7 +16604,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &971709115
 GameObject:
@@ -16995,7 +16837,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &996536549
 GameObject:
@@ -17227,7 +17070,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1009484053
 GameObject:
@@ -17459,7 +17303,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1044104675
 GameObject:
@@ -17691,7 +17536,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1067728880
 GameObject:
@@ -17923,7 +17769,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1102943972
 GameObject:
@@ -18155,7 +18002,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1109568899
 GameObject:
@@ -18387,7 +18235,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1127857241
 GameObject:
@@ -18619,7 +18468,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1148374515
 GameObject:
@@ -18851,7 +18701,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1164074405
 GameObject:
@@ -19083,7 +18934,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1164369264
 GameObject:
@@ -19315,7 +19167,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1168822673
 GameObject:
@@ -19547,7 +19400,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1169331744
 GameObject:
@@ -19779,7 +19633,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1170519483
 GameObject:
@@ -20011,7 +19866,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1191474624
 GameObject:
@@ -20243,7 +20099,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1247907994
 GameObject:
@@ -20475,7 +20332,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1255470480
 GameObject:
@@ -20707,7 +20565,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1284573309
 GameObject:
@@ -20939,7 +20798,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1302618259
 GameObject:
@@ -21171,7 +21031,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1312549390
 GameObject:
@@ -21245,6 +21106,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _useInput: 1
+  OnTouchHeadEvent:
+    m_PersistentCalls:
+      m_Calls: []
   maxForwardVelocity:
     UseInspectorValue: 1
     InspectorValue: 10
@@ -21447,13 +21311,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _useInput: 1
-  summonToStrikeDelay:
-    UseInspectorValue: 1
-    InspectorValue: 0.4
-    Variable: {fileID: 0}
-  impactLayer:
-    serializedVersion: 2
-    m_Bits: 256
   OnSummonEvent:
     m_PersistentCalls:
       m_Calls:
@@ -21484,6 +21341,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  summonToStrikeDelay:
+    UseInspectorValue: 1
+    InspectorValue: 0.4
+    Variable: {fileID: 0}
+  impactLayer:
+    serializedVersion: 2
+    m_Bits: 256
   originPoint: {fileID: 742322589}
   summonCoolDown:
     UseInspectorValue: 1
@@ -21502,6 +21366,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _useInput: 1
+  OnHopEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnJumpEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLandEvent:
+    m_PersistentCalls:
+      m_Calls: []
   jumpForce:
     UseInspectorValue: 1
     InspectorValue: 10
@@ -21749,7 +21622,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1319490842
 GameObject:
@@ -21981,7 +21855,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1320194260
 GameObject:
@@ -22213,7 +22088,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1342917578
 GameObject:
@@ -22445,7 +22321,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1344632034
 GameObject:
@@ -22677,7 +22554,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1351607116
 GameObject:
@@ -22909,7 +22787,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1372230385
 GameObject:
@@ -23141,7 +23020,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1384692016
 GameObject:
@@ -23373,7 +23253,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1385770230
 GameObject:
@@ -23605,7 +23486,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1397714086
 GameObject:
@@ -23837,7 +23719,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1408690211
 GameObject:
@@ -24069,7 +23952,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1413787639
 GameObject:
@@ -24301,7 +24185,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1416973305
 GameObject:
@@ -24533,7 +24418,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1422648380
 GameObject:
@@ -24765,7 +24651,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1449353448
 GameObject:
@@ -24997,7 +24884,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1458014234
 GameObject:
@@ -25229,7 +25117,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1476643556
 GameObject:
@@ -25461,7 +25350,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1477718868
 GameObject:
@@ -25693,7 +25583,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 1
-  gizmoColor: {r: 0, g: 0, b: 0, a: 1}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 1
 --- !u!1 &1487502024
 GameObject:
@@ -25925,7 +25816,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1502613988
 GameObject:
@@ -26157,7 +26049,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1507014905
 GameObject:
@@ -26389,7 +26282,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1530461728
 GameObject:
@@ -26621,7 +26515,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1534283505
 GameObject:
@@ -26853,7 +26748,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1536263813
 GameObject:
@@ -27085,7 +26981,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1560854844
 GameObject:
@@ -27317,7 +27214,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1588116548
 GameObject:
@@ -27549,7 +27447,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1611090914
 GameObject:
@@ -27781,7 +27680,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1644669306
 GameObject:
@@ -28013,7 +27913,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1646958806
 GameObject:
@@ -28245,7 +28146,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1654205714
 GameObject:
@@ -28477,7 +28379,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1675254142
 GameObject:
@@ -28709,7 +28612,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1690404106
 GameObject:
@@ -28941,7 +28845,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1692437220
 GameObject:
@@ -29173,7 +29078,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1697095310
 GameObject:
@@ -29405,7 +29311,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1703064613
 GameObject:
@@ -29637,7 +29544,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1707275428
 GameObject:
@@ -29869,7 +29777,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1787197968
 GameObject:
@@ -30101,7 +30010,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1820724268
 GameObject:
@@ -30333,7 +30243,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1841985182
 GameObject:
@@ -30565,7 +30476,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1842632628
 GameObject:
@@ -30797,7 +30709,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1897150997
 GameObject:
@@ -31029,7 +30942,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1925541359
 GameObject:
@@ -31261,7 +31175,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1947558085
 GameObject:
@@ -31493,7 +31408,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1951307456
 GameObject:
@@ -31725,7 +31641,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1958417276
 GameObject:
@@ -32131,7 +32048,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &1993039087
 GameObject:
@@ -32363,7 +32281,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &2006918816
 GameObject:
@@ -32595,7 +32514,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &2009194298
 GameObject:
@@ -32827,7 +32747,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &2010383954
 GameObject:
@@ -33059,7 +32980,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &2013215990
 GameObject:
@@ -33291,7 +33213,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &2056465149
 GameObject:
@@ -33523,7 +33446,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &2074945176
 GameObject:
@@ -33755,7 +33679,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &2096273023
 GameObject:
@@ -34079,7 +34004,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &2109556937
 GameObject:
@@ -34311,7 +34237,8 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
 --- !u!1 &2111933979
 GameObject:
@@ -34543,5 +34470,63 @@ MonoBehaviour:
       m_RotationOrder: 4
     Variable: {fileID: 0}
   showGizmos: 0
-  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 0
+--- !u!1001 &2672311149485613591
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1958417277}
+    m_Modifications:
+    - target: {fileID: 2672311149054204978, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672311149054204978, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672311149054204978, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672311149054204978, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672311149054204978, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672311149054204978, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672311149054204978, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672311149054204978, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672311149054204978, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672311149054204978, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672311149054204978, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672311149054204979, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
+      propertyPath: m_Name
+      value: CrowdAgent
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}

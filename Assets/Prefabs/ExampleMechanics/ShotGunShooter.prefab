@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1540835318329487709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1540835318329487696}
+  - component: {fileID: 1540835318329487708}
+  m_Layer: 0
+  m_Name: ShotGunShooter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1540835318329487696
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540835318329487709}
+  m_LocalRotation: {x: -0.06455524, y: -0.11545524, z: -0.007519534, w: 0.99118423}
+  m_LocalPosition: {x: 0.42, y: 1.24, z: 0.35}
+  m_LocalScale: {x: 0.20054471, y: 0.21451123, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -7.453, y: -13.288, z: 0}
+--- !u!114 &1540835318329487708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540835318329487709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02edcd17b6ced67429419e2c9e314390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _useInput: 0
+  OnShootEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  pelletsPerShot:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: 86102a97b29bb4f41928690c85523130, type: 2}
+  maxPelletDamage:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: 68ddb66b260f9f84f847d00f7f34d748, type: 2}
+  maxShotDistance:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: 11c7b74fef611d0428d97d6b78a60275, type: 2}
+  shotConeAngle:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: 951e3c4660db94746ac358114a775a76, type: 2}
+  defaultFireRate:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: 4cf95ec09ad1a7b449e88f919d9160a0, type: 2}
+  scfireRateModifier:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: 0dd8dddc46bda6149b0d479543d95308, type: 2}
+  isSuperCharged:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: 006e1f5915136c546a0be6764b061696, type: 2}
+  pelletDamageFalloff:
+    UseInspectorValue: 0
+    InspectorValue:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    Variable: {fileID: 11400000, guid: 8f925412a493d2a4c9ee870c411afa10, type: 2}
+  layersToHit:
+    serializedVersion: 2
+    m_Bits: 768
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 512
