@@ -23,6 +23,8 @@ public class Shotgun : InputReceiverBase
 
     [SerializeField] CurveVariable pelletDamageFalloff;
 
+    [SerializeField] private Camera cameraShotOrigin;
+
     [SerializeField] private LayerMask layersToHit;
     #endregion
 
@@ -33,6 +35,10 @@ public class Shotgun : InputReceiverBase
 
     [SerializeField] private LayerMask enemyLayer;
 
+    private void OnEnable()
+    {
+        RegisterForInput();
+    }
 
     protected override void RegisterForInput()
     {
@@ -54,17 +60,18 @@ public class Shotgun : InputReceiverBase
     {
         shotInterval = GetShotInterval();
 
-        if (_input && shotTimer > 0) shotTimer -= Time.deltaTime;
+        if (shotTimer > 0) shotTimer -= Time.deltaTime;
 
+        if (_input) TryToShoot();
     }
 
     private void TryToShoot()
     {
-        if(shotTimer <= 0) 
+        if (shotTimer <= 0) 
             Shoot();
     }
 
-    //[Button("Test Shoot")]
+    [Button("Test Shoot")]
     private void Shoot()
     {
         OnShootEvent.Invoke();
@@ -75,9 +82,9 @@ public class Shotgun : InputReceiverBase
             RaycastHit hitInfo;
             
             //TODO: Remove hard connection to main camera
-            Quaternion originR = Camera.main.transform.rotation;
-            Vector3 originP = Camera.main.transform.position;
-            originP = new Vector3(originP.x, originP.y, originP.z + Camera.main.nearClipPlane);
+            Quaternion originR = cameraShotOrigin.transform.rotation;
+            Vector3 originP = cameraShotOrigin.transform.position;
+            originP = new Vector3(originP.x, originP.y, originP.z + cameraShotOrigin.nearClipPlane);
 
             pellets[i] = Random.rotation;
             Quaternion rotation = Quaternion.RotateTowards(originR, pellets[i], shotConeAngle);
@@ -88,7 +95,7 @@ public class Shotgun : InputReceiverBase
 
             if (Physics.Raycast(pelletRay, out hitInfo, Mathf.Infinity, layersToHit))
             {
-                if (hitInfo.transform.gameObject.layer == enemyLayer)
+                if (enemyLayer == (enemyLayer | (1 << hitInfo.transform.gameObject.layer)))
                 {
                     numberOfHits++;
 
@@ -116,7 +123,7 @@ public class Shotgun : InputReceiverBase
                 #endregion
             }
         }
-        print("HITS: " + numberOfHits);
+        //print("HITS: " + numberOfHits);
         shotTimer = shotInterval;
     }
 

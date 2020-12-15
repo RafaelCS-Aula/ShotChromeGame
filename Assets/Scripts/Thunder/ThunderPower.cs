@@ -69,7 +69,7 @@ public class ThunderPower : MonoBehaviour
         currentRadius.SetValue(rad);
         currentDamage.SetValue(dmg);
 
-        print("From Power: Radius - " + rad );
+        //print("From Power: Radius - " + rad );
 
         if(consumeOnUse)
             currentPower.Variable.SetValue(0);

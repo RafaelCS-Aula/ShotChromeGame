@@ -213,7 +213,7 @@ public class HorizontalMovement : MovementBase
            //New Head
             if(_currentCrowdCollider != contact)
             {
-                print("new colldier");
+                //print("new colldier");
                 OnTouchHeadEvent.Invoke();
                 //If going forward, and was not previously on a head
                 if(_currentCrowdCollider == null)

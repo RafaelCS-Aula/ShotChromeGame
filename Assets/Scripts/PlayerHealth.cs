@@ -26,6 +26,8 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
+        if (transform.parent == null) Destroy(gameObject);
+
+        else Destroy(transform.root.gameObject);
     }
 }
