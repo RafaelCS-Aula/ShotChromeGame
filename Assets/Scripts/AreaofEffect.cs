@@ -1,11 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using NaughtyAttributes;
 
 public class AreaofEffect : MonoBehaviour
 {
     //[SerializeField] private bool isImmediate;
+
+    [Foldout("Events")]
+    [SerializeField] private UnityEvent OnActivateAoE;
+    [Foldout("Events")]
+    [SerializeField] private UnityEvent<Vector3> OnActivateAoEPosition;
 
     [SerializeField] private ResourceTypes AffectedResource;
     [SerializeField] private bool useEffectFallOff = true;
@@ -40,6 +46,8 @@ public class AreaofEffect : MonoBehaviour
     
     public void ApplyAoE(Vector3 center)
     {
+        OnActivateAoE.Invoke();
+        OnActivateAoEPosition.Invoke(center);
         HitsAndAffect =
              new Dictionary<Collider, float>();
 
