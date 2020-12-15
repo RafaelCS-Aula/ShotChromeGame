@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SuperChargedFireRateModifier
   m_EditorClassIdentifier: 
   DevDescription: Rate of Fire improvement when player is SuperCharged
-  variableValue: 3
+  variableValue: 2.25

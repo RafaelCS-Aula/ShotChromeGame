@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: FlyerWanderSpeed
   m_EditorClassIdentifier: 
   DevDescription: 
-  variableValue: 2
+  variableValue: 10

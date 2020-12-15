@@ -429,7 +429,7 @@ MonoBehaviour:
   MaxPlayerHP:
     UseInspectorValue: 0
     InspectorValue: 0
-    Variable: {fileID: 11400000, guid: 76220b265f359f14f89cce50aef6d833, type: 2}
+    Variable: {fileID: 11400000, guid: 1ee1ed70d6d510e4586e34461631f0c5, type: 2}
   PlayerHP: {fileID: 11400000, guid: b78d3a7b10555dc4d93832de30c422cd, type: 2}
 --- !u!136 &612275143
 CapsuleCollider:
