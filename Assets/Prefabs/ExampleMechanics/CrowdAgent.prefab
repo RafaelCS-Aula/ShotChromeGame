@@ -110,7 +110,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a644f06a8be2a9a44a1928ad9d1398cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useProximityEffects: 0
+  OnExpireRunnerEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  useProximityEffects: 1
   velocityThreshold:
     UseInspectorValue: 1
     InspectorValue: 40
@@ -229,7 +232,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     Variable: {fileID: 0}
-  showGizmos: 0
-  gizmoHitColor: {r: 0, g: 0, b: 0, a: 0}
+  showGizmos: 1
+  gizmoHitColor: {r: 0, g: 0, b: 0, a: 1}
   gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
-  gizmoTransparency: 0
+  gizmoTransparency: 1
