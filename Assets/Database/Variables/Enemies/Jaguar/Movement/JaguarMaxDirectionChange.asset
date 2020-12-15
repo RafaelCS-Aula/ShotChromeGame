@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: JaguarMaxDirectionChange
   m_EditorClassIdentifier: 
   DevDescription: Maximum change in direction when on Wander state
-  variableValue: 60
+  variableValue: 180

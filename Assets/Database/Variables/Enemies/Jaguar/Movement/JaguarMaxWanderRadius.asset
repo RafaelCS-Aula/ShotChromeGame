@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: JaguarMaxWanderRadius
   m_EditorClassIdentifier: 
   DevDescription: Maximum distance the unit can go from where the Wander state begins
-  variableValue: 25
+  variableValue: 15
