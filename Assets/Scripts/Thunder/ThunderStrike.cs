@@ -52,9 +52,7 @@ public class ThunderStrike : InputReceiverBase
     private void InputDown(bool key) => _input = key;
     // Update is called once per frame
     void Update()
-    {
-
-        
+    {        
         if(_input && UseInput && _smnCooldownTimer <= 0)
         {
             

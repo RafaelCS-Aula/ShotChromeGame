@@ -108,12 +108,6 @@ public class VerticalMovement : MovementBase
 
     }
 
-    private void Update()
-    {
-        print(_input);
-
-    }
-
     public void Jump(float jumpPower)
     {
         OnJumpEvent.Invoke();

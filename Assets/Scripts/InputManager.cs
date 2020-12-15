@@ -29,7 +29,7 @@ public sealed class InputManager : MonoBehaviour
 
         InpJump.Invoke(Input.GetKey(jumpKey));
         InpShoot.Invoke(Input.GetKeyDown(shootKey));
-        InpThunder.Invoke(Input.GetKey(thunderKey));
+        InpThunder.Invoke(Input.GetKeyDown(thunderKey));
 
 
 

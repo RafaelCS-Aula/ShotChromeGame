@@ -63,13 +63,10 @@ public class Shotgun : InputReceiverBase
         if (shotTimer > 0) shotTimer -= Time.deltaTime;
 
         if (_input) TryToShoot();
-        print(InputHolder.InpShoot);
-
     }
 
     private void TryToShoot()
     {
-        print("TRYSHOOT");
         if (shotTimer <= 0) 
             Shoot();
     }
@@ -126,7 +123,7 @@ public class Shotgun : InputReceiverBase
                 #endregion
             }
         }
-        print("HITS: " + numberOfHits);
+        //print("HITS: " + numberOfHits);
         shotTimer = shotInterval;
     }
 
