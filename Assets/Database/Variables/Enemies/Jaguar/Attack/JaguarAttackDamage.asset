@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: JaguarAttackDamage
   m_EditorClassIdentifier: 
   DevDescription: Damage the unit deals to the target
-  variableValue: 20
+  variableValue: 15

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: JaguarAttackInterval
   m_EditorClassIdentifier: 
   DevDescription: How long before the unit can attack again
-  variableValue: 1.5
+  variableValue: 1
