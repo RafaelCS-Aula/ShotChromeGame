@@ -931,9 +931,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
-  field of view: 60
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -1067,10 +1067,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 472223884595511760, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
-      propertyPath: originPoint
-      value: 
-      objectReference: {fileID: 1796859524}
     - target: {fileID: 472223884595511724, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
       propertyPath: jumpKey.UseInspectorValue
       value: 0
@@ -1095,6 +1091,10 @@ PrefabInstance:
       propertyPath: thunderKey.Variable
       value: 
       objectReference: {fileID: 11400000, guid: 30821714a37e9254cb47c948071cf498, type: 2}
+    - target: {fileID: 472223884595511760, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
+      propertyPath: originPoint
+      value: 
+      objectReference: {fileID: 1796859524}
     - target: {fileID: 472223884595511761, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
       propertyPath: maxRadius.Variable
       value: 
@@ -1207,6 +1207,10 @@ PrefabInstance:
     - target: {fileID: 1523871892547782779, guid: f231e5bc22c9e9d449ee23fcf7d7170a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1523871892547782781, guid: f231e5bc22c9e9d449ee23fcf7d7170a, type: 3}
+      propertyPath: duration
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1523871892547782783, guid: f231e5bc22c9e9d449ee23fcf7d7170a, type: 3}
       propertyPath: m_Name
