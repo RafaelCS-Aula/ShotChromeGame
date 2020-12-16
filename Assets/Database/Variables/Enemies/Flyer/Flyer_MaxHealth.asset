@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Flyer_MaxHealth
   m_EditorClassIdentifier: 
   DevDescription: 
-  variableValue: 40
+  variableValue: 60

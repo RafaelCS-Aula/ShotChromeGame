@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MaxShotDistance
   m_EditorClassIdentifier: 
   DevDescription: Distance where the shot stops dealing damage
-  variableValue: 5
+  variableValue: 7
