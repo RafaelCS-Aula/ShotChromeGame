@@ -10,6 +10,8 @@ public class MouseRotation : MonoBehaviour
     private float _mouseDeltaY = 0;
     private float _horizontalDelta;
     private float _verticalDelta;
+
+    [SerializeField] private BoolVariable needMouseLock;
     private Quaternion _startRotation;
 
     [ValidateInput("HasNeededHVars", "Input horizontal sensitivity and angle limit")]
@@ -53,11 +55,13 @@ public class MouseRotation : MonoBehaviour
     {
         _startRotation = transform.rotation;
 
-        //Dont let it go to build with it like this (recommended)
-        Cursor.lockState = CursorLockMode.Locked;
+        
     }
     void Update()
     {
+        if(needMouseLock && Cursor.lockState != CursorLockMode.Locked)
+            return;
+
        // Apply trunign restrictions
        if(turnHorizontal)
        {
