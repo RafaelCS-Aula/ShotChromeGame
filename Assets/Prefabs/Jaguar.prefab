@@ -92,11 +92,11 @@ GameObject:
   - component: {fileID: 1889420878301980049}
   - component: {fileID: 1889420878301980054}
   - component: {fileID: 1889420878301980055}
-  - component: {fileID: 1889420878301980052}
   - component: {fileID: 1889420878301980048}
   - component: {fileID: 1889420878301980053}
   - component: {fileID: 1889420878301980042}
   - component: {fileID: 4777773189944095317}
+  - component: {fileID: 144141432796337883}
   m_Layer: 9
   m_Name: Jaguar
   m_TagString: Untagged
@@ -169,20 +169,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &1889420878301980052
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889420878301980043}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1889420878301980048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,6 +340,24 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   gizmoDisabledColor: {r: 0.047169805, g: 0.000667496, b: 0.000667496, a: 1}
   gizmoTransparency: 1
+--- !u!143 &144141432796337883
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889420878301980043}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &648254896024917909
 PrefabInstance:
   m_ObjectHideFlags: 0

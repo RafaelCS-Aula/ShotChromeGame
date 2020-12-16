@@ -40,6 +40,6 @@ public class FirstPersonCameraSetting : MonoBehaviour
         else
             Cursor.lockState = CursorLockMode.None;
 
-        print(_cursorLock);
+        //print(_cursorLock);
     }
 }
