@@ -361,10 +361,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1889420878301980049}
     m_Modifications:
-    - target: {fileID: 2672311149054204976, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2672311149054204978, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -413,19 +409,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrowdAgent
       objectReference: {fileID: 0}
-    - target: {fileID: 2672311149054204988, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
-      propertyPath: dealDamage
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2672311149054204990, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2672311149054204990, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
-    - {fileID: 2672311149054204989, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
-    - {fileID: 2672311149054204976, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
-    - {fileID: 2672311149054204977, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dc9a5e2dd4be5f45bb4550591475f94, type: 3}
 --- !u!4 &3308708322194492327 stripped
 Transform:

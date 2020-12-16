@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SummonToStrikeDelay
   m_EditorClassIdentifier: 
   DevDescription: 
-  variableValue: 0.1
+  variableValue: 1

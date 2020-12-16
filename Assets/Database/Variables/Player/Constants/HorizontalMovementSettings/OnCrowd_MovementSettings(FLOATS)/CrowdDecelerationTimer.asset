@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CrowdDecelerationTimer
   m_EditorClassIdentifier: 
   DevDescription: Time Period Before the Player slows down to the maximum
-  variableValue: 0.75
+  variableValue: 3
