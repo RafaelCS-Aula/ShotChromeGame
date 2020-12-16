@@ -1,11 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement; // Take this out after PoC
+using NaughtyAttributes;
 
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private FloatVariable MaxPlayerHP;
     [SerializeField] private FloatData PlayerHP;
+
+    [Scene]
+    [SerializeField] private string deathScene;
+
+    [SerializeField] private UnityEvent OnDeathEvent;
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +34,6 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
-        if (transform.parent == null) Destroy(gameObject);
-
-        else Destroy(transform.root.gameObject);
+        SceneManager.LoadScene(deathScene);
     }
 }
