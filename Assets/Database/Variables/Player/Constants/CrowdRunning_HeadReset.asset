@@ -10,7 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f25694c1e7482b48a1ef7f715245d18, type: 3}
-  m_Name: Hop_LeapUp_Force
+  m_Name: CrowdRunning_HeadReset
   m_EditorClassIdentifier: 
-  DevDescription: 
-  variableValue: 4
+  DevDescription: 'How long after the player steps on this head can they use it to
+    crowdrun again
+
+
+'
+  variableValue: 3
