@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f25694c1e7482b48a1ef7f715245d18, type: 3}
   m_Name: Hop_Forward_Force
   m_EditorClassIdentifier: 
-  DevDescription: Increases MovementSpeed When Hopping
+  DevDescription: 
   variableValue: 0

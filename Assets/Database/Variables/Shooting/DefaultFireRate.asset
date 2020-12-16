@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: DefaultFireRate
   m_EditorClassIdentifier: 
   DevDescription: How many shots the player can take per second
-  variableValue: 1
+  variableValue: 1.25

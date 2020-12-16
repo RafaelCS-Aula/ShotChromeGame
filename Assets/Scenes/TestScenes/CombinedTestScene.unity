@@ -890,6 +890,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 2972285510033710687, guid: ce1cf017a6241a247b8f6d571ea3bb6a, type: 3}
+      propertyPath: MaxPlayerHP.Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 1ee1ed70d6d510e4586e34461631f0c5, type: 2}
     - target: {fileID: 6493709728274377936, guid: ce1cf017a6241a247b8f6d571ea3bb6a, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.801

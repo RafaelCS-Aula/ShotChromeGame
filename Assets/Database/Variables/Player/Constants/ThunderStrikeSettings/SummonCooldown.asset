@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SummonCooldown
   m_EditorClassIdentifier: 
   DevDescription: 
-  variableValue: 1
+  variableValue: 1.25
