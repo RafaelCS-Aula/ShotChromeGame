@@ -26,6 +26,9 @@ public class NumberDrawer : MonoBehaviour
 
     [SerializeField] private bool useInt;
 
+    private float _displayVal;
+    private float _displayValMax;
+
     private void OnEnable() 
     {
         _text = GetComponent<Text>();
@@ -35,16 +38,20 @@ public class NumberDrawer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float displayval = useInt ? valueInt.Value : value.Value;
-        float displaymaxVal = useInt ? maxValueInt.Value : maxValue.Value;
-
-
+        if(value != null && !useInt) 
+            _displayVal = useInt ? valueInt.Value : value.Value;
+        if(maxValue!= null && !useInt)
+            _displayValMax = useInt ? maxValueInt.Value : maxValue.Value;
+            
         if(isText && _text != null)
         {
+            if(maxValue == null && value == null)
+            _display = $"{valueName}";
+
             if(maxValue == null)
-            _display = $"{valueName}: {value.Value}";
+            _display = $"{valueName} {value.Value.ToString("n2")}";
             else
-            _display = $"{valueName}: {value.Value} / {maxValue.Value}";
+            _display = $"{valueName} {value.Value.ToString("n2")} / {maxValue.Value.ToString("n2")}";
 
             _text.text = _display;
 
@@ -52,7 +59,7 @@ public class NumberDrawer : MonoBehaviour
         
         if(isSlider && _slider != null && maxValue != null) 
         {
-            print("boing");
+           
             _slider.value = value.Value;
             _slider.maxValue = maxValue.Value;
             _slider.minValue = 0;
