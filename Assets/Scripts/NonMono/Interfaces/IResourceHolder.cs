@@ -1,11 +1,9 @@
 using System;
 using UnityEngine;
 
-public interface IResourceHolder
+public interface IResourceHolder<T> where T : ResourceType
 {
-    ResourceTypes Resource{get; set;}
-
-    void AddResource(float amount);
-    void ReduceResource(float amount);
+    
+    void ReceiveResource(float amount);
     
 }
