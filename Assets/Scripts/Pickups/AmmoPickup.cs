@@ -5,7 +5,7 @@ using UnityEngine;
 public sealed class AmmoPickup : Pickup<AmmoResource>
 {
     [SerializeField] private FloatVariable chargeTime;
-    [SerializeField] private BoolData poweredUp;
+    private bool _poweredUp;
     private float _chargeTimer = 0;
 
     private void Update() 
@@ -14,14 +14,14 @@ public sealed class AmmoPickup : Pickup<AmmoResource>
             return;
         
         _chargeTimer += Time.deltaTime;
-        poweredUp.SetValue(chargeTime < _chargeTimer);    
+        _poweredUp = chargeTime < _chargeTimer;    
     
 
     }
 
     protected override void SendValue(IResourceHolder<AmmoResource> receiver)
     {
-        if(!poweredUp)
+        if(!_poweredUp)
             base.SendValue(receiver);
         else
         (receiver as IResourceHolder<ThunderAmmoResource>)?.ReceiveResource(contentAmount);

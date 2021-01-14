@@ -6,7 +6,7 @@ using UnityEngine;
 public abstract class Pickup<T>  : MonoBehaviour where T : ResourceType
 {
     [SerializeField] protected LayerMask collectorLayer;
-    [SerializeField] protected FloatData contentAmount;
+    [SerializeField] protected IntVariable contentAmount;
 
     private void OnTriggerEnter(Collider other)
     {
