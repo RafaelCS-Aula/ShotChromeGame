@@ -19,13 +19,17 @@ public class Shotgun : InputReceiverBase
     [SerializeField] FloatVariable defaultFireRate;
     [SerializeField] FloatVariable scfireRateModifier;
 
-    [SerializeField] BoolVariable isSuperCharged;
+    [SerializeField] BoolData isSuperCharged;
 
     [SerializeField] CurveVariable pelletDamageFalloff;
 
     [SerializeField] private Camera cameraShotOrigin;
 
     [SerializeField] private LayerMask layersToHit;
+
+    [SerializeField] private IntVariable currentAmmo;
+    [SerializeField] private IntVariable maxAmmo;
+    [SerializeField] private IntVariable chargedAmmo;
     #endregion
 
     private List<Quaternion> pellets;
@@ -58,6 +62,7 @@ public class Shotgun : InputReceiverBase
 
     private void Update()
     {
+        isSuperCharged.SetValue(chargedAmmo > 0);
         shotInterval = GetShotInterval();
 
         if (shotTimer > 0) shotTimer -= Time.deltaTime;
@@ -67,21 +72,31 @@ public class Shotgun : InputReceiverBase
 
     private void TryToShoot()
     {
-        if (shotTimer <= 0) 
+        if (shotTimer <= 0 && currentAmmo > 0 && chargedAmmo > 0)
+        {
             Shoot();
+        }
+            
     }
 
     [Button("Test Shoot")]
     private void Shoot()
     {
         OnShootEvent.Invoke();
+
+        // Consume Ammo
+        if(isSuperCharged)
+            chargedAmmo.OverrideValue(chargedAmmo -  1);
+        else
+            currentAmmo.OverrideValue(currentAmmo - 1);
+
         int numberOfHits = 0;
 
         for (int i = 0; i < pellets.Count; i++)
         {
             RaycastHit hitInfo;
             
-            //TODO: Remove hard connection to main camera
+            
             Quaternion originR = cameraShotOrigin.transform.rotation;
             Vector3 originP = cameraShotOrigin.transform.position;
             originP = new Vector3(originP.x, originP.y, originP.z + cameraShotOrigin.nearClipPlane);
