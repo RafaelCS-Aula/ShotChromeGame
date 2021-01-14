@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using NaughtyAttributes;
 
-public class Shotgun : InputReceiverBase
+public class Shotgun : InputReceiverBase, IResourceHolder<AmmoResource>, IResourceHolder<ThunderAmmoResource>
 {
     #region InspectorVars
 
@@ -147,4 +147,16 @@ public class Shotgun : InputReceiverBase
         float currentFirerate = isSuperCharged ? defaultFireRate * scfireRateModifier : defaultFireRate;
         return 1 / currentFirerate;
     }
+
+    void IResourceHolder<AmmoResource>.ReceiveResource(float amount)
+    {
+        currentAmmo.OverrideValue(currentAmmo.Value + (int)amount);
+        if(currentAmmo.Value > maxAmmo)
+            currentAmmo.OverrideValue(maxAmmo);
+    }
+    void IResourceHolder<ThunderAmmoResource>.ReceiveResource(float amount)
+    {
+        chargedAmmo.OverrideValue(chargedAmmo.Value + (int)amount);
+    }
+    
 }
