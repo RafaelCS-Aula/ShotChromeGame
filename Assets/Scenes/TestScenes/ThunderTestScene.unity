@@ -1111,14 +1111,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f598742f9495d8e42ac204a7311930af, type: 2}
     - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
-      propertyPath: Response.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
-      propertyPath: PositionResponse.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
       propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: ThunderPower, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -1134,30 +1126,6 @@ PrefabInstance:
       propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1387283094}
-    - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
-      propertyPath: PositionResponse.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: ZigZagLine, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
-      propertyPath: PositionResponse.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
-      propertyPath: PositionResponse.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
-      propertyPath: PositionResponse.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1387283094}
-    - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
-      propertyPath: PositionResponse.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: DrawLine
-      objectReference: {fileID: 0}
-    - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
-      propertyPath: PositionResponse.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 472223884595511763, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
       propertyPath: maxPower.UseInspectorValue
       value: 0

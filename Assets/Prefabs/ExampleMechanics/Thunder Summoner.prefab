@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2526232592717960777}
   - component: {fileID: 7205802429366162661}
   - component: {fileID: 6898435362550550527}
+  - component: {fileID: 1755790541511287285}
   m_Layer: 10
   m_Name: Thunder Summoner
   m_TagString: Untagged
@@ -170,30 +171,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Stop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: feee06242f5d3ea40a6f1812ee5a3ae2, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   PositionResponse:
     m_PersistentCalls:
       m_Calls:
@@ -212,6 +189,30 @@ MonoBehaviour:
       - m_Target: {fileID: 7205802429366162661}
         m_TargetAssemblyTypeName: ZigZagLine, Assembly-CSharp
         m_MethodName: DrawLine
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6898435362550550527}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: feee06242f5d3ea40a6f1812ee5a3ae2, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1755790541511287285}
+        m_TargetAssemblyTypeName: Spawner, Assembly-CSharp
+        m_MethodName: SpawnAt
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -688,6 +689,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1755790541511287285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472223884595511764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7c8cb84da487e248b35eca6552cb6a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 5501309246333494220, guid: c10f5e0c2ab898c42adea43e50a50c1a, type: 3}
 --- !u!1 &3483556132671641285
 GameObject:
   m_ObjectHideFlags: 0
