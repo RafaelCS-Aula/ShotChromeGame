@@ -128,7 +128,7 @@ public class VerticalMovement : MovementBase
         //_fact.x = sideAirControl.Value;
         //_fact.z = frontAirControl.Value;
 
-        print("jump!");
+        //print("jump!");
         _mov.y = jumpPower;
 
     }
@@ -174,7 +174,7 @@ public class VerticalMovement : MovementBase
         // new head
         if (_currentCrowdCollider != _newCrowdCollider)
         {
-            print("new head");
+            //print("new head");
             OnHopEvent.Invoke();
             if(_input)
                 Leap(hopLeapForwardForce, hopLeapUpForce);

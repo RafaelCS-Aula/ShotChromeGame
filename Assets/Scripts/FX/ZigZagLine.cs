@@ -15,7 +15,7 @@ public class ZigZagLine : MonoBehaviour
     LineRenderer lineRenderer;
     public void DrawLine(Vector3 endPoint)
     {
-        print("DrawLine");
+        //print("DrawLine");
         lineRenderer = GetComponent<LineRenderer>();
         if(!lineRenderer) return;
         lineRenderer.enabled = false;

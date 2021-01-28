@@ -17,17 +17,18 @@ public class JaguarAttack : MonoBehaviour
     void Start()
     {
         attackTimer = 0;
+        target = GameObject.Find("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (attackTimer > 0) attackTimer-= Time.deltaTime;
-
-        float distToTarget = Vector3.Distance(transform.position, target.position);
-
-        if (distToTarget <= attackRange && attackTimer <= 0) Attack();
-
+        if (target != null)
+        {
+            if (attackTimer > 0) attackTimer -= Time.deltaTime;
+            float distToTarget = Vector3.Distance(transform.position, target.position);
+            if (distToTarget <= attackRange && attackTimer <= 0) Attack();
+        }
     }
 
     private void Attack()

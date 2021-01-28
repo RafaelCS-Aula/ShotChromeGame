@@ -18,7 +18,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void OnDamaged(float damage)
     {
-        print("Damage: " + damage);
+        //print("Damage: " + damage);
         health -= damage;
     }
 }

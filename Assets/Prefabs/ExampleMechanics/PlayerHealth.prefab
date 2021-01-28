@@ -48,8 +48,12 @@ MonoBehaviour:
   MaxPlayerHP:
     UseInspectorValue: 0
     InspectorValue: 0
-    Variable: {fileID: 11400000, guid: d45d761ca0ee2ce449dbc5e380017e3c, type: 2}
+    Variable: {fileID: 0}
   PlayerHP: {fileID: 11400000, guid: b78d3a7b10555dc4d93832de30c422cd, type: 2}
+  deathScene: ProofOfConcept
+  OnDeathEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3455174961997311218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,6 +67,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: 8252108987d608d428fc4e8e1ed6e974, type: 2}
+  useVoidResponse: 0
+  useVector3Response: 0
+  useFloatResponse: 0
   Response:
     m_PersistentCalls:
       m_Calls: []
