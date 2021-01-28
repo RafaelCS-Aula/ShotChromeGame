@@ -42,7 +42,7 @@ public class EnemyAgentControl : MonoBehaviour
     void Update()
     {
         if (herd.showDebugGizmos)DrawDebugRays();
-        CheckForPath();
+        hasPath = CheckForPath(target.position);
 
         float distToTarget = Vector3.Distance(transform.position, target.position);
 
@@ -56,6 +56,7 @@ public class EnemyAgentControl : MonoBehaviour
 
     private void Chase()
     {
+        print("CHASING");
         Vector3 wantedPos = new Vector3(RoundFloat1D(target.position.x), agent.destination.y, RoundFloat1D(target.position.z));
 
         if (agent.destination != wantedPos)
@@ -92,15 +93,15 @@ public class EnemyAgentControl : MonoBehaviour
         return Mathf.Round(f * 100) * 0.01f;
     }
 
-    private void CheckForPath()
+    public bool CheckForPath(Vector3 destination)
     {
-        agent.CalculatePath(target.position, path);
+        agent.CalculatePath(destination, path);
 
-        if (path.status == NavMeshPathStatus.PathComplete) hasPath = true;
+        if (path.status == NavMeshPathStatus.PathComplete) return true;
 
-        else hasPath = false;
+        else return false;
 
-        if (HasWallInBetween()) hasPath = false;
+        //if (HasWallInBetween()) hasPath = false;
     }
 
     private bool HasWallInBetween()

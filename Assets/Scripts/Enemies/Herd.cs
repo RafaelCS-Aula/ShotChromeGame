@@ -118,7 +118,7 @@ public class Herd : MonoBehaviour
         for (int i = 0; i < nmAgents.Count; i++)
         {
             // Return true if one of the agents is in Chase distance and if it has a path to the target
-            if (ecAgents[i].inChaseDist)
+            if (ecAgents[i].inChaseDist && ecAgents[i].hasPath)
             {
                 isChasing = true;
                 isWandering = false;
@@ -173,14 +173,15 @@ public class Herd : MonoBehaviour
     }
 
     private void UpdateGoalPosition()
-    {
-        if (!wanderBounds.GetComponent<Collider>().bounds.Contains(goalPos))
+    {      
+        if (!wanderBounds.GetComponent<Collider>().bounds.Contains(goalPos) ||
+            !ecAgents[0].CheckForPath(goalPos))
         {
-            goalPos = transform.position +
-                new Vector3(Random.Range(-wanderLimits.x / 2, wanderLimits.x / 2),
-                wanderBounds.localPosition.y,
-                Random.Range(-wanderLimits.z / 2, wanderLimits.z / 2));
-
+            print("OUTSIDE BOUNDS");
+            goalPos = wanderBounds.position +
+                    new Vector3(Random.Range(-wanderLimits.x / 2, wanderLimits.x / 2),
+                    wanderBounds.localPosition.y,
+                    Random.Range(-wanderLimits.z / 2, wanderLimits.z / 2));
             return;
         }
 
@@ -189,6 +190,7 @@ public class Herd : MonoBehaviour
         {
             if (cAgents[i].bounds.Contains(goalPos))
             {
+                print("GOAL REAHCED");
                 goalPos = wanderBounds.position +
                     new Vector3(Random.Range(-wanderLimits.x / 2, wanderLimits.x / 2),
                     wanderBounds.localPosition.y,
@@ -196,16 +198,6 @@ public class Herd : MonoBehaviour
                 return;
             }
         }
-
-        /*GOAL POSITION CHANGED RANDOMLY
-        if (Random.Range(0, 10000) < 25) 
-        {
-            goalPos = transform.position +
-                new Vector3(Random.Range(-wanderLimits.x / 2, wanderLimits.x / 2),
-                            Random.Range(-wanderLimits.y / 2, wanderLimits.y / 2),
-                            Random.Range(-wanderLimits.z / 2, wanderLimits.z / 2));
-        }
-        */
     }
 
     private void RemoveDeadAgents()
