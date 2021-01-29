@@ -32,7 +32,7 @@ public class ThunderPower : MonoBehaviour
 
         currentPower.Variable?.ApplyChange(
             ReplenishmentCurve.Value.Evaluate(
-                (currentPower / maxPower)) * Time.deltaTime);
+                (currentPower / maxPower)));
 
         if(currentPower > maxPower)
         {
@@ -41,6 +41,8 @@ public class ThunderPower : MonoBehaviour
 
         /*print(ReplenishmentCurve.Value.Evaluate(
                 (currentPower / maxPower)) * Time.deltaTime);*/
+
+        print("Current Power = " + currentPower.Value);
 
     }
     public void EvaluatePower()

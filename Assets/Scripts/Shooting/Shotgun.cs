@@ -62,7 +62,7 @@ public class Shotgun : InputReceiverBase, IResourceHolder<AmmoResource>, IResour
 
     private void Update()
     {
-        isSuperCharged.SetValue(chargedAmmo > 0);
+        isSuperCharged?.SetValue(chargedAmmo > 0);
         shotInterval = GetShotInterval();
 
         if (shotTimer > 0) shotTimer -= Time.deltaTime;
@@ -72,7 +72,7 @@ public class Shotgun : InputReceiverBase, IResourceHolder<AmmoResource>, IResour
 
     private void TryToShoot()
     {
-        if (shotTimer <= 0 && currentAmmo > 0 && chargedAmmo > 0)
+        if (shotTimer <= 0 && (currentAmmo > 0 || chargedAmmo > 0))
         {
             Shoot();
         }
@@ -125,7 +125,7 @@ public class Shotgun : InputReceiverBase, IResourceHolder<AmmoResource>, IResour
 
                     if (enemyHealth == null) enemyHealth = hitInfo.transform.gameObject.GetComponentInParent<EnemyHealth>();
 
-                    enemyHealth.OnDamaged(dealtDamage);
+                    enemyHealth.OnDamaged(dealtDamage, this);
                 }
 
                 #region Damage Using Formula
