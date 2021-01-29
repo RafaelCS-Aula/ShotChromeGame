@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5501309246333494219}
   - component: {fileID: 5501309246333494218}
   - component: {fileID: 5501309246333494217}
-  - component: {fileID: 5501309246333494216}
   - component: {fileID: 5501309246333494223}
   - component: {fileID: 5501309246333494222}
   - component: {fileID: 5501309246333494221}
@@ -85,19 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &5501309246333494216
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5501309246333494220}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5501309246333494223
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -125,8 +111,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.6286534, y: 1.3291206, z: 2.1164646}
+  m_Center: {x: -0.022235572, y: 0.16456032, z: -0.0366354}
 --- !u!114 &5501309246333494221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,7 +132,7 @@ MonoBehaviour:
     UseInspectorValue: 0
     InspectorValue: 0
     Variable: {fileID: 11400000, guid: f0312276924fa4447b4a3fae4c79b600, type: 2}
-  chargeTime:
+  TimeChargedAfterSpawn:
     UseInspectorValue: 1
-    InspectorValue: 2
+    InspectorValue: 5
     Variable: {fileID: 0}

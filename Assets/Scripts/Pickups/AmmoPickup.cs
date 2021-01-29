@@ -4,17 +4,21 @@ using UnityEngine;
 
 public sealed class AmmoPickup : Pickup<AmmoResource>
 {
-    [SerializeField] private FloatVariable chargeTime;
+    [SerializeField] private FloatVariable TimeChargedAfterSpawn;
     private bool _poweredUp;
     private float _chargeTimer = 0;
-
+    private void Start() {
+        _chargeTimer = 0;
+    }
     private void Update() 
     {
-        if(_chargeTimer > chargeTime)
-            return;
+        if(_chargeTimer > TimeChargedAfterSpawn)
+            _poweredUp = false;
+        else
+            _poweredUp = true;
         
         _chargeTimer += Time.deltaTime;
-        _poweredUp = chargeTime < _chargeTimer;    
+            
     
 
     }
