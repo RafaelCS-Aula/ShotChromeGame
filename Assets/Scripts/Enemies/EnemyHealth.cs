@@ -29,25 +29,6 @@ public class EnemyHealth : MonoBehaviour
     private void Update()
     {
         if (health <= 0) Destroy(gameObject);
-
-        if (renderer.material.color == damageColor)
-        {
-            time = 0;
-            changingToOriginal = true;
-            changingToDamaged = false;
-        }
-
-        if (renderer.material.color == originalColor)
-        {
-            //print("");
-            //time = 0;
-            changingToOriginal = false;
-        }
-
-
-        //if (changingToOriginal) ColorChanger(damageColor, originalColor);
-        //if (changingToDamaged) ColorChanger(originalColor, damageColor);
-
     }
 
     public void OnDamaged(float damage)
@@ -59,18 +40,7 @@ public class EnemyHealth : MonoBehaviour
         changingToOriginal = false;
         StartCoroutine("ColorChange");
     }
-    /*
-    IEnumerator ColorChanger(Color start, Color end)
-    {
-        renderer.material.color = Color.Lerp(start, end, time);
 
-        if (time < 1)
-        {
-            time += Time.deltaTime / duration;
-        }
-
-    }
-    */
     public IEnumerator ColorChange()
     {
         float ElapsedTime = 0.0f;
