@@ -33,6 +33,14 @@ public abstract class GameVariable<T, K> where T:  DatabaseVariable<K>
         get { return UseInspectorValue || Variable == null ? InspectorValue : Variable.Value; }
     }
 
+    public void OverrideValue(K newValue)
+    {
+        if(UseInspectorValue || Variable == null)
+            InspectorValue = newValue;
+        else
+            Variable.SetValue(newValue);
+    }
+
    /* public static implicit operator float(Gamevariable reference)
     {
         return reference.Value;

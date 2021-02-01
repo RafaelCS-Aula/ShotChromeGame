@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using NaughtyAttributes;
 
-public class Shotgun : InputReceiverBase
+public class Shotgun : InputReceiverBase, IResourceHolder<AmmoResource>, IResourceHolder<ThunderAmmoResource>
 {
     #region InspectorVars
 
@@ -19,13 +19,17 @@ public class Shotgun : InputReceiverBase
     [SerializeField] FloatVariable defaultFireRate;
     [SerializeField] FloatVariable scfireRateModifier;
 
-    [SerializeField] BoolVariable isSuperCharged;
+    [SerializeField] BoolData isSuperCharged;
 
     [SerializeField] CurveVariable pelletDamageFalloff;
 
     [SerializeField] private Camera cameraShotOrigin;
 
     [SerializeField] private LayerMask layersToHit;
+
+    [SerializeField] private IntVariable currentAmmo;
+    [SerializeField] private IntVariable maxAmmo;
+    [SerializeField] private IntVariable chargedAmmo;
     #endregion
 
     private List<Quaternion> pellets;
@@ -58,6 +62,7 @@ public class Shotgun : InputReceiverBase
 
     private void Update()
     {
+        isSuperCharged?.SetValue(chargedAmmo > 0);
         shotInterval = GetShotInterval();
 
         if (shotTimer > 0) shotTimer -= Time.deltaTime;
@@ -67,14 +72,24 @@ public class Shotgun : InputReceiverBase
 
     private void TryToShoot()
     {
-        if (shotTimer <= 0) 
+        if (shotTimer <= 0 && (currentAmmo > 0 || chargedAmmo > 0))
+        {
             Shoot();
+        }
+            
     }
 
     [Button("Test Shoot")]
     private void Shoot()
     {
         OnShootEvent.Invoke();
+
+        // Consume Ammo
+        if(isSuperCharged)
+            chargedAmmo.OverrideValue(chargedAmmo -  1);
+        else
+            currentAmmo.OverrideValue(currentAmmo - 1);
+
         int numberOfHits = 0;
 
         for (int i = 0; i < pellets.Count; i++)
@@ -109,7 +124,7 @@ public class Shotgun : InputReceiverBase
 
                     if (enemyHealth == null) enemyHealth = hitInfo.transform.gameObject.GetComponentInParent<EnemyHealth>();
 
-                    enemyHealth.OnDamaged(dealtDamage);
+                    enemyHealth.OnDamaged(dealtDamage, this);
                 }
 
                 #region Damage Using Formula
@@ -131,4 +146,16 @@ public class Shotgun : InputReceiverBase
         float currentFirerate = isSuperCharged ? defaultFireRate * scfireRateModifier : defaultFireRate;
         return 1 / currentFirerate;
     }
+
+    void IResourceHolder<AmmoResource>.ReceiveResource(float amount)
+    {
+        currentAmmo.OverrideValue(currentAmmo.Value + (int)amount);
+        if(currentAmmo.Value > maxAmmo)
+            currentAmmo.OverrideValue(maxAmmo);
+    }
+    void IResourceHolder<ThunderAmmoResource>.ReceiveResource(float amount)
+    {
+        chargedAmmo.OverrideValue(chargedAmmo.Value + (int)amount);
+    }
+    
 }

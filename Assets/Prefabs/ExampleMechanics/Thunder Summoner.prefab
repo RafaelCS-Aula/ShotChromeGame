@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 472223884595511763}
   - component: {fileID: 2526232592717960777}
   - component: {fileID: 7205802429366162661}
+  - component: {fileID: 6898435362550550527}
+  - component: {fileID: 1755790541511287285}
   m_Layer: 10
   m_Name: Thunder Summoner
   m_TagString: Untagged
@@ -61,7 +63,7 @@ MonoBehaviour:
   thunderKey:
     UseInspectorValue: 0
     InspectorValue: 32
-    Variable: {fileID: 11400000, guid: 165d2f42e1d139242ad2a3297eec1fc9, type: 2}
+    Variable: {fileID: 11400000, guid: 30821714a37e9254cb47c948071cf498, type: 2}
 --- !u!114 &472223884595511760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,7 +91,19 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
+      - m_Target: {fileID: 6898435362550550527}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 20aca234be5a80c4f8ad65de4aec7590, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnStrikeEvent:
     m_PersistentCalls:
       m_Calls:
@@ -104,7 +118,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: b05cd052b7ec94f4f9c351a7d794cb33, type: 2}
         m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
         m_MethodName: RaisePositionArg
@@ -118,17 +132,17 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   summonToStrikeDelay:
-    UseInspectorValue: 1
+    UseInspectorValue: 0
     InspectorValue: 1
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: f9a726051d5351c4d86b95eeb910aa4f, type: 2}
   impactLayer:
     serializedVersion: 2
     m_Bits: 256
   originPoint: {fileID: 0}
   summonCoolDown:
-    UseInspectorValue: 1
+    UseInspectorValue: 0
     InspectorValue: 1
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 9143afed97cba0646a34503d7df8dc85, type: 2}
 --- !u!114 &472223884595511762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +170,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
   PositionResponse:
     m_PersistentCalls:
       m_Calls:
@@ -171,7 +185,43 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
+      - m_Target: {fileID: 7205802429366162661}
+        m_TargetAssemblyTypeName: ZigZagLine, Assembly-CSharp
+        m_MethodName: DrawLine
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6898435362550550527}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: feee06242f5d3ea40a6f1812ee5a3ae2, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1755790541511287285}
+        m_TargetAssemblyTypeName: Spawner, Assembly-CSharp
+        m_MethodName: SpawnAt
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   DamageResponse:
     m_PersistentCalls:
       m_Calls: []
@@ -253,11 +303,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxPower:
-    UseInspectorValue: 1
+    UseInspectorValue: 0
     InspectorValue: 20
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 413f8a89812ea4e4a89fe6a488fb6060, type: 2}
   currentPower:
-    UseInspectorValue: 1
+    UseInspectorValue: 0
     InspectorValue: 20
     Variable: {fileID: 11400000, guid: acab311c951432448842d576a5e833e4, type: 2}
   currentRadius: {fileID: 11400000, guid: 2d38d342517318d47b47e2a85efca121, type: 2}
@@ -272,17 +322,26 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 10
-        outSlope: 10
+        inSlope: 30.446358
+        outSlope: 30.446358
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
+        time: 0.28222114
+        value: 8.592606
+        inSlope: 5.743805
+        outSlope: 5.743805
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.18656184
+        outWeight: 0.33333334
+      - serializedVersion: 3
         time: 1
         value: 10
-        inSlope: 10
-        outSlope: 10
+        inSlope: 1.9607632
+        outSlope: 1.9607632
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -327,21 +386,30 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
+        value: 70
+        inSlope: 55.104877
+        outSlope: 55.104877
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
-        outWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.4921896
+        value: 97.12205
+        inSlope: 30.386127
+        outSlope: 30.386127
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
+        value: 100
+        inSlope: 5.667376
+        outSlope: 5.667376
         tangentMode: 34
         weightedMode: 0
-        inWeight: 0
+        inWeight: 0.33333334
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -354,45 +422,36 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
-        inSlope: -2.498065
-        outSlope: -2.498065
+        value: 10
+        inSlope: -20.86637
+        outSlope: -20.86637
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.40030983
-        value: 0
-        inSlope: -2.498065
-        outSlope: Infinity
-        tangentMode: 101
+        time: 0.4012504
+        value: 1.6273613
+        inSlope: -20.86637
+        outSlope: -9.929689
+        tangentMode: 5
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.33333334
+        outWeight: 0.048120625
       - serializedVersion: 3
-        time: 0.7003329
-        value: 0
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: 0.0023498535
-        inSlope: Infinity
+        time: 0.99494445
+        value: 0.09668948
+        inSlope: 0.11890352
         outSlope: 0
-        tangentMode: 7
+        tangentMode: 1
         weightedMode: 0
-        inWeight: 0.33333334
+        inWeight: 0.03336526
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     Variable: {fileID: 0}
-  consumeOnUse: 0
+  consumeOnUse: 1
 --- !u!120 &2526232592717960777
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -534,6 +593,115 @@ MonoBehaviour:
   pointVariation: 2
   lineLength: 150
   duration: 1
+--- !u!82 &6898435362550550527
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472223884595511764}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1dc709bf38ff2b74eb6a1c962446c814, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.988
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.05277778
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.964
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1755790541511287285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472223884595511764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7c8cb84da487e248b35eca6552cb6a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 5501309246333494220, guid: c10f5e0c2ab898c42adea43e50a50c1a, type: 3}
 --- !u!1 &3483556132671641285
 GameObject:
   m_ObjectHideFlags: 0

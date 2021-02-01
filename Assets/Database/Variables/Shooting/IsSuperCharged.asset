@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa67bc076b723f949a5d15ef5d06a8e0, type: 3}
   m_Name: IsSuperCharged
   m_EditorClassIdentifier: 
-  DevDescription: 
+  DevDescription: Shotgun is in super charged state
   variableValue: 0
