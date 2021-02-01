@@ -86,14 +86,14 @@ public class ThunderStrike : InputReceiverBase
         yield return new WaitForSeconds(summonToStrikeDelay);
 
         Vector3 origin = landingSpot;
-        print("Landing place " +  origin);
+        //print("Landing place " +  origin);
         origin.y += _originHeight;
-        print("Origin" +  origin);
+        //print("Origin" +  origin);
 
         RaycastHit strikeInfo;
         Physics.Raycast(origin, Vector3.down,out strikeInfo,_originHeight*5, impactLayer);
 
-        print("StrikePoint " +  strikeInfo.point);
+        //print("StrikePoint " +  strikeInfo.point);
 
         OnStrikeEvent.Invoke(strikeInfo.point);
 

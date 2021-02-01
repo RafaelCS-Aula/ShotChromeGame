@@ -96,7 +96,6 @@ public class Shotgun : InputReceiverBase, IResourceHolder<AmmoResource>, IResour
         {
             RaycastHit hitInfo;
             
-            
             Quaternion originR = cameraShotOrigin.transform.rotation;
             Vector3 originP = cameraShotOrigin.transform.position;
             originP = new Vector3(originP.x, originP.y, originP.z + cameraShotOrigin.nearClipPlane);
@@ -110,7 +109,7 @@ public class Shotgun : InputReceiverBase, IResourceHolder<AmmoResource>, IResour
 
             if (Physics.Raycast(pelletRay, out hitInfo, Mathf.Infinity, layersToHit))
             {
-                if (enemyLayer == (enemyLayer | (1 << hitInfo.transform.gameObject.layer)))
+                if ((enemyLayer | (1 << hitInfo.transform.gameObject.layer)) == enemyLayer)
                 {
                     numberOfHits++;
 

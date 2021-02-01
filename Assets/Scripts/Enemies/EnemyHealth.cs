@@ -41,7 +41,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void OnDamaged(float damage, MonoBehaviour source = null)
     {
-        print("Damage: " + damage);
+        //print("Damage: " + damage);
         health -= damage;
         lastDamageSource = source;
         Vector3 sourceDir = Vector3.zero; 
