@@ -81,7 +81,6 @@ public class Shotgun : InputReceiverBase
         {
             RaycastHit hitInfo;
             
-            //TODO: Remove hard connection to main camera
             Quaternion originR = cameraShotOrigin.transform.rotation;
             Vector3 originP = cameraShotOrigin.transform.position;
             originP = new Vector3(originP.x, originP.y, originP.z + cameraShotOrigin.nearClipPlane);
@@ -95,7 +94,7 @@ public class Shotgun : InputReceiverBase
 
             if (Physics.Raycast(pelletRay, out hitInfo, Mathf.Infinity, layersToHit))
             {
-                if (enemyLayer == (enemyLayer | (1 << hitInfo.transform.gameObject.layer)))
+                if ((enemyLayer | (1 << hitInfo.transform.gameObject.layer)) == enemyLayer)
                 {
                     numberOfHits++;
 
