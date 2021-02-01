@@ -118,7 +118,7 @@ public class Herd : MonoBehaviour
         for (int i = 0; i < nmAgents.Count; i++)
         {
             // Return true if one of the agents is in Chase distance and if it has a path to the target
-            if (ecAgents[i].inChaseDist && ecAgents[i].hasPath)
+            if (ecAgents[i].inChaseDist /*&& ecAgents[i].hasPath*/)
             {
                 isChasing = true;
                 isWandering = false;
@@ -177,7 +177,7 @@ public class Herd : MonoBehaviour
         if (!wanderBounds.GetComponent<Collider>().bounds.Contains(goalPos) ||
             !ecAgents[0].CheckForPath(goalPos))
         {
-            print("OUTSIDE BOUNDS");
+            //print("OUTSIDE BOUNDS");
             goalPos = wanderBounds.position +
                     new Vector3(Random.Range(-wanderLimits.x / 2, wanderLimits.x / 2),
                     wanderBounds.localPosition.y,
@@ -190,7 +190,7 @@ public class Herd : MonoBehaviour
         {
             if (cAgents[i].bounds.Contains(goalPos))
             {
-                print("GOAL REAHCED");
+                //print("GOAL REAHCED");
                 goalPos = wanderBounds.position +
                     new Vector3(Random.Range(-wanderLimits.x / 2, wanderLimits.x / 2),
                     wanderBounds.localPosition.y,
@@ -227,4 +227,6 @@ public class Herd : MonoBehaviour
             Gizmos.DrawSphere(goalPos, .5f);
         }
     }
+
+    public Transform GetTarget() => target;
 }

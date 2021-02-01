@@ -15,10 +15,10 @@ public class FirstPersonCameraSetting : MonoBehaviour
     void Awake()
     {
         //Dont let it go to build with it like this (recommended)
-        Cursor.lockState = CursorLockMode.Locked;
+        _cursorLock = true;
         Camera cam = GetComponent<Camera>();
-        if(cam)
-            cam.fieldOfView = fieldOfView;
+        if (cam) cam.fieldOfView = fieldOfView;
+        else print("NO CAM");
     }
 
     // Update is called once per frame
