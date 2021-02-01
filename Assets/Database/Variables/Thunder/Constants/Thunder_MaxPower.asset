@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Thunder_MaxPower
   m_EditorClassIdentifier: 
   DevDescription: 
-  variableValue: 20
+  variableValue: 100
