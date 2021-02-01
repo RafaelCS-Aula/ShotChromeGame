@@ -426,14 +426,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   hasPath: 0
-  hasHerd: 0
   chaseDist: 0
   isHerdChasing: 0
   inChaseDist: 0
   wallLayer:
     serializedVersion: 2
     m_Bits: 0
-  hasWander: 0
   wanderLimits: {x: 0, y: 0, z: 0}
   boundingBoxColor: {r: 0, g: 0, b: 0, a: 0}
   isHerdWandering: 0
@@ -450,7 +448,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b46625d58dafbd34ca581c77efd1f82a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   attackDamage:
     UseInspectorValue: 0
     InspectorValue: 0
@@ -480,6 +477,7 @@ MonoBehaviour:
     UseInspectorValue: 0
     InspectorValue: 0
     Variable: {fileID: 11400000, guid: 87d31b55ee0f58d46b5ed1025dda5ba8, type: 2}
+  damageColor: {r: 0.7176471, g: 0, b: 0, a: 1}
 --- !u!114 &3870282607237204575
 MonoBehaviour:
   m_ObjectHideFlags: 0

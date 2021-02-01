@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MaxPelletDamage
   m_EditorClassIdentifier: 
   DevDescription: 
-  variableValue: 40
+  variableValue: 1

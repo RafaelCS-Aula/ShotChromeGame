@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class JaguarAttack : MonoBehaviour
 {
-    [SerializeField] Transform target;
+    private Transform target;
+    private Herd herd;
 
     [SerializeField] FloatVariable attackDamage;
     [SerializeField] FloatVariable attackInterval;
@@ -17,7 +18,8 @@ public class JaguarAttack : MonoBehaviour
     void Start()
     {
         attackTimer = 0;
-        target = GameObject.Find("Player").transform;
+        herd = transform.GetComponentInParent<Herd>();
+        target = herd.GetTarget();
     }
 
     // Update is called once per frame

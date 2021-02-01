@@ -49,14 +49,14 @@ public class EnemyAgentControl : MonoBehaviour
         if (distToTarget < chaseDist) inChaseDist = true;
         else inChaseDist = false;
 
-        if (isHerdChasing && hasPath) Chase();
+        if (isHerdChasing) Chase();
 
         if (isHerdWandering) Wander();
     }
 
     private void Chase()
     {
-        print("CHASING");
+        //print("CHASING");
         Vector3 wantedPos = new Vector3(RoundFloat1D(target.position.x), agent.destination.y, RoundFloat1D(target.position.z));
 
         if (agent.destination != wantedPos)
