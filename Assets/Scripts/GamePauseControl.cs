@@ -9,19 +9,20 @@ public class GamePauseControl : MonoBehaviour
     
     public void TogglePause()
     {
+        print("toggling pause");
         if(IsPaused)
         {
             Time.timeScale = 1;
             IsPaused = false;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
         else
         {
             Time.timeScale = 0;
             IsPaused = true;
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 }

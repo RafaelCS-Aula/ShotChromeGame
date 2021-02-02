@@ -18,7 +18,7 @@ public class SliderValueSetter : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void UpdateSliderValue()
     {
         slider.value = referenceValue.Value;
     }
