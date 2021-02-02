@@ -153,6 +153,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &881307979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4374950570398694931, guid: 35d9ba2c3b2380348b2fd9eeb03fccce, type: 3}
+  m_PrefabInstance: {fileID: 4374950570327937968}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &881307982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881307979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b219e7c2c26c7a54d8840d95b4c37c9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  referenceValue: {fileID: 11400000, guid: b78d3a7b10555dc4d93832de30c422cd, type: 2}
+--- !u!1 &1228166325 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4374950570545909839, guid: 35d9ba2c3b2380348b2fd9eeb03fccce, type: 3}
+  m_PrefabInstance: {fileID: 4374950570327937968}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1228166328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228166325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b219e7c2c26c7a54d8840d95b4c37c9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  referenceValue: {fileID: 11400000, guid: acab311c951432448842d576a5e833e4, type: 2}
 --- !u!1 &1405735817
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,6 +568,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4374950570013712977, guid: 35d9ba2c3b2380348b2fd9eeb03fccce, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4374950570013712981, guid: 35d9ba2c3b2380348b2fd9eeb03fccce, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -623,6 +663,10 @@ PrefabInstance:
     - target: {fileID: 4374950570135344076, guid: 35d9ba2c3b2380348b2fd9eeb03fccce, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4374950570854472971, guid: 35d9ba2c3b2380348b2fd9eeb03fccce, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4374950571127713695, guid: 35d9ba2c3b2380348b2fd9eeb03fccce, type: 3}
       propertyPath: m_AnchorMax.x
@@ -728,6 +772,10 @@ PrefabInstance:
     - target: {fileID: 7243772976841838425, guid: 35dbcefc19452c64dbe21c3a16fbc3f3, type: 3}
       propertyPath: m_Name
       value: Pause Menu Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243772976841838425, guid: 35dbcefc19452c64dbe21c3a16fbc3f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35dbcefc19452c64dbe21c3a16fbc3f3, type: 3}
