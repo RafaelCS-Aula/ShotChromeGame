@@ -109,10 +109,7 @@ MonoBehaviour:
     UseInspectorValue: 0
     InspectorValue: 0
     Variable: {fileID: 11400000, guid: 0dd8dddc46bda6149b0d479543d95308, type: 2}
-  isSuperCharged:
-    UseInspectorValue: 0
-    InspectorValue: 0
-    Variable: {fileID: 11400000, guid: 006e1f5915136c546a0be6764b061696, type: 2}
+  isSuperCharged: {fileID: 11400000, guid: 006e1f5915136c546a0be6764b061696, type: 2}
   pelletDamageFalloff:
     UseInspectorValue: 0
     InspectorValue:
@@ -126,6 +123,18 @@ MonoBehaviour:
   layersToHit:
     serializedVersion: 2
     m_Bits: 768
+  currentAmmo:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: 7ed4469312883544da6834cb38ca1cae, type: 2}
+  maxAmmo:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
+  chargedAmmo:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: 0bc9871b9d7ecca449496a33c71bebec, type: 2}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 512
