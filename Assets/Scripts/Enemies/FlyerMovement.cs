@@ -6,7 +6,7 @@ public class FlyerMovement : MonoBehaviour
 {
     [SerializeField] private Transform target;
 
-    [SerializeField] FloatVariable flyingHeight;
+    private float flyingHeight;
 
     #region Seek
     [SerializeField] private FloatVariable seekSpeed;
@@ -23,6 +23,7 @@ public class FlyerMovement : MonoBehaviour
     private Vector3 wanderOrigin;
     [SerializeField] private FloatVariable wanderRadius;
 
+    private bool isChasing = false;
     private bool isWandering = false;
 
     private float dirChangeTimer;
@@ -35,7 +36,7 @@ public class FlyerMovement : MonoBehaviour
 
     private void Start()
     {
-        transform.position = new Vector3(transform.position.x, flyingHeight, transform.position.z);
+        flyingHeight = transform.position.y;
 
         vel = Vector3.zero;
 

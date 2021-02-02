@@ -85,7 +85,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void EnemyDeath()
     {
-        if(lastDamageSource is Shotgun)
+        if (lastDamageSource is Shotgun)
         {
             currentThunderPower.ApplyChange(ThunderPowerGift);
             OnShotgunKill.Invoke();
@@ -94,8 +94,9 @@ public class EnemyHealth : MonoBehaviour
         {
             OnAoEKill.Invoke();
         }
-        else
-            OnDefaultKill.Invoke();
+        else OnDefaultKill.Invoke();
+
+        
         Destroy(gameObject);
     }
 
