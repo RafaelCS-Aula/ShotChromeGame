@@ -30,7 +30,7 @@ public class FlyerAttack : MonoBehaviour
     {
         if (attackTimer > 0) attackTimer -= Time.deltaTime;
 
-        Vector3 targetSameHeight = new Vector3(target.position.x, flyingHeight, target.position.z);
+        Vector3 targetSameHeight = new Vector3(target.position.x, transform.position.y, target.position.z);
         float distToTarget = Vector3.Distance(targetSameHeight, transform.position);
 
         if (distToTarget <= attackRange && attackTimer <= 0) Attack();
@@ -39,6 +39,7 @@ public class FlyerAttack : MonoBehaviour
 
     private void Attack()
     {
+        print("SHOOT PROJECTILE");
         attackTimer = attackInterval;
 
         GameObject projObj = Instantiate(projPrefab);
@@ -48,7 +49,9 @@ public class FlyerAttack : MonoBehaviour
         projObj.GetComponent<FlyerProjectile>().damage = attackDamage;
         projObj.GetComponent<FlyerProjectile>().projSpeed = projectileSpeed;
         projObj.GetComponent<FlyerProjectile>().damageEvent = DamagePlayer;
+
     }
+    //Obsolete
     #region  Kamikaze Attack
     /*
     private bool isAttacking;
@@ -143,5 +146,5 @@ private void MoveToTarget()
         Gizmos.DrawSphere(attackOrigin, 1);
     }
     */
-    #endregion
+    #endregion // OBSOLETE
 }
