@@ -16,9 +16,9 @@ public class SuperAmmoChecker : MonoBehaviour
             return;
 
         if(superChargeStatus)
-            SuperCounter.SetActive(false);
-        else
             SuperCounter.SetActive(true);
+        else
+            SuperCounter.SetActive(false);
 
     }
 }
