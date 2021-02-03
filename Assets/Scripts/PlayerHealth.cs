@@ -16,10 +16,6 @@ public class PlayerHealth : MonoBehaviour, IResourceHolder<HealthResource>
     [SerializeField] private UnityEvent OnDeathEvent;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        PlayerHP.SetValue(MaxPlayerHP);
-    }
 
     // Update is called once per frame
     void Update()
