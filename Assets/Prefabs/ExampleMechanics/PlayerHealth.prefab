@@ -50,7 +50,7 @@ MonoBehaviour:
     InspectorValue: 0
     Variable: {fileID: 0}
   PlayerHP: {fileID: 11400000, guid: b78d3a7b10555dc4d93832de30c422cd, type: 2}
-  deathScene: ProofOfConcept
+  deathScene: MainMenu Scene
   OnDeathEvent:
     m_PersistentCalls:
       m_Calls: []
