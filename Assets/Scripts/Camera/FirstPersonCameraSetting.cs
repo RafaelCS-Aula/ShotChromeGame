@@ -10,15 +10,17 @@ public class FirstPersonCameraSetting : MonoBehaviour
     [SerializeField] private FloatVariable fieldOfView;
     
     private bool _cursorLock;
+    private Camera cam;
 
     // Start is called before the first frame update
     void Awake()
     {
         //Dont let it go to build with it like this (recommended)
-        _cursorLock = true;
-        Camera cam = GetComponent<Camera>();
-        print(cam.fieldOfView);
-        if (cam) cam.fieldOfView = fieldOfView;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        cam = GetComponent<Camera>();
+       
+        //if (cam) cam.fieldOfView = fieldOfView;
         print(cam.fieldOfView);
     }
     
@@ -26,21 +28,6 @@ public class FirstPersonCameraSetting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(cursorKey))
-        {
-            if(Cursor.lockState == CursorLockMode.Locked)
-                _cursorLock = false;
-            if(Cursor.lockState == CursorLockMode.None)
-                _cursorLock = true;
-             
-            
-        }
-
-        if(_cursorLock)
-            Cursor.lockState = CursorLockMode.Locked;
-        else
-            Cursor.lockState = CursorLockMode.None;
-
-        //print(_cursorLock);
+       if (cam) cam.fieldOfView = fieldOfView;
     }
 }

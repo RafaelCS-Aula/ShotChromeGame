@@ -691,6 +691,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &987493838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 987493842}
+  - component: {fileID: 987493841}
+  - component: {fileID: 987493840}
+  - component: {fileID: 987493839}
+  m_Layer: 0
+  m_Name: Cylinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!136 &987493839
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987493838}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!23 &987493840
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987493838}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &987493841
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987493838}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &987493842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987493838}
+  m_LocalRotation: {x: 0.1601375, y: -0, z: -0, w: 0.9870947}
+  m_LocalPosition: {x: -0.66, y: 1.62, z: -6.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 18.43, y: 0, z: 0}
 --- !u!1 &996555882
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,17 +882,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1387283094 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7205802429366162661, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
-  m_PrefabInstance: {fileID: 472223883969909356}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aba89daad66ecd944a54b02a5e548e26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1744322832
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,6 +989,7 @@ GameObject:
   - component: {fileID: 1796859524}
   - component: {fileID: 1796859523}
   - component: {fileID: 1796859522}
+  - component: {fileID: 1796859525}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -969,13 +1055,38 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796859521}
-  m_LocalRotation: {x: 0.18151125, y: -0, z: -0, w: 0.98338896}
-  m_LocalPosition: {x: 0, y: 5.04, z: -9.62}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.18, y: 11.2, z: -2.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 20.916, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1796859525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796859521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43bd33e32fe14894db72a159a8342de5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultImpact:
+    UseInspectorValue: 1
+    InspectorValue: 10
+    Variable: {fileID: 0}
+  _shockRadius:
+    UseInspectorValue: 1
+    InspectorValue: 30
+    Variable: {fileID: 0}
+  maximumTranslationShake: {x: 0, y: 0, z: 0}
+  maximumAngularShake: {x: 5, y: 5, z: 1}
+  frequency: 40
+  traumaExponent: 1
+  recoverySpeed: 5
 --- !u!1 &1993167276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,18 +1216,26 @@ PrefabInstance:
     - target: {fileID: 472223884595511760, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
       propertyPath: originPoint
       value: 
-      objectReference: {fileID: 1796859524}
+      objectReference: {fileID: 987493842}
     - target: {fileID: 472223884595511761, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
       propertyPath: maxRadius.Variable
       value: 
       objectReference: {fileID: 11400000, guid: f598742f9495d8e42ac204a7311930af, type: 2}
     - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
+      propertyPath: PositionResponse.m_PersistentCalls.m_Calls.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
       propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: ThunderPower, Assembly-CSharp
+      value: ShakeableTransform, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
       propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
       propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
@@ -1125,7 +1244,55 @@ PrefabInstance:
     - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
       propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1387283094}
+      objectReference: {fileID: 1796859525}
+    - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
+      propertyPath: useVoidResponse
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
+      propertyPath: useVector3Response
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
+      propertyPath: useFloatResponse
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Shake
+      objectReference: {fileID: 0}
+    - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
+      propertyPath: PositionResponse.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      value: ShakeableTransform, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
+      propertyPath: PositionResponse.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
+      propertyPath: PositionResponse.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
+      propertyPath: PositionResponse.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 1796859525}
+    - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
+      propertyPath: PositionResponse.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: ShakeDistanceAffected
+      objectReference: {fileID: 0}
+    - target: {fileID: 472223884595511762, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
+      propertyPath: PositionResponse.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 472223884595511763, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
       propertyPath: maxPower.UseInspectorValue
       value: 0
@@ -1134,6 +1301,10 @@ PrefabInstance:
       propertyPath: maxPower.Variable
       value: 
       objectReference: {fileID: 11400000, guid: 413f8a89812ea4e4a89fe6a488fb6060, type: 2}
+    - target: {fileID: 472223884595511763, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
+      propertyPath: currentPower
+      value: 
+      objectReference: {fileID: 11400000, guid: acab311c951432448842d576a5e833e4, type: 2}
     - target: {fileID: 472223884595511764, guid: 62bb899b747ccfc43b2898fc4b393cb8, type: 3}
       propertyPath: m_Name
       value: Thunder Summoner
