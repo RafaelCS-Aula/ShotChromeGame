@@ -10,14 +10,22 @@ public class ZigZagLine : MonoBehaviour
     [SerializeField] private float pointVariation;
     [SerializeField] private float  lineLength;
     [SerializeField] private float  duration;
+
+     private float widthFactor;
+     private float widthCurrentVal;
+    [SerializeField] private FloatVariable witdthMaxVal;
     private Vector3 _start;
     private Vector3 _end;
     LineRenderer lineRenderer;
+
+    public void StorePower(FloatData power) => widthCurrentVal = power.Value;
     public void DrawLine(Vector3 endPoint)
     {
+        print("stored power:" + widthCurrentVal);
         //print("DrawLine");
         lineRenderer = GetComponent<LineRenderer>();
         if(!lineRenderer) return;
+        
         lineRenderer.enabled = false;
         _end = endPoint;
         _start = _end;
@@ -37,8 +45,11 @@ public class ZigZagLine : MonoBehaviour
             
         }
         lineRenderer.SetPositions(positions);
-
+        widthFactor = widthCurrentVal / witdthMaxVal;
+        print("line width:" + widthFactor);
+        lineRenderer.widthMultiplier = widthFactor;
         lineRenderer.enabled = true;
+        
         StartCoroutine(StopThunder(duration));
 
     }
