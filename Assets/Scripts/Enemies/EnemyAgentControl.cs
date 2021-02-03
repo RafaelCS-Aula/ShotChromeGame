@@ -9,7 +9,6 @@ public class EnemyAgentControl : MonoBehaviour
     public Transform target;
 
     NavMeshAgent agent;
-    private NavMeshPath path;
 
     public bool hasPath = false;
 
@@ -36,7 +35,6 @@ public class EnemyAgentControl : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         herd = GetComponentInParent<Herd>();
         agent.SetDestination(transform.parent.transform.position);
-        path = new NavMeshPath();
     }
 
     void Update()
@@ -73,7 +71,7 @@ public class EnemyAgentControl : MonoBehaviour
         if (agent.destination != wantedPos)
         {
             //transform.LookAt(target.position);
-            agent.SetDestination(wantedPos);
+            if (CheckForPath(wantedPos)) agent.SetDestination(wantedPos);
         }
     }
 
@@ -108,6 +106,8 @@ public class EnemyAgentControl : MonoBehaviour
 
     public bool CheckForPath(Vector3 destination)
     {
+        NavMeshPath path = new NavMeshPath();
+
         agent.CalculatePath(destination, path);
 
         if (path.status == NavMeshPathStatus.PathComplete) return true;

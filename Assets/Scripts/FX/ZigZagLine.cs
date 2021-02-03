@@ -21,7 +21,7 @@ public class ZigZagLine : MonoBehaviour
     public void StorePower(FloatData power) => widthCurrentVal = power.Value;
     public void DrawLine(Vector3 endPoint)
     {
-        print("stored power:" + widthCurrentVal);
+        //print("stored power:" + widthCurrentVal);
         //print("DrawLine");
         lineRenderer = GetComponent<LineRenderer>();
         if(!lineRenderer) return;
@@ -46,7 +46,7 @@ public class ZigZagLine : MonoBehaviour
         }
         lineRenderer.SetPositions(positions);
         widthFactor = widthCurrentVal / witdthMaxVal;
-        print("line width:" + widthFactor);
+        //print("line width:" + widthFactor);
         lineRenderer.widthMultiplier = widthFactor;
         lineRenderer.enabled = true;
         

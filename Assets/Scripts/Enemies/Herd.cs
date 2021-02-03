@@ -39,6 +39,10 @@ public class Herd : MonoBehaviour
 
     [HideInInspector] public Vector3 goalPos;
 
+    [SerializeField] private float timeUntilNextGoalChange;
+
+    private float goalChangeTimer;
+
     public bool showDebugGizmos;
 
 
@@ -184,16 +188,20 @@ public class Herd : MonoBehaviour
 
     private void UpdateGoalPosition()
     {
+        goalChangeTimer += Time.deltaTime;
+        print(goalChangeTimer);
         if (nmAgents.Count <= 0) return;
 
         if (!wanderBounds.GetComponent<Collider>().bounds.Contains(goalPos) ||
-            !ecAgents[0].CheckForPath(goalPos))
+            !ecAgents[0].CheckForPath(goalPos) || goalChangeTimer >= timeUntilNextGoalChange)
         {
-            //print("OUTSIDE BOUNDS");
+            print("CHANGED");
             goalPos = wanderBounds.position +
                     new Vector3(Random.Range(-wanderLimits.x / 2, wanderLimits.x / 2),
                     wanderBounds.localPosition.y,
                     Random.Range(-wanderLimits.z / 2, wanderLimits.z / 2));
+
+            goalChangeTimer = 0;
             return;
         }
 
@@ -207,6 +215,8 @@ public class Herd : MonoBehaviour
                     new Vector3(Random.Range(-wanderLimits.x / 2, wanderLimits.x / 2),
                     wanderBounds.localPosition.y,
                     Random.Range(-wanderLimits.z / 2, wanderLimits.z / 2));
+                
+                goalChangeTimer = 0;
                 return;
             }
         }
