@@ -14,6 +14,7 @@ public class ShakeableTransform : MonoBehaviour
 {
     [SerializeField] private FloatVariable _defaultImpact;
     [SerializeField] private FloatVariable _shockRadius;
+    [SerializeField] private GameObject _targetOverride;
 
     /// <summary>
     /// Maximum distance in each direction the transform
@@ -59,9 +60,16 @@ public class ShakeableTransform : MonoBehaviour
     private float seed;
     private float _forceFactor;
 
+    private GameObject _target;
     private void Awake()
     {
         seed = UnityEngine.Random.value;
+        if(_targetOverride == null)
+        {
+            _target = gameObject;
+        }
+        else
+            _target = _targetOverride;
     }
 
    /* private void Update()
@@ -109,7 +117,7 @@ public class ShakeableTransform : MonoBehaviour
     public void ShakeDistanceAffected(Vector3 sourcePosition)
     {
         
-        float distance = Vector3.Distance(transform.position, sourcePosition);
+        float distance = Vector3.Distance(_target.transform.position, sourcePosition);
         float distance01 = Mathf.Clamp01(distance / _shockRadius);
         _forceFactor = (1-distance01);
         print(_forceFactor);
@@ -125,7 +133,7 @@ public class ShakeableTransform : MonoBehaviour
 
     public void ShakeDirectionDistanceAffected(Vector3 sourcePosition)
     {
-        float distance = Vector3.Distance(transform.position, sourcePosition);
+        float distance = Vector3.Distance(_target.transform.position, sourcePosition);
         float distance01 = Mathf.Clamp01(distance / _shockRadius);
         _forceFactor = (1-distance01);
 
@@ -136,8 +144,8 @@ public class ShakeableTransform : MonoBehaviour
 
     private IEnumerator ApplyShake(float amount)
     {
-        Vector3 startingPos = transform.localPosition;
-        Quaternion startingRot = transform.localRotation;
+        Vector3 startingPos = _target.transform.localPosition;
+        Quaternion startingRot = _target.transform.localRotation;
 
         trauma = Mathf.Clamp01(trauma + (amount * _forceFactor));
         while(trauma > 0.000f)
@@ -151,13 +159,13 @@ public class ShakeableTransform : MonoBehaviour
             // of the translational and rotational shake.
             // PerlinNoise returns a value in the 0...1 range; this is transformed to
             // be in the -1...1 range to ensure the shake travels in all directions.
-            transform.localPosition = startingPos + new Vector3(
+            _target.transform.localPosition = startingPos + new Vector3(
             maximumTranslationShake.x * (Mathf.PerlinNoise(seed, Time.time *    frequency) * 2 - 1),
             maximumTranslationShake.y * (Mathf.PerlinNoise(seed + 1, Time.time  * frequency) * 2 - 1),
             maximumTranslationShake.z * (Mathf.PerlinNoise(seed + 2, Time.time * frequency) * 2 - 1)
                 ) * shake;
 
-            transform.localRotation = startingRot * Quaternion.Euler(new Vector3(
+            _target.transform.localRotation = startingRot * Quaternion.Euler(new Vector3(
             maximumAngularShake.x * (Mathf.PerlinNoise(seed + 3, Time.time * frequency) * 2 - 1),
             maximumAngularShake.y * (Mathf.PerlinNoise(seed + 4, Time.time * frequency) * 2 - 1),
             maximumAngularShake.z * (Mathf.PerlinNoise(seed + 5, Time.time * frequency) * 2 - 1)
@@ -173,8 +181,8 @@ public class ShakeableTransform : MonoBehaviour
 
     private IEnumerator ApplyDirectionalShake(Vector3 direction)
     {
-        Vector3 startingPos = transform.localPosition;
-        Quaternion startingRot = transform.localRotation;
+        Vector3 startingPos = _target.transform.localPosition;
+        Quaternion startingRot = _target.transform.localRotation;
         trauma = Mathf.Clamp01(trauma + (_defaultImpact * _forceFactor));
 
         float factorHorizontal = Mathf.Clamp(Vector3.Dot(direction, transform.right), -1, 1);
@@ -199,7 +207,7 @@ public class ShakeableTransform : MonoBehaviour
             maximumTranslationShake.z * (Mathf.PerlinNoise(seed + 2, Time.time * frequency) * 2 - 1)
                 ) * shake;*/
 
-            transform.localRotation = startingRot * Quaternion.Euler(new Vector3(
+            _target.transform.localRotation = startingRot * Quaternion.Euler(new Vector3(
             maximumAngularShake.x * factorVertical * (Mathf.PerlinNoise(seed + 3, Time.time * frequency) * 2 - 1),
             maximumAngularShake.y * factorHorizontal * (Mathf.PerlinNoise(seed + 4, Time.time * frequency) * 2 - 1),
             maximumAngularShake.z * (Mathf.PerlinNoise(seed + 5, Time.time * frequency) * 2 - 1)
