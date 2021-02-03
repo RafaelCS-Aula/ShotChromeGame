@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PlayerHP
   m_EditorClassIdentifier: 
   DevDescription: 
-  variableValue: 100
+  variableValue: 25
