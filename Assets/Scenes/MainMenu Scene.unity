@@ -295,6 +295,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1496664047, guid: 1ecee5ce64b182e478c73d3a1495c70c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496664047, guid: 1ecee5ce64b182e478c73d3a1495c70c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -193
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496664047, guid: 1ecee5ce64b182e478c73d3a1495c70c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1294
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496664047, guid: 1ecee5ce64b182e478c73d3a1495c70c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.73088
+      objectReference: {fileID: 0}
+    - target: {fileID: 1902980365, guid: 1ecee5ce64b182e478c73d3a1495c70c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6844793348811470249, guid: 1ecee5ce64b182e478c73d3a1495c70c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -325,7 +345,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6844793348811470249, guid: 1ecee5ce64b182e478c73d3a1495c70c, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6844793348811470249, guid: 1ecee5ce64b182e478c73d3a1495c70c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -383,7 +403,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main  Menu Canvas fINAL
       objectReference: {fileID: 0}
-    - target: {fileID: 6844793348811470253, guid: 1ecee5ce64b182e478c73d3a1495c70c, type: 3}
+    - target: {fileID: 6844793350031700932, guid: 1ecee5ce64b182e478c73d3a1495c70c, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -453,7 +473,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1776732664
 GameObject:

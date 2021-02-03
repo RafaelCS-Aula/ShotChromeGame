@@ -47,7 +47,7 @@ public class FlyerAttack : MonoBehaviour
 
     private void Attack()
     {
-        print("SHOOT PROJECTILE");
+        //print("SHOOT PROJECTILE");
         attackTimer = attackInterval;
 
         GameObject projObj = Instantiate(projPrefab);
