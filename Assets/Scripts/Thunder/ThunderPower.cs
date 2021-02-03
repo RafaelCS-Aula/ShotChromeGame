@@ -7,7 +7,7 @@ using System;
 public class ThunderPower : MonoBehaviour
 {
     [SerializeField] private FloatVariable maxPower;
-    [SerializeField] private FloatVariable currentPower;
+    [SerializeField] private FloatData currentPower;
     [SerializeField] private FloatData currentRadius;
     [SerializeField] private FloatData currentDamage;
     [SerializeField] private IntData currentAmmo;
@@ -30,19 +30,17 @@ public class ThunderPower : MonoBehaviour
     private void Update() 
     {
 
-        currentPower.Variable?.ApplyChange(
-            ReplenishmentCurve.Value.Evaluate(
-                (currentPower / maxPower)));
+        currentPower.ApplyChange(ReplenishmentCurve.Value.Evaluate((currentPower.Value / maxPower.Value)));
 
-        if(currentPower > maxPower)
+        if(currentPower.Value > maxPower.Value  )
         {
-            currentPower = maxPower;
+            currentPower.SetValue(maxPower.Value);
         }
 
         /*print(ReplenishmentCurve.Value.Evaluate(
                 (currentPower / maxPower)) * Time.deltaTime);*/
 
-        print("Current Power = " + currentPower.Value);
+        //print("Current Power = " + currentPower.Value);
 
     }
     public void EvaluatePower()
@@ -50,7 +48,7 @@ public class ThunderPower : MonoBehaviour
         float rad = 0;
         float amm = 0;
         float dmg = 0;
-        float currTime = currentPower / maxPower;
+        float currTime = currentPower.Value / maxPower.Value;
 
         if(!readRadiusKeysDirectly)
             rad = radiusCurve.Value.Evaluate(currTime);
@@ -74,7 +72,7 @@ public class ThunderPower : MonoBehaviour
         //print("From Power: Radius - " + rad );
 
         if(consumeOnUse)
-            currentPower.Variable.SetValue(0);
+            currentPower.SetValue(0);
 
     }
 
