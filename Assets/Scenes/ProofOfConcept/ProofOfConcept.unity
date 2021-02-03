@@ -109,7 +109,7 @@ NavMeshSettings:
     agentRadius: 0.5
     agentHeight: 2
     agentSlope: 45
-    agentClimb: 1.99
+    agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -2430,7 +2430,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49084
+=======
+  m_Name: pb_Mesh-38106
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2949,7 +2953,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49428
+=======
+  m_Name: pb_Mesh-38450
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22943,7 +22951,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49354
+=======
+  m_Name: pb_Mesh-38376
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -23107,7 +23119,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49136
+=======
+  m_Name: pb_Mesh-38158
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -23591,7 +23607,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49526
+=======
+  m_Name: pb_Mesh-38548
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -24007,7 +24027,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49558
+=======
+  m_Name: pb_Mesh-38580
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -26107,7 +26131,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49150
+=======
+  m_Name: pb_Mesh-38172
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -27757,7 +27785,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49098
+=======
+  m_Name: pb_Mesh-38120
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -28051,7 +28083,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49280
+=======
+  m_Name: pb_Mesh-38302
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -28245,7 +28281,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49104
+=======
+  m_Name: pb_Mesh-38126
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -28669,7 +28709,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49192
+=======
+  m_Name: pb_Mesh-38214
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -28833,7 +28877,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49320
+=======
+  m_Name: pb_Mesh-38342
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -29088,7 +29136,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49376
+=======
+  m_Name: pb_Mesh-38398
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -29252,7 +29304,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49534
+=======
+  m_Name: pb_Mesh-38556
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -29416,7 +29472,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49164
+=======
+  m_Name: pb_Mesh-38186
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -29585,7 +29645,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49010
+=======
+  m_Name: pb_Mesh-38032
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -29749,7 +29813,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49472
+=======
+  m_Name: pb_Mesh-38494
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -29918,7 +29986,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh38154
+=======
+  m_Name: pb_Mesh16498
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -31490,7 +31562,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49418
+=======
+  m_Name: pb_Mesh-38440
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -31779,7 +31855,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49334
+=======
+  m_Name: pb_Mesh-38356
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -31948,7 +32028,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49362
+=======
+  m_Name: pb_Mesh-38384
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -32142,7 +32226,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49548
+=======
+  m_Name: pb_Mesh-38570
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -32366,7 +32454,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49304
+=======
+  m_Name: pb_Mesh-38326
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -32530,7 +32622,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49482
+=======
+  m_Name: pb_Mesh-38504
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -32818,7 +32914,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49128
+=======
+  m_Name: pb_Mesh-38150
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -32982,7 +33082,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49036
+=======
+  m_Name: pb_Mesh-38058
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -33176,7 +33280,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49114
+=======
+  m_Name: pb_Mesh-38136
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -33823,7 +33931,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49176
+=======
+  m_Name: pb_Mesh-38198
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -33987,7 +34099,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh38038
+=======
+  m_Name: pb_Mesh16382
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -39392,7 +39508,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49182
+=======
+  m_Name: pb_Mesh-38204
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -39763,7 +39883,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49348
+=======
+  m_Name: pb_Mesh-38370
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -39957,7 +40081,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49290
+=======
+  m_Name: pb_Mesh-38312
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -41226,7 +41354,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49462
+=======
+  m_Name: pb_Mesh-38484
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -41476,7 +41608,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49394
+=======
+  m_Name: pb_Mesh-38416
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -41759,7 +41895,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49076
+=======
+  m_Name: pb_Mesh-38098
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -41923,7 +42063,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49448
+=======
+  m_Name: pb_Mesh-38470
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -42299,7 +42443,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49024
+=======
+  m_Name: pb_Mesh-38046
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -43180,7 +43328,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49386
+=======
+  m_Name: pb_Mesh-38408
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -43500,7 +43652,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49408
+=======
+  m_Name: pb_Mesh-38430
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -43764,7 +43920,11 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_Name: pb_Mesh-49312
+=======
+  m_Name: pb_Mesh-38334
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -43922,3 +44082,97 @@ Mesh:
     offset: 0
     size: 0
     path: 
+<<<<<<< HEAD
+=======
+--- !u!1001 &7536027128878802753
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1457906608926990887, guid: 96c2a55f21eb97d4eaa6a4540a726471, type: 3}
+      propertyPath: near clip plane
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457906609497618856, guid: 96c2a55f21eb97d4eaa6a4540a726471, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457906609497618856, guid: 96c2a55f21eb97d4eaa6a4540a726471, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 28.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457906609497618856, guid: 96c2a55f21eb97d4eaa6a4540a726471, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457906609497618856, guid: 96c2a55f21eb97d4eaa6a4540a726471, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457906609497618856, guid: 96c2a55f21eb97d4eaa6a4540a726471, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457906609497618856, guid: 96c2a55f21eb97d4eaa6a4540a726471, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457906609497618856, guid: 96c2a55f21eb97d4eaa6a4540a726471, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457906609497618856, guid: 96c2a55f21eb97d4eaa6a4540a726471, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457906609497618856, guid: 96c2a55f21eb97d4eaa6a4540a726471, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457906609497618856, guid: 96c2a55f21eb97d4eaa6a4540a726471, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457906609497618856, guid: 96c2a55f21eb97d4eaa6a4540a726471, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457906609497618859, guid: 96c2a55f21eb97d4eaa6a4540a726471, type: 3}
+      propertyPath: needMouseLock.InspectorValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457906609497618859, guid: 96c2a55f21eb97d4eaa6a4540a726471, type: 3}
+      propertyPath: turnVertical
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457906609497618870, guid: 96c2a55f21eb97d4eaa6a4540a726471, type: 3}
+      propertyPath: m_Name
+      value: FullMovementCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448128045713929355, guid: 96c2a55f21eb97d4eaa6a4540a726471, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536027130029389658, guid: 96c2a55f21eb97d4eaa6a4540a726471, type: 3}
+      propertyPath: fieldOfView.InspectorValue
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933360819690906389, guid: 96c2a55f21eb97d4eaa6a4540a726471, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 96c2a55f21eb97d4eaa6a4540a726471, type: 3}
+--- !u!20 &8984363399602144614 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1457906608926990887, guid: 96c2a55f21eb97d4eaa6a4540a726471, type: 3}
+  m_PrefabInstance: {fileID: 7536027128878802753}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8984363400105271017 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1457906609497618856, guid: 96c2a55f21eb97d4eaa6a4540a726471, type: 3}
+  m_PrefabInstance: {fileID: 7536027128878802753}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> parent of 1335670 (Merge branch 'Prototype_Map')
