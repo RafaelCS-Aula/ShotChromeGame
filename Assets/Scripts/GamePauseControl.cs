@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class GamePauseControl : MonoBehaviour
 {
-    public static bool IsPaused = false;
+    public static bool IsPaused;
 
-    
+    /*private void OnEnable() {
+        IsPaused = false;
+    }*/
     public void TogglePause()
     {
         print("toggling pause");

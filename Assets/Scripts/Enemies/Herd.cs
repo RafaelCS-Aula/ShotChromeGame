@@ -189,7 +189,7 @@ public class Herd : MonoBehaviour
     private void UpdateGoalPosition()
     {
         goalChangeTimer += Time.deltaTime;
-        print(goalChangeTimer);
+        //print(goalChangeTimer);
         if (nmAgents.Count <= 0) return;
 
         if (!wanderBounds.GetComponent<Collider>().bounds.Contains(goalPos) ||
@@ -226,14 +226,18 @@ public class Herd : MonoBehaviour
     {
         int removedCount = 0;
         int numAgents = nmAgents.Count; 
-        for (int i = 0; i < numAgents; i++)
+        //List<int> indexesToRemove = new List<int>();
+        for (int i = numAgents-1; i > 0; i--)
         {
             if (nmAgents[i] == null)
             {
-                nmAgents.RemoveAt(i-removedCount);
-                ecAgents.RemoveAt(i-removedCount);
-                cAgents.RemoveAt(i-removedCount);
+                //indexesToRemove.Add(i);
+                nmAgents.RemoveAt(i);
+                ecAgents.RemoveAt(i);
+                cAgents.RemoveAt(i);
                 removedCount++;
+
+                
             }
         }
     }
