@@ -57,7 +57,7 @@ public class EnemyAgentControl : MonoBehaviour
     private void Chase()
     {
         //print("CHASING");
-        Vector3 wantedPos = new Vector3(RoundFloat1D(target.position.x), agent.destination.y, RoundFloat1D(target.position.z));
+        Vector3 wantedPos = new Vector3(RoundFloat1D(target.position.x), RoundFloat1D(target.position.y), RoundFloat1D(target.position.z));
 
         if (agent.destination != wantedPos)
         {

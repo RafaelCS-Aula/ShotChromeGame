@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 33065013992664210}
   - component: {fileID: 23466419510729776}
   - component: {fileID: 7920332997217261325}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RedWood 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
