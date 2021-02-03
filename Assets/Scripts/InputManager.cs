@@ -23,6 +23,9 @@ public sealed class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GamePauseControl.IsPaused)
+            return;
+        
         _cardinalInputs.x = Mathf.Round(Input.GetAxisRaw("Horizontal"));
         _cardinalInputs.y = Mathf.Round(Input.GetAxisRaw("Vertical"));
         InpDirection.Invoke(_cardinalInputs);
