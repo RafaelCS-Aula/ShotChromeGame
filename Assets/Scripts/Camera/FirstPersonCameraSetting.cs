@@ -17,15 +17,16 @@ public class FirstPersonCameraSetting : MonoBehaviour
         //Dont let it go to build with it like this (recommended)
         _cursorLock = true;
         Camera cam = GetComponent<Camera>();
+        print(cam.fieldOfView);
         if (cam) cam.fieldOfView = fieldOfView;
-        else print("NO CAM");
+        print(cam.fieldOfView);
     }
+    
 
     // Update is called once per frame
     void Update()
     {
-       
-        if(Input.GetKeyDown(cursorKey))
+        if (Input.GetKeyDown(cursorKey))
         {
             if(Cursor.lockState == CursorLockMode.Locked)
                 _cursorLock = false;

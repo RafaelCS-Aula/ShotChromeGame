@@ -105,6 +105,8 @@ public class Herd : MonoBehaviour
         }
 
         if (isWandering) UpdateGoalPosition();
+
+        if (!CheckForAgents()) Destroy(transform.gameObject);
     }
 
     /// <summary>
@@ -144,13 +146,19 @@ public class Herd : MonoBehaviour
         {
             if (isChasing)
             {
-                nmAgents[i].speed = agentChaseSpeed;
-                nmAgents[i].stoppingDistance = 2;
+                if (nmAgents[i])
+                {
+                    nmAgents[i].speed = agentChaseSpeed;
+                    nmAgents[i].stoppingDistance = 2;
+                }
             }
             else
             {
-                nmAgents[i].speed = agentWanderSpeed;
-                nmAgents[i].stoppingDistance = 0;
+                if (nmAgents[i])
+                {
+                    nmAgents[i].speed = agentWanderSpeed;
+                    nmAgents[i].stoppingDistance = 0;
+                }
             }
         }
     }
@@ -173,7 +181,9 @@ public class Herd : MonoBehaviour
     }
 
     private void UpdateGoalPosition()
-    {      
+    {
+        if (nmAgents.Count <= 0) return;
+
         if (!wanderBounds.GetComponent<Collider>().bounds.Contains(goalPos) ||
             !ecAgents[0].CheckForPath(goalPos))
         {
@@ -188,7 +198,7 @@ public class Herd : MonoBehaviour
         /*GOAL POSITION CHANGED WHEN ONE AGENTS REACHES IT*/
         for (int i = 0; i < cAgents.Count; i++)
         {
-            if (cAgents[i].bounds.Contains(goalPos))
+            if (cAgents[i] && cAgents[i].bounds.Contains(goalPos))
             {
                 //print("GOAL REAHCED");
                 goalPos = wanderBounds.position +
@@ -202,12 +212,16 @@ public class Herd : MonoBehaviour
 
     private void RemoveDeadAgents()
     {
-        for (int i = 0; i < nmAgents.Count; i++)
+        int removedCount = 0;
+        int numAgents = nmAgents.Count; 
+        for (int i = 0; i < numAgents; i++)
         {
             if (nmAgents[i] == null)
             {
-                nmAgents.RemoveAt(i);
-                ecAgents.RemoveAt(i);
+                nmAgents.RemoveAt(i-removedCount);
+                ecAgents.RemoveAt(i-removedCount);
+                cAgents.RemoveAt(i-removedCount);
+                removedCount++;
             }
         }
     }
@@ -229,4 +243,10 @@ public class Herd : MonoBehaviour
     }
 
     public Transform GetTarget() => target;
+
+    private bool CheckForAgents()
+    {
+        if (nmAgents.Count <= 0) return false;
+        else return true;
+    }
 }

@@ -473,10 +473,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7acdafdb8ecd854181cdd2144586736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnShotgunKill:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAoEKill:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDefaultKill:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDefaultDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnShotgunDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAoEDamaged:
+    m_PersistentCalls:
+      m_Calls: []
   MaxHealth:
     UseInspectorValue: 0
     InspectorValue: 0
     Variable: {fileID: 11400000, guid: 87d31b55ee0f58d46b5ed1025dda5ba8, type: 2}
+  ThunderPowerGift:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
+  currentThunderPower: {fileID: 11400000, guid: acab311c951432448842d576a5e833e4, type: 2}
   damageColor: {r: 0.7176471, g: 0, b: 0, a: 1}
 --- !u!114 &3870282607237204575
 MonoBehaviour:
