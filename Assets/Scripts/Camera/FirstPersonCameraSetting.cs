@@ -21,7 +21,7 @@ public class FirstPersonCameraSetting : MonoBehaviour
         cam = GetComponent<Camera>();
        
         //if (cam) cam.fieldOfView = fieldOfView;
-        print(cam.fieldOfView);
+        //print(cam.fieldOfView);
     }
     
 

@@ -115,9 +115,10 @@ public class Herd : MonoBehaviour
     /// <returns></returns>
     private void UpdateMovementStatus()
     {
+        int count = nmAgents.Count;
         bool hasAgentInChaseDist = false;
         // Iterate through every agent created
-        for (int i = 0; i < nmAgents.Count; i++)
+        for (int i = 0; i < count; i++)
         {
             // Return true if one of the agents is in Chase distance and if it has a path to the target
             if (ecAgents[i].inChaseDist /*&& ecAgents[i].hasPath*/)
@@ -129,7 +130,7 @@ public class Herd : MonoBehaviour
             }
 
             // Check if the loop is on it's last iteraction
-            if (i == nmAgents.Count - 1)
+            if (i == count - 1)
             {
                 if (!hasAgentInChaseDist)
                 {
@@ -142,6 +143,7 @@ public class Herd : MonoBehaviour
                 }
             }
         }
+
         for (int i = 0; i < nmAgents.Count; i++)
         {
             if (isChasing)

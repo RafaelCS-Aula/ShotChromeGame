@@ -30,7 +30,7 @@ public class DataEqualizer : MonoBehaviour
         
         for (int i = 0; i < _targetSet.Length; i++)
         {
-            print($"({gameObject.name}): Set {_targetSet[i].name} to {_sourceSet[i].Value}, was {_targetSet[i].Value}");
+            //print($"({gameObject.name}): Set {_targetSet[i].name} to {_sourceSet[i].Value}, was {_targetSet[i].Value}");
             _targetSet[i].SetValue(_sourceSet[i].Value);
             
         }
