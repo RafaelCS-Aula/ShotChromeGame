@@ -5,10 +5,22 @@ using UnityEngine;
 public class GamePauseControl : MonoBehaviour
 {
     public static bool IsPaused;
+    public bool StartPause;
 
-    /*private void OnEnable() {
-        IsPaused = false;
-    }*/
+    private void OnEnable() {
+        if (StartPause)
+        {
+            IsPaused = false;
+            TogglePause();
+        }
+        else
+        {
+            IsPaused = true;
+            TogglePause();
+        }
+
+    }
+
     public void TogglePause()
     {
         print("toggling pause");

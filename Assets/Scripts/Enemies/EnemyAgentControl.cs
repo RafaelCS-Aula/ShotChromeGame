@@ -19,6 +19,7 @@ public class EnemyAgentControl : MonoBehaviour
     [HideInInspector] public bool inChaseDist;
 
     public LayerMask wallLayer;
+    private NavMeshPath path;
 
     [SerializeField] private Vector3 wanderLimits = Vector3.zero;
 
@@ -34,6 +35,7 @@ public class EnemyAgentControl : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         herd = GetComponentInParent<Herd>();
+        path = new NavMeshPath();
         agent.SetDestination(transform.parent.transform.position);
     }
 
@@ -106,8 +108,6 @@ public class EnemyAgentControl : MonoBehaviour
 
     public bool CheckForPath(Vector3 destination)
     {
-        NavMeshPath path = new NavMeshPath();
-
         agent.CalculatePath(destination, path);
 
         if (path.status == NavMeshPathStatus.PathComplete) return true;

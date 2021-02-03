@@ -54,7 +54,7 @@ public class Herd : MonoBehaviour
         {
             // Create an instance of said agent, and assign it as a child of this object
             GameObject newAgent = Instantiate(
-                agentPrefab, transform);
+                agentPrefab, transform.position, Quaternion.identity, transform);
 
             // Add the agents NavMeshAgent component (required) to the nmAgents list
             nmAgents.Add(newAgent.GetComponent<NavMeshAgent>());
