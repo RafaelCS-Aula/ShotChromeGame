@@ -347,6 +347,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2160247401328116458, guid: 39e959b69f6e72e4ea78fd6985b7f0ed, type: 3}
+      propertyPath: targetScene
+      value: Protot_Map
+      objectReference: {fileID: 0}
     - target: {fileID: 2160247401567227987, guid: 39e959b69f6e72e4ea78fd6985b7f0ed, type: 3}
       propertyPath: m_Name
       value: 'Main  Menu Canvas '
