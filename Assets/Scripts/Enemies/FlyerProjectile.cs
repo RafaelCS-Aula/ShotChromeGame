@@ -7,6 +7,8 @@ public class FlyerProjectile : MonoBehaviour
     [HideInInspector] public Vector3 targetPos;
     [HideInInspector] public float damage;
     [HideInInspector] public float projSpeed;
+    [HideInInspector] public float destroyAfterSeconds;
+
     [HideInInspector] public GameEvent damageEvent;
 
     [SerializeField] private LayerMask layersToHit;
@@ -20,6 +22,7 @@ public class FlyerProjectile : MonoBehaviour
         col = GetComponent<SphereCollider>();
         col.isTrigger = true;
         hasDirection = false;
+        StartCoroutine("DestroyByTime");
     }
     // Update is called once per frame
     void Update()
@@ -40,7 +43,13 @@ public class FlyerProjectile : MonoBehaviour
             {
                 damageEvent.RaiseDamageArg(damage);
             }
+            //print("HIT " + other.gameObject.name);
             Destroy(gameObject);
         }
+    }
+    private IEnumerator DestroyByTime()
+    {
+        yield return new WaitForSeconds(destroyAfterSeconds);
+        Destroy(transform.gameObject);
     }
 }

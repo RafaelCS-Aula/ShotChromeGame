@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: StartingHP
   m_EditorClassIdentifier: 
   DevDescription: 
-  variableValue: 25
+  variableValue: 100

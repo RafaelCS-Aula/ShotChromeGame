@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -8736966319832169065}
   - component: {fileID: 3034260989331338182}
   - component: {fileID: 7953698899553380524}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FlyerProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,6 +128,7 @@ MonoBehaviour:
   targetPos: {x: 0, y: 0, z: 0}
   damage: 0
   projSpeed: 0
+  destroyAfterSeconds: 5
   damageEvent: {fileID: 0}
   layersToHit:
     serializedVersion: 2

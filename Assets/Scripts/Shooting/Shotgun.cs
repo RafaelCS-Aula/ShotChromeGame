@@ -95,7 +95,7 @@ public class Shotgun : InputReceiverBase, IResourceHolder<AmmoResource>, IResour
         }  
         else
         {
-            print("shooty");
+            //print("shooty");
             currentAmmo.OverrideValue(currentAmmo - 1);
             OnShootEvent.Invoke();
         }

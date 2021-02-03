@@ -1,28 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 public class FlyerAttack : MonoBehaviour
 {
     [SerializeField] Transform target;
 
-    [SerializeField] FloatVariable flyingHeight;
-
     [SerializeField] FloatVariable attackDamage;
     [SerializeField] FloatVariable attackInterval;
     [SerializeField] FloatVariable attackRange;
     [SerializeField] FloatVariable projectileSpeed;
+    [SerializeField] FloatVariable destroyProjAfterSeconds;
 
     [SerializeField] GameEvent DamagePlayer;
 
     [SerializeField] Transform projOrigin;
     [SerializeField] GameObject projPrefab;
 
+    [SerializeField] bool hasHerd = true;
+    [ShowIf("hasHerd")] Herd herd;
+
     private float attackTimer;
     // Start is called before the first frame update
     void Start()
     {
         attackTimer = 0;
+        if (hasHerd)
+        {
+            herd = GetComponentInParent<Herd>();
+            target = herd.GetTarget();
+        }
     }
 
     // Update is called once per frame
@@ -33,7 +41,7 @@ public class FlyerAttack : MonoBehaviour
         Vector3 targetSameHeight = new Vector3(target.position.x, transform.position.y, target.position.z);
         float distToTarget = Vector3.Distance(targetSameHeight, transform.position);
 
-        if (distToTarget <= attackRange && attackTimer <= 0) Attack();
+        if (herd.isChasing && distToTarget <= attackRange && attackTimer <= 0) Attack();
 
     }
 
@@ -48,6 +56,7 @@ public class FlyerAttack : MonoBehaviour
         projObj.GetComponent<FlyerProjectile>().targetPos = target.position;
         projObj.GetComponent<FlyerProjectile>().damage = attackDamage;
         projObj.GetComponent<FlyerProjectile>().projSpeed = projectileSpeed;
+        projObj.GetComponent<FlyerProjectile>().destroyAfterSeconds = destroyProjAfterSeconds;
         projObj.GetComponent<FlyerProjectile>().damageEvent = DamagePlayer;
 
     }
