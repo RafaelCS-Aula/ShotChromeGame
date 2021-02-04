@@ -7,7 +7,7 @@ public class GamePauseControl : MonoBehaviour
     public static bool IsPaused;
     public bool StartPause;
 
-    private void OnEnable() {
+    private void Awake() {
         if (StartPause)
         {
             IsPaused = false;
@@ -23,7 +23,7 @@ public class GamePauseControl : MonoBehaviour
 
     public void TogglePause()
     {
-        print("toggling pause");
+        print(gameObject.name + "toggle pause");
         if(IsPaused)
         {
             Time.timeScale = 1;

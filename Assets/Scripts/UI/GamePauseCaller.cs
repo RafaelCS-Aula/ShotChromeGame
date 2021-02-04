@@ -14,13 +14,13 @@ public class GamePauseCaller : MonoBehaviour
     private void Awake() {
         _pauseCtrl = GetComponent<GamePauseControl>();
         _menuToggle = GetComponent<ObjectToggler>();
-        GamePauseControl.IsPaused = true;
-        _pauseCtrl.TogglePause();
+        //GamePauseControl.IsPaused = true;
+        //_pauseCtrl.TogglePause();
     }
 
     private void Update() 
     {
-        print(GamePauseControl.IsPaused);
+        //print(GamePauseControl.IsPaused);
         if(Input.GetKeyDown(pauseKey.Value))
         {
             _pauseCtrl.TogglePause();
