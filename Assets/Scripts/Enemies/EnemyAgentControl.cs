@@ -9,7 +9,6 @@ public class EnemyAgentControl : MonoBehaviour
     public Transform target;
 
     NavMeshAgent agent;
-    private NavMeshPath path;
 
     public bool hasPath = false;
 
@@ -20,6 +19,7 @@ public class EnemyAgentControl : MonoBehaviour
     [HideInInspector] public bool inChaseDist;
 
     public LayerMask wallLayer;
+    private NavMeshPath path;
 
     [SerializeField] private Vector3 wanderLimits = Vector3.zero;
 
@@ -35,13 +35,13 @@ public class EnemyAgentControl : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         herd = GetComponentInParent<Herd>();
-        agent.SetDestination(transform.parent.transform.position);
         path = new NavMeshPath();
+        agent.SetDestination(transform.parent.transform.position);
     }
 
     void Update()
     {
-        if (herd.showDebugGizmos)DrawDebugRays();
+        if (herd.showDebugGizmos) DrawDebugRays();
         hasPath = CheckForPath(target.position);
 
         float distToTarget = Vector3.Distance(transform.position, target.position);
@@ -54,20 +54,32 @@ public class EnemyAgentControl : MonoBehaviour
         if (isHerdWandering) Wander();
     }
 
+    void LateUpdate()
+    {
+        if (isHerdWandering)
+        {
+            if (agent.updateRotation) agent.updateRotation = false;
+            transform.rotation = Quaternion.LookRotation(agent.velocity.normalized);
+        }
+        else transform.LookAt(target.position);
+
+
+    }
     private void Chase()
     {
         //print("CHASING");
-        Vector3 wantedPos = new Vector3(RoundFloat1D(target.position.x), agent.destination.y, RoundFloat1D(target.position.z));
+        Vector3 wantedPos = new Vector3(RoundFloat1D(target.position.x), RoundFloat1D(target.position.y), RoundFloat1D(target.position.z));
 
         if (agent.destination != wantedPos)
         {
-            transform.LookAt(target.position);
-            agent.SetDestination(wantedPos);
+            //transform.LookAt(target.position);
+            if (CheckForPath(wantedPos)) agent.SetDestination(wantedPos);
         }
     }
 
     private void Wander()
     {
+        //print("WANDERING");
         bool turn;
         Bounds b = new Bounds(herdWanderBounds.position, herdWanderBounds.localScale);
 
@@ -84,7 +96,8 @@ public class EnemyAgentControl : MonoBehaviour
 
         wanderGoalPos = herd.goalPos;
 
-        transform.LookAt(wanderGoalPos);
+        //transform.LookAt(wanderGoalPos);
+
         agent.SetDestination(wanderGoalPos);
     }
 

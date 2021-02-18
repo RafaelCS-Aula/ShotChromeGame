@@ -16,8 +16,8 @@ TagManager:
   - LevelGeometry
   - Enemy
   - Player
-  - 
-  - 
+  - FinalBoss
+  - EnemyProjectiles
   - 
   - 
   - 

@@ -30,7 +30,7 @@ public class ThunderPower : MonoBehaviour
     private void Update() 
     {
 
-        currentPower.ApplyChange(ReplenishmentCurve.Value.Evaluate((currentPower.Value / maxPower.Value)));
+        currentPower.ApplyChange(ReplenishmentCurve.Value.Evaluate((currentPower.Value / maxPower.Value))* Time.deltaTime);
 
         if(currentPower.Value > maxPower.Value  )
         {

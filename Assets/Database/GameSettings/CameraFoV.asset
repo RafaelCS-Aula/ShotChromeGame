@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f25694c1e7482b48a1ef7f715245d18, type: 3}
   m_Name: CameraFoV
   m_EditorClassIdentifier: 
-  DevDescription: 
+  DevDescription: Field of View of player camera
   variableValue: 90

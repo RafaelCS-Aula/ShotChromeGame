@@ -85,6 +85,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnChargedShootEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1930468617908264476}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 51dd494f818ed2744b3e721aaaf1c32a, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   pelletsPerShot:
     UseInspectorValue: 0
     InspectorValue: 0
@@ -109,10 +124,7 @@ MonoBehaviour:
     UseInspectorValue: 0
     InspectorValue: 0
     Variable: {fileID: 11400000, guid: 0dd8dddc46bda6149b0d479543d95308, type: 2}
-  isSuperCharged:
-    UseInspectorValue: 0
-    InspectorValue: 0
-    Variable: {fileID: 11400000, guid: 006e1f5915136c546a0be6764b061696, type: 2}
+  isSuperCharged: {fileID: 11400000, guid: 006e1f5915136c546a0be6764b061696, type: 2}
   pelletDamageFalloff:
     UseInspectorValue: 0
     InspectorValue:
@@ -126,6 +138,18 @@ MonoBehaviour:
   layersToHit:
     serializedVersion: 2
     m_Bits: 768
+  currentAmmo:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: 7ed4469312883544da6834cb38ca1cae, type: 2}
+  maxAmmo:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
+  chargedAmmo:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: 0bc9871b9d7ecca449496a33c71bebec, type: 2}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 512

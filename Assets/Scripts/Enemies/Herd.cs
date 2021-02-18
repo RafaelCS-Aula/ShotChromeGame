@@ -39,6 +39,10 @@ public class Herd : MonoBehaviour
 
     [HideInInspector] public Vector3 goalPos;
 
+    [SerializeField] private float timeUntilNextGoalChange;
+
+    private float goalChangeTimer;
+
     public bool showDebugGizmos;
 
 
@@ -50,7 +54,7 @@ public class Herd : MonoBehaviour
         {
             // Create an instance of said agent, and assign it as a child of this object
             GameObject newAgent = Instantiate(
-                agentPrefab, transform);
+                agentPrefab, transform.position, Quaternion.identity, transform);
 
             // Add the agents NavMeshAgent component (required) to the nmAgents list
             nmAgents.Add(newAgent.GetComponent<NavMeshAgent>());
@@ -115,9 +119,10 @@ public class Herd : MonoBehaviour
     /// <returns></returns>
     private void UpdateMovementStatus()
     {
+        int count = nmAgents.Count;
         bool hasAgentInChaseDist = false;
         // Iterate through every agent created
-        for (int i = 0; i < nmAgents.Count; i++)
+        for (int i = 0; i < count; i++)
         {
             // Return true if one of the agents is in Chase distance and if it has a path to the target
             if (ecAgents[i].inChaseDist /*&& ecAgents[i].hasPath*/)
@@ -129,7 +134,7 @@ public class Herd : MonoBehaviour
             }
 
             // Check if the loop is on it's last iteraction
-            if (i == nmAgents.Count - 1)
+            if (i == count - 1)
             {
                 if (!hasAgentInChaseDist)
                 {
@@ -142,6 +147,7 @@ public class Herd : MonoBehaviour
                 }
             }
         }
+
         for (int i = 0; i < nmAgents.Count; i++)
         {
             if (isChasing)
@@ -182,16 +188,20 @@ public class Herd : MonoBehaviour
 
     private void UpdateGoalPosition()
     {
+        goalChangeTimer += Time.deltaTime;
+        //print(goalChangeTimer);
         if (nmAgents.Count <= 0) return;
 
         if (!wanderBounds.GetComponent<Collider>().bounds.Contains(goalPos) ||
-            !ecAgents[0].CheckForPath(goalPos))
+            !ecAgents[0].CheckForPath(goalPos) || goalChangeTimer >= timeUntilNextGoalChange)
         {
-            //print("OUTSIDE BOUNDS");
+            print("CHANGED");
             goalPos = wanderBounds.position +
                     new Vector3(Random.Range(-wanderLimits.x / 2, wanderLimits.x / 2),
                     wanderBounds.localPosition.y,
                     Random.Range(-wanderLimits.z / 2, wanderLimits.z / 2));
+
+            goalChangeTimer = 0;
             return;
         }
 
@@ -205,6 +215,8 @@ public class Herd : MonoBehaviour
                     new Vector3(Random.Range(-wanderLimits.x / 2, wanderLimits.x / 2),
                     wanderBounds.localPosition.y,
                     Random.Range(-wanderLimits.z / 2, wanderLimits.z / 2));
+                
+                goalChangeTimer = 0;
                 return;
             }
         }
@@ -214,14 +226,18 @@ public class Herd : MonoBehaviour
     {
         int removedCount = 0;
         int numAgents = nmAgents.Count; 
-        for (int i = 0; i < numAgents; i++)
+        //List<int> indexesToRemove = new List<int>();
+        for (int i = numAgents-1; i > 0; i--)
         {
             if (nmAgents[i] == null)
             {
-                nmAgents.RemoveAt(i-removedCount);
-                ecAgents.RemoveAt(i-removedCount);
-                cAgents.RemoveAt(i-removedCount);
+                //indexesToRemove.Add(i);
+                nmAgents.RemoveAt(i);
+                ecAgents.RemoveAt(i);
+                cAgents.RemoveAt(i);
                 removedCount++;
+
+                
             }
         }
     }

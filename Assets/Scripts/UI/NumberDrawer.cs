@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using NaughtyAttributes;
+using TMPro;
 public class NumberDrawer : MonoBehaviour
 {
     private Text _text;
+    private TextMeshProUGUI _pText;
     private Slider _slider;
     private string _display;
 
@@ -26,44 +28,61 @@ public class NumberDrawer : MonoBehaviour
 
     [SerializeField] private bool useInt;
 
-    private float _displayVal;
-    private float _displayValMax;
+    private float? _displayVal;
+    private float? _displayValMax;
+
+    private Component textComponent;
 
     private void OnEnable() 
     {
         _text = GetComponent<Text>();
         _slider = GetComponent<Slider>();
-
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        if(value != null && !useInt) 
-            _displayVal = useInt ? valueInt.Value : value.Value;
-        if(maxValue!= null && !useInt)
-            _displayValMax = useInt ? maxValueInt.Value : maxValue.Value;
-            
-        if(isText && _text != null)
-        {
-            if(maxValue == null && value == null)
-            _display = $"{valueName}";
-
-            if(maxValue == null)
-            _display = $"{valueName} {value.Value.ToString("n2")}";
-            else
-            _display = $"{valueName} {value.Value.ToString("n2")} / {maxValue.Value.ToString("n2")}";
-
-            _text.text = _display;
-
-        }
+        _pText = GetComponent<TextMeshProUGUI>();
         
+        if(_pText == null)
+            textComponent = _text;
+        else
+            textComponent = _pText;
+
         if(isSlider && _slider != null && maxValue != null) 
         {
            
             _slider.value = value.Value;
-            _slider.maxValue = maxValue.Value;
-            _slider.minValue = 0;
+            
+            
 
         }
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        if(value != null || valueInt != null) 
+            _displayVal = useInt ? valueInt.Value : value.Value;
+        if(maxValue!= null)
+            _displayValMax = useInt ? maxValueInt.Value : maxValue.Value;
+            
+        if(isText && (_text != null || _pText != null))
+        {
+          
+               if(_displayValMax == null && _displayVal == null)
+                _display = $"{valueName}";
+
+                if(_displayValMax == null)
+                _display = $"{valueName} {_displayVal.Value.ToString("n0")}";
+                else
+                _display = $"{valueName} {_displayVal.Value.ToString("n0")} / {_displayValMax.Value.ToString("n2")}";
+               
+
+           
+           
+            
+        if(_pText == null)
+            _text.text = _display;
+        else
+            _pText.text = _display;
+
+        }
+        
+
     }
 }

@@ -10,6 +10,8 @@ public class Shotgun : InputReceiverBase, IResourceHolder<AmmoResource>, IResour
 
     [Foldout("Events")]
     [SerializeField] private UnityEvent OnShootEvent;
+    [Foldout("Events")]
+    [SerializeField] private UnityEvent OnChargedShootEvent;
 
     [SerializeField] IntVariable pelletsPerShot;
 
@@ -27,7 +29,7 @@ public class Shotgun : InputReceiverBase, IResourceHolder<AmmoResource>, IResour
 
     [SerializeField] private LayerMask layersToHit;
 
-    [SerializeField] private IntVariable currentAmmo;
+    [SerializeField] private FloatVariable currentAmmo;
     [SerializeField] private IntVariable maxAmmo;
     [SerializeField] private IntVariable chargedAmmo;
     #endregion
@@ -82,13 +84,22 @@ public class Shotgun : InputReceiverBase, IResourceHolder<AmmoResource>, IResour
     [Button("Test Shoot")]
     private void Shoot()
     {
-        OnShootEvent.Invoke();
+        
 
         // Consume Ammo
         if(isSuperCharged)
+        {
+
             chargedAmmo.OverrideValue(chargedAmmo -  1);
+            OnChargedShootEvent.Invoke();
+        }  
         else
+        {
+            //print("shooty");
             currentAmmo.OverrideValue(currentAmmo - 1);
+            OnShootEvent.Invoke();
+        }
+            
 
         int numberOfHits = 0;
 
