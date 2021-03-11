@@ -4,14 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using NaughtyAttributes;
 
-[System.Serializable]
-public class CombatWave
-{
-    public UnityEvent<Transform> StartWave;
 
-
-
-}
 public class CombatEncounter : MonoBehaviour
 {
     [SerializeField][ReorderableList]
