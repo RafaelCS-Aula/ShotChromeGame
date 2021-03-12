@@ -4,12 +4,33 @@ using UnityEngine;
 using NaughtyAttributes;
 public class SpawnerHolder : MonoBehaviour
 {
-   [SerializeField]
-    private Stack<CombatSpawner> spawners = new Stack<CombatSpawner>();
     
+    [SerializeField]
+    private Stack<CombatSpawner>[] spawnerGroups = 
+    {
+        new Stack<CombatSpawner>(),
+        new Stack<CombatSpawner>(),
+        new Stack<CombatSpawner>(),
+        new Stack<CombatSpawner>(),
+        new Stack<CombatSpawner>(),
+        new Stack<CombatSpawner>(),
+        new Stack<CombatSpawner>()
+    };
 
-    [ShowNativeProperty]
-    public float spawnPoints => spawners.Count;
+  
+    private string[] _groupnames = 
+    {
+        ":: Jaguar Spawners",
+        ":: Flyer Spawners",
+        ":: Drone Spawners",
+        ":: Giant Spawners",
+        ":: Sandman Spawners",
+        ":: Shaman Spawners",
+        ":: Special Spawners"
+    };
+
+
+    private GameObject[] _groups = new GameObject[7];
 
     // Start is called before the first frame update
     void Start()
@@ -23,49 +44,100 @@ public class SpawnerHolder : MonoBehaviour
         
     }
 
-    [Button]
-    public void CreateSpawner()
+
+
+    
+    [Button] public void CreateJaguarSpawner() => 
+        CreateSpawner(CombatSpawnerTypes.JAGUAR);
+    [Button] public void ClearJaguarSpawner() => 
+        DeleteLastSpawner(CombatSpawnerTypes.JAGUAR);
+    
+    [Button] public void CreateFlyerSpawner() => 
+        CreateSpawner(CombatSpawnerTypes.FLYER);
+    [Button] public void ClearFlyerSpawner() => 
+        DeleteLastSpawner(CombatSpawnerTypes.FLYER);
+
+    [Button] public void CreateDroneSpawner() => 
+        CreateSpawner(CombatSpawnerTypes.DRONE);
+    [Button] public void ClearDroneSpawner() => 
+        DeleteLastSpawner(CombatSpawnerTypes.DRONE);
+
+    [Button] public void CreateGiantSpawner() => 
+        CreateSpawner(CombatSpawnerTypes.GIANT);
+    [Button] public void ClearGiantSpawner() => 
+        DeleteLastSpawner(CombatSpawnerTypes.GIANT);
+    
+    [Button] public void CreateSandmanSpawner() => 
+        CreateSpawner(CombatSpawnerTypes.SANDMAN);
+    [Button] public void ClearSandmanSpawner() => 
+        DeleteLastSpawner(CombatSpawnerTypes.SANDMAN);
+    
+    [Button] public void CreateShamanSpawner() => 
+        CreateSpawner(CombatSpawnerTypes.SHAMAN);
+    [Button] public void ClearShamanSpawner() => 
+        DeleteLastSpawner(CombatSpawnerTypes.SHAMAN);
+    
+    [Button] public void CreateSpecialSpawner() => 
+        CreateSpawner(CombatSpawnerTypes.SPECIAL);
+    [Button] public void ClearSpecialSpawner() => 
+        DeleteLastSpawner(CombatSpawnerTypes.SPECIAL);
+
+    
+    private void CreateSpawner(CombatSpawnerTypes enemyType)
     {
-        if(spawners.Count == 0)
-            UpdateStack();
         
-        GameObject go = new GameObject($"Spawner {spawners.Count}");
+        Stack<CombatSpawner> choosenStack = spawnerGroups[(int)enemyType];
+        GameObject parent = _groups[(int)enemyType]; 
+        if(parent == null)
+        {
+            parent = new GameObject(_groupnames[(int)enemyType]);
+            _groups[(int)enemyType] = parent; 
+            parent.transform.SetParent(gameObject.transform);
+            print("but");
+        }
+
+
+        if(choosenStack.Count == 0)
+            UpdateStack(choosenStack);
+        
+        GameObject go = new GameObject($"Spawner {choosenStack.Count}");
         CombatSpawner cs = go.AddComponent<CombatSpawner>();
-        spawners.Push(cs);
-        go.transform.SetParent(gameObject.transform);
+        choosenStack.Push(cs);
+        go.transform.SetParent(parent.transform);
         
        
     }
     
-    [Button]
-    public void DeleteLastSpawner()
+    
+    private void DeleteLastSpawner(CombatSpawnerTypes enemyType)
     {
-        if(spawners.Count == 0)
-            UpdateStack();
-        CleanStack();
-        Object.DestroyImmediate(spawners.Peek().gameObject);
-        spawners.Pop();
+        Stack<CombatSpawner> choosenStack = spawnerGroups[(int)enemyType];
+        if(choosenStack.Count == 0)
+            UpdateStack(choosenStack);
+        CleanStack(choosenStack);
+        Object.DestroyImmediate(choosenStack.Peek().gameObject);
+        choosenStack.Pop();
     }
 
-    private void CleanStack()
+    private void CleanStack(Stack<CombatSpawner> stack)
     {
-        CombatSpawner cs = spawners.Peek();
+        CombatSpawner cs = stack.Peek();
 
         while(cs == null)
         {
-            spawners.Pop();
-            cs = spawners.Peek();
+            stack.Pop();
+            cs = stack.Peek();
         }
        
     }
 
-    private void UpdateStack()
+    private void UpdateStack(Stack<CombatSpawner> stack)
     {
 
         CombatSpawner[] spawnersInScene = 
             gameObject.GetComponentsInChildren<CombatSpawner>();
         foreach(CombatSpawner cs in spawnersInScene )
-            spawners.Push(cs);
+            stack.Push(cs);
 
     }
 
