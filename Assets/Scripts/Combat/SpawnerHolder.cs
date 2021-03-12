@@ -80,25 +80,52 @@ public class SpawnerHolder : MonoBehaviour
         
         Stack<CombatSpawner> choosenStack = spawnerGroups[(int)enemyType];
         GameObject parent = _groups[(int)enemyType]; 
+        
+
         if(parent == null)
         {
             parent = new GameObject(_groupnames[(int)enemyType]);
             _groups[(int)enemyType] = parent; 
+            parent.transform.position = gameObject.transform.position;
             parent.transform.SetParent(gameObject.transform);
+           
             
         }
 
 
-        if(choosenStack.Count == 0)
-            UpdateStack(choosenStack);
+        
+        SyncStackToScene(choosenStack, parent);
         
         GameObject go = new GameObject($"{enemyType.ToString()} Spawner {parent.transform.childCount} - {gameObject.name}");
         CombatSpawner cs = go.AddComponent<CombatSpawner>();
         cs.enemy = enemyType;
-        choosenStack.Push(cs);
+        
+        
         go.transform.SetParent(parent.transform);
+        if(choosenStack.Count > 1)
+        {
+            print($"Position of {choosenStack.Peek().name}: {choosenStack.Peek().transform.position}");
+            print($"Local Position of {choosenStack.Peek().name}: {choosenStack.Peek().transform.localPosition}");
+            
+            go.transform.localPosition = choosenStack.Peek().transform.localPosition;
+        }
+            
+        else
+        {
+            go.transform.localPosition = parent.transform.localPosition;
+        }
+        
+
+        choosenStack.Push(cs);
         parent.name = _groupnames[(int)enemyType] + $"- {parent.transform.childCount}";
        
+
+       
+        /*for(int i = 0; i < spawnerGroups.Length; i++)
+        {
+            Debug.Log($"Stack of {(CombatSpawnerTypes)i} - has {spawnerGroups[i].Count}");
+        }
+        Debug.Log("======================================");*/
     }
     
     
@@ -106,7 +133,8 @@ public class SpawnerHolder : MonoBehaviour
     {
         Stack<CombatSpawner> choosenStack = spawnerGroups[(int)enemyType];
         if(choosenStack.Count == 0)
-            UpdateStack(choosenStack);
+            SyncStackToScene(choosenStack, 
+                choosenStack.Peek().transform.parent.gameObject);
         CleanStack(choosenStack);
         Object.DestroyImmediate(choosenStack.Peek().gameObject);
         GameObject parent = _groups[(int)enemyType];
@@ -116,6 +144,8 @@ public class SpawnerHolder : MonoBehaviour
 
     private void CleanStack(Stack<CombatSpawner> stack)
     {
+        if(stack.Count == 0)
+            return;
         CombatSpawner cs = stack.Peek();
 
         while(cs == null)
@@ -126,11 +156,11 @@ public class SpawnerHolder : MonoBehaviour
        
     }
 
-    private void UpdateStack(Stack<CombatSpawner> stack)
+    private void SyncStackToScene(Stack<CombatSpawner> stack, GameObject group)
     {
-
+        CleanStack(stack);
         CombatSpawner[] spawnersInScene = 
-            gameObject.GetComponentsInChildren<CombatSpawner>();
+            group.GetComponentsInChildren<CombatSpawner>();
         foreach(CombatSpawner cs in spawnersInScene )
             stack.Push(cs);
 
