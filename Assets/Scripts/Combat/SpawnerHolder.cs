@@ -39,39 +39,46 @@ public class SpawnerHolder : MonoBehaviour
 
 
 #region Creation Buttons
-    [Button] public void CreateJaguarSpawner() => 
+    [Button(":::::::: Create Jaguar Spawn ::::::::")] 
+    public void CreateJaguarSpawner() => 
         CreateSpawner(CombatSpawnerTypes.JAGUAR);
-    [Button] public void ClearJaguarSpawner() => 
+    [Button] public void ClearLastJaguarSpawner() => 
         DeleteLastSpawner(CombatSpawnerTypes.JAGUAR);
     
-    [Button] public void CreateFlyerSpawner() => 
+    [Button(":::::::: Create Flyer Spawn ::::::::")]
+     public void CreateFlyerSpawner() => 
         CreateSpawner(CombatSpawnerTypes.FLYER);
-    [Button] public void ClearFlyerSpawner() => 
+    [Button] public void ClearLastFlyerSpawner() => 
         DeleteLastSpawner(CombatSpawnerTypes.FLYER);
 
-    [Button] public void CreateDroneSpawner() => 
+    [Button(":::::::: Create Drone Spawn ::::::::")]
+     public void CreateDroneSpawner() => 
         CreateSpawner(CombatSpawnerTypes.DRONE);
-    [Button] public void ClearDroneSpawner() => 
+    [Button] public void ClearLastDroneSpawner() => 
         DeleteLastSpawner(CombatSpawnerTypes.DRONE);
 
-    [Button] public void CreateGiantSpawner() => 
+    [Button(":::::::: Create Giant Spawn ::::::::")]
+     public void CreateGiantSpawner() => 
         CreateSpawner(CombatSpawnerTypes.GIANT);
-    [Button] public void ClearGiantSpawner() => 
+    [Button] public void ClearLastGiantSpawner() => 
         DeleteLastSpawner(CombatSpawnerTypes.GIANT);
     
-    [Button] public void CreateSandmanSpawner() => 
+    [Button(":::::::: Create Sandman Spawn ::::::::")]
+     public void CreateSandmanSpawner() => 
         CreateSpawner(CombatSpawnerTypes.SANDMAN);
-    [Button] public void ClearSandmanSpawner() => 
+    [Button] public void ClearLastSandmanSpawner() => 
         DeleteLastSpawner(CombatSpawnerTypes.SANDMAN);
     
-    [Button] public void CreateShamanSpawner() => 
+    [Button(":::::::: Create Shaman Spawn ::::::::")]
+     public void CreateShamanSpawner() => 
         CreateSpawner(CombatSpawnerTypes.SHAMAN);
-    [Button] public void ClearShamanSpawner() => 
+    [Button] public void ClearLastShamanSpawner() => 
         DeleteLastSpawner(CombatSpawnerTypes.SHAMAN);
     
-    [Button] public void CreateSpecialSpawner() => 
+    [Button(":::::::: Create Special Spawn ::::::::")]
+     public void CreateSpecialSpawner() => 
         CreateSpawner(CombatSpawnerTypes.SPECIAL);
-    [Button] public void ClearSpecialSpawner() => 
+    [Button] public void ClearLastSpecialSpawner() => 
         DeleteLastSpawner(CombatSpawnerTypes.SPECIAL);
 #endregion
     
@@ -106,7 +113,7 @@ public class SpawnerHolder : MonoBehaviour
         {
             print($"Position of {choosenStack.Peek().name}: {choosenStack.Peek().transform.position}");
             print($"Local Position of {choosenStack.Peek().name}: {choosenStack.Peek().transform.localPosition}");
-            
+
             go.transform.localPosition = choosenStack.Peek().transform.localPosition;
         }
             
