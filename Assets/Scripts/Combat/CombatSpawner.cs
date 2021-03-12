@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class CombatSpawner : MonoBehaviour
 {
@@ -8,8 +9,9 @@ public class CombatSpawner : MonoBehaviour
     public CombatSpawnerTypes enemy;
 
 
-    private void OnDrawGizmosSelected() 
+    private void OnDrawGizmos() 
     {
+        
         switch(enemy)
         {
             case(CombatSpawnerTypes.JAGUAR):
