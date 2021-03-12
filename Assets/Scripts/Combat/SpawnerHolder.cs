@@ -32,21 +32,13 @@ public class SpawnerHolder : MonoBehaviour
 
     private GameObject[] _groups = new GameObject[7];
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
 
 
-    
+
+
+
+#region Creation Buttons
     [Button] public void CreateJaguarSpawner() => 
         CreateSpawner(CombatSpawnerTypes.JAGUAR);
     [Button] public void ClearJaguarSpawner() => 
@@ -81,7 +73,7 @@ public class SpawnerHolder : MonoBehaviour
         CreateSpawner(CombatSpawnerTypes.SPECIAL);
     [Button] public void ClearSpecialSpawner() => 
         DeleteLastSpawner(CombatSpawnerTypes.SPECIAL);
-
+#endregion
     
     private void CreateSpawner(CombatSpawnerTypes enemyType)
     {
@@ -100,11 +92,12 @@ public class SpawnerHolder : MonoBehaviour
         if(choosenStack.Count == 0)
             UpdateStack(choosenStack);
         
-        GameObject go = new GameObject($"Spawner {choosenStack.Count}");
+        GameObject go = new GameObject($"{enemyType.ToString()} Spawner {parent.transform.childCount} - {gameObject.name}");
         CombatSpawner cs = go.AddComponent<CombatSpawner>();
+        cs.enemy = enemyType;
         choosenStack.Push(cs);
         go.transform.SetParent(parent.transform);
-        
+        parent.name = _groupnames[(int)enemyType] + $"- {parent.transform.childCount}";
        
     }
     
@@ -116,6 +109,8 @@ public class SpawnerHolder : MonoBehaviour
             UpdateStack(choosenStack);
         CleanStack(choosenStack);
         Object.DestroyImmediate(choosenStack.Peek().gameObject);
+        GameObject parent = _groups[(int)enemyType];
+        parent.name = _groupnames[(int)enemyType] + $"- {parent.transform.childCount}";
         choosenStack.Pop();
     }
 
