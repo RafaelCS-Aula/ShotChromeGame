@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CombatSpawner : MonoBehaviour
 {
+    [HideInInspector]
     public CombatSpawnerTypes enemy;
 
 
