@@ -93,7 +93,7 @@ public class SpawnerHolder : MonoBehaviour
             parent = new GameObject(_groupnames[(int)enemyType]);
             _groups[(int)enemyType] = parent; 
             parent.transform.SetParent(gameObject.transform);
-            print("but");
+            
         }
 
 
