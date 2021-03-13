@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum CombatSpawnerTypes 
+public enum EnemyTypes 
 {
     JAGUAR,
     FLYER,
