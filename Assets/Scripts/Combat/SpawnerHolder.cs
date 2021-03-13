@@ -180,6 +180,8 @@ public class SpawnerHolder : MonoBehaviour
         Stack<GameObject> spawned = new Stack<GameObject>();
 
         CombatSpawner[] sp = spawnerGroups[(int)enemyType].ToArray();
+        if(sp.Length == 0)
+            return null; 
 
         while(spawned.Count < amount)
         {
