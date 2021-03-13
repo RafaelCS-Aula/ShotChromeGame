@@ -112,7 +112,24 @@ public class CombatWave : ScriptableObject
 
     }
 
+    public void CheckLockConditions()
+    {
+        // Check the time condition
+        if(unlockCondition.HasFlag(WaveUnlockConditions.Time))
+        {
+            float currentTime = Time.realtimeSinceStartup;
+            float timeDelta = currentTime - _timeOnWaveStart;
 
+            if(timeDelta > secondsToUnlock)
+            {
+                locked = false;
+            
+            }
+        }
+
+       
+        
+    }
     
     
 
