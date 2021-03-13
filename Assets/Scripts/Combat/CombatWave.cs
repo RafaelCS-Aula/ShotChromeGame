@@ -8,9 +8,8 @@ using NaughtyAttributes;
 
 
 [CreateAssetMenu(menuName = "Combat/EncounterWave",fileName = "New Wave")]
-public class CombatWave:ScriptableObject
+public class CombatWave : ScriptableObject
 {
-    public UnityEvent StartWave;
 
     [ReadOnly][Tooltip("The encounter will not trigger the next wave while this is true")]
     public bool locked;
@@ -19,7 +18,7 @@ public class CombatWave:ScriptableObject
 
 
     [SerializeField]
-    private SpawnerHolder spawnGroups;
+    private SpawnerHolder _spawnGroups;
     [SerializeField][HorizontalLine]
     private EnemyHolder jaguarHolder;
     [SerializeField]
@@ -86,7 +85,34 @@ public class CombatWave:ScriptableObject
     [SerializeField][ShowIf(EConditionOperator.And,"lockOnStart", "UsesTimeUnlock")]
     private float secondsToUnlock;
 
-    
+
+    private Dictionary<EnemyTypes, Stack<GameObject>> spawnedEnemies; 
+    private float _timeOnWaveStart;
+
+    public void BeginWave()
+    {
+        
+        _timeOnWaveStart = Time.realtimeSinceStartup;
+        spawnedEnemies = new Dictionary<EnemyTypes, Stack<GameObject>>();
+
+        if(_jaguars > 0)
+            spawnedEnemies.Add(EnemyTypes.JAGUAR, _spawnGroups.PopulateType(jaguarHolder,_jaguars));
+        if(_flyers > 0)
+            spawnedEnemies.Add(EnemyTypes.FLYER, _spawnGroups.PopulateType(flyerHolder,_flyers));
+        if(_drones > 0)
+            spawnedEnemies.Add(EnemyTypes.DRONE, _spawnGroups.PopulateType(droneHolder,_drones));
+        if(_giants > 0)
+            spawnedEnemies.Add(EnemyTypes.GIANT, _spawnGroups.PopulateType(giantHolder,_giants));
+        if(_sandmen > 0)
+            spawnedEnemies.Add(EnemyTypes.SANDMAN, _spawnGroups.PopulateType(sandmanHolder,_sandmen));
+        if(_shamans > 0)
+            spawnedEnemies.Add(EnemyTypes.SHAMAN, _spawnGroups.PopulateType(shamanHolder,_shamans));
+        if(_specials > 0)
+            spawnedEnemies.Add(EnemyTypes.SPECIAL, _spawnGroups.PopulateType(specialHolder,_specials));
+
+    }
+
+
     
     
 
