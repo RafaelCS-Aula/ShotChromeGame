@@ -41,48 +41,48 @@ public class SpawnerHolder : MonoBehaviour
 #region Creation Buttons
     [Button(":::::::: Create Jaguar Spawn ::::::::")] 
     public void CreateJaguarSpawner() => 
-        CreateSpawner(CombatSpawnerTypes.JAGUAR);
+        CreateSpawner(EnemyTypes.JAGUAR);
     [Button] public void ClearLastJaguarSpawner() => 
-        DeleteLastSpawner(CombatSpawnerTypes.JAGUAR);
+        DeleteLastSpawner(EnemyTypes.JAGUAR);
     
     [Button(":::::::: Create Flyer Spawn ::::::::")]
      public void CreateFlyerSpawner() => 
-        CreateSpawner(CombatSpawnerTypes.FLYER);
+        CreateSpawner(EnemyTypes.FLYER);
     [Button] public void ClearLastFlyerSpawner() => 
-        DeleteLastSpawner(CombatSpawnerTypes.FLYER);
+        DeleteLastSpawner(EnemyTypes.FLYER);
 
     [Button(":::::::: Create Drone Spawn ::::::::")]
      public void CreateDroneSpawner() => 
-        CreateSpawner(CombatSpawnerTypes.DRONE);
+        CreateSpawner(EnemyTypes.DRONE);
     [Button] public void ClearLastDroneSpawner() => 
-        DeleteLastSpawner(CombatSpawnerTypes.DRONE);
+        DeleteLastSpawner(EnemyTypes.DRONE);
 
     [Button(":::::::: Create Giant Spawn ::::::::")]
      public void CreateGiantSpawner() => 
-        CreateSpawner(CombatSpawnerTypes.GIANT);
+        CreateSpawner(EnemyTypes.GIANT);
     [Button] public void ClearLastGiantSpawner() => 
-        DeleteLastSpawner(CombatSpawnerTypes.GIANT);
+        DeleteLastSpawner(EnemyTypes.GIANT);
     
     [Button(":::::::: Create Sandman Spawn ::::::::")]
      public void CreateSandmanSpawner() => 
-        CreateSpawner(CombatSpawnerTypes.SANDMAN);
+        CreateSpawner(EnemyTypes.SANDMAN);
     [Button] public void ClearLastSandmanSpawner() => 
-        DeleteLastSpawner(CombatSpawnerTypes.SANDMAN);
+        DeleteLastSpawner(EnemyTypes.SANDMAN);
     
     [Button(":::::::: Create Shaman Spawn ::::::::")]
      public void CreateShamanSpawner() => 
-        CreateSpawner(CombatSpawnerTypes.SHAMAN);
+        CreateSpawner(EnemyTypes.SHAMAN);
     [Button] public void ClearLastShamanSpawner() => 
-        DeleteLastSpawner(CombatSpawnerTypes.SHAMAN);
+        DeleteLastSpawner(EnemyTypes.SHAMAN);
     
     [Button(":::::::: Create Special Spawn ::::::::")]
      public void CreateSpecialSpawner() => 
-        CreateSpawner(CombatSpawnerTypes.SPECIAL);
+        CreateSpawner(EnemyTypes.SPECIAL);
     [Button] public void ClearLastSpecialSpawner() => 
-        DeleteLastSpawner(CombatSpawnerTypes.SPECIAL);
+        DeleteLastSpawner(EnemyTypes.SPECIAL);
 #endregion
     
-    private void CreateSpawner(CombatSpawnerTypes enemyType)
+    private void CreateSpawner(EnemyTypes enemyType)
     {
         
         Stack<CombatSpawner> choosenStack = spawnerGroups[(int)enemyType];
@@ -136,7 +136,7 @@ public class SpawnerHolder : MonoBehaviour
     }
     
     
-    private void DeleteLastSpawner(CombatSpawnerTypes enemyType)
+    private void DeleteLastSpawner(EnemyTypes enemyType)
     {
         Stack<CombatSpawner> choosenStack = spawnerGroups[(int)enemyType];
         if(choosenStack.Count == 0)

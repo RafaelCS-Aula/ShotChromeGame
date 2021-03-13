@@ -6,7 +6,7 @@ using UnityEditor;
 public class CombatSpawner : MonoBehaviour
 {
     [HideInInspector]
-    public CombatSpawnerTypes enemy;
+    public EnemyTypes enemy;
 
     private string _enemyName => enemy.ToString().ToLower();
     private string pathToIcons => $"enemies/{_enemyName}_icon.png";
