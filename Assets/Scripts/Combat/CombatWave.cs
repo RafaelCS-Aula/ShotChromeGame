@@ -181,7 +181,36 @@ public class CombatWave : ScriptableObject
             }
         }
 
-       
+       if(unlockCondition.HasFlag(WaveUnlockConditions.KillEnemies))
+       {
+           int totalLiving = 0;
+           Stack<GameObject> enemyStack;
+           foreach(KeyValuePair<EnemyHolder, int> kv in _holdersAndCountsDict)
+           {
+               if(spawnedEnemies.TryGetValue(kv.Key.enemyType, out enemyStack))
+               {
+                   foreach(GameObject enemyObject in enemyStack)
+                   {
+                       if(enemyObject != null)
+                       {
+                            if(enemyObject.activeSelf)
+                            {
+                                totalLiving++;
+                                float percentage = 
+                                    (totalLiving * 100)/_totalEnemies;
+                                if(percentage >= totalKillPercentage)
+                                {
+                                    locked = false;
+                                    return;
+                                }
+                                    
+                            }
+                                
+                       }
+                   }
+               }
+            }
+
 
             
             
