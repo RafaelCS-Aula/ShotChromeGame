@@ -247,15 +247,29 @@ public class CombatWave : ScriptableObject
                 }
 
             }
-
-
-            
-            
-
        }
         
     }
     
+    public void CheckCompletion()
+    {
+        foreach(KeyValuePair<EnemyTypes, Stack<GameObject>> kv in spawnedEnemies)
+        {
+            foreach(GameObject go in kv.Value)
+            {
+                if(go != null)
+                {
+                    if(go.activeSelf)
+                    {
+                        return;
+                    }
+                }
+            }
+        }
+        complete = true;
+
+
+    }
     
 
 
