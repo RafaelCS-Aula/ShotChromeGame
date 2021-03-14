@@ -211,6 +211,43 @@ public class CombatWave : ScriptableObject
                }
             }
 
+            if(unlockCondition.HasFlag(WaveUnlockConditions.KillEnemiesOfType))
+            {
+                int typeTotal;
+                int typeAlive = 0;
+                Stack<GameObject> typeStack;
+                foreach(KeyValuePair<EnemyHolder, int> kv in _holdersAndCountsDict)
+                {
+                    if(kv.Key.enemyType == TypeToGenocide)
+                    {
+                        typeTotal = kv.Value;
+                        if(spawnedEnemies.TryGetValue(TypeToGenocide, out typeStack))
+                        {
+                            foreach(GameObject enemyObject in typeStack)
+                            {
+                                if(enemyObject != null)
+                                {
+                                    if(enemyObject.activeSelf)
+                                    {
+                                        typeAlive++;
+
+                                        float percentage = 
+                                            (typeAlive * 100) / typeTotal;
+                                        if(percentage >= typeKillPercentage)
+                                        {
+                                            locked = false;
+                                            return;
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                }
+
+            }
+
 
             
             
