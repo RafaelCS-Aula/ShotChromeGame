@@ -184,70 +184,65 @@ public class CombatWave : ScriptableObject
        if(unlockCondition.HasFlag(WaveUnlockConditions.KillEnemies))
        {
            int totalLiving = 0;
-           Stack<GameObject> enemyStack;
-           foreach(KeyValuePair<EnemyHolder, int> kv in _holdersAndCountsDict)
-           {
-               if(spawnedEnemies.TryGetValue(kv.Key.enemyType, out enemyStack))
-               {
-                   foreach(GameObject enemyObject in enemyStack)
-                   {
-                       if(enemyObject != null)
-                       {
-                            if(enemyObject.activeSelf)
-                            {
-                                totalLiving++;
-                                float percentage = 
-                                    (totalLiving * 100)/_totalEnemies;
-                                if(percentage >= totalKillPercentage)
-                                {
-                                    locked = false;
-                                    return;
-                                }
-                                    
-                            }
-                                
-                       }
-                   }
-               }
-            }
-
-            if(unlockCondition.HasFlag(WaveUnlockConditions.KillEnemiesOfType))
+            foreach(KeyValuePair<EnemyTypes, Stack<GameObject>> kv in spawnedEnemies)
             {
-                int typeTotal;
-                int typeAlive = 0;
-                Stack<GameObject> typeStack;
-                foreach(KeyValuePair<EnemyHolder, int> kv in _holdersAndCountsDict)
+                foreach(GameObject go in kv.Value)
                 {
-                    if(kv.Key.enemyType == TypeToGenocide)
+                    if(go != null)
                     {
-                        typeTotal = kv.Value;
-                        if(spawnedEnemies.TryGetValue(TypeToGenocide, out typeStack))
+                        if(go.activeSelf)
                         {
-                            foreach(GameObject enemyObject in typeStack)
+                            totalLiving++;
+                            float percentage = 
+                                (totalLiving * 100)/_totalEnemies;
+                            if(percentage >= totalKillPercentage)
                             {
-                                if(enemyObject != null)
-                                {
-                                    if(enemyObject.activeSelf)
-                                    {
-                                        typeAlive++;
-
-                                        float percentage = 
-                                            (typeAlive * 100) / typeTotal;
-                                        if(percentage >= typeKillPercentage)
-                                        {
-                                            locked = false;
-                                            return;
-                                        }
-                                    }
-                                }
+                                locked = false;
+                                return;
                             }
-
                         }
                     }
                 }
-
             }
-       }
+        }
+
+        if(unlockCondition.HasFlag(WaveUnlockConditions.KillEnemiesOfType))
+        {
+            int typeTotal;
+            int typeAlive = 0;
+            Stack<GameObject> typeStack;
+            foreach(KeyValuePair<EnemyHolder, int> kv in _holdersAndCountsDict)
+            {
+                if(kv.Key.enemyType == TypeToGenocide)
+                {
+                    typeTotal = kv.Value;
+                    if(spawnedEnemies.TryGetValue(TypeToGenocide, out typeStack))
+                    {
+                        foreach(GameObject enemyObject in typeStack)
+                        {
+                            if(enemyObject != null)
+                            {
+                                if(enemyObject.activeSelf)
+                                {
+                                    typeAlive++;
+
+                                    float percentage = 
+                                        (typeAlive * 100) / typeTotal;
+                                    if(percentage >= typeKillPercentage)
+                                    {
+                                        locked = false;
+                                        return;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+
+        }
+       
         
     }
     
