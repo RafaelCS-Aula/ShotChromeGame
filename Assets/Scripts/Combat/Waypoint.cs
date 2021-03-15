@@ -12,6 +12,7 @@ public class Waypoint : MonoBehaviour
     private static int createdPoints = 0;
     private int myCreatedPointNR = 0;
 
+    public bool drawPathGizmos = true;
     public Waypoint[] customWaypointList;
     public List<Waypoint> outgoingConnections = new List<Waypoint>();
 
@@ -24,16 +25,51 @@ public class Waypoint : MonoBehaviour
 
 
     [Button]
-    public void AddOneWayOutgoingConnection() => 
+    public void CreateOneWayOutgoingConnection() => 
         MakeWaypoint(connectionWays.outgoing);
 
     [Button]
-    public void AddOneWayIncomingConnection() =>
+    public void CreateOneWayIncomingConnection() =>
         MakeWaypoint(connectionWays.incoming);
 
     [Button]
-    public void AddTwoWayConnection() => 
+    public void CreateTwoWayConnection() => 
         MakeWaypoint(connectionWays.twoway);
+
+    [Button]
+    public void MakeOneWayOutgoingConnectionWith(Waypoint other = null)
+    {
+        if(other == null)
+        {
+            foreach(Waypoint wp in customWaypointList)
+                AddWaypoint(wp,connectionWays.outgoing);
+        }
+        else
+            AddWaypoint(other,connectionWays.outgoing);
+    }
+    [Button]
+    public void MakeOneWayIncomingConnectionWith(Waypoint other = null)
+    {
+        if(other == null)
+        {
+            foreach(Waypoint wp in customWaypointList)
+                AddWaypoint(wp,connectionWays.incoming);
+        }
+        else
+            AddWaypoint(other,connectionWays.incoming);
+    }
+    
+    [Button]
+    public void MakeTwoWayConnectionWith(Waypoint other = null)
+    {
+        if(other == null)
+        {
+            foreach(Waypoint wp in customWaypointList)
+                AddWaypoint(wp,connectionWays.twoway);
+        }
+        else
+            AddWaypoint(other,connectionWays.twoway);
+    }
 
     private void MakeWaypoint(connectionWays direction)
     {
@@ -41,29 +77,36 @@ public class Waypoint : MonoBehaviour
         GameObject newObj = new GameObject($"Waypoint {myCreatedPointNR}");
         Waypoint newComp = newObj.AddComponent<Waypoint>();
 
-        if(direction == connectionWays.outgoing)
-        {
-            outgoingConnections.Add(newComp);
-            newComp.incomingConnections.Add(this);
-        }
-        else if(direction == connectionWays.incoming)
-        {
-            incomingConnections.Add(newComp);
-            newComp.outgoingConnections.Add(this);
-        }
-        else if(direction == connectionWays.twoway)
-        {
-            outgoingConnections.Add(newComp);
-            newComp.incomingConnections.Add(this);
-            incomingConnections.Add(newComp);
-            newComp.outgoingConnections.Add(this);
-        }
+        AddWaypoint(newComp, direction);
 
         newObj.transform.position = transform.position;
 
     }
 
+    private void AddWaypoint(Waypoint other, connectionWays direction)
+    {
+        if(direction == connectionWays.outgoing)
+        {
+            outgoingConnections.Add(other);
+            other.incomingConnections.Add(this);
+        }
+        else if(direction == connectionWays.incoming)
+        {
+            incomingConnections.Add(other);
+            other.outgoingConnections.Add(this);
+        }
+        else if(direction == connectionWays.twoway)
+        {
+            outgoingConnections.Add(other);
+            other.incomingConnections.Add(this);
+            incomingConnections.Add(other);
+            other.outgoingConnections.Add(this);
+        }
+    }
+
     private void OnDrawGizmos() {
+        if(!drawPathGizmos)
+            return;
         Gizmos.DrawIcon(transform.position,$"enemies/waypoint_icon.png", true);
         foreach(Waypoint wp in outgoingConnections)
         {
