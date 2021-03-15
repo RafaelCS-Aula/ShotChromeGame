@@ -10,7 +10,7 @@ using NaughtyAttributes;
 [CreateAssetMenu(menuName = "Combat/EncounterWave",fileName = "New Wave")]
 public class CombatWave : ScriptableObject
 {
-
+    
     [ReadOnly][Tooltip("The encounter will not trigger the next wave while this is true")]
     public bool locked;
     [ReadOnly][Tooltip("The encounter will not be complete until all waves are marked as complete")]
@@ -19,6 +19,7 @@ public class CombatWave : ScriptableObject
 
     [SerializeField]
     private SpawnerHolder _spawnGroups;
+
 
     [SerializeField][HorizontalLine]
     private EnemyHolder jaguarHolder;
@@ -53,18 +54,18 @@ public class CombatWave : ScriptableObject
     [SerializeField][EnableIf("HasSpecialHolder"),AllowNesting] 
      private int _specials;
 
-    private bool HasJaguarHolder() => jaguarHolder != null;
-    private bool HasFlyerHolder() => flyerHolder != null;
-    private bool HasDroneHolder() => droneHolder != null;
-    private bool HasGiantHolder() => giantHolder != null;
-    private bool HasSandmanHolder() => sandmanHolder != null;
-    private bool HasShamanHolder() => shamanHolder != null;
-    private bool HasSpecialHolder() => specialHolder != null;
+    private bool HasJaguarHolder => jaguarHolder != null;
+    private bool HasFlyerHolder => flyerHolder != null;
+    private bool HasDroneHolder => droneHolder != null;
+    private bool HasGiantHolder => giantHolder != null;
+    private bool HasSandmanHolder => sandmanHolder != null;
+    private bool HasShamanHolder => shamanHolder != null;
+    private bool HasSpecialHolder => specialHolder != null;
 
-    private bool UsesTimeUnlock() => unlockCondition.HasFlag(WaveUnlockConditions.Time);
-    private bool UsesKillUnlock() => unlockCondition.HasFlag(WaveUnlockConditions.KillEnemies);
+    private bool UsesTimeUnlock => unlockCondition.HasFlag(WaveUnlockConditions.Time);
+    private bool UsesKillUnlock => unlockCondition.HasFlag(WaveUnlockConditions.KillEnemies);
 
-    private bool UsesKillTypeUnlock() => unlockCondition.HasFlag(WaveUnlockConditions.KillEnemiesOfType);
+    private bool UsesKillTypeUnlock => unlockCondition.HasFlag(WaveUnlockConditions.KillEnemiesOfType);
     
    
     
