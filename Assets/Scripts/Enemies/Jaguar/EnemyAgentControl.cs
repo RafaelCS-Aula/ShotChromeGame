@@ -21,15 +21,6 @@ public class EnemyAgentControl : MonoBehaviour
     public LayerMask wallLayer;
     private NavMeshPath path;
 
-    [SerializeField] private Vector3 wanderLimits = Vector3.zero;
-
-    [SerializeField] private Color boundingBoxColor;
-
-    private Vector3 wanderGoalPos;
-
-    [HideInInspector] public bool isHerdWandering;
-    [HideInInspector] public Transform herdWanderBounds;
-
 
     void Start()
     {
@@ -44,26 +35,14 @@ public class EnemyAgentControl : MonoBehaviour
         if (herd.showDebugGizmos) DrawDebugRays();
         hasPath = CheckForPath(target.position);
 
-        float distToTarget = Vector3.Distance(transform.position, target.position);
-
-        if (distToTarget < chaseDist) inChaseDist = true;
-        else inChaseDist = false;
-
-        if (isHerdChasing) Chase();
-
-        if (isHerdWandering) Wander();
+        Chase();
     }
 
     void LateUpdate()
     {
-        if (isHerdWandering)
-        {
-            if (agent.updateRotation) agent.updateRotation = false;
-            transform.rotation = Quaternion.LookRotation(agent.velocity.normalized);
-        }
-        else transform.LookAt(target.position);
+        Vector3 dir = new Vector3(target.position.x, transform.position.y, target.position.z);
 
-
+        transform.LookAt(dir);
     }
     private void Chase()
     {
@@ -75,30 +54,6 @@ public class EnemyAgentControl : MonoBehaviour
             //transform.LookAt(target.position);
             if (CheckForPath(wantedPos)) agent.SetDestination(wantedPos);
         }
-    }
-
-    private void Wander()
-    {
-        //print("WANDERING");
-        bool turn;
-        Bounds b = new Bounds(herdWanderBounds.position, herdWanderBounds.localScale);
-
-        if (!b.Contains(transform.position)) turn = true;
-        else turn = false;
-
-        if (turn)
-        {
-            Vector3 direction = herd.transform.position - transform.position;
-            transform.rotation = Quaternion.Slerp(transform.rotation,
-                                                  Quaternion.LookRotation(direction),
-                                                  agent.angularSpeed * Time.deltaTime);
-        }
-
-        wanderGoalPos = herd.goalPos;
-
-        //transform.LookAt(wanderGoalPos);
-
-        agent.SetDestination(wanderGoalPos);
     }
 
     private float RoundFloat1D(float f)
@@ -113,20 +68,6 @@ public class EnemyAgentControl : MonoBehaviour
         if (path.status == NavMeshPathStatus.PathComplete) return true;
 
         else return false;
-
-        //if (HasWallInBetween()) hasPath = false;
-    }
-
-    private bool HasWallInBetween()
-    {
-        RaycastHit hitInfo;
-
-        if (Physics.Raycast(transform.position, target.position, out hitInfo, Mathf.Infinity, wallLayer))
-        {
-            if ((wallLayer | (1 << hitInfo.transform.gameObject.layer)) == wallLayer) return true;
-        }
-
-        return false;
     }
 
     private void DrawDebugRays()

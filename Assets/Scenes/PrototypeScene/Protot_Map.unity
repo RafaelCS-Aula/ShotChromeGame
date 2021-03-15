@@ -4832,6 +4832,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FinalBossSetup
       objectReference: {fileID: 0}
+    - target: {fileID: 1517035696548100298, guid: 1a5fe6003fb9dbe4f8ee5f52d33fd499, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1517035696548100300, guid: 1a5fe6003fb9dbe4f8ee5f52d33fd499, type: 3}
       propertyPath: timeUntilNextGoalChange
       value: 12
@@ -5895,6 +5899,10 @@ PrefabInstance:
     - target: {fileID: 2692198101879290445, guid: d206ff4c69101f744bc979c81d72cbef, type: 3}
       propertyPath: m_Name
       value: Herd (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2692198101879290445, guid: d206ff4c69101f744bc979c81d72cbef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d206ff4c69101f744bc979c81d72cbef, type: 3}
@@ -10115,6 +10123,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Herd (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2692198101879290445, guid: d206ff4c69101f744bc979c81d72cbef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d206ff4c69101f744bc979c81d72cbef, type: 3}
 --- !u!1001 &1021691886
@@ -13609,7 +13621,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.25
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: f16a6c3bd10fff9428bb5839d460b1cf, type: 2}
+  m_NavMeshData: {fileID: 0}
 --- !u!114 &1347570668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15446,6 +15458,10 @@ PrefabInstance:
     - target: {fileID: 2692198101879290445, guid: d206ff4c69101f744bc979c81d72cbef, type: 3}
       propertyPath: m_Name
       value: Herd (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2692198101879290445, guid: d206ff4c69101f744bc979c81d72cbef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d206ff4c69101f744bc979c81d72cbef, type: 3}
@@ -17997,6 +18013,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Herd (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2692198101879290445, guid: d206ff4c69101f744bc979c81d72cbef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d206ff4c69101f744bc979c81d72cbef, type: 3}
 --- !u!1001 &1857416063
@@ -19392,6 +19412,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Herd (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 2692198101879290445, guid: d206ff4c69101f744bc979c81d72cbef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d206ff4c69101f744bc979c81d72cbef, type: 3}
 --- !u!1 &1995475147
@@ -19754,6 +19778,10 @@ PrefabInstance:
     - target: {fileID: 2692198101879290445, guid: d206ff4c69101f744bc979c81d72cbef, type: 3}
       propertyPath: m_Name
       value: Herd (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2692198101879290445, guid: d206ff4c69101f744bc979c81d72cbef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d206ff4c69101f744bc979c81d72cbef, type: 3}
