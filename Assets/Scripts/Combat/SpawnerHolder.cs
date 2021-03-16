@@ -29,7 +29,7 @@ public class SpawnerHolder : MonoBehaviour
         ":: Special Spawners"
     };
 
-
+    [SerializeField][HideInInspector]
     private GameObject[] _groups = new GameObject[7];
 
 
@@ -82,6 +82,17 @@ public class SpawnerHolder : MonoBehaviour
         DeleteLastSpawner(EnemyTypes.SPECIAL);
 #endregion
     
+    private void Awake() 
+    {
+        
+        foreach(CombatSpawner cs in GetComponentsInChildren<CombatSpawner>())
+        {   
+            
+            spawnerGroups[(int)cs.enemy].Push(cs);
+        }
+
+    }
+
     private void CreateSpawner(EnemyTypes enemyType)
     {
         
@@ -181,15 +192,21 @@ public class SpawnerHolder : MonoBehaviour
 
         CombatSpawner[] sp = spawnerGroups[(int)enemyType].ToArray();
         if(sp.Length == 0)
+        {
+            Debug.Log($"No spawners of type {enemyType}");
             return null; 
+        }
+            
 
         while(spawned.Count < amount)
         {
             for(int i = 0; i < sp.Length; i++)
             {
                 
-                GameObject newBorn = Instantiate(enemy.enemyPrefab, sp[i].transform.localPosition, sp[i].transform.localRotation);
+                GameObject newBorn = Instantiate(enemy.enemyPrefab, sp[i].transform.position, sp[i].transform.rotation);
                 spawned.Push(newBorn);
+                if(spawned.Count >= amount)
+                    break;
             }
             /*if(spawned.Count >= amount)
                 break;

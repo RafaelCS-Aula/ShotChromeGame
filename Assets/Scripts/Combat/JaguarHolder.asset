@@ -10,17 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 867ebc0c38ac64d4fb659c5411579c0a, type: 3}
-  m_Name: New Enemy Group
+  m_Name: JaguarHolder
   m_EditorClassIdentifier: 
-  jaguarPrefab: {fileID: 0}
-  flyerPrefab: {fileID: 0}
-  dronePrefab: {fileID: 0}
-  giantPrefab: {fileID: 0}
-  sandManPrefab: {fileID: 0}
-  shamanPrefab: {fileID: 0}
-  JaguarAmount: 0
-  FlyerAmount: 0
-  DroneAmount: 0
-  GiantAmount: 0
-  SandmanAmount: 0
-  ShamanAmount: 0
+  enemyPrefab: {fileID: 8901399103737813003, guid: 7cff62015a9557f4dba9ebec765dcfd2, type: 3}
+  enemyType: 0

@@ -7,14 +7,19 @@ using NaughtyAttributes;
 
 
 
-[CreateAssetMenu(menuName = "Combat/EncounterWave",fileName = "New Wave")]
-public class CombatWave : ScriptableObject
+//[CreateAssetMenu(menuName = "Combat/EncounterWave",fileName = "New Wave")]
+[System.Serializable]
+public class CombatWave //: ScriptableObject
 {
     
-    [ReadOnly][Tooltip("The encounter will not trigger the next wave while this is true")]
+    [SerializeField][ReadOnly][Tooltip("The encounter will not trigger the next wave while this is true")]
     public bool locked;
-    [ReadOnly][Tooltip("The encounter will not be complete until all waves are marked as complete")]
+    
+    [SerializeField][ReadOnly][Tooltip("The encounter will not be complete until all waves are marked as complete")]
     public bool complete;
+
+    [SerializeField][ReadOnly][Tooltip("The encounter will not be complete until all waves are marked as complete")]
+    public bool inProgress;
 
 
     [SerializeField]
@@ -72,35 +77,35 @@ public class CombatWave : ScriptableObject
     [SerializeField]
     private bool lockOnStart = true;    
     
-    [SerializeField][ShowIf("lockOnStart")]
+    [SerializeField][ShowIf("lockOnStart"),AllowNesting]
     private WaveUnlockConditions unlockCondition;
 
-    [SerializeField][MinValue(0), MaxValue(100)][ShowIf(EConditionOperator.And,"lockOnStart", "UsesKillUnlock")]
+    [SerializeField][MinValue(0), MaxValue(100)][ShowIf(EConditionOperator.And,"lockOnStart", "UsesKillUnlock"),AllowNesting]
     private float  totalKillPercentage;
     
-    [SerializeField][ShowIf(EConditionOperator.And,"lockOnStart", "UsesKillTypeUnlock")]
+    [SerializeField][ShowIf(EConditionOperator.And,"lockOnStart", "UsesKillTypeUnlock"),AllowNesting]
     private EnemyTypes TypeToGenocide; 
 
-    [SerializeField][MinValue(0), MaxValue(100)][ShowIf(EConditionOperator.And,"lockOnStart", "UsesKillTypeUnlock")]
+    [SerializeField][MinValue(0), MaxValue(100)][ShowIf(EConditionOperator.And,"lockOnStart", "UsesKillTypeUnlock"),AllowNesting]
     private float typeKillPercentage;
 
-    [SerializeField][ShowIf(EConditionOperator.And,"lockOnStart", "UsesTimeUnlock")]
+    [SerializeField][ShowIf(EConditionOperator.And,"lockOnStart", "UsesTimeUnlock"),AllowNesting]
     private float secondsToUnlock;
 
 
-    private Dictionary<EnemyTypes, Stack<GameObject>> spawnedEnemies; 
+    private Dictionary<EnemyTypes, Stack<GameObject>> spawnedEnemies = new Dictionary<EnemyTypes, Stack<GameObject>>(); 
     private float _timeOnWaveStart;
 
-    //private int[] _enemyCountArray = 
-    //    new int[Enum.GetNames(typeof(EnemyTypes)).Length];
-   // private EnemyHolder[] _holdersArray =
-   //     new EnemyHolder[Enum.GetNames(typeof(EnemyTypes)).Length];
 
     private Dictionary<EnemyHolder, int> _holdersAndCountsDict = new Dictionary<EnemyHolder, int>();
 
     private int _totalEnemies;
     public void BeginWave()
     {
+
+        if(lockOnStart)
+            locked = true;
+        
         if(jaguarHolder != null)
             _holdersAndCountsDict.Add(jaguarHolder, _jaguars);
         if(flyerHolder != null)    
@@ -116,45 +121,12 @@ public class CombatWave : ScriptableObject
         if(specialHolder != null)
             _holdersAndCountsDict.Add(specialHolder, _specials);
 
-        
-
-        /*_enemyCountArray[(int)EnemyTypes.JAGUAR] = _jaguars;
-        _enemyCountArray[(int)EnemyTypes.FLYER] = _flyers;
-        _enemyCountArray[(int)EnemyTypes.DRONE] = _drones;
-        _enemyCountArray[(int)EnemyTypes.GIANT] = _giants;
-        _enemyCountArray[(int)EnemyTypes.SANDMAN] = _sandmen;
-        _enemyCountArray[(int)EnemyTypes.SHAMAN] = _shamans;
-        _enemyCountArray[(int)EnemyTypes.SPECIAL] = _specials;
-
-        _holdersArray[(int)EnemyTypes.JAGUAR] = jaguarHolder;
-        _holdersArray[(int)EnemyTypes.FLYER] = flyerHolder;
-        _holdersArray[(int)EnemyTypes.DRONE] = droneHolder;
-        _holdersArray[(int)EnemyTypes.GIANT] = giantHolder;
-        _holdersArray[(int)EnemyTypes.SANDMAN] = sandmanHolder;
-        _holdersArray[(int)EnemyTypes.SHAMAN] = shamanHolder;
-        _holdersArray[(int)EnemyTypes.SPECIAL] = specialHolder;*/
-        
-
 
         _timeOnWaveStart = Time.realtimeSinceStartup;
         spawnedEnemies = new Dictionary<EnemyTypes, Stack<GameObject>>();
 
-        /*if(_jaguars > 0)
-            spawnedEnemies.Add(EnemyTypes.JAGUAR, _spawnGroups.PopulateType(jaguarHolder,_jaguars));
-        if(_flyers > 0)
-            spawnedEnemies.Add(EnemyTypes.FLYER, _spawnGroups.PopulateType(flyerHolder,_flyers));
-        if(_drones > 0)
-            spawnedEnemies.Add(EnemyTypes.DRONE, _spawnGroups.PopulateType(droneHolder,_drones));
-        if(_giants > 0)
-            spawnedEnemies.Add(EnemyTypes.GIANT, _spawnGroups.PopulateType(giantHolder,_giants));
-        if(_sandmen > 0)
-            spawnedEnemies.Add(EnemyTypes.SANDMAN, _spawnGroups.PopulateType(sandmanHolder,_sandmen));
-        if(_shamans > 0)
-            spawnedEnemies.Add(EnemyTypes.SHAMAN, _spawnGroups.PopulateType(shamanHolder,_shamans));
-        if(_specials > 0)
-            spawnedEnemies.Add(EnemyTypes.SPECIAL, _spawnGroups.PopulateType(specialHolder,_specials));*/
 
-        Stack<GameObject> spawnedStack;
+        Stack<GameObject> spawnedStack = new Stack<GameObject>();
         foreach(KeyValuePair<EnemyHolder, int> HoldersCounts in _holdersAndCountsDict)
         {
             spawnedEnemies.Add(HoldersCounts.Key.enemyType, _spawnGroups.PopulateType(HoldersCounts.Key, HoldersCounts.Value));
@@ -162,6 +134,8 @@ public class CombatWave : ScriptableObject
             if(spawnedEnemies.TryGetValue(HoldersCounts.Key.enemyType, out spawnedStack))
                 _totalEnemies += spawnedStack.Count;
         }
+        inProgress = true;
+        Debug.Log($"Total Enemies: {_totalEnemies}");
 
     }
 
@@ -194,22 +168,26 @@ public class CombatWave : ScriptableObject
                         if(go.activeSelf)
                         {
                             totalLiving++;
-                            float percentage = 
-                                (totalLiving * 100)/_totalEnemies;
-                            if(percentage >= totalKillPercentage)
-                            {
-                                locked = false;
-                                return;
-                            }
+                            
                         }
                     }
                 }
+            }
+            
+            float percentage = (totalLiving * 100)/_totalEnemies;
+            Debug.Log(totalLiving);
+            Debug.Log($"Percentage: {percentage}");
+            if(percentage <= totalKillPercentage)
+            {
+
+                locked = false;
+                return;
             }
         }
 
         if(unlockCondition.HasFlag(WaveUnlockConditions.KillEnemiesOfType))
         {
-            int typeTotal;
+            int typeTotal = 0;
             int typeAlive = 0;
             Stack<GameObject> typeStack;
             foreach(KeyValuePair<EnemyHolder, int> kv in _holdersAndCountsDict)
@@ -227,19 +205,20 @@ public class CombatWave : ScriptableObject
                                 {
                                     typeAlive++;
 
-                                    float percentage = 
-                                        (typeAlive * 100) / typeTotal;
-                                    if(percentage >= typeKillPercentage)
-                                    {
-                                        locked = false;
-                                        return;
-                                    }
+                                    
+                                    
                                 }
                             }
                         }
 
                     }
                 }
+                    float percentage = (typeAlive * 100) / typeTotal;
+                    if(percentage <= typeKillPercentage)
+                    {
+                        locked = false;
+                        return;
+                    }
             }
 
         }
@@ -263,6 +242,7 @@ public class CombatWave : ScriptableObject
             }
         }
         complete = true;
+        inProgress = false;
 
 
     }
