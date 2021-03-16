@@ -26,19 +26,19 @@ public class CombatWave //: ScriptableObject
     private SpawnerHolder _spawnGroups;
 
 
-    [SerializeField][HorizontalLine]
+    [SerializeField][HorizontalLine][Expandable]
     private EnemyHolder jaguarHolder;
-    [SerializeField]
+    [SerializeField][Expandable]
     private EnemyHolder flyerHolder;
-    [SerializeField]
+    [SerializeField][Expandable]
     private EnemyHolder droneHolder;
-    [SerializeField]
+    [SerializeField][Expandable]
     private EnemyHolder giantHolder;
-    [SerializeField]
+    [SerializeField][Expandable]
     private EnemyHolder sandmanHolder;
-    [SerializeField]
+    [SerializeField][Expandable]
     private EnemyHolder shamanHolder;
-    [SerializeField]
+    [SerializeField][Expandable]
     private EnemyHolder specialHolder;
     
     
@@ -100,6 +100,7 @@ public class CombatWave //: ScriptableObject
     private Dictionary<EnemyHolder, int> _holdersAndCountsDict = new Dictionary<EnemyHolder, int>();
 
     private int _totalEnemies;
+    private bool _allEnemiesInWaveSpawned = false;
     public void BeginWave()
     {
 
@@ -129,7 +130,7 @@ public class CombatWave //: ScriptableObject
         Stack<GameObject> spawnedStack = new Stack<GameObject>();
         foreach(KeyValuePair<EnemyHolder, int> HoldersCounts in _holdersAndCountsDict)
         {
-            spawnedEnemies.Add(HoldersCounts.Key.enemyType, _spawnGroups.PopulateType(HoldersCounts.Key, HoldersCounts.Value));
+            spawnedEnemies.Add(HoldersCounts.Key.enemyType, _spawnGroups.PopulateType(HoldersCounts.Key, HoldersCounts.Value, this));
             
             if(spawnedEnemies.TryGetValue(HoldersCounts.Key.enemyType, out spawnedStack))
                 _totalEnemies += spawnedStack.Count;
@@ -137,12 +138,16 @@ public class CombatWave //: ScriptableObject
         inProgress = true;
         Debug.Log($"Total Enemies: {_totalEnemies}");
 
+        _allEnemiesInWaveSpawned = CheckIfAllSpawned();
     }
+
 
     public void CheckLockConditions()
     {
         if(!locked)
             return;
+
+        
         // Check the time condition
         if(unlockCondition.HasFlag(WaveUnlockConditions.Time))
         {
@@ -156,11 +161,20 @@ public class CombatWave //: ScriptableObject
             }
         }
 
+        if(!_allEnemiesInWaveSpawned)
+        {
+            _allEnemiesInWaveSpawned = CheckIfAllSpawned();
+        }
+
        if(unlockCondition.HasFlag(WaveUnlockConditions.KillEnemies))
        {
+           // Only start checking once all enemies of this wave have spawned
+           if(!_allEnemiesInWaveSpawned)
+            return;
            int totalLiving = 0;
             foreach(KeyValuePair<EnemyTypes, Stack<GameObject>> kv in spawnedEnemies)
             {
+                
                 foreach(GameObject go in kv.Value)
                 {
                     if(go != null)
@@ -187,6 +201,10 @@ public class CombatWave //: ScriptableObject
 
         if(unlockCondition.HasFlag(WaveUnlockConditions.KillEnemiesOfType))
         {
+            // Only start checking once all enemies of this wave have spawned
+            if(!_allEnemiesInWaveSpawned)
+                return;
+
             int typeTotal = 0;
             int typeAlive = 0;
             Stack<GameObject> typeStack;
@@ -213,12 +231,12 @@ public class CombatWave //: ScriptableObject
 
                     }
                 }
-                    float percentage = (typeAlive * 100) / typeTotal;
-                    if(percentage <= typeKillPercentage)
-                    {
-                        locked = false;
-                        return;
-                    }
+                float percentage = (typeAlive * 100) / typeTotal;
+                if(percentage <= typeKillPercentage)
+                {
+                    locked = false;
+                    return;
+                }
             }
 
         }
@@ -248,8 +266,27 @@ public class CombatWave //: ScriptableObject
     }
     
 
-
+    public void AddLateSpawnedEnemy(EnemyTypes enemyType, GameObject enemyObj)
+    {
+        Stack<GameObject> dummyStack;
+        if(spawnedEnemies.TryGetValue(enemyType,out dummyStack))
+            dummyStack.Push(enemyObj);
+    }
     
+    // Check if the spawned count is the same as the count specified by the user
+    private bool CheckIfAllSpawned()
+    {
+        foreach(KeyValuePair<EnemyHolder, int> hkv in _holdersAndCountsDict)
+        {
+            if(spawnedEnemies[hkv.Key.enemyType].Count < hkv.Value)
+            {
+                return false;
 
+            }
+            else
+                return true;
+        }
+        return true;
+    }
 
 }

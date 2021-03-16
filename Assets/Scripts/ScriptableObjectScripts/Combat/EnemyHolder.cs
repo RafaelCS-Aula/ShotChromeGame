@@ -10,7 +10,7 @@ public class EnemyHolder : ScriptableObject
 
     public EnemyTypes enemyType;
     
+    public FloatVariable distanceToAllowOtherToSpawn;
     
-
 
 }

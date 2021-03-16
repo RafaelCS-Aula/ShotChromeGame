@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 8901399103737813003, guid: 7cff62015a9557f4dba9ebec765dcfd2, type: 3}
   enemyType: 0
+  distanceToAllowOtherToSpawn:
+    UseInspectorValue: 1
+    InspectorValue: 0.2
+    Variable: {fileID: 0}

@@ -185,7 +185,7 @@ public class SpawnerHolder : MonoBehaviour
     }
 
 
-    public Stack<GameObject> PopulateType(EnemyHolder enemy, int amount)
+    public Stack<GameObject> PopulateType(EnemyHolder enemy, int amount, CombatWave callerWave)
     {
         EnemyTypes enemyType = enemy.enemyType;
         Stack<GameObject> spawned = new Stack<GameObject>();
@@ -197,30 +197,28 @@ public class SpawnerHolder : MonoBehaviour
             return null; 
         }
             
+        int enqueued = 0;
 
-        while(spawned.Count < amount)
+        while(enqueued < amount)
         {
             for(int i = 0; i < sp.Length; i++)
             {
                 
-                GameObject newBorn = Instantiate(enemy.enemyPrefab, sp[i].transform.position, sp[i].transform.rotation);
-                spawned.Push(newBorn);
-                if(spawned.Count >= amount)
+                sp[i].spawnQueue.Enqueue(enemy.enemyPrefab);
+                enqueued++;
+                if(enqueued >= amount)
                     break;
             }
-            /*if(spawned.Count >= amount)
-                break;
 
-            for(int i = 0; i < sp.Length; i++)
-            {
-                
-                GameObject newBorn = Instantiate(enemy.enemyPrefab, sp[i].transform.localPosition, sp[i].transform.localRotation);
-                spawned.Push(newBorn);
-            }*/
-
+        }
+        foreach(CombatSpawner cs in sp)
+        {
+            spawned.Push(cs.StartSpawning(callerWave,enemy.distanceToAllowOtherToSpawn));
         }
         return spawned;
 
     }
+
+   
 
 }
