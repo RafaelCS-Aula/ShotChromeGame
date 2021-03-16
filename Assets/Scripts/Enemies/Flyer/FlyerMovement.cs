@@ -17,8 +17,6 @@ public class FlyerMovement : MonoBehaviour
     [SerializeField] private float turnSpeed;
 
     [SerializeField] private LayerMask playerLayer;
-    [SerializeField] private LayerMask obstacleLayer;
-    [SerializeField] private LayerMask detectionLayers;
 
     [SerializeField] private BoolVariable shootWhileMoving;
 
@@ -35,10 +33,6 @@ public class FlyerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         currentWaypoint = startingIndex;
         transform.position = waypoints[currentWaypoint].transform.position;
-
-
-        detectionLayers = playerLayer.value | obstacleLayer.value;
-
     }
 
     private void Update()
@@ -110,11 +104,7 @@ public class FlyerMovement : MonoBehaviour
                     //print("PLAYER");
                     return true;
                 }
-                else if (obstacleLayer == (obstacleLayer | (1 << hitinfo.collider.gameObject.layer)))
-                {
-                    //print("OBSTACLE");
-                    return false;
-                }
+                else return false;
             }
         }
         return false;
