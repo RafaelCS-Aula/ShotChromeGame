@@ -64,6 +64,7 @@ public class CombatSpawner : MonoBehaviour
 
         _lastSpawned = Instantiate(spawnQueue.Peek(),transform.position, transform.rotation);
         spawnQueue.Dequeue();
+        _lastSpawned.GetComponent<TargetHolder>().Target = _callerWave.enemyTarget;
 
         if(spawnQueue.Count > 0)
             _openForSpawning = true;
@@ -82,6 +83,7 @@ public class CombatSpawner : MonoBehaviour
             if(distance >= _minDistanceToNext)
             {
                 _lastSpawned = Instantiate(spawnQueue.Peek(),transform.position, transform.rotation);
+                _lastSpawned.GetComponent<TargetHolder>().Target = _callerWave.enemyTarget;
                 spawnQueue.Dequeue();
                 _callerWave.AddLateSpawnedEnemy(enemy,_lastSpawned);
                 

@@ -24,14 +24,20 @@ public class CombatEncounter : MonoBehaviour
     [SerializeField][ReadOnly]
     private bool ongoing = false;
 
+    public Transform encounterTarget;
+
     [Button]
     public void StartEncounter()
     {
         _currentWaveIndex = 0;
         OnEncounterStart.Invoke();
         _currentWave = waves[_currentWaveIndex];
-        _currentWave.BeginWave();
+        
         _allWavesComplete = false;
+        if(encounterTarget == null)
+            encounterTarget = gameObject.transform;
+        _currentWave.enemyTarget = encounterTarget;
+        _currentWave.BeginWave();
         ongoing = true;
     }
 
@@ -70,6 +76,9 @@ public class CombatEncounter : MonoBehaviour
         ongoing = false;
     }
 
+    /// <summary>
+    /// Start the next wave in the list.
+    /// </summary>
     private void AdvanceWave()
     {
         _currentWaveIndex++;

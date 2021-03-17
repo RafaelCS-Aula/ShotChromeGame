@@ -21,6 +21,8 @@ public class CombatWave
     [SerializeField][ReadOnly][Tooltip("The encounter will not be complete until all waves are marked as complete")]
     public bool inProgress;
 
+    [ReadOnly]
+    public Transform enemyTarget;
 
     [SerializeField]
     private SpawnerHolder _spawnGroups;
@@ -104,6 +106,10 @@ public class CombatWave
 
     private int _totalEnemies;
     private bool _allEnemiesInWaveSpawned = false;
+
+    /// <summary>
+    /// Make all the enemies spawn on the given spawners.
+    /// </summary>
     public void BeginWave()
     {
 
@@ -249,6 +255,9 @@ public class CombatWave
         
     }
     
+    /// <summary>
+    /// Check if all enemies of this wave are dead.
+    /// </summary>
     public void CheckCompletion()
     {
         foreach(KeyValuePair<EnemyTypes, Stack<GameObject>> kv in spawnedEnemies)
@@ -278,7 +287,11 @@ public class CombatWave
             dummyStack.Push(enemyObj);
     }
     
-    // Check if the spawned count is the same as the count specified by the user
+    /// <summary>
+    /// Check if the spawned count is the same as the amount of enemies of that
+    /// type specified by the user.
+    /// </summary>
+    /// <returns>true if it is, false if it isn't.</returns>
     private bool CheckIfAllSpawned()
     {
         foreach(KeyValuePair<EnemyHolder, int> hkv in _holdersAndCountsDict)
