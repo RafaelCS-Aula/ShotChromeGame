@@ -45,9 +45,11 @@ public class CombatSpawner : MonoBehaviour
 
     public GameObject StartSpawning(CombatWave callerWave,float minDistanceToNext)
     {
+       
         _callerWave = callerWave;
         _minDistanceToNext = minDistanceToNext;
-        _lastSpawned = Instantiate(spawnQueue.Peek(),transform.position, Quaternion.identity);
+
+        _lastSpawned = Instantiate(spawnQueue.Peek(),transform.position, transform.rotation);
         spawnQueue.Dequeue();
 
         if(spawnQueue.Count > 0)
@@ -64,7 +66,7 @@ public class CombatSpawner : MonoBehaviour
 
             if(distance >= _minDistanceToNext)
             {
-                _lastSpawned = Instantiate(spawnQueue.Peek(),transform.position, Quaternion.identity);
+                _lastSpawned = Instantiate(spawnQueue.Peek(),transform.position, transform.rotation);
                 spawnQueue.Dequeue();
                 _callerWave.AddLateSpawnedEnemy(enemy,_lastSpawned);
                 
@@ -81,6 +83,10 @@ public class CombatSpawner : MonoBehaviour
         
        Gizmos.DrawIcon(transform.position, pathToIcons, true);
         Handles.RadiusHandle(Quaternion.identity,transform.position,_minDistanceToNext,false);
+
+        Handles.ConeHandleCap(GetInstanceID(),transform.position + transform.forward,transform.rotation,0.3f,EventType.Repaint);
+
+        Gizmos.DrawRay(transform.position,transform.forward);
        if(flyerWaypoint != null && _isFlyer)
        {
            Handles.color = Color.blue;
