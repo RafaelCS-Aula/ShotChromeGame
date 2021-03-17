@@ -4,7 +4,7 @@ using UnityEngine;
 using NaughtyAttributes;
 public class SpawnerHolder : MonoBehaviour
 {
-    
+    // Stacks of spawners, each index is a different type of spawner
     [SerializeField]
     private Stack<CombatSpawner>[] spawnerGroups = 
     {
@@ -17,7 +17,7 @@ public class SpawnerHolder : MonoBehaviour
         new Stack<CombatSpawner>()
     };
 
-  
+    // Names for the parent game objects that will hold the spawners
     private string[] _groupnames = 
     {
         ":: Jaguar Spawners",
@@ -84,7 +84,8 @@ public class SpawnerHolder : MonoBehaviour
     
     private void Awake() 
     {
-        
+        // Go trough the hierarqui to make sure the stacks are synced to what 
+        // the user sees
         foreach(CombatSpawner cs in GetComponentsInChildren<CombatSpawner>())
         {   
             
@@ -93,6 +94,11 @@ public class SpawnerHolder : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Create an empty game object with a spawner component
+    /// </summary>
+    /// <param name="enemyType"> The enemy that will spawn from the new 
+    /// spawner</param>
     private void CreateSpawner(EnemyTypes enemyType)
     {
         
@@ -120,6 +126,10 @@ public class SpawnerHolder : MonoBehaviour
         
         
         go.transform.SetParent(parent.transform);
+
+        // Put new spawner in the location & rotation of the last made spawner 
+        // of the same type if it exists, if it doesn't put it in the group 
+        // holder object's location
         if(choosenStack.Count > 1)
         {
             print($"Position of {choosenStack.Peek().name}: {choosenStack.Peek().transform.position}");
@@ -137,18 +147,17 @@ public class SpawnerHolder : MonoBehaviour
         
 
         choosenStack.Push(cs);
+
+        // Update the parent's name to show how many children (spawners) it
+        // has.
         parent.name = _groupnames[(int)enemyType] + $"- {parent.transform.childCount}";
        
-
-       
-        /*for(int i = 0; i < spawnerGroups.Length; i++)
-        {
-            Debug.Log($"Stack of {(CombatSpawnerTypes)i} - has {spawnerGroups[i].Count}");
-        }
-        Debug.Log("======================================");*/
     }
     
-    
+    /// <summary>
+    /// Delete the object of the last placed spawner a type.
+    /// </summary>
+    /// <param name="enemyType">The type of spawner to be considered</param>
     private void DeleteLastSpawner(EnemyTypes enemyType)
     {
         Stack<CombatSpawner> choosenStack = spawnerGroups[(int)enemyType];
@@ -162,6 +171,10 @@ public class SpawnerHolder : MonoBehaviour
         choosenStack.Pop();
     }
 
+    /// <summary>
+    /// Remove null spawners from the tip of the stack
+    /// </summary>
+    /// <param name="stack">The stack to clean</param>
     private void CleanStack(Stack<CombatSpawner> stack)
     {
         if(stack.Count == 0)
@@ -176,6 +189,11 @@ public class SpawnerHolder : MonoBehaviour
        
     }
 
+    /// <summary>
+    /// Syncs the stacks with the spawner components in the hierarchy.
+    /// </summary>
+    /// <param name="stack">The stack to sync</param>
+    /// <param name="group">The parent game object of that spawner type.</param>
     private void SyncStackToScene(Stack<CombatSpawner> stack, GameObject group)
     {
         CleanStack(stack);
@@ -186,7 +204,17 @@ public class SpawnerHolder : MonoBehaviour
 
     }
 
-
+    /// <summary>
+    /// Tell the spawners of a type to queue in the prefabs to instantiate, and 
+    /// then spawn them.
+    /// </summary>
+    /// <param name="enemy">The enemy Holder with the prefab to spawn</param>
+    /// <param name="amount">How many enemies?</param>
+    /// <param name="delay">Wait some seconds until telling each spawner to 
+    /// start</param>
+    /// <param name="callerWave"> The combat wave that is sending the enemies
+    /// </param>
+    /// <returns>The objects spawned by all the spawners of this type.</returns>
     public Stack<GameObject> PopulateType(EnemyHolder enemy, int amount, float delay, CombatWave callerWave)
     {
         EnemyTypes enemyType = enemy.enemyType;
@@ -201,6 +229,7 @@ public class SpawnerHolder : MonoBehaviour
             
         int enqueued = 0;
 
+        // Tell each spawner how many enemies it needs to spawn
         while(enqueued < amount)
         {
             for(int i = 0; i < sp.Length; i++)
@@ -213,13 +242,18 @@ public class SpawnerHolder : MonoBehaviour
             }
 
         }
+
+        // Start the spawning process, making each spawner go down their queue.
         foreach(CombatSpawner cs in sp)
         {
-            float delayCount = 0;
-            while(delayCount < 0)
+            float startTime = Time.unscaledTime;
+            float time_delta = 0;
+            do
             {
-                delayCount += Time.deltaTime;
-            }
+                time_delta = Time.unscaledTime - startTime;
+                
+            }while(time_delta < delay);
+
             spawned.Push(cs.StartSpawning(callerWave,enemy.distanceToAllowOtherToSpawn));
         }
         return spawned;

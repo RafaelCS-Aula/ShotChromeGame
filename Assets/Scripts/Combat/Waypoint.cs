@@ -24,19 +24,19 @@ public class Waypoint : MonoBehaviour
     public void ToggleOccupation() { isOccupied = !isOccupied; }
 
 
-    [Button]
+    [Button("Create New Outgoing Connection")]
     public void CreateOneWayOutgoingConnection() => 
         MakeWaypoint(connectionWays.outgoing);
 
-    [Button]
+    [Button("Create New Incoming Connection")]
     public void CreateOneWayIncomingConnection() =>
         MakeWaypoint(connectionWays.incoming);
 
-    [Button]
+    [Button("Create New Two-Way Connection")]
     public void CreateTwoWayConnection() => 
         MakeWaypoint(connectionWays.twoway);
 
-    [Button]
+    [Button("Make Outgoing Connection With Custom List Points")]
     public void MakeOneWayOutgoingConnectionWith(Waypoint other = null)
     {
         if(other == null)
@@ -47,7 +47,7 @@ public class Waypoint : MonoBehaviour
         else
             AddWaypoint(other,connectionWays.outgoing);
     }
-    [Button]
+    [Button("Make Incoming Connection With Custom List Points")]
     public void MakeOneWayIncomingConnectionWith(Waypoint other = null)
     {
         if(other == null)
@@ -59,7 +59,7 @@ public class Waypoint : MonoBehaviour
             AddWaypoint(other,connectionWays.incoming);
     }
     
-    [Button]
+    [Button("Make Two-Way Connection With Custom List Points")]
     public void MakeTwoWayConnectionWith(Waypoint other = null)
     {
         if(other == null)
@@ -71,6 +71,13 @@ public class Waypoint : MonoBehaviour
             AddWaypoint(other,connectionWays.twoway);
     }
 
+
+    /// <summary>
+    /// Creates a new empty object with a waypoint component in it at this 
+    /// one's location.
+    /// </summary>
+    /// <param name="direction"> The direction of the new waypoint in relation 
+    /// to this one</param>
     private void MakeWaypoint(connectionWays direction)
     {
         myCreatedPointNR = ++createdPoints;
@@ -83,6 +90,11 @@ public class Waypoint : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Create a connection with an existing waypoint.
+    /// </summary>
+    /// <param name="other"> Other waypoint</param>
+    /// <param name="direction">Direction of the connectio</param>
     private void AddWaypoint(Waypoint other, connectionWays direction)
     {
         if(direction == connectionWays.outgoing)

@@ -26,6 +26,10 @@ public class CombatSpawner : MonoBehaviour
     [ShowIf("_isFlyer")]
     public List<Waypoint> flyerEntryWaypoints;
 
+    /// <summary>
+    /// Create an Outgoing connection with the Spawners in the flyerEntryPoints
+    /// colection.
+    /// </summary>
     [Button]
     public void ConnectWithFlyerWaypoints()
     {
@@ -43,6 +47,15 @@ public class CombatSpawner : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Spawn the first object in its queue and if there are more left, keep 
+    /// itself open too keep spawning
+    /// </summary>
+    /// <param name="callerWave">The wave commanding the spawns</param>
+    /// <param name="minDistanceToNext">The minimum distance a newly spawned
+    /// enemy must have to this spawner until it can spawn the next monster in 
+    /// the queue.</param>
+    /// <returns></returns>
     public GameObject StartSpawning(CombatWave callerWave,float minDistanceToNext)
     {
        
@@ -60,8 +73,10 @@ public class CombatSpawner : MonoBehaviour
 
     private void Update() 
     {
+        
         if(_openForSpawning)
         {
+            // If the newest spawn is far away enough, spawn the next in the queue.
             float distance = distance = (_lastSpawned.transform.position - transform.position).sqrMagnitude;
 
             if(distance >= _minDistanceToNext)
