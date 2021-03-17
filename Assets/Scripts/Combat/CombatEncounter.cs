@@ -12,6 +12,9 @@ public class CombatEncounter : MonoBehaviour
     [SerializeField]
     private UnityEvent OnEncounterComplete;
     
+    [SerializeField]
+    public float timeFromStartToFirstWave;
+
     [SerializeField][ReorderableList]
     private List<CombatWave> waves = new List<CombatWave>();
 
@@ -26,8 +29,9 @@ public class CombatEncounter : MonoBehaviour
 
     public Transform encounterTarget;
 
+
     [Button]
-    public void StartEncounter()
+    public IEnumerable StartEncounter()
     {
         _currentWaveIndex = 0;
         OnEncounterStart.Invoke();
@@ -37,6 +41,7 @@ public class CombatEncounter : MonoBehaviour
         if(encounterTarget == null)
             encounterTarget = gameObject.transform;
         _currentWave.enemyTarget = encounterTarget;
+        yield return new WaitForSeconds(timeFromStartToFirstWave);
         _currentWave.BeginWave();
         ongoing = true;
     }

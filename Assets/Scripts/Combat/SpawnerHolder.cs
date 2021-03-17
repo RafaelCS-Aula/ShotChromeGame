@@ -246,13 +246,13 @@ public class SpawnerHolder : MonoBehaviour
         // Start the spawning process, making each spawner go down their queue.
         foreach(CombatSpawner cs in sp)
         {
-            float startTime = Time.unscaledTime;
+           /* float startTime = Time.unscaledTime;
             float time_delta = 0;
             do
             {
                 time_delta = Time.unscaledTime - startTime;
                 
-            }while(time_delta < delay);
+            }while(time_delta < delay);*/
 
             spawned.Push(cs.StartSpawning(callerWave,enemy.distanceToAllowOtherToSpawn));
         }
