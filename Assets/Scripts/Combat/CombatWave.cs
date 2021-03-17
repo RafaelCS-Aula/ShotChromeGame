@@ -9,7 +9,7 @@ using NaughtyAttributes;
 
 //[CreateAssetMenu(menuName = "Combat/EncounterWave",fileName = "New Wave")]
 [System.Serializable]
-public class CombatWave //: ScriptableObject
+public class CombatWave 
 {
     
     [SerializeField][ReadOnly][Tooltip("The encounter will not trigger the next wave while this is true")]
@@ -24,6 +24,9 @@ public class CombatWave //: ScriptableObject
 
     [SerializeField]
     private SpawnerHolder _spawnGroups;
+
+    [SerializeField]
+    private FloatVariable _spawnerDelay;
 
 
     [SerializeField][HorizontalLine][Expandable]
@@ -130,7 +133,7 @@ public class CombatWave //: ScriptableObject
         Stack<GameObject> spawnedStack = new Stack<GameObject>();
         foreach(KeyValuePair<EnemyHolder, int> HoldersCounts in _holdersAndCountsDict)
         {
-            spawnedEnemies.Add(HoldersCounts.Key.enemyType, _spawnGroups.PopulateType(HoldersCounts.Key, HoldersCounts.Value, this));
+            spawnedEnemies.Add(HoldersCounts.Key.enemyType, _spawnGroups.PopulateType(HoldersCounts.Key, HoldersCounts.Value, _spawnerDelay , this));
             
             if(spawnedEnemies.TryGetValue(HoldersCounts.Key.enemyType, out spawnedStack))
                 _totalEnemies += spawnedStack.Count;
@@ -141,7 +144,9 @@ public class CombatWave //: ScriptableObject
         _allEnemiesInWaveSpawned = CheckIfAllSpawned();
     }
 
-
+    /// <summary>
+    /// Verify the conditions to either unlock or continue locking this wave.
+    /// </summary>
     public void CheckLockConditions()
     {
         if(!locked)

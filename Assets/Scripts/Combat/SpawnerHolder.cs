@@ -126,11 +126,13 @@ public class SpawnerHolder : MonoBehaviour
             print($"Local Position of {choosenStack.Peek().name}: {choosenStack.Peek().transform.localPosition}");
 
             go.transform.localPosition = choosenStack.Peek().transform.localPosition;
+            go.transform.localRotation = choosenStack.Peek().transform.localRotation;
         }
             
         else
         {
             go.transform.localPosition = parent.transform.localPosition;
+            go.transform.localRotation = parent.transform.localRotation;
         }
         
 
@@ -185,7 +187,7 @@ public class SpawnerHolder : MonoBehaviour
     }
 
 
-    public Stack<GameObject> PopulateType(EnemyHolder enemy, int amount, CombatWave callerWave)
+    public Stack<GameObject> PopulateType(EnemyHolder enemy, int amount, float delay, CombatWave callerWave)
     {
         EnemyTypes enemyType = enemy.enemyType;
         Stack<GameObject> spawned = new Stack<GameObject>();
@@ -213,6 +215,11 @@ public class SpawnerHolder : MonoBehaviour
         }
         foreach(CombatSpawner cs in sp)
         {
+            float delayCount = 0;
+            while(delayCount < 0)
+            {
+                delayCount += Time.deltaTime;
+            }
             spawned.Push(cs.StartSpawning(callerWave,enemy.distanceToAllowOtherToSpawn));
         }
         return spawned;
