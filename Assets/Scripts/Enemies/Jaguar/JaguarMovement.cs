@@ -1,152 +1,77 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using NaughtyAttributes;
 
 public class JaguarMovement : MonoBehaviour
 {
-    [SerializeField] private Transform target;
+    private TargetHolder targetH;
 
-    #region Seek
-    [SerializeField] private FloatVariable seekSpeed;
-    [SerializeField] private FloatVariable seekDist;
-    #endregion
+    private NavMeshAgent agent;
 
-    #region Wander
+    private bool hasPath = false;
 
-    [SerializeField] private FloatVariable wanderSpeed;
-    [SerializeField] private FloatVariable dirChangeInterval;
-    [SerializeField] private FloatVariable maxDirChange;
+    private NavMeshPath path;
 
-    private Vector3 wanderOrigin;
-    [SerializeField] private FloatVariable wanderRadius;
-
-    private bool isWandering = false;
-
-    private float dirChangeTimer;
-
-    private Quaternion rotation = Quaternion.identity;
-
-    private CharacterController cC;
-
-    #endregion
-
-    [SerializeField] FloatVariable attackRange;
-
-    private Vector3 vel;
+    [SerializeField] private FloatVariable chaseSpeed;
+    [SerializeField] private FloatVariable stopDist;
 
 
-    private void Start()
+    void Start()
     {
-        vel = Vector3.zero;
-        cC = GetComponent<CharacterController>();
+        agent = GetComponent<NavMeshAgent>();
+        path = new NavMeshPath();
+        targetH = GetComponent<TargetHolder>();
 
-        dirChangeTimer = 0;
+        agent.speed = chaseSpeed;
+
+        agent.stoppingDistance = stopDist;
     }
 
-    private void Update()
+    void Update()
     {
-        float distToTarget = Vector3.Distance(target.position, transform.position);
+        hasPath = CheckForPath(targetH.Target.position);
 
-        #region SeekDistanceRays
-        Vector3 sDir1 = transform.forward.normalized;
-        Vector3 sDir2 = -transform.forward.normalized;
-        Vector3 sDir3 = transform.right.normalized;
-        Vector3 sDir4 = -transform.right.normalized;
-        Debug.DrawRay(transform.position, sDir1 * seekDist, Color.red);
-        Debug.DrawRay(transform.position, sDir2 * seekDist, Color.red);
-        Debug.DrawRay(transform.position, sDir3 * seekDist, Color.red);
-        Debug.DrawRay(transform.position, sDir4 * seekDist, Color.red);
-        #endregion
+        Chase();
+    }
 
-        #region MeleeDistanceRays
-        Vector3 mDir1 = transform.forward.normalized;
-        Vector3 mDir2 = -transform.forward.normalized;
-        Vector3 mDir3 = transform.right.normalized;
-        Vector3 mDir4 = -transform.right.normalized;
-        Debug.DrawRay(transform.position, mDir1 * attackRange, Color.blue);
-        Debug.DrawRay(transform.position, mDir2 * attackRange, Color.blue);
-        Debug.DrawRay(transform.position, mDir3 * attackRange, Color.blue);
-        Debug.DrawRay(transform.position, mDir4 * attackRange, Color.blue);
-        #endregion
+    void LateUpdate()
+    {
+        Vector3 dir = new Vector3(targetH.Target.position.x, transform.position.y, targetH.Target.position.z);
 
-        if (distToTarget <= seekDist)
+        transform.LookAt(dir);
+    }
+    private void Chase()
+    {
+        Vector3 wantedPos = RoundVecTo1D(targetH.Target.position);
+
+        if (agent.destination != wantedPos)
         {
-            if (isWandering != false) isWandering = false;
-
-            if (distToTarget > attackRange)
-            {
-                Seek();
-            }
-        }
-
-        else
-        {
-            Wander();
-            if (isWandering != true)
-            {
-                isWandering = true;
-                wanderOrigin = transform.position;
-                dirChangeTimer = dirChangeInterval;
-            }
-            dirChangeTimer -= Time.deltaTime;
+            if (CheckForPath(wantedPos)) agent.SetDestination(wantedPos);
         }
     }
 
-    private void Seek()
+    private Vector3 RoundVecTo1D(Vector3 vec)
     {
-        Vector3 wantedVel = target.position - transform.position;
-        wantedVel = wantedVel.normalized * seekSpeed;
+        float f1 = Mathf.Round(vec.x * 100) * 0.01f;
+        float f2 = Mathf.Round(vec.y * 100) * 0.01f;
+        float f3 = Mathf.Round(vec.z * 100) * 0.01f;
 
-        //wantedVel = new Vector3(wantedVel.x, 0, wantedVel.z);
-
-        Vector3 steering = wantedVel - vel;
-
-        vel = Vector3.ClampMagnitude(vel + steering, seekSpeed);
-        //transform.position += new Vector3(vel.x, 0, vel.z) * Time.deltaTime;
-        cC.Move(vel * Time.deltaTime);
-        
-        if (vel != Vector3.zero) transform.forward = vel.normalized;
-
-        Debug.DrawRay(transform.position, vel.normalized * 2, Color.green);
-        Debug.DrawRay(transform.position, wantedVel.normalized * 2, Color.magenta);
+        return new Vector3(f1, f2, f3);
     }
 
-    private void Wander()
+    public bool CheckForPath(Vector3 destination)
     {
-        float distToOrigin = Vector3.Distance(transform.position, wanderOrigin); // For Later
+        agent.CalculatePath(destination, path);
 
-        if (dirChangeTimer <= 0)
-        {
-            float min = transform.eulerAngles.y - maxDirChange;
-            float max = transform.eulerAngles.y + maxDirChange;
-            float dir = Random.Range(min, max);
-            rotation = Quaternion.Euler(0, dir, 0);
-            dirChangeTimer = dirChangeInterval;
+        if (path.status == NavMeshPathStatus.PathComplete) return true;
 
-            if (rotation.y < 0) rotation = Quaternion.identity;
-            transform.Rotate(rotation.eulerAngles);
-        }
-
-        Vector3 move = transform.forward * wanderSpeed * Time.deltaTime;
-        //transform.position += move * Time.deltaTime;
-        cC.Move(move);
-
-
-        #region WanderDistanceRays
-        Vector3 dir1 = transform.forward.normalized;
-        Vector3 dir2 = -transform.forward.normalized;
-        Vector3 dir3 = transform.right.normalized;
-        Vector3 dir4 = -transform.right.normalized;
-        Debug.DrawRay(transform.position, dir1 * wanderRadius, Color.green);
-        Debug.DrawRay(transform.position, dir2 * wanderRadius, Color.green);
-        Debug.DrawRay(transform.position, dir3 * wanderRadius, Color.green);
-        Debug.DrawRay(transform.position, dir4 * wanderRadius, Color.green);
-        #endregion
+        else return false;
     }
 
-    private void OnDrawGizmos()
+    private void DrawDebugRays()
     {
-        //Gizmos.color = Color.yellow;
-        //Gizmos.DrawSphere(wanderOrigin, 1);
+
     }
 }

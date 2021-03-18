@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 2223515168033367723}
   - component: {fileID: 2223515168033367732}
   - component: {fileID: 2223515168033367722}
+  - component: {fileID: 254826969876248967}
   m_Layer: 9
   m_Name: Flyer
   m_TagString: Untagged
@@ -297,35 +298,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e99e0119439bc44b3e19bef2498a43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waypoints: []
+  startingIndex: 0
   target: {fileID: 0}
-  seekSpeed:
-    UseInspectorValue: 0
+  shotOrigin: {fileID: 0}
+  moveSpeed: 0
+  turnSpeed: 0
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  shootWhileMoving:
+    UseInspectorValue: 1
     InspectorValue: 0
-    Variable: {fileID: 11400000, guid: 899be0066f14e7c46aac0fe5b661ce18, type: 2}
-  maxSeekLateralDist:
-    UseInspectorValue: 0
-    InspectorValue: 0
-    Variable: {fileID: 11400000, guid: 0c90cd8318e7cef4196a4aea4921a6d6, type: 2}
-  minSeekLateralDist:
-    UseInspectorValue: 0
-    InspectorValue: 0
-    Variable: {fileID: 11400000, guid: c620966f1fdbad04e9d4e5746d4da55d, type: 2}
-  wanderSpeed:
-    UseInspectorValue: 0
-    InspectorValue: 0
-    Variable: {fileID: 11400000, guid: f920e8017006d3f41876db7e7977cbeb, type: 2}
-  dirChangeInterval:
-    UseInspectorValue: 0
-    InspectorValue: 0
-    Variable: {fileID: 11400000, guid: 65077ff1a184af64d9d221654a675919, type: 2}
-  maxDirChange:
-    UseInspectorValue: 0
-    InspectorValue: 0
-    Variable: {fileID: 11400000, guid: d3746a7ffea3d644d8ce6e6cc04ff9d8, type: 2}
-  wanderRadius:
-    UseInspectorValue: 0
-    InspectorValue: 0
-    Variable: {fileID: 11400000, guid: 49cb7dfdbd4ae434fb07cc75a0bab4fa, type: 2}
+    Variable: {fileID: 0}
 --- !u!114 &2223515168033367722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,10 +324,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  flyingHeight:
-    UseInspectorValue: 0
-    InspectorValue: 0
-    Variable: {fileID: 11400000, guid: 49eefff5d58211d408844785ec03bb11, type: 2}
   attackDamage:
     UseInspectorValue: 0
     InspectorValue: 0
@@ -359,9 +340,30 @@ MonoBehaviour:
     UseInspectorValue: 0
     InspectorValue: 0
     Variable: {fileID: 11400000, guid: 98610130002200f4f8614e0b3aa9da83, type: 2}
+  destroyProjAfterSeconds:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
   DamagePlayer: {fileID: 11400000, guid: 8252108987d608d428fc4e8e1ed6e974, type: 2}
   projOrigin: {fileID: 2223515167903557726}
   projPrefab: {fileID: 2637331313813923962, guid: 2dd9c93511a709e43af7f8d6f643b834, type: 3}
+  shootWhileMoving:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
+--- !u!114 &254826969876248967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2223515168033367731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f744206498249604da819846d0313ab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
 --- !u!1001 &4653813509358304406
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -298,11 +298,12 @@ GameObject:
   - component: {fileID: 8262600434731184482}
   - component: {fileID: 8262600434731184481}
   - component: {fileID: 8262600434731184480}
-  - component: {fileID: 8262600434731184511}
   - component: {fileID: 2451717112510783957}
+  - component: {fileID: 1351261197603441579}
   - component: {fileID: -8318772244394340069}
   - component: {fileID: 3870282607237204575}
   - component: {fileID: 5905229089389333372}
+  - component: {fileID: 2386901822880732003}
   m_Layer: 0
   m_Name: JaguarPrefab
   m_TagString: Untagged
@@ -414,30 +415,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &8262600434731184511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8262600434731184510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9648a25ef9daa7e449e30abdceee8742, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  hasPath: 0
-  chaseDist: 0
-  isHerdChasing: 0
-  inChaseDist: 0
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  wanderLimits: {x: 0, y: 0, z: 0}
-  boundingBoxColor: {r: 0, g: 0, b: 0, a: 0}
-  isHerdWandering: 0
-  herdWanderBounds: {fileID: 0}
 --- !u!114 &2451717112510783957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -463,6 +440,26 @@ MonoBehaviour:
     InspectorValue: 0
     Variable: {fileID: 11400000, guid: 7574380ef26391b42bf3dd147927cb7f, type: 2}
   DamagePlayer: {fileID: 11400000, guid: 8252108987d608d428fc4e8e1ed6e974, type: 2}
+--- !u!114 &1351261197603441579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8262600434731184510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a36cb4b2ddcec3f4180a47db00e3c663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseSpeed:
+    UseInspectorValue: 1
+    InspectorValue: 5
+    Variable: {fileID: 0}
+  stopDist:
+    UseInspectorValue: 1
+    InspectorValue: 0.2
+    Variable: {fileID: 0}
 --- !u!114 &-8318772244394340069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -695,6 +692,19 @@ MonoBehaviour:
   gizmoHitColor: {r: 0, g: 0, b: 0, a: 1}
   gizmoBlockedColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoTransparency: 1
+--- !u!114 &2386901822880732003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8262600434731184510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f744206498249604da819846d0313ab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
 --- !u!1001 &246434780404634268
 PrefabInstance:
   m_ObjectHideFlags: 0

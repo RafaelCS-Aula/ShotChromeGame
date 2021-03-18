@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 867ebc0c38ac64d4fb659c5411579c0a, type: 3}
   m_Name: JaguarHolder
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 8901399103737813003, guid: 7cff62015a9557f4dba9ebec765dcfd2, type: 3}
+  enemyPrefab: {fileID: 8262600434731184510, guid: cd04e4746891c6c409f21d3eca45ddc6, type: 3}
   enemyType: 0
   distanceToAllowOtherToSpawn:
     UseInspectorValue: 1

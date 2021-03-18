@@ -6,10 +6,9 @@ public class FlyerMovement : MonoBehaviour
 {
     private Rigidbody rb;
 
-    [SerializeField] private Waypoint[] waypoints;
-    [SerializeField] private int startingIndex;
+    [SerializeField] private Waypoint currentWaypoint;
 
-    [SerializeField] private Transform target;
+    [SerializeField] private TargetHolder targetH;
 
     [SerializeField] private Transform shotOrigin;
 
@@ -21,7 +20,6 @@ public class FlyerMovement : MonoBehaviour
     [SerializeField] private BoolVariable shootWhileMoving;
 
 
-    private int currentWaypoint;
     private Vector3 movDest;
     private Vector3 movStart;
     private bool isMoving;
@@ -31,8 +29,8 @@ public class FlyerMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        currentWaypoint = startingIndex;
-        transform.position = waypoints[currentWaypoint].transform.position;
+        transform.position = currentWaypoint.transform.position;
+        targetH = GetComponent<TargetHolder>();
     }
 
     private void Update()
@@ -44,23 +42,34 @@ public class FlyerMovement : MonoBehaviour
 
         if (isMoving) Move(movDest);
 
-        if (shootWhileMoving) RotateToPoint(target.position);
-        else if (!isMoving) RotateToPoint(target.position);
-        print(CheckForVisual(transform.position));
+        //if (shootWhileMoving) RotateToPoint(target.position);
+        //else if (!isMoving) RotateToPoint(target.position);
+        //print(CheckForVisual(transform.position));
+        //print("RUNNING");
 
     }
 
     private void ChangeWaypoint()
     {
-        int nextWaypoint;
+        bool validWaypoint = false;
+        int waypointsReviewed = 0;
+        Waypoint nextWaypoint;
 
-        if (currentWaypoint == waypoints.Length - 1) nextWaypoint = 0;
-        else nextWaypoint = currentWaypoint + 1;
+        while (!validWaypoint)
+        {
+            int next = Random.Range(0, currentWaypoint.outgoingConnections.Count - 1);
+            nextWaypoint = currentWaypoint.outgoingConnections[next];
 
-        movDest = waypoints[nextWaypoint].transform.position;
-        movStart = waypoints[currentWaypoint].transform.position;
+            //if (CheckForVisual(nextWaypoint.transform.position));
 
-        currentWaypoint = nextWaypoint;
+            waypointsReviewed++;
+            if (waypointsReviewed == currentWaypoint.outgoingConnections.Count && !validWaypoint) return;
+        }
+
+
+        //movDest = waypoints[nextWaypoint].transform.position;
+        //movStart = waypoints[currentWaypoint].transform.position;
+
         isMoving = true;
         if (shootWhileMoving) moveLerpStartTime = Time.time;
         else isRotating = true;
@@ -88,52 +97,20 @@ public class FlyerMovement : MonoBehaviour
 
         Vector3 originP = pos + originOffset;
 
-        Ray rayshow = new Ray(originP, target.position - originP);
+        Ray rayshow = new Ray(originP, targetH.Target.position - originP);
         RaycastHit hitinfo;
 
-        Debug.DrawRay(originP,(target.position - originP) * 3000, Color.red);
+        Debug.DrawRay(originP, (targetH.Target.position - originP) * 3000, Color.red);
 
         if (Physics.Raycast(rayshow, out hitinfo, 3000))
         {
-            //print("ENTERED RAYCAST");
             if (hitinfo.collider != null)
             {
-                //print(hitinfo.collider.gameObject.name);
-                if (playerLayer == (playerLayer | (1 << hitinfo.collider.gameObject.layer)))
-                {
-                    //print("PLAYER");
-                    return true;
-                }
+                if (playerLayer == (playerLayer | (1 << hitinfo.collider.gameObject.layer))) return true;
                 else return false;
             }
         }
         return false;
-        #region obs
-        /*
-        RaycastHit hitInfo;
-
-        Vector3 originP = pos + shotOrigin.localPosition;
-
-        
-        if (Physics.Raycast(originP, Vector3.forward, out hitInfo, Mathf.Infinity))
-        {
-            Debug.DrawRay(originP, Vector3.forward * 30000, Color.red);
-            if (hitInfo.transform.gameObject.layer == obstacleLayer)
-            {
-                print("GOT HERE - HIT OBSTACLE");
-                return false;
-            }
-            else
-            {
-                print("GOT HERE - NO OBSTACLE");
-                return true;
-            }
-            
-        }
-        //print("GOT HERE - NO DETECTION");
-        return true;
-        */
-        #endregion
     }
 
     private void RotateToPoint(Vector3 point)
