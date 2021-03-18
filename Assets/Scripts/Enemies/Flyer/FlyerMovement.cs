@@ -6,7 +6,7 @@ public class FlyerMovement : MonoBehaviour
 {
     private Rigidbody rb;
 
-    [SerializeField] private Waypoint currentWaypoint;
+    [SerializeField] public Waypoint currentWaypoint { get; private set; }
 
     [SerializeField] private TargetHolder targetH;
 
@@ -42,33 +42,31 @@ public class FlyerMovement : MonoBehaviour
 
         if (isMoving) Move(movDest);
 
-        //if (shootWhileMoving) RotateToPoint(target.position);
-        //else if (!isMoving) RotateToPoint(target.position);
-        //print(CheckForVisual(transform.position));
-        //print("RUNNING");
-
+        if (shootWhileMoving) RotateToPoint(targetH.Target.position);
+        else if (!isMoving) RotateToPoint(targetH.Target.position);
     }
 
     private void ChangeWaypoint()
     {
-        bool validWaypoint = false;
-        int waypointsReviewed = 0;
         Waypoint nextWaypoint;
+        List<Waypoint> canGo = new List<Waypoint>();
 
-        while (!validWaypoint)
+        for (int i = 0; i < currentWaypoint.outgoingConnections.Count; i++)
         {
-            int next = Random.Range(0, currentWaypoint.outgoingConnections.Count - 1);
-            nextWaypoint = currentWaypoint.outgoingConnections[next];
-
-            //if (CheckForVisual(nextWaypoint.transform.position));
-
-            waypointsReviewed++;
-            if (waypointsReviewed == currentWaypoint.outgoingConnections.Count && !validWaypoint) return;
+            if (!currentWaypoint.outgoingConnections[i].isOccupied &&
+                CheckForVisual(currentWaypoint.outgoingConnections[i].transform.position))
+            {
+                canGo.Add(currentWaypoint.outgoingConnections[i]);
+            }
         }
+        nextWaypoint = canGo[Random.Range(0, canGo.Count - 1)];
 
+        movDest = nextWaypoint.transform.position;
+        movStart = currentWaypoint.transform.position;
 
-        //movDest = waypoints[nextWaypoint].transform.position;
-        //movStart = waypoints[currentWaypoint].transform.position;
+        currentWaypoint.ToggleOccupation();
+        currentWaypoint = nextWaypoint;
+        currentWaypoint.ToggleOccupation();
 
         isMoving = true;
         if (shootWhileMoving) moveLerpStartTime = Time.time;
@@ -127,8 +125,5 @@ public class FlyerMovement : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
-    {
-
-    }
+        public void SetCurrentWaypoint(Waypoint wp) { currentWaypoint = wp; }
 }

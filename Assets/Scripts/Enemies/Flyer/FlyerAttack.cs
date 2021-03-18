@@ -5,7 +5,7 @@ using NaughtyAttributes;
 
 public class FlyerAttack : MonoBehaviour
 {
-    [SerializeField] Transform target;
+    [SerializeField] TargetHolder targetH;
 
     [SerializeField] FloatVariable attackDamage;
     [SerializeField] FloatVariable attackInterval;
@@ -29,7 +29,7 @@ public class FlyerAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        targetH = GetComponent<TargetHolder>();
     }
 
     // Update is called once per frame
@@ -37,7 +37,7 @@ public class FlyerAttack : MonoBehaviour
     {
         if (attackTimer > 0) attackTimer -= Time.deltaTime;
 
-        float distToTarget = Vector3.Distance(target.position, transform.position);
+        float distToTarget = Vector3.Distance(targetH.Target.position, transform.position);
 
         if (attackTimer <= 0)
         {
@@ -55,7 +55,7 @@ public class FlyerAttack : MonoBehaviour
 
         #region Projectile Variable Setting
         projObj.transform.position = projOrigin.position;
-        projObj.GetComponent<FlyerProjectile>().targetPos = target.position;
+        projObj.GetComponent<FlyerProjectile>().targetPos = targetH.Target.position;
         projObj.GetComponent<FlyerProjectile>().damage = attackDamage;
         projObj.GetComponent<FlyerProjectile>().projSpeed = projectileSpeed;
         projObj.GetComponent<FlyerProjectile>().destroyAfterSeconds = destroyProjAfterSeconds;
