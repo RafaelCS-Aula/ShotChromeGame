@@ -14,7 +14,7 @@ public class PowerUp : ScriptableObject
     public bool isFinished;
 
     [SerializeField]
-    private FloatVariable baseChance;
+    public FloatVariable baseChance;
 
     
     [SerializeField]
