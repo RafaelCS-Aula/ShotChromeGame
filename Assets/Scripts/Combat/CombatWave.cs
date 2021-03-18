@@ -116,19 +116,19 @@ public class CombatWave
         if(lockOnStart)
             locked = true;
         
-        if(jaguarHolder != null)
+        if(jaguarHolder != null && _jaguars > 0)
             _holdersAndCountsDict.Add(jaguarHolder, _jaguars);
-        if(flyerHolder != null)    
+        if(flyerHolder != null && _flyers > 0)    
             _holdersAndCountsDict.Add(flyerHolder, _flyers);
-        if(droneHolder != null)
+        if(droneHolder != null && _drones > 0)
         _holdersAndCountsDict.Add(droneHolder, _drones);
-        if(droneHolder != null)
+        if(giantHolder != null && _giants > 0 )
             _holdersAndCountsDict.Add(giantHolder, _giants);
-        if(sandmanHolder != null)
+        if(sandmanHolder != null && _sandmen > 0)
             _holdersAndCountsDict.Add(sandmanHolder, _sandmen);
-        if(shamanHolder != null)
+        if(shamanHolder != null && _shamans > 0)
             _holdersAndCountsDict.Add(shamanHolder, _shamans);
-        if(specialHolder != null)
+        if(specialHolder != null && _specials > 0)
             _holdersAndCountsDict.Add(specialHolder, _specials);
 
 
