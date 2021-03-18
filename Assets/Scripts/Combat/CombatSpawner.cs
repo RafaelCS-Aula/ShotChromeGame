@@ -89,7 +89,14 @@ public class CombatSpawner : MonoBehaviour
             if(distance >= _minDistanceToNext)
             {
                 _lastSpawned = Instantiate(spawnQueue.Peek(),transform.position, transform.rotation);
-                _lastSpawned.GetComponent<TargetHolder>().Target = _callerWave.enemyTarget;
+                TargetHolder target = 
+                    _lastSpawned.GetComponent<TargetHolder>(); 
+                if(target != null)
+                {
+                    Debug.LogError($"Enemy from {_lastSpawned.name} doesn't have a TargetHolder Component");
+                    target.Target = _callerWave.enemyTarget;
+                }
+                _lastSpawned.layer = 9;
                 spawnQueue.Dequeue();
                 _callerWave.AddLateSpawnedEnemy(enemy,_lastSpawned);
                 
