@@ -32,7 +32,8 @@ public class SpawnerHolder : MonoBehaviour
     [SerializeField][HideInInspector]
     private GameObject[] _groups = new GameObject[7];
 
-
+    [SerializeField][ReadOnly]
+    private List<CombatSpawner> SpawnersDebugList;
 
 
 
@@ -84,11 +85,12 @@ public class SpawnerHolder : MonoBehaviour
     
     private void Awake() 
     {
+        SpawnersDebugList = new List<CombatSpawner>();
         // Go trough the hierarqui to make sure the stacks are synced to what 
         // the user sees
         foreach(CombatSpawner cs in GetComponentsInChildren<CombatSpawner>())
         {   
-            
+            SpawnersDebugList.Add(cs);
             spawnerGroups[(int)cs.enemy].Push(cs);
         }
 
