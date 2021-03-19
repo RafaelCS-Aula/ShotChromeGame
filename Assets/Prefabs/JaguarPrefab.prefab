@@ -756,6 +756,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5878484501798611281, guid: eb3fee47add986b439d28dcca5daf327, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5878484501798611283, guid: eb3fee47add986b439d28dcca5daf327, type: 3}
       propertyPath: m_Name
       value: EnemyDeath
@@ -779,6 +783,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8262600434731184484}
     m_Modifications:
+    - target: {fileID: 1863918745335644696, guid: bb0aaae77d6d3354ea0823060c37b206, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1863918745335644697, guid: bb0aaae77d6d3354ea0823060c37b206, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

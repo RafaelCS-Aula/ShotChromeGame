@@ -71,6 +71,17 @@ public class Waypoint : MonoBehaviour
             AddWaypoint(other,connectionWays.twoway);
     }
 
+    [ReadOnly] public bool occupationDisplay; // REMOVE LATER - JUST FOR TESTING
+
+    private void Awake()
+    {
+        isOccupied = false;
+    }
+
+    private void Update() // REMOVE LATER - JUST FOR TESTING
+    {
+        occupationDisplay = isOccupied;
+    }
 
     /// <summary>
     /// Creates a new empty object with a waypoint component in it at this 

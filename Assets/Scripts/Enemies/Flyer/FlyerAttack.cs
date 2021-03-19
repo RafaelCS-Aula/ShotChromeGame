@@ -9,7 +9,6 @@ public class FlyerAttack : MonoBehaviour
 
     [SerializeField] FloatVariable attackDamage;
     [SerializeField] FloatVariable attackInterval;
-    [SerializeField] FloatVariable attackRange;
     [SerializeField] FloatVariable projectileSpeed;
     [SerializeField] FloatVariable destroyProjAfterSeconds;
 
@@ -21,6 +20,7 @@ public class FlyerAttack : MonoBehaviour
     [SerializeField] private BoolVariable shootWhileMoving;
 
     private float attackTimer;
+    private bool attackLocked;
 
     private Vector3 currentPos = Vector3.zero;
     private Vector3 lastPos = Vector3.zero;
@@ -30,21 +30,24 @@ public class FlyerAttack : MonoBehaviour
     void Start()
     {
         targetH = GetComponent<TargetHolder>();
+        StartCoroutine(DelayAttackForSeconds(2));
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (attackTimer > 0) attackTimer -= Time.deltaTime;
-
-        float distToTarget = Vector3.Distance(targetH.Target.position, transform.position);
-
-        if (attackTimer <= 0)
+        if (!attackLocked)
         {
-            if (shootWhileMoving) Attack();
-            else if (!CheckMovement()) Attack();
-        }
+            if (attackTimer > 0) attackTimer -= Time.deltaTime;
 
+            float distToTarget = Vector3.Distance(targetH.Target.position, transform.position);
+
+            if (attackTimer <= 0)
+            {
+                if (shootWhileMoving) Attack();
+                else if (!CheckMovement()) Attack();
+            }
+        }
     }
 
     private void Attack()
@@ -79,4 +82,18 @@ public class FlyerAttack : MonoBehaviour
 
         return moved;
     }
+
+    private IEnumerator DelayAttackForSeconds(int time)
+    {
+        attackLocked = true;
+        yield return new WaitForSeconds(2);
+        attackLocked = false;
+    }
+
+    public void LockAttackForSeconds(int time)
+    {
+        StartCoroutine(DelayAttackForSeconds(time));
+    }
+
+    public Vector3 GetProjOrigin() { return projOrigin.position; }
 }

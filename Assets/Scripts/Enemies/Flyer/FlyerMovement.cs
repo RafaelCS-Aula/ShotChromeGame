@@ -6,18 +6,23 @@ public class FlyerMovement : MonoBehaviour
 {
     private Rigidbody rb;
 
-    [SerializeField] public Waypoint currentWaypoint { get; private set; }
+    [SerializeField] private Waypoint currWP;
 
     [SerializeField] private TargetHolder targetH;
 
     [SerializeField] private Transform shotOrigin;
 
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float turnSpeed;
+    [SerializeField] private FloatVariable moveSpeed;
+    [SerializeField] private FloatVariable turnSpeed;
 
     [SerializeField] private LayerMask playerLayer;
 
     [SerializeField] private BoolVariable shootWhileMoving;
+
+
+    [SerializeField] private FloatVariable timeToMove;
+
+    [SerializeField] private IntVariable attackDelayOnArrival;
 
 
     private Vector3 movDest;
@@ -26,18 +31,35 @@ public class FlyerMovement : MonoBehaviour
     private bool isRotating;
     private float moveLerpStartTime;
 
+    private float visualTimer;
+
+    [SerializeField] private GameObject FlyerFrebab;
+    private GameObject clone;
+
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        transform.position = currentWaypoint.transform.position;
-        targetH = GetComponent<TargetHolder>();
+        transform.position = currWP.transform.position;
+
+        clone = Instantiate(FlyerFrebab, transform);
+        visualTimer = timeToMove;
+        ChangeWaypoint();
     }
 
     private void Update()
     {
-        if (!isMoving && Input.GetKeyDown(KeyCode.T))
+
+        if (!isMoving)
         {
-            ChangeWaypoint();
+            if (!CheckForVisual(true, transform.position))
+            {
+                visualTimer -= Time.deltaTime;
+            }
+            else if (visualTimer != timeToMove) visualTimer = timeToMove;
+
+            if (visualTimer <= 0) ChangeWaypoint();
         }
 
         if (isMoving) Move(movDest);
@@ -51,22 +73,43 @@ public class FlyerMovement : MonoBehaviour
         Waypoint nextWaypoint;
         List<Waypoint> canGo = new List<Waypoint>();
 
-        for (int i = 0; i < currentWaypoint.outgoingConnections.Count; i++)
+        for (int i = 0; i < currWP.outgoingConnections.Count; i++)
         {
-            if (!currentWaypoint.outgoingConnections[i].isOccupied &&
-                CheckForVisual(currentWaypoint.outgoingConnections[i].transform.position))
+            if (!currWP.outgoingConnections[i].isOccupied &&
+                CheckForVisual(false, currWP.outgoingConnections[i].transform.position))
             {
-                canGo.Add(currentWaypoint.outgoingConnections[i]);
+                canGo.Add(currWP.outgoingConnections[i]);
             }
         }
-        nextWaypoint = canGo[Random.Range(0, canGo.Count - 1)];
+
+        if (canGo.Count == 0)
+        {
+            for (int i = 0; i < currWP.outgoingConnections.Count; i++)
+            {
+                if (!currWP.outgoingConnections[i].isOccupied)
+                {
+                    for (int j = 0; j < currWP.outgoingConnections[i].outgoingConnections.Count; j++)
+                    {
+                        if (!currWP.outgoingConnections[i].outgoingConnections[j].isOccupied &&
+                            CheckForVisual(false, currWP.outgoingConnections[i].outgoingConnections[j].transform.position))
+                        {
+                            canGo.Add(currWP.outgoingConnections[i]);
+                        }
+                    }
+                }
+            }
+        }
+
+        visualTimer = timeToMove;
+
+        nextWaypoint = canGo[Random.Range(0, canGo.Count)];
 
         movDest = nextWaypoint.transform.position;
-        movStart = currentWaypoint.transform.position;
+        movStart = currWP.transform.position;
 
-        currentWaypoint.ToggleOccupation();
-        currentWaypoint = nextWaypoint;
-        currentWaypoint.ToggleOccupation();
+        currWP.ToggleOccupation();
+        currWP = nextWaypoint;
+        currWP.ToggleOccupation();
 
         isMoving = true;
         if (shootWhileMoving) moveLerpStartTime = Time.time;
@@ -84,16 +127,31 @@ public class FlyerMovement : MonoBehaviour
 
             transform.position = Vector3.Lerp(movStart, end, percentageComplete);
 
-            if (percentageComplete >= 1.0f) isMoving = false;
+            if (percentageComplete >= 1.0f)
+            {
+                isMoving = false;
+                GetComponent<FlyerAttack>().LockAttackForSeconds(attackDelayOnArrival);
+            }
         }
 
     }
 
-    private bool CheckForVisual(Vector3 pos)
+    private bool CheckForVisual(bool thiWP, Vector3 pos)
     {
-        Vector3 originOffset = shotOrigin.position - pos;
+        Vector3 originP;
 
-        Vector3 originP = pos + originOffset;
+        if (!thiWP)
+        {
+            clone.SetActive(true);
+            clone.transform.position = pos;
+            clone.transform.LookAt(targetH.Target);
+            originP = clone.GetComponent<FlyerAttack>().GetProjOrigin();
+            clone.SetActive(false);
+        }
+        else originP = GetComponent<FlyerAttack>().GetProjOrigin();
+
+
+        //Vector3 originP = pos + Vector3.forward + originOffset;
 
         Ray rayshow = new Ray(originP, targetH.Target.position - originP);
         RaycastHit hitinfo;
@@ -125,5 +183,5 @@ public class FlyerMovement : MonoBehaviour
         }
     }
 
-        public void SetCurrentWaypoint(Waypoint wp) { currentWaypoint = wp; }
+    public void SetCurrentWaypoint(Waypoint wp) { currWP = wp; }
 }

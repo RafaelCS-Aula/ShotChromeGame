@@ -14,14 +14,14 @@ public class JaguarAttack : MonoBehaviour
 
     private float attackTimer;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         attackTimer = 0;
         targetH = GetComponent<TargetHolder>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (targetH.Target != null)
         {

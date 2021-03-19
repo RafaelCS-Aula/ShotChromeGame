@@ -16,5 +16,5 @@ MonoBehaviour:
   enemyType: 0
   distanceToAllowOtherToSpawn:
     UseInspectorValue: 1
-    InspectorValue: 0.2
+    InspectorValue: 0
     Variable: {fileID: 0}

@@ -298,19 +298,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e99e0119439bc44b3e19bef2498a43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
-  startingIndex: 0
-  target: {fileID: 0}
-  shotOrigin: {fileID: 0}
-  moveSpeed: 0
-  turnSpeed: 0
+  currWP: {fileID: 0}
+  targetH: {fileID: 254826969876248967}
+  shotOrigin: {fileID: 2223515167903557726}
+  moveSpeed:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: 49ef5f9dbdc714f49b80ebc1ab28a4df, type: 2}
+  turnSpeed:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: 9cb3ca4d1a859064395387de52f3e3fe, type: 2}
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   shootWhileMoving:
     UseInspectorValue: 1
     InspectorValue: 0
     Variable: {fileID: 0}
+  timeToMove:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: aac1c0b3cf9e0bb4281c946220f1df0b, type: 2}
+  attackDelayOnArrival:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: d3e8a592881e52c478e05d689e576442, type: 2}
+  FlyerFrebab: {fileID: 2223515168033367731}
 --- !u!114 &2223515168033367722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,7 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c90526fa768c424cbdf36fd16b40ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  targetH: {fileID: 0}
   attackDamage:
     UseInspectorValue: 0
     InspectorValue: 0
@@ -332,17 +346,13 @@ MonoBehaviour:
     UseInspectorValue: 0
     InspectorValue: 0
     Variable: {fileID: 11400000, guid: e84ca1c7c375c1643ba239bbda0c698b, type: 2}
-  attackRange:
-    UseInspectorValue: 0
-    InspectorValue: 0
-    Variable: {fileID: 11400000, guid: bafb22b00ab999041b3062ebb47cb3b0, type: 2}
   projectileSpeed:
     UseInspectorValue: 0
     InspectorValue: 0
     Variable: {fileID: 11400000, guid: 98610130002200f4f8614e0b3aa9da83, type: 2}
   destroyProjAfterSeconds:
     UseInspectorValue: 1
-    InspectorValue: 0
+    InspectorValue: 5
     Variable: {fileID: 0}
   DamagePlayer: {fileID: 11400000, guid: 8252108987d608d428fc4e8e1ed6e974, type: 2}
   projOrigin: {fileID: 2223515167903557726}
@@ -415,6 +425,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5878484501798611281, guid: eb3fee47add986b439d28dcca5daf327, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5878484501798611283, guid: eb3fee47add986b439d28dcca5daf327, type: 3}
       propertyPath: m_Name
       value: EnemyDeath
@@ -433,6 +447,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2223515168033367721}
     m_Modifications:
+    - target: {fileID: 1863918745335644696, guid: bb0aaae77d6d3354ea0823060c37b206, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1863918745335644697, guid: bb0aaae77d6d3354ea0823060c37b206, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
