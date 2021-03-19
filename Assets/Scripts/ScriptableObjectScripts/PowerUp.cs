@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 
+[CreateAssetMenu(menuName = "New Powerup")]
 public class PowerUp : ScriptableObject
 {
-    [Required("Name must be unique among all other powerups")]
-    public string name = "New Powerup";
+   
+    public string powerName = "Name must be unique among all other powerups";
 
     [Multiline]
     public string description;
 
-    public bool isFinished;
+    public bool overwriteActive = true;
+    public bool isFinished = false;
 
     [SerializeField]
     public FloatVariable baseChance;
@@ -24,7 +26,7 @@ public class PowerUp : ScriptableObject
     private FloatData affectedFloatData;
 
     [SerializeField][HideIf("IsFloat")]
-    private FloatData affectedIntData;
+    private IntData affectedIntData;
 
     [SerializeField]
     private bool returnToDefaultOnEnd;
@@ -40,13 +42,13 @@ public class PowerUp : ScriptableObject
     [SerializeField][ShowIf("IsNumerical")]
     private FloatVariable immediateChange;
 
-    [SerializeField][HideIf(EConditionOperator.And,"IsNotInstant","IsNumerical")]
+    [SerializeField][ShowIf(EConditionOperator.And,"IsNotInstant","IsNumerical")]
     private FloatVariable changeOverTime;
 
     [SerializeField]
     private float duration;
 
-    private bool IsInstant => duration > 0;
+    private bool IsNotInstant => duration > 0;
     private bool IsNumerical => (affectedFloatData != null || affectedIntData != null);
 
     private bool IsFloat => affectedFloatData != null;
@@ -59,7 +61,7 @@ public class PowerUp : ScriptableObject
 
     public void Activate()
     {
-
+        isFinished = false;
         if(IsFloat)
         {
             _defaultNumberValue = affectedFloatData.Value;
@@ -68,17 +70,21 @@ public class PowerUp : ScriptableObject
         else if(IsInt)
         {
             _defaultNumberValue = affectedIntData.Value;
-            affectedIntData.ApplyChange(immediateChange);
+            affectedIntData.ApplyChange((int)immediateChange.Value);
         }
         
         _defaultBoolValue = affectedBoolData.Value;
         affectedBoolData.SetValue(newValue);
+        
         _beginningTime = Time.realtimeSinceStartup;
+
+        if(!IsNotInstant)
+            isFinished = true;
     }
 
     public void ApplyOverTime()
     {
-        if(IsInstant || isFinished)
+        if(!IsNotInstant || isFinished)
             return;
         
 
@@ -93,7 +99,7 @@ public class PowerUp : ScriptableObject
                 if(IsFloat)
                     affectedFloatData.SetValue(_defaultNumberValue);
                 else if(IsInt)
-                    affectedIntData.SetValue(_defaultNumberValue);
+                    affectedIntData.SetValue((int)_defaultNumberValue);
                 
                 affectedBoolData.SetValue(_defaultBoolValue);
             }
@@ -104,7 +110,7 @@ public class PowerUp : ScriptableObject
             if(IsFloat)
                     affectedFloatData.ApplyChange(changeOverTime * Time.deltaTime);
             else if(IsInt)
-                    affectedIntData.ApplyChange(changeOverTime * Time.deltaTime);
+                    affectedIntData.ApplyChange((int)(changeOverTime * Time.deltaTime));
                 
             
         }
