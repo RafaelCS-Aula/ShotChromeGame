@@ -6,7 +6,12 @@ using NaughtyAttributes;
 [CreateAssetMenu(menuName = "New Powerup")]
 public class PowerUp : ScriptableObject
 {
-   
+
+    [SerializeField]
+    private GameObject prefab;
+
+   [Label("Power Name (Used for lookups)")]
+   [Tooltip("This string will be used to search for this power in the powerups list. Make sure it is unique and unlikely to change.")]
     public string powerName = "Name must be unique among all other powerups";
 
     [Multiline]
@@ -15,8 +20,8 @@ public class PowerUp : ScriptableObject
     public bool overwriteActive = true;
     public bool isFinished = false;
 
-    [SerializeField]
-    public FloatVariable baseChance;
+    [Range(0,1)]
+    public float baseChance;
 
     
     [SerializeField]
@@ -46,7 +51,7 @@ public class PowerUp : ScriptableObject
     private FloatVariable changeOverTime;
 
     [SerializeField]
-    private float duration;
+    private FloatVariable duration;
 
     private bool IsNotInstant => duration > 0;
     private bool IsNumerical => (affectedFloatData != null || affectedIntData != null);
@@ -118,7 +123,29 @@ public class PowerUp : ScriptableObject
 
     }
 
-   
+   [Button(enabledMode: EButtonEnableMode.Playmode)]
+    public void ApplyPowerup()
+    {
+        PowerUpApplier.Instance.ActivatePower(this);
+    }
+
+    public GameObject SpawnPrefab(Vector3 position, Quaternion rotation)
+    {
+
+        GameObject go = Instantiate(prefab,position,rotation);
+        PowerUpHolder pp = go.GetComponent<PowerUpHolder>();
+        if(pp == null)
+        {
+            pp = go.AddComponent<PowerUpHolder>();
+            pp.powerUp = this;
+        }
+        else
+        {
+            pp.powerUp = this;
+        }
+
+        return go;
+    }
 
     public override bool Equals(object other)
     {

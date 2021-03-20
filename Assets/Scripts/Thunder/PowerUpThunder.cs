@@ -66,7 +66,7 @@ public class PowerUpThunder : MonoBehaviour
         // Use weighted chance to spawn one of the possible powerups
         for(int i = 0; i < droppablePowers.Count; i++)
         {
-            probabilitySum += droppablePowers[i].baseChance.Value;
+            probabilitySum += droppablePowers[i].baseChance;
         }
 
         for(int i = droppablePowers.Count - 1; i > -1; i--)

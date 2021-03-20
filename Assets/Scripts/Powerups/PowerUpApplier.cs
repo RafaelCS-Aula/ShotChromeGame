@@ -4,31 +4,48 @@ using UnityEngine;
 
 public class PowerUpApplier : MonoBehaviour
 {
-   private static HashSet<PowerUp> activePowers = new HashSet<PowerUp>();
+   private Dictionary<string,PowerUp> activePowers = new Dictionary<string, PowerUp>();
 
+   public bool IsPowerActive(string powerName) => activePowers.ContainsKey(powerName);
+
+    public static PowerUpApplier Instance;
+
+    private void Awake() 
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else if(Instance != this)
+        {
+            Destroy(Instance);
+            Instance = this;
+        }
+        DontDestroyOnLoad(this);
+    }
     public void ActivatePower(PowerUp power)
     {
         if(power.overwriteActive)
         {
-            foreach(PowerUp pu in activePowers)
+            foreach(KeyValuePair<string,PowerUp> pu in activePowers)
             {
-                pu.isFinished = true;
-                activePowers.Remove(pu);
+                pu.Value.isFinished = true;
+                activePowers.Remove(pu.Key);
             }
         }
 
         power.Activate();
-        activePowers.Add(power);
+        activePowers.Add(power.powerName, power);
         
     }
 
     private void Update() 
     {
-        foreach(PowerUp pu in activePowers)
+        foreach(KeyValuePair<string, PowerUp> pu in activePowers)
         {
-            pu.ApplyOverTime();
-            if(pu.isFinished)
-                activePowers.Remove(pu);
+            pu.Value.ApplyOverTime();
+            if(pu.Value.isFinished)
+                activePowers.Remove(pu.Key);
         }
 
     }
