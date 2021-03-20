@@ -10,22 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 773d0728e8f55244a91156d806761601, type: 3}
-  m_Name: New Power Up
+  m_Name: SuperCharge
   m_EditorClassIdentifier: 
-  powerName: Name must be unique among all other powerups
-  description: 
+  powerName: Supercharge Shotgun
+  description: "Turns on the super charge state of the shotgun (higher fire rate)
+    \nfor a set duration"
+  overwriteActive: 1
   isFinished: 0
-  baseChance:
-    UseInspectorValue: 1
-    InspectorValue: 0
-    Variable: {fileID: 0}
-  affectedBoolData: {fileID: 0}
+  baseChance: 1
+  affectedBoolData: {fileID: 11400000, guid: 006e1f5915136c546a0be6764b061696, type: 2}
   affectedFloatData: {fileID: 0}
   affectedIntData: {fileID: 0}
-  returnToDefaultOnEnd: 0
+  returnToDefaultOnEnd: 1
   newValue:
     UseInspectorValue: 1
-    InspectorValue: 0
+    InspectorValue: 1
     Variable: {fileID: 0}
   immediateChange:
     UseInspectorValue: 1
@@ -35,4 +34,7 @@ MonoBehaviour:
     UseInspectorValue: 1
     InspectorValue: 0
     Variable: {fileID: 0}
-  duration: 0
+  duration:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
