@@ -82,6 +82,9 @@ public class PowerUpThunder : MonoBehaviour
                 probabilitySum -= droppablePowers[i].baseChance;
             }
         }
+        powerToSpawn = droppablePowers[0];
+
+        powerToSpawn.SpawnPrefab(strikePoint, Quaternion.identity);
 
     }
 }
