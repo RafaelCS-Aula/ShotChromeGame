@@ -10,7 +10,7 @@ public class ThunderPower : MonoBehaviour
     [SerializeField] private FloatData currentPower;
     [SerializeField] private FloatData currentRadius;
     [SerializeField] private FloatData currentDamage;
-    [SerializeField] private IntData currentAmmo;
+    [SerializeField] private FloatData currentAmmo;
 
     [Label("Read Keys Directly (Radius Curve)")]
     [SerializeField] private bool readRadiusKeysDirectly;
