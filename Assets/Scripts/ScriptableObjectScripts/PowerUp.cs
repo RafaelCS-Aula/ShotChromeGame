@@ -88,7 +88,7 @@ public class PowerUp : ScriptableObject
     {
         Debug.Log("Power Activation!");
         isFinished = false;
-        _defaultBoolValue = affectedBoolData.Value;
+        _defaultBoolValue = affectedBoolData ?? false;
         if(IsFloat)
         {
             _defaultNumberValue = affectedFloatData.Value;
@@ -101,7 +101,7 @@ public class PowerUp : ScriptableObject
         }
         
        
-        affectedBoolData.SetValue(newValue);
+        affectedBoolData?.SetValue(newValue);
         
         _beginningTime = Time.realtimeSinceStartup;
 
@@ -144,10 +144,10 @@ public class PowerUp : ScriptableObject
         PowerUpApplier.Instance.ActivatePower(this);
     }
 
-    public GameObject SpawnPrefab(Vector3 position, Quaternion rotation)
+    public GameObject SpawnPrefab(Vector3 position)
     {
 
-        GameObject go = Instantiate(prefab,position,rotation);
+        GameObject go = Instantiate(prefab,position,prefab.transform.rotation);
         PowerUpHolder pp = go.GetComponent<PowerUpHolder>();
         if(pp == null)
         {
@@ -175,7 +175,7 @@ public class PowerUp : ScriptableObject
         
         if(returnToDefaultOnEnd)
         {
-            affectedBoolData.SetValue(_defaultBoolValue);
+            affectedBoolData?.SetValue(_defaultBoolValue);
             if(IsFloat)
                 affectedFloatData.SetValue(_defaultNumberValue);
             else if(IsInt)
