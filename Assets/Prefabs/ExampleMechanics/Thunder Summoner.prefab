@@ -56,11 +56,11 @@ MonoBehaviour:
   jumpKey:
     UseInspectorValue: 0
     InspectorValue: 0
-    Variable: {fileID: 11400000, guid: 91176998c755d734ab27d73fb8b85289, type: 2}
+    Variable: {fileID: 11400000, guid: d523c7ce9aa0aa241ab853a3e62f0ece, type: 2}
   shootKey:
     UseInspectorValue: 0
     InspectorValue: 0
-    Variable: {fileID: 11400000, guid: f30c2c4a5abd15741a801e92056694a7, type: 2}
+    Variable: {fileID: 11400000, guid: 90bb47ffd10ebfe408d803a76669e76c, type: 2}
   thunderKey:
     UseInspectorValue: 0
     InspectorValue: 32
@@ -157,9 +157,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: b05cd052b7ec94f4f9c351a7d794cb33, type: 2}
-  useVoidResponse: 0
-  useVector3Response: 0
-  useFloatResponse: 0
+  useVoidResponse: 1
+  useVector3Response: 1
+  useFloatResponse: 1
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -207,7 +207,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: feee06242f5d3ea40a6f1812ee5a3ae2, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: 75a40a9e77c7c2749a067b39f3e98113, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -217,6 +217,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1755790541511287285}
         m_TargetAssemblyTypeName: Spawner, Assembly-CSharp
         m_MethodName: SpawnAt
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ShakeableTransform, Assembly-CSharp
+        m_MethodName: ShakeDistanceAffected
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -256,7 +268,7 @@ MonoBehaviour:
   maxRadius:
     UseInspectorValue: 0
     InspectorValue: 10
-    Variable: {fileID: 11400000, guid: 2d38d342517318d47b47e2a85efca121, type: 2}
+    Variable: {fileID: 11400000, guid: f598742f9495d8e42ac204a7311930af, type: 2}
   affectedLayers:
     serializedVersion: 2
     m_Bits: 512
@@ -310,7 +322,7 @@ MonoBehaviour:
     UseInspectorValue: 0
     InspectorValue: 20
     Variable: {fileID: 11400000, guid: 413f8a89812ea4e4a89fe6a488fb6060, type: 2}
-  currentPower: {fileID: 0}
+  currentPower: {fileID: 11400000, guid: acab311c951432448842d576a5e833e4, type: 2}
   currentRadius: {fileID: 11400000, guid: 2d38d342517318d47b47e2a85efca121, type: 2}
   currentDamage: {fileID: 11400000, guid: 52df505d8888cc34997244cfca66ed0b, type: 2}
   currentAmmo: {fileID: 11400000, guid: f0312276924fa4447b4a3fae4c79b600, type: 2}
@@ -593,7 +605,7 @@ MonoBehaviour:
   points: 90
   pointVariation: 2
   lineLength: 150
-  duration: 1
+  duration: 3
   witdthMaxVal:
     UseInspectorValue: 1
     InspectorValue: 0
@@ -5684,6 +5696,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 472223884595511767}
     m_Modifications:
+    - target: {fileID: 2216992327135354089, guid: fc7844667fe6bb54b85c6ed9605414b3, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2216992327135354089, guid: fc7844667fe6bb54b85c6ed9605414b3, type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2216992327135354089, guid: fc7844667fe6bb54b85c6ed9605414b3, type: 3}
+      propertyPath: ClampVelocityModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2216992327135354089, guid: fc7844667fe6bb54b85c6ed9605414b3, type: 3}
+      propertyPath: ClampVelocityModule.magnitude.scalar
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2216992327135354090, guid: fc7844667fe6bb54b85c6ed9605414b3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
