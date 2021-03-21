@@ -38,8 +38,6 @@ public class CombatEncounter : MonoBehaviour
         _currentWave = waves[_currentWaveIndex];
         
         _allWavesComplete = false;
-        if(encounterTarget == null)
-            encounterTarget = gameObject.transform;
 
         if(encounterTarget == null)
         {
@@ -97,6 +95,7 @@ public class CombatEncounter : MonoBehaviour
         if(_currentWaveIndex < waves.Count)
         {
             _currentWave = waves[_currentWaveIndex];
+            _currentWave.enemyTarget = encounterTarget;
             _currentWave.BeginWave();
         }
         else

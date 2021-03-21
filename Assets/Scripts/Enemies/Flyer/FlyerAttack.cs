@@ -94,6 +94,4 @@ public class FlyerAttack : MonoBehaviour
     {
         StartCoroutine(DelayAttackForSeconds(time));
     }
-
-    public Vector3 GetProjOrigin() { return projOrigin.position; }
 }

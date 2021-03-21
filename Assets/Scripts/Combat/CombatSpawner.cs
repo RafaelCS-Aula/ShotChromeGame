@@ -93,29 +93,48 @@ public class CombatSpawner : MonoBehaviour
 
             if (!_isFlyer)
             {
-                // If the newest spawn is far away enough, spawn the next in the queue.
-                float distance = (_lastSpawned.transform.position - transform.position).sqrMagnitude;
+                if(_lastSpawned == null)
+                {
+                    _canSpawn = true;
+                }
+                else
+                {
+                    // If the newest spawn is far away enough, spawn the next in the queue.
+                    float distance = (_lastSpawned.transform.position - transform.position).sqrMagnitude;
 
-                if (distance >= _minDistanceToNext) _canSpawn = true;
+                    if (distance >= _minDistanceToNext) _canSpawn = true;
+                }
             }
 
             else
             {
-                float distance = (_lastSpawned.transform.position - transform.position).sqrMagnitude;
+                Waypoint thisWP = GetComponent<Waypoint>();
 
-                if (distance >= _minDistanceToNext)
+                if (_lastSpawned == null)
                 {
-                    Waypoint thisWP = GetComponent<Waypoint>();
+                    print("NULL SPAWNED");
+                    if (!thisWP.isOccupied) _canSpawn = true; ;
+                }
+                else
+                {
+                    float distance = (_lastSpawned.transform.position - transform.position).sqrMagnitude;
 
-                    if (thisWP.isOccupied) return;
-
-                    for (int i = 0; i < thisWP.outgoingConnections.Count; i++)
+                    if (distance >= _minDistanceToNext)
                     {
-                        if (!thisWP.outgoingConnections[i].isOccupied)
+
+                        if (!thisWP.isOccupied) _canSpawn = true; ;
+                        
+                        /*
+                        for (int i = 0; i < thisWP.outgoingConnections.Count; i++)
                         {
-                            _canSpawn = true;
-                            break;
+
+                            if (!thisWP.outgoingConnections[i].isOccupied)
+                            {
+                                _canSpawn = true;
+                                break;
+                            }
                         }
+                        */
                     }
                 }
             }

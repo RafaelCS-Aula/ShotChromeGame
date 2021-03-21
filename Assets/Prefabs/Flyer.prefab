@@ -285,6 +285,7 @@ MonoBehaviour:
     InspectorValue: 20
     Variable: {fileID: 0}
   currentThunderPower: {fileID: 11400000, guid: acab311c951432448842d576a5e833e4, type: 2}
+  isFlyer: 1
   damageColor: {r: 0.7176471, g: 0, b: 0, a: 0}
 --- !u!114 &2223515168033367732
 MonoBehaviour:
@@ -324,7 +325,7 @@ MonoBehaviour:
     UseInspectorValue: 0
     InspectorValue: 0
     Variable: {fileID: 11400000, guid: d3e8a592881e52c478e05d689e576442, type: 2}
-  FlyerFrebab: {fileID: 2223515168033367731}
+  CloneFrebab: {fileID: 6158883325784796269, guid: 366c70cd343a8ac408b3f165e61e103c, type: 3}
 --- !u!114 &2223515168033367722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,7 +333,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2223515168033367731}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c90526fa768c424cbdf36fd16b40ee6, type: 3}
   m_Name: 

@@ -27,6 +27,10 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] FloatVariable MaxHealth;
     [SerializeField] FloatVariable ThunderPowerGift;
     [SerializeField] FloatData currentThunderPower;
+
+    [SerializeField] private bool isFlyer;
+
+
     private float health = 100;
     private MonoBehaviour lastDamageSource = null;
 
@@ -85,6 +89,11 @@ public class EnemyHealth : MonoBehaviour
 
     public void EnemyDeath()
     {
+        if (isFlyer)
+        {
+            GetComponent<FlyerMovement>().GetCurrentWaypoint().ToggleOccupation();
+        }
+
         if (lastDamageSource is Shotgun)
         {
             currentThunderPower.ApplyChange(ThunderPowerGift);

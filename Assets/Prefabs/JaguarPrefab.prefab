@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1432956443172667886}
   - component: {fileID: 5598701915373846248}
   - component: {fileID: 1287025318205646865}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 556899985894923098}
   - component: {fileID: 2440828821355831947}
   - component: {fileID: 6167316724174016769}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 2281440036100514995}
   - component: {fileID: 8153936888579700905}
   - component: {fileID: 4696889181559456505}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 3870282607237204575}
   - component: {fileID: 5905229089389333372}
   - component: {fileID: 2386901822880732003}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: JaguarPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -504,10 +504,34 @@ MonoBehaviour:
         m_CallState: 2
   OnDefaultKill:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5980518221026540493}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDefaultDamaged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4869255738323191355}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnShotgunDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -764,6 +788,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyDeath
       objectReference: {fileID: 0}
+    - target: {fileID: 5878484501798611283, guid: eb3fee47add986b439d28dcca5daf327, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb3fee47add986b439d28dcca5daf327, type: 3}
 --- !u!4 &5980518221026540492 stripped
@@ -835,10 +863,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemyHurt
       objectReference: {fileID: 0}
+    - target: {fileID: 1863918745335644698, guid: bb0aaae77d6d3354ea0823060c37b206, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb0aaae77d6d3354ea0823060c37b206, type: 3}
 --- !u!4 &4869255738323191354 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1863918745335644697, guid: bb0aaae77d6d3354ea0823060c37b206, type: 3}
+  m_PrefabInstance: {fileID: 6507396289538622499}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4869255738323191355 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1863918745335644696, guid: bb0aaae77d6d3354ea0823060c37b206, type: 3}
   m_PrefabInstance: {fileID: 6507396289538622499}
   m_PrefabAsset: {fileID: 0}

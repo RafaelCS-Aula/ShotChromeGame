@@ -33,7 +33,7 @@ public class FlyerMovement : MonoBehaviour
 
     private float visualTimer;
 
-    [SerializeField] private GameObject FlyerFrebab;
+    [SerializeField] private GameObject CloneFrebab;
     private GameObject clone;
 
 
@@ -43,9 +43,10 @@ public class FlyerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         transform.position = currWP.transform.position;
 
-        clone = Instantiate(FlyerFrebab, transform);
+        clone = Instantiate(CloneFrebab, transform.position, transform.rotation, transform) ;
+
         visualTimer = timeToMove;
-        ChangeWaypoint();
+        //ChangeWaypoint();
     }
 
     private void Update()
@@ -100,6 +101,8 @@ public class FlyerMovement : MonoBehaviour
             }
         }
 
+        if (canGo.Count == 0) return;
+
         visualTimer = timeToMove;
 
         nextWaypoint = canGo[Random.Range(0, canGo.Count)];
@@ -142,13 +145,11 @@ public class FlyerMovement : MonoBehaviour
 
         if (!thiWP)
         {
-            clone.SetActive(true);
             clone.transform.position = pos;
             clone.transform.LookAt(targetH.Target);
-            originP = clone.GetComponent<FlyerAttack>().GetProjOrigin();
-            clone.SetActive(false);
+            originP = clone.transform.GetChild(0).transform.position;
         }
-        else originP = GetComponent<FlyerAttack>().GetProjOrigin();
+        else originP = shotOrigin.position;
 
 
         //Vector3 originP = pos + Vector3.forward + originOffset;
@@ -184,4 +185,5 @@ public class FlyerMovement : MonoBehaviour
     }
 
     public void SetCurrentWaypoint(Waypoint wp) { currWP = wp; }
+    public Waypoint GetCurrentWaypoint() { return currWP; }
 }
