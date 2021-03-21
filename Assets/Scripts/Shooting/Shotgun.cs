@@ -85,7 +85,7 @@ public class Shotgun : InputReceiverBase
     private void Shoot()
     {
         
-
+        currentAmmo.OverrideValue(currentAmmo - 1);
         // Consume Ammo
         if(isSuperCharged)
         {
@@ -95,8 +95,7 @@ public class Shotgun : InputReceiverBase
         }  
         else
         {
-            //print("shooty");
-            currentAmmo.OverrideValue(currentAmmo - 1);
+
             OnShootEvent.Invoke();
         }
             
