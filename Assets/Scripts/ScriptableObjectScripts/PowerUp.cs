@@ -57,8 +57,11 @@ public class PowerUp : ScriptableObject
 
 
 
-    [SerializeField][ShowIf("IsNumerical")]
-    private FloatVariable immediateChange;
+    [SerializeField][ShowIf("IsFloat")]
+    private FloatVariable immediateFloatChange;
+
+    [SerializeField][ShowIf("IsInt")]
+    private IntVariable immediateIntChange;
 
     [SerializeField][ShowIf(EConditionOperator.And,"IsNotInstant","IsNumerical")]
     private FloatVariable changeOverTime;
@@ -89,12 +92,12 @@ public class PowerUp : ScriptableObject
         if(IsFloat)
         {
             _defaultNumberValue = affectedFloatData.Value;
-            affectedFloatData.ApplyChange(immediateChange);
+            affectedFloatData.ApplyChange(immediateFloatChange);
         }
         else if(IsInt)
         {
             _defaultNumberValue = affectedIntData.Value;
-            affectedIntData.ApplyChange((int)immediateChange.Value);
+            affectedIntData.ApplyChange((int)immediateIntChange.Value);
         }
         
        

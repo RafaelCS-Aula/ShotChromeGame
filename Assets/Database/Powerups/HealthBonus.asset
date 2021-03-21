@@ -10,28 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 773d0728e8f55244a91156d806761601, type: 3}
-  m_Name: SuperCharge
+  m_Name: HealthBonus
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3000678785173053624, guid: db799cb58d52c704b984a8258e6a6c24, type: 3}
-  powerName: Supercharge Shotgun
-  description: "Turns on the super charge state of the shotgun (higher fire rate)
-    \nfor a set duration"
-  overwriteActive: 1
-  isFinished: 1
-  baseChance: 0.801
-  affectedBoolData: {fileID: 11400000, guid: 006e1f5915136c546a0be6764b061696, type: 2}
-  affectedFloatData: {fileID: 0}
+  prefab: {fileID: 6960224039188135715, guid: 6c53a4ffe15671a4ab924eb558594f58, type: 3}
+  powerName: Health Bonus
+  description: Small health pack
+  overwriteActive: 0
+  isFinished: 0
+  baseChance: 1
+  affectedBoolData: {fileID: 0}
+  affectedFloatData: {fileID: 11400000, guid: b78d3a7b10555dc4d93832de30c422cd, type: 2}
   affectedIntData: {fileID: 0}
-  returnToDefaultOnEnd: 1
-  _defaultNumberValue: 150
+  returnToDefaultOnEnd: 0
+  _defaultNumberValue: 0
   _defaultBoolValue: 0
   newValue:
     UseInspectorValue: 1
-    InspectorValue: 1
+    InspectorValue: 0
     Variable: {fileID: 0}
   immediateFloatChange:
     UseInspectorValue: 1
-    InspectorValue: 0
+    InspectorValue: 10
     Variable: {fileID: 0}
   immediateIntChange:
     UseInspectorValue: 1
@@ -39,10 +38,10 @@ MonoBehaviour:
     Variable: {fileID: 0}
   changeOverTime:
     UseInspectorValue: 1
-    InspectorValue: 5
+    InspectorValue: 0
     Variable: {fileID: 0}
   duration:
     UseInspectorValue: 1
-    InspectorValue: 2
+    InspectorValue: 0
     Variable: {fileID: 0}
-  _elapsed: 2.0098686
+  _elapsed: 0
