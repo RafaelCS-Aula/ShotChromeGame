@@ -12,23 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 773d0728e8f55244a91156d806761601, type: 3}
   m_Name: SuperCharge
   m_EditorClassIdentifier: 
+  prefab: {fileID: 5501309246333494220, guid: c10f5e0c2ab898c42adea43e50a50c1a, type: 3}
   powerName: Supercharge Shotgun
   description: "Turns on the super charge state of the shotgun (higher fire rate)
     \nfor a set duration"
   overwriteActive: 1
-  isFinished: 0
+  isFinished: 1
   baseChance: 1
   affectedBoolData: {fileID: 11400000, guid: 006e1f5915136c546a0be6764b061696, type: 2}
   affectedFloatData: {fileID: 0}
   affectedIntData: {fileID: 0}
   returnToDefaultOnEnd: 1
+  _defaultNumberValue: 200
+  _defaultBoolValue: 1
   newValue:
     UseInspectorValue: 1
     InspectorValue: 1
     Variable: {fileID: 0}
   immediateChange:
     UseInspectorValue: 1
-    InspectorValue: 0
+    InspectorValue: 10
     Variable: {fileID: 0}
   changeOverTime:
     UseInspectorValue: 1
@@ -36,5 +39,5 @@ MonoBehaviour:
     Variable: {fileID: 0}
   duration:
     UseInspectorValue: 1
-    InspectorValue: 0
+    InspectorValue: 2
     Variable: {fileID: 0}
