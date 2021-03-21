@@ -25,25 +25,34 @@ public class PowerUpThunder : MonoBehaviour
     private List<PowerUp> droppablePowers = new List<PowerUp>();
 
 
-
+    private void Awake() {
+        
+    }
     public void TryStrike(Vector3 center)
     {
         float powerPercentage = _thunderPower/_maxThunderPower;
-        powerPercentage = Mathf.Clamp01(powerPercentage);
+        Debug.Log($"{_thunderPower.Value}");
+        //powerPercentage = Mathf.Clamp01(powerPercentage);
         float myProbability = strikeProbabilityCurve.Evaluate(powerPercentage);
-        myProbability = Mathf.Clamp01(myProbability);
+        //myProbability = Mathf.Clamp01(myProbability);
+        
+        float rngRoll = Random.Range(0.0f,1.0f);
 
-        float rngRoll = Random.Range(0,1);
-        if(rngRoll <= myProbability)
+        Debug.Log($"Try Power strike: rng:{rngRoll.ToString("n3")} probability: {myProbability.ToString("n3")} power percentage: {powerPercentage.ToString("n3")}");
+        if(rngRoll < myProbability)
         {
             //Find place to spawn powerup
             Vector3 newSpot = center + Random.insideUnitSphere * maxRangeFromCenter;
-
+            if(newSpot.y < center.y)
+            {
+                float diff = center.y - newSpot.y;
+                newSpot.y += diff*2;
+            }
             Vector3 directionToSpot = (newSpot - center).normalized;
 
             RaycastHit hit;
 
-            if(Physics.Raycast((center + directionToSpot * minRangeFromCenter), directionToSpot,
+            if(Physics.Raycast(center , directionToSpot,
             out hit,
             maxRangeFromCenter - minRangeFromCenter,
             impactLayer))
@@ -55,10 +64,12 @@ public class PowerUpThunder : MonoBehaviour
                 StrikePowerUp(newSpot);
             }    
         }
+        else
+            Debug.Log("No powerup spawn");
 
     }
 
-    public void StrikePowerUp(Vector3 strikePoint)
+    private void StrikePowerUp(Vector3 strikePoint)
     {
         PowerUp powerToSpawn;
         float probabilitySum = 0;
@@ -84,7 +95,7 @@ public class PowerUpThunder : MonoBehaviour
         }
         powerToSpawn = droppablePowers[0];
 
-        powerToSpawn.SpawnPrefab(strikePoint, Quaternion.identity);
+        powerToSpawn.SpawnPrefab(strikePoint);
 
     }
 }
