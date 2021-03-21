@@ -109,7 +109,9 @@ public class AreaofEffect : MonoBehaviour
         {
             EnemyHealth enemyHealth = hit.Key.transform.gameObject.GetComponent<EnemyHealth>();
             if (enemyHealth == null) enemyHealth = hit.Key.transform.gameObject.GetComponentInParent<EnemyHealth>();
-            enemyHealth.OnDamaged(hit.Value);
+
+            if(enemyHealth != null)
+                enemyHealth.OnDamaged(hit.Value);
         }
     }
 

@@ -135,7 +135,8 @@ public class Shotgun : InputReceiverBase
 
                     if (enemyHealth == null) enemyHealth = hitInfo.transform.gameObject.GetComponentInParent<EnemyHealth>();
 
-                    enemyHealth.OnDamaged(dealtDamage, this);
+                    if(enemyHealth != null)
+                        enemyHealth.OnDamaged(dealtDamage, this);
                 }
 
                 #region Damage Using Formula
