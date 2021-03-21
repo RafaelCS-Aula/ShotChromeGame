@@ -6,6 +6,7 @@ public class PowerUpApplier : MonoBehaviour
 {
    private Dictionary<string,PowerUp> activePowers = new Dictionary<string, PowerUp>();
 
+    private List<string> finishedPowers = new List<string>(); 
    public bool IsPowerActive(string powerName) => activePowers.ContainsKey(powerName);
 
     public static PowerUpApplier Instance;
@@ -30,12 +31,14 @@ public class PowerUpApplier : MonoBehaviour
             foreach(KeyValuePair<string,PowerUp> pu in activePowers)
             {
                 pu.Value.isFinished = true;
-                activePowers.Remove(pu.Key);
             }
+            activePowers.Clear();
         }
-
+        Debug.Log("Applier Activation!");
         power.Activate();
-        activePowers.Add(power.powerName, power);
+     
+        if(!power.isFinished)
+            activePowers.Add(power.powerName, power);
         
     }
 
@@ -44,10 +47,28 @@ public class PowerUpApplier : MonoBehaviour
         foreach(KeyValuePair<string, PowerUp> pu in activePowers)
         {
             pu.Value.ApplyOverTime();
-            if(pu.Value.isFinished)
-                activePowers.Remove(pu.Key);
+           if(pu.Value.isFinished)
+           {
+               
+               finishedPowers.Add(pu.Key);
+           }
+                
+            
         }
 
+        foreach(string key in finishedPowers)
+        {
+            if(activePowers.ContainsKey(key))
+            {
+                Debug.Log($"Removing {key}");
+                activePowers.Remove(key);
+            }
+        }
+
+        finishedPowers.Clear();
+
     }
+
+    
 
 }
