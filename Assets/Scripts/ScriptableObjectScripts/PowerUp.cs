@@ -17,7 +17,10 @@ public class PowerUp : ScriptableObject
     [Multiline]
     public string description;
 
+    [SerializeField]
     public bool overwriteActive = true;
+
+    [SerializeField]
     public bool isFinished = false;
 
     [Range(0,1)]
@@ -27,16 +30,26 @@ public class PowerUp : ScriptableObject
     [SerializeField]
     private BoolData affectedBoolData;
 
+    [SerializeField][ShowNativeProperty]
+    private bool affectedBoolValue => affectedBoolData ?? false;
+
     [SerializeField][HideIf("IsInt")]
     private FloatData affectedFloatData;
+    [SerializeField][ShowNativeProperty]
+    private float affectedFloatValue => affectedFloatData ?? 0.0f;
 
     [SerializeField][HideIf("IsFloat")]
     private IntData affectedIntData;
+    [SerializeField][ShowNativeProperty]
+    private int affectedIntValue => affectedIntData ?? 0;
 
     [SerializeField]
     private bool returnToDefaultOnEnd;
 
+    [SerializeField][ReadOnly]
     private float _defaultNumberValue;
+
+    [SerializeField][ReadOnly]
     private bool _defaultBoolValue;
 
     [SerializeField][ShowIf("IsBoolean")]
@@ -53,6 +66,7 @@ public class PowerUp : ScriptableObject
     [SerializeField]
     private FloatVariable duration;
 
+    [ShowNativeProperty][SerializeField]
     private bool IsNotInstant => duration > 0;
     private bool IsNumerical => (affectedFloatData != null || affectedIntData != null);
 
@@ -63,10 +77,15 @@ public class PowerUp : ScriptableObject
     private float _beginningTime;
     private float _currentTime;
 
+    [ReadOnly]
+    public float _elapsed;
+
 
     public void Activate()
     {
+        Debug.Log("Power Activation!");
         isFinished = false;
+        _defaultBoolValue = affectedBoolData.Value;
         if(IsFloat)
         {
             _defaultNumberValue = affectedFloatData.Value;
@@ -78,13 +97,14 @@ public class PowerUp : ScriptableObject
             affectedIntData.ApplyChange((int)immediateChange.Value);
         }
         
-        _defaultBoolValue = affectedBoolData.Value;
+       
         affectedBoolData.SetValue(newValue);
         
         _beginningTime = Time.realtimeSinceStartup;
 
         if(!IsNotInstant)
             isFinished = true;
+        Debug.Log($"Activate: {powerName}");
     }
 
     public void ApplyOverTime()
@@ -95,19 +115,11 @@ public class PowerUp : ScriptableObject
 
         _currentTime = Time.realtimeSinceStartup;
         float elapsedTime = _currentTime - _beginningTime;
-
+        _elapsed = elapsedTime;
         if(elapsedTime >= duration)
         {
-            isFinished = true;
-            if(returnToDefaultOnEnd)
-            {
-                if(IsFloat)
-                    affectedFloatData.SetValue(_defaultNumberValue);
-                else if(IsInt)
-                    affectedIntData.SetValue((int)_defaultNumberValue);
-                
-                affectedBoolData.SetValue(_defaultBoolValue);
-            }
+            Debug.Log("Time's up!");
+            FinishActivation();
             return;
         }
         else
@@ -152,5 +164,23 @@ public class PowerUp : ScriptableObject
         return (other as PowerUp).name == this.name;
     }
 
-
+    private void OnDestroy() {
+        FinishActivation();
+    }
+    public void FinishActivation()
+    {
+        
+        if(returnToDefaultOnEnd)
+        {
+            affectedBoolData.SetValue(_defaultBoolValue);
+            if(IsFloat)
+                affectedFloatData.SetValue(_defaultNumberValue);
+            else if(IsInt)
+                affectedIntData.SetValue((int)_defaultNumberValue);
+                
+                
+        }  
+        isFinished = true;  
+        Debug.Log($"Finishing: {powerName}");
+    }
 }
