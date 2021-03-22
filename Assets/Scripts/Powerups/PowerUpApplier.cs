@@ -34,7 +34,7 @@ public class PowerUpApplier : MonoBehaviour
             }
             activePowers.Clear();
         }
-        Debug.Log("Applier Activation!");
+       // Debug.Log("Applier Activation!");
         power.Activate();
      
         if(!power.isFinished)

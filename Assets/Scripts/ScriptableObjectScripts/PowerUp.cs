@@ -86,7 +86,7 @@ public class PowerUp : ScriptableObject
 
     public void Activate()
     {
-        Debug.Log("Power Activation!");
+       // Debug.Log("Power Activation!");
         isFinished = false;
         _defaultBoolValue = affectedBoolData ?? false;
         if(IsFloat)
