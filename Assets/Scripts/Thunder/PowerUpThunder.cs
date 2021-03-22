@@ -71,7 +71,7 @@ public class PowerUpThunder : MonoBehaviour
 
     private void StrikePowerUp(Vector3 strikePoint)
     {
-        PowerUp powerToSpawn;
+        PowerUp powerToSpawn = null;
         float probabilitySum = 0;
         
         // Use weighted chance to spawn one of the possible powerups
@@ -82,7 +82,7 @@ public class PowerUpThunder : MonoBehaviour
 
         for(int i = droppablePowers.Count - 1; i > -1; i--)
         {
-            float rng = Random.Range(0,probabilitySum);
+            float rng = Random.Range(0.0f,probabilitySum);
             if(rng < droppablePowers[i].baseChance)
             {
                 powerToSpawn = droppablePowers[i];
@@ -93,7 +93,8 @@ public class PowerUpThunder : MonoBehaviour
                 probabilitySum -= droppablePowers[i].baseChance;
             }
         }
-        powerToSpawn = droppablePowers[0];
+        if(powerToSpawn == null)
+            powerToSpawn = droppablePowers[0];
 
         powerToSpawn.SpawnPrefab(strikePoint);
 
