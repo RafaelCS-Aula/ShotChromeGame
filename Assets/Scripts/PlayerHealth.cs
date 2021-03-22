@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement; // Take this out after PoC
 using NaughtyAttributes;
 
-public class PlayerHealth : MonoBehaviour, IResourceHolder<HealthResource>
+public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private FloatVariable MaxPlayerHP;
     [SerializeField] private FloatData PlayerHP;
@@ -33,10 +33,5 @@ public class PlayerHealth : MonoBehaviour, IResourceHolder<HealthResource>
         SceneManager.LoadScene(deathScene);
     }
 
-    void IResourceHolder<HealthResource>.ReceiveResource(float amount)
-    {
-        PlayerHP.SetValue(PlayerHP.Value + (int)amount);
-        if(PlayerHP > MaxPlayerHP)
-            PlayerHP.SetValue(MaxPlayerHP);
-    }
+  
 }
