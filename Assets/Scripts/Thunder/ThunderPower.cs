@@ -8,9 +8,11 @@ public class ThunderPower : MonoBehaviour
 {
     [SerializeField] private FloatVariable maxPower;
     [SerializeField] private FloatData currentPower;
+
+    [SerializeField] private FloatData lastSpentPower;
     [SerializeField] private FloatData currentRadius;
     [SerializeField] private FloatData currentDamage;
-    [SerializeField] private IntData currentAmmo;
+    [SerializeField] private FloatData currentAmmo;
 
     [Label("Read Keys Directly (Radius Curve)")]
     [SerializeField] private bool readRadiusKeysDirectly;
@@ -68,6 +70,7 @@ public class ThunderPower : MonoBehaviour
         currentAmmo.SetValue((int)amm);
         currentRadius.SetValue(rad);
         currentDamage.SetValue(dmg);
+        lastSpentPower.SetValue(currentPower.Value);
 
         //print("From Power: Radius - " + rad );
 

@@ -61,6 +61,47 @@ public class ZigZagLine : MonoBehaviour
 
     }
 
+    //TODO: Merge both methods
+    public void DrawTwoPointLine(Vector3 startPoint, Vector3 endPoint)
+    {
+        if(lineRenderer == null)
+            lineRenderer = GetComponent<LineRenderer>();
+        if(!lineRenderer) return;
+        
+        Debug.Log($"Drawing zigzag from {startPoint} to {endPoint}");
+
+        lineRenderer.enabled = false;
+        _end = endPoint;
+        _start = startPoint;
+
+        float length = Vector3.Distance(startPoint,endPoint);
+        float division = length/points;
+        Vector3 direction = (endPoint - startPoint).normalized;
+
+        lineRenderer.alignment = LineAlignment.TransformZ;
+        lineRenderer.positionCount = points;
+        Vector3[] positions = new Vector3[points];
+        for (int i = 0; i < positions.Length; i++)
+        {
+            float variation = Random.Range(-pointVariation, pointVariation);
+            positions[i] = _start + direction * (division * i) + new Vector3(variation, variation, variation);
+
+            if(i == positions.Length - 1)
+                positions[i] = new Vector3(_end.x, _end.y, _end.z);
+            
+        }
+        lineRenderer.SetPositions(positions);
+        //widthFactor = widthCurrentVal / witdthMaxVal;
+        //print("line width:" + widthFactor);
+        //lineRenderer.widthMultiplier = widthFactor;
+        lineRenderer.enabled = true;
+        Debug.Log($"Drawing zigzag from {startPoint} to {endPoint}");
+        StartCoroutine(StopThunder(duration));
+
+    }
+
+
+
     private IEnumerator StopThunder(float seconds)
     {
         yield return new WaitForSeconds(seconds);

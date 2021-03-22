@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ResourceType 
+public class PowerUpCollector : MonoBehaviour
 {
-
+  
 }
