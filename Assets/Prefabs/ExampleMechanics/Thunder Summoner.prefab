@@ -38,6 +38,7 @@ Transform:
   m_Children:
   - {fileID: 2120990957332693051}
   - {fileID: 6497116081940105105}
+  - {fileID: 5588553721163209331}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -139,7 +140,7 @@ MonoBehaviour:
   impactLayer:
     serializedVersion: 2
     m_Bits: 256
-  originPoint: {fileID: 0}
+  originPoint: {fileID: 472223884595511767}
   summonCoolDown:
     UseInspectorValue: 0
     InspectorValue: 1
@@ -174,6 +175,30 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 6898435362550550527}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6898435362550550527}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: feee06242f5d3ea40a6f1812ee5a3ae2, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
   PositionResponse:
     m_PersistentCalls:
@@ -189,25 +214,13 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7205802429366162661}
-        m_TargetAssemblyTypeName: ZigZagLine, Assembly-CSharp
-        m_MethodName: DrawLine
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
       - m_Target: {fileID: 6898435362550550527}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 75a40a9e77c7c2749a067b39f3e98113, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: feee06242f5d3ea40a6f1812ee5a3ae2, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -217,18 +230,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1755790541511287285}
         m_TargetAssemblyTypeName: Spawner, Assembly-CSharp
         m_MethodName: SpawnAt
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ShakeableTransform, Assembly-CSharp
-        m_MethodName: ShakeDistanceAffected
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -323,9 +324,10 @@ MonoBehaviour:
     InspectorValue: 20
     Variable: {fileID: 11400000, guid: 413f8a89812ea4e4a89fe6a488fb6060, type: 2}
   currentPower: {fileID: 11400000, guid: acab311c951432448842d576a5e833e4, type: 2}
+  lastSpentPower: {fileID: 11400000, guid: 9436460a50b30ce40aa3be2e6da57cf6, type: 2}
   currentRadius: {fileID: 11400000, guid: 2d38d342517318d47b47e2a85efca121, type: 2}
   currentDamage: {fileID: 11400000, guid: 52df505d8888cc34997244cfca66ed0b, type: 2}
-  currentAmmo: {fileID: 11400000, guid: f0312276924fa4447b4a3fae4c79b600, type: 2}
+  currentAmmo: {fileID: 11400000, guid: 7ed4469312883544da6834cb38ca1cae, type: 2}
   readRadiusKeysDirectly: 0
   radiusCurve:
     UseInspectorValue: 1
@@ -5689,6 +5691,68 @@ MonoBehaviour:
   DamageResponse:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1001 &1637957125018911914
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 472223884595511767}
+    m_Modifications:
+    - target: {fileID: 6572360082343616217, guid: 3b79216a5566934418a128fb870ad772, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572360082343616217, guid: 3b79216a5566934418a128fb870ad772, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572360082343616217, guid: 3b79216a5566934418a128fb870ad772, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572360082343616217, guid: 3b79216a5566934418a128fb870ad772, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572360082343616217, guid: 3b79216a5566934418a128fb870ad772, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572360082343616217, guid: 3b79216a5566934418a128fb870ad772, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572360082343616217, guid: 3b79216a5566934418a128fb870ad772, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572360082343616217, guid: 3b79216a5566934418a128fb870ad772, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572360082343616217, guid: 3b79216a5566934418a128fb870ad772, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572360082343616217, guid: 3b79216a5566934418a128fb870ad772, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572360082343616217, guid: 3b79216a5566934418a128fb870ad772, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572360082343616222, guid: 3b79216a5566934418a128fb870ad772, type: 3}
+      propertyPath: m_Name
+      value: PowerUp Thunder
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3b79216a5566934418a128fb870ad772, type: 3}
+--- !u!4 &5588553721163209331 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6572360082343616217, guid: 3b79216a5566934418a128fb870ad772, type: 3}
+  m_PrefabInstance: {fileID: 1637957125018911914}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4966962834453814139
 PrefabInstance:
   m_ObjectHideFlags: 0

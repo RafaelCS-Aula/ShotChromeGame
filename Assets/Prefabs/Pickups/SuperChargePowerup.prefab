@@ -92,7 +92,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3000678785173053624}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.61831623
   m_Height: 11.516271
@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUp: {fileID: 11400000, guid: 9c968e15a23e59343baaa055c2795fd5, type: 2}
+  lifeTime: 8
 --- !u!54 &-7802718370842001372
 Rigidbody:
   m_ObjectHideFlags: 0
