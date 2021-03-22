@@ -23,7 +23,7 @@ public class GamePauseControl : MonoBehaviour
 
     public void TogglePause()
     {
-        print(gameObject.name + "toggle pause");
+        //print(gameObject.name + "toggle pause");
         if(IsPaused)
         {
             Time.timeScale = 1;

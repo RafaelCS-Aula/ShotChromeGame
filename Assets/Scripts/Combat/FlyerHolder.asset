@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 867ebc0c38ac64d4fb659c5411579c0a, type: 3}
-  m_Name: JaguarHolder
+  m_Name: FlyerHolder
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 8262600434731184510, guid: cd04e4746891c6c409f21d3eca45ddc6, type: 3}
-  enemyType: 0
+  enemyPrefab: {fileID: 2223515168033367731, guid: 6e68959d20d67c3449a4893e089a15a2, type: 3}
+  enemyType: 1
   distanceToAllowOtherToSpawn:
     UseInspectorValue: 1
-    InspectorValue: 0
+    InspectorValue: 3
     Variable: {fileID: 0}

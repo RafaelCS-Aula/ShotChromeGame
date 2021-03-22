@@ -31,15 +31,20 @@ public class CombatEncounter : MonoBehaviour
 
 
     [Button]
-    public IEnumerable StartEncounter()
+    public IEnumerator StartEncounter()
     {
         _currentWaveIndex = 0;
         OnEncounterStart.Invoke();
         _currentWave = waves[_currentWaveIndex];
         
         _allWavesComplete = false;
+
         if(encounterTarget == null)
-            encounterTarget = gameObject.transform;
+        {
+            Debug.LogWarning($"No Target for encounter {gameObject.name}. Assigning its own transform for now");
+            encounterTarget = transform;
+        }
+
         _currentWave.enemyTarget = encounterTarget;
         yield return new WaitForSeconds(timeFromStartToFirstWave);
         _currentWave.BeginWave();
@@ -90,6 +95,7 @@ public class CombatEncounter : MonoBehaviour
         if(_currentWaveIndex < waves.Count)
         {
             _currentWave = waves[_currentWaveIndex];
+            _currentWave.enemyTarget = encounterTarget;
             _currentWave.BeginWave();
         }
         else

@@ -33,7 +33,7 @@ public class CombatSpawner : MonoBehaviour
     [Button]
     public void ConnectWithFlyerWaypoints()
     {
-        if(!_isFlyer)
+        if (!_isFlyer)
         {
             Debug.Log("Only flyer types spawners make use of flyer waypoints");
             return;
@@ -41,7 +41,7 @@ public class CombatSpawner : MonoBehaviour
 
         flyerWaypoint = gameObject.GetComponent<Waypoint>() ?? gameObject.AddComponent<Waypoint>();
         flyerWaypoint.drawPathGizmos = false;
-        foreach(Waypoint wp in flyerEntryWaypoints)
+        foreach (Waypoint wp in flyerEntryWaypoints)
         {
             flyerWaypoint.MakeOneWayOutgoingConnectionWith(wp);
         }
@@ -56,70 +56,142 @@ public class CombatSpawner : MonoBehaviour
     /// enemy must have to this spawner until it can spawn the next monster in 
     /// the queue.</param>
     /// <returns></returns>
-    public GameObject StartSpawning(CombatWave callerWave,float minDistanceToNext)
+    public GameObject StartSpawning(CombatWave callerWave, float minDistanceToNext)
     {
-       
+
         _callerWave = callerWave;
         _minDistanceToNext = minDistanceToNext;
 
-        _lastSpawned = Instantiate(spawnQueue.Peek(),transform.position, transform.rotation);
+        _lastSpawned = Instantiate(spawnQueue.Peek(), transform.position, transform.rotation);
         spawnQueue.Dequeue();
-        _lastSpawned.GetComponent<TargetHolder>().Target = _callerWave.enemyTarget;
 
-        if(spawnQueue.Count > 0)
+        TargetHolder target = _lastSpawned.GetComponent<TargetHolder>();
+        if (target != null)
+        {
+            target.Target = _callerWave.enemyTarget;
+        }
+        else Debug.LogError($"Enemy from {_lastSpawned.name} doesn't have a TargetHolder Component");
+
+        if (_isFlyer)
+        {
+            GetComponent<Waypoint>().ToggleOccupation();
+            _lastSpawned.GetComponent<FlyerMovement>().SetCurrentWaypoint(GetComponent<Waypoint>());
+        }
+
+        if (spawnQueue.Count > 0)
             _openForSpawning = true;
 
         return _lastSpawned;
     }
 
-    private void Update() 
+    private void Update()
     {
-        
-        if(_openForSpawning)
-        {
-            // If the newest spawn is far away enough, spawn the next in the queue.
-            float distance = distance = (_lastSpawned.transform.position - transform.position).sqrMagnitude;
 
-            if(distance >= _minDistanceToNext)
+        if (_openForSpawning)
+        {
+            bool _canSpawn = false;
+
+            if (!_isFlyer)
             {
-                _lastSpawned = Instantiate(spawnQueue.Peek(),transform.position, transform.rotation);
-                _lastSpawned.GetComponent<TargetHolder>().Target = _callerWave.enemyTarget;
+                if(_lastSpawned == null)
+                {
+                    _canSpawn = true;
+                }
+                else
+                {
+                    // If the newest spawn is far away enough, spawn the next in the queue.
+                    float distance = (_lastSpawned.transform.position - transform.position).sqrMagnitude;
+
+                    if (distance >= _minDistanceToNext) _canSpawn = true;
+                }
+            }
+
+            else
+            {
+                Waypoint thisWP = GetComponent<Waypoint>();
+
+                if (_lastSpawned == null)
+                {
+                    print("NULL SPAWNED");
+                    if (!thisWP.isOccupied) _canSpawn = true; ;
+                }
+                else
+                {
+                    float distance = (_lastSpawned.transform.position - transform.position).sqrMagnitude;
+
+                    if (distance >= _minDistanceToNext)
+                    {
+
+                        if (!thisWP.isOccupied) _canSpawn = true; ;
+                        
+                        /*
+                        for (int i = 0; i < thisWP.outgoingConnections.Count; i++)
+                        {
+
+                            if (!thisWP.outgoingConnections[i].isOccupied)
+                            {
+                                _canSpawn = true;
+                                break;
+                            }
+                        }
+                        */
+                    }
+                }
+            }
+
+            if (_canSpawn)
+            {
+                _lastSpawned = Instantiate(spawnQueue.Peek(), transform.position, transform.rotation);
+                TargetHolder target =
+                    _lastSpawned.GetComponent<TargetHolder>();
+                if (target != null)
+                {
+                    target.Target = _callerWave.enemyTarget;
+                }
+                else Debug.LogError($"Enemy from {_lastSpawned.name} doesn't have a TargetHolder Component");
+
+
+                if (_isFlyer)
+                {
+                    GetComponent<Waypoint>().ToggleOccupation();
+                    _lastSpawned.GetComponent<FlyerMovement>().SetCurrentWaypoint(GetComponent<Waypoint>());
+                }
+
+                _lastSpawned.layer = 9;
                 spawnQueue.Dequeue();
-                _callerWave.AddLateSpawnedEnemy(enemy,_lastSpawned);
-                
-            }   
-            if(spawnQueue.Count == 0)
+                _callerWave.AddLateSpawnedEnemy(enemy, _lastSpawned);
+            }
+
+            if (spawnQueue.Count == 0)
                 _openForSpawning = false;
         }
-        
-        
     }
 
-    private void OnDrawGizmos() 
+    private void OnDrawGizmos()
     {
-        
-       Gizmos.DrawIcon(transform.position, pathToIcons, true);
-        Handles.RadiusHandle(Quaternion.identity,transform.position,_minDistanceToNext,false);
 
-        Handles.ConeHandleCap(GetInstanceID(),transform.position + transform.forward,transform.rotation,0.3f,EventType.Repaint);
+        Gizmos.DrawIcon(transform.position, pathToIcons, true);
+        Handles.RadiusHandle(Quaternion.identity, transform.position, _minDistanceToNext, false);
 
-        Gizmos.DrawRay(transform.position,transform.forward);
-       if(flyerWaypoint != null && _isFlyer)
-       {
-           Handles.color = Color.blue;
-           foreach(Waypoint wp in flyerWaypoint.outgoingConnections)
-           {
-               Handles.DrawDottedLine(transform.position, wp.transform.position,2f);
+        Handles.ConeHandleCap(GetInstanceID(), transform.position + transform.forward, transform.rotation, 0.3f, EventType.Repaint);
+
+        Gizmos.DrawRay(transform.position, transform.forward);
+        if (flyerWaypoint != null && _isFlyer)
+        {
+            Handles.color = Color.blue;
+            foreach (Waypoint wp in flyerWaypoint.outgoingConnections)
+            {
+                Handles.DrawDottedLine(transform.position, wp.transform.position, 2f);
 
                 Vector3 direction = (wp.transform.position - transform.position).normalized;
-                if(wp.transform.position == transform.position)
+                if (wp.transform.position == transform.position)
                     continue;
 
-                Quaternion coneRotation = Quaternion.LookRotation(direction,transform.up);
-                
-                
-                Handles.ConeHandleCap(wp.GetInstanceID(),transform.position + direction * 1.2f, coneRotation,0.5f,EventType.Repaint);
-           }
-       }
+                Quaternion coneRotation = Quaternion.LookRotation(direction, transform.up);
+
+
+                Handles.ConeHandleCap(wp.GetInstanceID(), transform.position + direction * 1.2f, coneRotation, 0.5f, EventType.Repaint);
+            }
+        }
     }
 }

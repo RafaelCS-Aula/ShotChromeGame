@@ -120,8 +120,8 @@ public class ShakeableTransform : MonoBehaviour
         float distance = Vector3.Distance(_target.transform.position, sourcePosition);
         float distance01 = Mathf.Clamp01(distance / _shockRadius);
         _forceFactor = (1-distance01);
-        print(_forceFactor);
-        print(_defaultImpact * _forceFactor);
+        //print(_forceFactor);
+        //print(_defaultImpact * _forceFactor);
         StartCoroutine(ApplyShake(_defaultImpact));
     }
 
@@ -188,7 +188,7 @@ public class ShakeableTransform : MonoBehaviour
         float factorHorizontal = Mathf.Clamp(Vector3.Dot(direction, transform.right), -1, 1);
         float factorVertical = Mathf.Clamp(Vector3.Dot(direction, transform.up), -1, 1);
         float factorForward = Mathf.Clamp(Vector3.Dot(direction, transform.forward), -1, 1);
-        print(factorHorizontal + ", " + factorVertical + ", " + factorForward );
+        //print(factorHorizontal + ", " + factorVertical + ", " + factorForward );
 
         while(trauma > 0.000f)
         {
