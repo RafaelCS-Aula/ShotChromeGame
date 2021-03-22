@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
+using UnityEngine.Events;
 
 public class PowerUpThunder : MonoBehaviour
 {
+    public UnityEvent<Vector3, Vector3> OnPowerupSpawn;
     
     [SerializeField]
     private LayerMask impactLayer;
@@ -30,6 +32,8 @@ public class PowerUpThunder : MonoBehaviour
     }
     public void TryStrike(Vector3 center)
     {
+
+        Vector3 spawnPlace;
         float powerPercentage = _thunderPower/_maxThunderPower;
         Debug.Log($"{_thunderPower.Value}");
         //powerPercentage = Mathf.Clamp01(powerPercentage);
@@ -57,12 +61,16 @@ public class PowerUpThunder : MonoBehaviour
             maxRangeFromCenter - minRangeFromCenter,
             impactLayer))
             {
-                StrikePowerUp(hit.point);
+                spawnPlace = hit.point;
+               
             }
             else
             {
-                StrikePowerUp(newSpot);
+                spawnPlace = newSpot;
+                
             }    
+            StrikePowerUp(spawnPlace);
+            OnPowerupSpawn.Invoke(center,spawnPlace);
         }
         else
             Debug.Log("No powerup spawn");
