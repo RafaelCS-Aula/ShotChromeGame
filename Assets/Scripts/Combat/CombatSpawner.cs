@@ -93,7 +93,7 @@ public class CombatSpawner : MonoBehaviour
 
             if (!_isFlyer)
             {
-                if(_lastSpawned == null)
+                if (_lastSpawned == null)
                 {
                     _canSpawn = true;
                 }
@@ -110,31 +110,18 @@ public class CombatSpawner : MonoBehaviour
             {
                 Waypoint thisWP = GetComponent<Waypoint>();
 
-                if (_lastSpawned == null)
-                {
-                    print("NULL SPAWNED");
-                    if (!thisWP.isOccupied) _canSpawn = true; ;
-                }
-                else
-                {
-                    float distance = (_lastSpawned.transform.position - transform.position).sqrMagnitude;
+                float distance = (_lastSpawned.transform.position - transform.position).sqrMagnitude;
 
-                    if (distance >= _minDistanceToNext)
+                if (distance >= _minDistanceToNext)
+                {
+                    for (int i = 0; i < thisWP.outgoingConnections.Count; i++)
                     {
-
-                        if (!thisWP.isOccupied) _canSpawn = true; ;
-                        
-                        /*
-                        for (int i = 0; i < thisWP.outgoingConnections.Count; i++)
+                        if (!thisWP.outgoingConnections[i].isOccupied)
                         {
-
-                            if (!thisWP.outgoingConnections[i].isOccupied)
-                            {
-                                _canSpawn = true;
-                                break;
-                            }
+                            _canSpawn = true;
+                            break;
                         }
-                        */
+
                     }
                 }
             }

@@ -145,7 +145,7 @@ public class CombatWave
                 _totalEnemies += spawnedStack.Count;
         }
         inProgress = true;
-        Debug.Log($"Total Enemies: {_totalEnemies}");
+        //Debug.Log($"Total Enemies: {_totalEnemies}");
 
         _allEnemiesInWaveSpawned = CheckIfAllSpawned();
     }

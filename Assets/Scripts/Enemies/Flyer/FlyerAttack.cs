@@ -5,6 +5,7 @@ using NaughtyAttributes;
 
 public class FlyerAttack : MonoBehaviour
 {
+    private Animator anim;
     [SerializeField] TargetHolder targetH;
 
     [SerializeField] FloatVariable attackDamage;
@@ -12,6 +13,7 @@ public class FlyerAttack : MonoBehaviour
     [SerializeField] FloatVariable projectileSpeed;
     [SerializeField] FloatVariable destroyProjAfterSeconds;
 
+    [SerializeField] private LayerMask playerLayer;
     [SerializeField] GameEvent DamagePlayer;
 
     [SerializeField] Transform projOrigin;
@@ -29,8 +31,9 @@ public class FlyerAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         targetH = GetComponent<TargetHolder>();
-        StartCoroutine(DelayAttackForSeconds(2));
+        StartCoroutine(LockAttackForSeconds(2));
     }
 
     // Update is called once per frame
@@ -42,7 +45,7 @@ public class FlyerAttack : MonoBehaviour
 
             float distToTarget = Vector3.Distance(targetH.Target.position, transform.position);
 
-            if (attackTimer <= 0)
+            if (attackTimer <= 0 && CheckForVisual())
             {
                 if (shootWhileMoving) Attack();
                 else if (!CheckMovement()) Attack();
@@ -52,6 +55,7 @@ public class FlyerAttack : MonoBehaviour
 
     private void Attack()
     {
+
         attackTimer = attackInterval;
 
         GameObject projObj = Instantiate(projPrefab);
@@ -64,6 +68,8 @@ public class FlyerAttack : MonoBehaviour
         projObj.GetComponent<FlyerProjectile>().destroyAfterSeconds = destroyProjAfterSeconds;
         projObj.GetComponent<FlyerProjectile>().damageEvent = DamagePlayer;
         #endregion
+
+        anim.SetTrigger("Shoot");
     }
 
     private bool CheckMovement()
@@ -83,15 +89,28 @@ public class FlyerAttack : MonoBehaviour
         return moved;
     }
 
-    private IEnumerator DelayAttackForSeconds(int time)
+    public IEnumerator LockAttackForSeconds(int time)
     {
         attackLocked = true;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(time);
         attackLocked = false;
     }
 
-    public void LockAttackForSeconds(int time)
+    private bool CheckForVisual()
     {
-        StartCoroutine(DelayAttackForSeconds(time));
+        Vector3 originP = projOrigin.position;
+
+        Ray rayshow = new Ray(originP, targetH.Target.position - originP);
+        RaycastHit hitinfo;
+
+        if (Physics.Raycast(rayshow, out hitinfo, 3000))
+        {
+            if (hitinfo.collider != null)
+            {
+                if (playerLayer == (playerLayer | (1 << hitinfo.collider.gameObject.layer))) return true;
+                else return false;
+            }
+        }
+        return false;
     }
 }

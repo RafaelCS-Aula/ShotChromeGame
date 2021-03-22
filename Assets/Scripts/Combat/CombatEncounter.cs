@@ -52,7 +52,7 @@ public class CombatEncounter : MonoBehaviour
     }
 
     private void Start() {
-        print(waves.Count);
+        //print(waves.Count);
     }
     // Update is called once per frame
     void Update()
