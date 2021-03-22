@@ -5,6 +5,7 @@ using UnityEngine;
 public class FlyerMovement : MonoBehaviour
 {
     private Rigidbody rb;
+    private Animator anim;
 
     [SerializeField] private Waypoint currWP;
 
@@ -16,6 +17,7 @@ public class FlyerMovement : MonoBehaviour
     [SerializeField] private FloatVariable turnSpeed;
 
     [SerializeField] private LayerMask playerLayer;
+    [SerializeField] private LayerMask visualCheckLayers;
 
     [SerializeField] private BoolVariable shootWhileMoving;
 
@@ -41,26 +43,35 @@ public class FlyerMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
+        targetH = GetComponent<TargetHolder>();
+
         transform.position = currWP.transform.position;
 
         clone = Instantiate(CloneFrebab, transform.position, transform.rotation, transform) ;
 
         visualTimer = timeToMove;
-        //ChangeWaypoint();
+        ChangeWaypoint(true);
     }
 
     private void Update()
     {
+        anim.SetBool("isMoving", isMoving);
 
         if (!isMoving)
         {
-            if (!CheckForVisual(true, transform.position))
+            print(visualTimer);
+            if (!CheckForVisual(true, transform.position)) 
             {
                 visualTimer -= Time.deltaTime;
             }
             else if (visualTimer != timeToMove) visualTimer = timeToMove;
 
-            if (visualTimer <= 0) ChangeWaypoint();
+            if (visualTimer <= 0)
+            {
+                print("NO VISUAL, CHANGING POSITION");
+                ChangeWaypoint(false);
+            }
         }
 
         if (isMoving) Move(movDest);
@@ -69,15 +80,15 @@ public class FlyerMovement : MonoBehaviour
         else if (!isMoving) RotateToPoint(targetH.Target.position);
     }
 
-    private void ChangeWaypoint()
+    private void ChangeWaypoint(bool isStart)
     {
         Waypoint nextWaypoint;
         List<Waypoint> canGo = new List<Waypoint>();
 
         for (int i = 0; i < currWP.outgoingConnections.Count; i++)
         {
-            if (!currWP.outgoingConnections[i].isOccupied &&
-                CheckForVisual(false, currWP.outgoingConnections[i].transform.position))
+            if ((isStart && !currWP.outgoingConnections[i].isOccupied) ||
+                (!currWP.outgoingConnections[i].isOccupied && CheckForVisual(false, currWP.outgoingConnections[i].transform.position)))
             {
                 canGo.Add(currWP.outgoingConnections[i]);
             }
@@ -133,7 +144,8 @@ public class FlyerMovement : MonoBehaviour
             if (percentageComplete >= 1.0f)
             {
                 isMoving = false;
-                GetComponent<FlyerAttack>().LockAttackForSeconds(attackDelayOnArrival);
+
+                StartCoroutine(GetComponent<FlyerAttack>().LockAttackForSeconds(attackDelayOnArrival));
             }
         }
 
@@ -159,7 +171,7 @@ public class FlyerMovement : MonoBehaviour
 
         Debug.DrawRay(originP, (targetH.Target.position - originP) * 3000, Color.red);
 
-        if (Physics.Raycast(rayshow, out hitinfo, 3000))
+        if (Physics.Raycast(rayshow, out hitinfo, 3000, visualCheckLayers))
         {
             if (hitinfo.collider != null)
             {
