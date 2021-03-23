@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ShotConeAngle
   m_EditorClassIdentifier: 
   DevDescription: Angle (in Degrees) in which the pellets will spread
-  variableValue: 5
+  variableValue: 10

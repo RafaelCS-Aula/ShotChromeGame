@@ -38,10 +38,10 @@ MonoBehaviour:
     Variable: {fileID: 0}
   changeOverTime:
     UseInspectorValue: 1
-    InspectorValue: 0
+    InspectorValue: 5
     Variable: {fileID: 0}
   duration:
     UseInspectorValue: 1
-    InspectorValue: 0
+    InspectorValue: 2
     Variable: {fileID: 0}
   _elapsed: 0
