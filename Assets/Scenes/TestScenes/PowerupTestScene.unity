@@ -888,10 +888,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SuperChargePowerup
       objectReference: {fileID: 0}
-    - target: {fileID: 6036552803066010944, guid: db799cb58d52c704b984a8258e6a6c24, type: 3}
-      propertyPath: lifeTime
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6361280541071513127, guid: db799cb58d52c704b984a8258e6a6c24, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.48883
