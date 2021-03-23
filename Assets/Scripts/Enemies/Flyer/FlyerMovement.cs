@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class FlyerMovement : MonoBehaviour
 {
-    private Rigidbody rb;
     private Animator anim;
+    private TargetHolder targetH;
 
     [SerializeField] private Waypoint currWP;
-
-    [SerializeField] private TargetHolder targetH;
 
     [SerializeField] private Transform shotOrigin;
 
@@ -42,7 +40,6 @@ public class FlyerMovement : MonoBehaviour
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         targetH = GetComponent<TargetHolder>();
 
@@ -60,7 +57,6 @@ public class FlyerMovement : MonoBehaviour
 
         if (!isMoving)
         {
-            print(visualTimer);
             if (!CheckForVisual(true, transform.position)) 
             {
                 visualTimer -= Time.deltaTime;
@@ -69,7 +65,6 @@ public class FlyerMovement : MonoBehaviour
 
             if (visualTimer <= 0)
             {
-                print("NO VISUAL, CHANGING POSITION");
                 ChangeWaypoint(false);
             }
         }
