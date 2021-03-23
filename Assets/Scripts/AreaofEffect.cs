@@ -13,6 +13,9 @@ public class AreaofEffect : MonoBehaviour
     [Foldout("Events")]
     [SerializeField] private UnityEvent<Vector3> OnActivateAoEPosition;
 
+    [Foldout("Events")]
+    [SerializeField] private UnityEvent<Vector3, Vector3[]> OnFindAffected;
+
     [SerializeField] private ResourceTypes AffectedResource;
     [SerializeField] private bool useEffectFallOff = true;
 
@@ -46,6 +49,7 @@ public class AreaofEffect : MonoBehaviour
     
     public void ApplyAoE(Vector3 center)
     {
+        List<Vector3> hitPositions = new List<Vector3>();
         OnActivateAoE.Invoke();
         OnActivateAoEPosition.Invoke(center);
         HitsAndAffect =
@@ -99,12 +103,13 @@ public class AreaofEffect : MonoBehaviour
             if(showGizmos)
                 Debug.DrawLine(center, c.ClosestPoint(center), gizmoHitColor,4);
 
-             //print(debugPoints.Count);
+             print(c.gameObject.name);
             /////////////////
-            
+            hitPositions.Add(c.ClosestPoint(center));
             //Get the Health component of the hit colliders and affect them.
 
         }
+        OnFindAffected.Invoke(center, hitPositions.ToArray() );
         foreach (var hit in HitsAndAffect)
         {
             EnemyHealth enemyHealth = hit.Key.transform.gameObject.GetComponent<EnemyHealth>();
