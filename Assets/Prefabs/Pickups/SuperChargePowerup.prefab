@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 453300552712802190}
   - component: {fileID: 6036552803066010944}
   - component: {fileID: -7802718370842001372}
+  - component: {fileID: 887231868}
   m_Layer: 0
   m_Name: SuperChargePowerup
   m_TagString: Untagged
@@ -111,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUp: {fileID: 11400000, guid: 9c968e15a23e59343baaa055c2795fd5, type: 2}
-  lifeTime: 8
+  lifeTime: 0
 --- !u!54 &-7802718370842001372
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -128,3 +129,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &887231868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3000678785173053624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e61b814249f4e4ca46672291b8f9cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed:
+    UseInspectorValue: 1
+    InspectorValue: {x: 4, y: 0, z: 0}
+    Variable: {fileID: 0}
