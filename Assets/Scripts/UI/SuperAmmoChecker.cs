@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 [RequireComponent(typeof(ObjectToggler))]
 public class SuperAmmoChecker : MonoBehaviour
 {
@@ -14,7 +14,7 @@ public class SuperAmmoChecker : MonoBehaviour
 
     private Color _normalColor;
 
-    [SerializeField] private TMPro.TMP_Text SuperCounter;
+    [SerializeField] private TextMeshProUGUI SuperCounter;
     // Update is called once per frame
     private void Start() {
         _normalColor = SuperCounter.color;
