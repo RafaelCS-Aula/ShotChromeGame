@@ -13,13 +13,13 @@ public class FlyerProjectile : MonoBehaviour
 
     [SerializeField] private LayerMask layersToHit;
  
-    private SphereCollider col;
+    private Collider col;
 
     private bool hasDirection;
 
     private void Start()
     {
-        col = GetComponent<SphereCollider>();
+        col = GetComponent<Collider>();
         col.isTrigger = true;
         hasDirection = false;
         StartCoroutine("DestroyByTime");

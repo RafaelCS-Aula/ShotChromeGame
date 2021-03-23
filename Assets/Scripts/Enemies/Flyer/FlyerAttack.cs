@@ -6,7 +6,7 @@ using NaughtyAttributes;
 public class FlyerAttack : MonoBehaviour
 {
     private Animator anim;
-    [SerializeField] TargetHolder targetH;
+    private TargetHolder targetH;
 
     [SerializeField] FloatVariable attackDamage;
     [SerializeField] FloatVariable attackInterval;

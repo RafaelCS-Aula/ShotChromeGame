@@ -20,8 +20,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private UnityEvent<Vector3> OnShotgunDamaged;
     [Foldout("Positional Events")]
     [SerializeField] private UnityEvent<Vector3> OnAoEDamaged;
-    
-    
+
+
 
 
     [SerializeField] FloatVariable MaxHealth;
@@ -29,7 +29,6 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] FloatData currentThunderPower;
 
     [SerializeField] private bool isFlyer;
-
 
     private float health = 100;
     private MonoBehaviour lastDamageSource = null;
@@ -45,23 +44,21 @@ public class EnemyHealth : MonoBehaviour
 
     public void OnDamaged(float damage, MonoBehaviour source = null)
     {
-        //print("Damage: " + damage);
+        print("Damage: " + damage);
         health -= damage;
         lastDamageSource = source;
-        Vector3 sourceDir = Vector3.zero; 
+        Vector3 sourceDir = Vector3.zero;
 
-        if(source == null)
+        if (source == null)
             OnDefaultDamaged.Invoke();
         else
             sourceDir = transform.position - source.gameObject.transform.position;
 
-        if(source is Shotgun)
+        if (source is Shotgun)
         {
             OnShotgunDamaged.Invoke(sourceDir);
-            
-
         }
-        else if(source is AreaofEffect)
+        else if (source is AreaofEffect)
         {
             OnAoEDamaged.Invoke(sourceDir);
         }
@@ -79,13 +76,21 @@ public class EnemyHealth : MonoBehaviour
             currentThunderPower.ApplyChange(ThunderPowerGift);
             OnShotgunKill.Invoke();
         }
-        else if(lastDamageSource is AreaofEffect)
+        else if (lastDamageSource is AreaofEffect)
         {
             OnAoEKill.Invoke();
         }
-        else OnDefaultKill.Invoke();
+        else
+        {
+            OnDefaultKill.Invoke();
+        }
 
-        
+        StartCoroutine(DestroyInSecs(0.4f));
+    }
+
+    private IEnumerator DestroyInSecs(float time)
+    {
+        yield return new WaitForSeconds(time);
         Destroy(gameObject);
     }
 }
