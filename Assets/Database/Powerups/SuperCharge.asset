@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773d0728e8f55244a91156d806761601, type: 3}
+  m_Name: SuperCharge
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3000678785173053624, guid: db799cb58d52c704b984a8258e6a6c24, type: 3}
+  powerName: Supercharge Shotgun
+  description: "Turns on the super charge state of the shotgun (higher fire rate)
+    \nfor a set duration"
+  overwriteActive: 1
+  isFinished: 1
+  baseChance: 1
+  affectedBoolData: {fileID: 11400000, guid: 006e1f5915136c546a0be6764b061696, type: 2}
+  affectedFloatData: {fileID: 0}
+  affectedIntData: {fileID: 0}
+  returnToDefaultOnEnd: 1
+  _defaultNumberValue: 150
+  _defaultBoolValue: 0
+  newValue:
+    UseInspectorValue: 1
+    InspectorValue: 1
+    Variable: {fileID: 0}
+  immediateFloatChange:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
+  immediateIntChange:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
+  changeOverTime:
+    UseInspectorValue: 1
+    InspectorValue: 5
+    Variable: {fileID: 0}
+  duration:
+    UseInspectorValue: 1
+    InspectorValue: 2
+    Variable: {fileID: 0}
+  _elapsed: 2.0052147

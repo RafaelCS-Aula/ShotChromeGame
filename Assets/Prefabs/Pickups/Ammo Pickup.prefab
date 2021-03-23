@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5501309246333494217}
   - component: {fileID: 5501309246333494223}
   - component: {fileID: 5501309246333494222}
-  - component: {fileID: 5501309246333494221}
+  - component: {fileID: 5090863774226949089}
   m_Layer: 0
   m_Name: Ammo Pickup
   m_TagString: Untagged
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: dc9d28e4c58b3b64d94174e84867aa90, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -113,7 +113,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.6286534, y: 1.3291206, z: 2.1164646}
   m_Center: {x: -0.022235572, y: 0.16456032, z: -0.0366354}
---- !u!114 &5501309246333494221
+--- !u!114 &5090863774226949089
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,17 +122,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5501309246333494220}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80bd960c689a9e1418b71a3e88728630, type: 3}
+  m_Script: {fileID: 11500000, guid: 26097a647900a2547884eb0020ac1004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectorLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  contentAmount:
-    UseInspectorValue: 0
-    InspectorValue: 0
-    Variable: {fileID: 11400000, guid: f0312276924fa4447b4a3fae4c79b600, type: 2}
-  TimeChargedAfterSpawn:
-    UseInspectorValue: 1
-    InspectorValue: 5
-    Variable: {fileID: 0}
+  powerUp: {fileID: 11400000, guid: 7944c8fbf0713e642b8207d83653ad75, type: 2}
