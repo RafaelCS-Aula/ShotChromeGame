@@ -18,7 +18,7 @@ MonoBehaviour:
     \nfor a set duration"
   overwriteActive: 1
   isFinished: 1
-  baseChance: 0.801
+  baseChance: 1
   affectedBoolData: {fileID: 11400000, guid: 006e1f5915136c546a0be6764b061696, type: 2}
   affectedFloatData: {fileID: 0}
   affectedIntData: {fileID: 0}
@@ -45,4 +45,4 @@ MonoBehaviour:
     UseInspectorValue: 1
     InspectorValue: 2
     Variable: {fileID: 0}
-  _elapsed: 2.0098686
+  _elapsed: 2.0052147

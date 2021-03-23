@@ -224,7 +224,8 @@ public class HorizontalMovement : MovementBase
                 // Might be performance intensive
                 _inContactComponent = 
                     contact.GetComponent<CrowdAgent>();
-
+                if(_inContactComponent == null)
+                    return;
                 _inContactComponent.GetFriends();
 
                     _currentCrowdCollider = contact; 

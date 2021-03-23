@@ -20,7 +20,7 @@ public class PowerUp : ScriptableObject
     [SerializeField]
     public bool overwriteActive = true;
 
-    [SerializeField]
+    [SerializeField][ReadOnly]
     public bool isFinished = false;
 
     [Range(0,1)]
