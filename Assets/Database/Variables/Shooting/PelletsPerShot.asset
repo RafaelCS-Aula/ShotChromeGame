@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PelletsPerShot
   m_EditorClassIdentifier: 
   DevDescription: Number of shotgun pellets in each shot
-  variableValue: 5
+  variableValue: 6

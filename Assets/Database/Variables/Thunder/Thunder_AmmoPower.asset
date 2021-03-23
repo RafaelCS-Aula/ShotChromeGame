@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Thunder_AmmoPower
   m_EditorClassIdentifier: 
   DevDescription: 
-  variableValue: 0
+  variableValue: 5

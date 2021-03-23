@@ -43,6 +43,6 @@ MonoBehaviour:
     Variable: {fileID: 0}
   duration:
     UseInspectorValue: 1
-    InspectorValue: 2
+    InspectorValue: 3
     Variable: {fileID: 0}
   _elapsed: 2.0052147

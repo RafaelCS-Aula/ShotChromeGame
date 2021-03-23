@@ -453,13 +453,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseSpeed:
-    UseInspectorValue: 1
+    UseInspectorValue: 0
     InspectorValue: 5
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 1838a3e1fe5f1e843a24152052e31742, type: 2}
   stopDist:
-    UseInspectorValue: 1
+    UseInspectorValue: 0
     InspectorValue: 0.2
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: bc67e7c7038c6e746a0b272f687c476e, type: 2}
 --- !u!114 &-8318772244394340069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,7 +571,7 @@ MonoBehaviour:
     InspectorValue: 15
     Variable: {fileID: 0}
   currentThunderPower: {fileID: 11400000, guid: acab311c951432448842d576a5e833e4, type: 2}
-  damageColor: {r: 0.7176471, g: 0, b: 0, a: 1}
+  isFlyer: 0
 --- !u!114 &3870282607237204575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -676,6 +676,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnActivateAoEPosition:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFindAffected:
     m_PersistentCalls:
       m_Calls: []
   AffectedResource: 0

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: JaguarSpeed
   m_EditorClassIdentifier: 
   DevDescription: Unit speed when on Wander state
-  variableValue: 15
+  variableValue: 11
