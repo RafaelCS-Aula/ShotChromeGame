@@ -14,6 +14,7 @@ public class FlyerAttack : MonoBehaviour
     [SerializeField] FloatVariable destroyProjAfterSeconds;
 
     [SerializeField] private LayerMask playerLayer;
+    [SerializeField] private LayerMask ignoreLayer;
     [SerializeField] GameEvent DamagePlayer;
 
     [SerializeField] Transform projOrigin;
@@ -103,7 +104,7 @@ public class FlyerAttack : MonoBehaviour
         Ray rayshow = new Ray(originP, targetH.Target.position - originP);
         RaycastHit hitinfo;
 
-        if (Physics.Raycast(rayshow, out hitinfo, 3000, layerMask: playerLayer))
+        if (Physics.Raycast(rayshow, out hitinfo, 3000, layerMask: ~ignoreLayer))
         {
             if (hitinfo.collider != null)
             {
