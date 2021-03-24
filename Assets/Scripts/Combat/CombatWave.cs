@@ -200,8 +200,8 @@ public class CombatWave
             }
             
             float percentage = (totalLiving * 100)/_totalEnemies;
-            Debug.Log(totalLiving);
-            Debug.Log($"Percentage: {percentage}");
+            //Debug.Log(totalLiving);
+            //Debug.Log($"Percentage: {percentage}");
             if(percentage <= totalKillPercentage)
             {
 
