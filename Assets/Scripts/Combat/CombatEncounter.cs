@@ -57,7 +57,7 @@ public class CombatEncounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_currentWave == null || _allWavesComplete)
+        if(_allWavesComplete)
         {
             OnEncounterComplete.Invoke();
         }
