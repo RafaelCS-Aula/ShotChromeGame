@@ -30,7 +30,7 @@ public class Shotgun : InputReceiverBase
     [SerializeField] private LayerMask layersToHit;
 
     [SerializeField] private FloatVariable currentAmmo;
-    [SerializeField] private IntVariable maxAmmo;
+    [SerializeField] private FloatVariable maxAmmo;
     //[SerializeField] private IntVariable chargedAmmo;
     #endregion
 
@@ -58,7 +58,10 @@ public class Shotgun : InputReceiverBase
     private void InputDown(bool key) => _input = key;
     private void Awake()
     {
+        currentAmmo.OverrideValue(maxAmmo);
+
         pellets = new List<Quaternion>(new Quaternion[pelletsPerShot]);
+
         shotTimer = 0;
     }
 

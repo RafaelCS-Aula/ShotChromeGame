@@ -6,21 +6,34 @@ using NaughtyAttributes;
 public class Cheats : MonoBehaviour
 {
     #region Inputs
-    [Header("-----INPUTS-----")]
+    [Header("------------ INPUTS ------------")]
     [SerializeField] KeyCode immortalityCheatKey;
+    [SerializeField] KeyCode infiniteAmmoCheatKey;
+    [SerializeField] KeyCode maxThunderCheatKey;
 
     #endregion
 
     #region Influenced Variables
-    [Header("-----INFLUENCED VARIABLES-----")]
+    [Header("----- INFLUENCED VARIABLES -----")]
+
+    [Header("---- Immortality ----")]
     [SerializeField] private FloatData PlayerHP;
     [SerializeField] private FloatVariable MaxPlayerHP;
 
+    [Header("--- Infinite Ammo ---")]
+    [SerializeField] private FloatData CurrentAmmo;
+    [SerializeField] private FloatVariable MaxAmmo;
+
+    [Header("---- Max Thunder ----")]
+    [SerializeField] private FloatData CurrentThunderPower;
+    [SerializeField] private FloatVariable MaxThunderPower;
     #endregion
 
     #region Bools
 
-    private bool _isImmortalityActive;
+    private bool _isImmortalityActive = false;
+    private bool _isInfiniteAmmoActive = false;
+    private bool _isMaxThunderActive = false;
 
     #endregion
 
@@ -33,13 +46,35 @@ public class Cheats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_isImmortalityActive) PlayerHP.SetValue(MaxPlayerHP.Value);
+        CheckForCheatInputs();
+        UpdateVariables();
     }
 
-    private void CheckForCheatInput()
+    private void CheckForCheatInputs()
     {
-        if (Input.GetKeyDown(immortalityCheatKey)) ToggleBool(_isImmortalityActive);
+        if (Input.GetKeyDown(immortalityCheatKey))
+        {
+            _isImmortalityActive = ToggleBool(_isImmortalityActive);
+        }
+        
+        if (Input.GetKeyDown(infiniteAmmoCheatKey))
+        {
+            _isInfiniteAmmoActive = ToggleBool(_isInfiniteAmmoActive);
+        }
+        if (Input.GetKeyDown(maxThunderCheatKey))
+        {
+            _isMaxThunderActive = ToggleBool(_isMaxThunderActive);
+        }
     }
 
-    private void ToggleBool(bool variable) { variable = !variable; }
+    private void UpdateVariables()
+    {
+        if (_isImmortalityActive) PlayerHP.SetValue(MaxPlayerHP.Value);
+
+        if (_isInfiniteAmmoActive) CurrentAmmo.SetValue(MaxAmmo.Value);
+
+        if (_isMaxThunderActive) CurrentThunderPower.SetValue(MaxThunderPower.Value);
+    }
+
+    private bool ToggleBool(bool variable) { return !variable; }
 }

@@ -134,8 +134,8 @@ public class SpawnerHolder : MonoBehaviour
         // holder object's location
         if(choosenStack.Count > 1)
         {
-            print($"Position of {choosenStack.Peek().name}: {choosenStack.Peek().transform.position}");
-            print($"Local Position of {choosenStack.Peek().name}: {choosenStack.Peek().transform.localPosition}");
+            //print($"Position of {choosenStack.Peek().name}: {choosenStack.Peek().transform.position}");
+            //print($"Local Position of {choosenStack.Peek().name}: {choosenStack.Peek().transform.localPosition}");
 
             go.transform.localPosition = choosenStack.Peek().transform.localPosition;
             go.transform.localRotation = choosenStack.Peek().transform.localRotation;
