@@ -47,6 +47,7 @@ public class ProximityDetector : MonoBehaviour
 
     }
 
+#if UNITY_EDITOR
     private void OnDrawGizmos() {
         
         
@@ -58,4 +59,5 @@ public class ProximityDetector : MonoBehaviour
         Gizmos.DrawSphere(transform.position, 0.5f);
        // Gizmos.DrawWireSphere(transform.position, _collider.radius);
     }
+#endif
 }
