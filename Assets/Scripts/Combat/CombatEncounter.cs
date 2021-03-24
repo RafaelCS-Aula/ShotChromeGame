@@ -31,7 +31,7 @@ public class CombatEncounter : MonoBehaviour
 
 
     [Button]
-    public IEnumerator StartEncounter()
+    public void StartEncounter()
     {
         _currentWaveIndex = 0;
         OnEncounterStart.Invoke();
@@ -46,7 +46,7 @@ public class CombatEncounter : MonoBehaviour
         }
 
         _currentWave.enemyTarget = encounterTarget;
-        yield return new WaitForSeconds(timeFromStartToFirstWave);
+        //yield return new WaitForSeconds(timeFromStartToFirstWave);
         _currentWave.BeginWave();
         ongoing = true;
     }
