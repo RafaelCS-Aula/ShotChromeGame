@@ -5,13 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/ProofOfConcept/ProofOfConcept.unity
-    guid: f17fafac9e4e931419ad30a734640c20
   - enabled: 1
     path: Assets/Scenes/MainMenu Scene.unity
     guid: 248eb789658265c4fbef42074551de0f
   - enabled: 1
+    path: Assets/Scenes/A_Sem2_Del1/BlockMap.unity
+    guid: f4bf9e356c90f5c4d8e007c39f06d8c6
+  - enabled: 0
     path: Assets/Scenes/PrototypeScene/Protot_Map.unity
     guid: ca6c306a59ec06e4a91f7a5b365adbbb
+  - enabled: 0
+    path: Assets/Scenes/ProofOfConcept/ProofOfConcept.unity
+    guid: f17fafac9e4e931419ad30a734640c20
   m_configObjects: {}
