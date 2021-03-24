@@ -72,6 +72,9 @@ public class Shotgun : InputReceiverBase
 
         if (shotTimer > 0) shotTimer -= Time.deltaTime;
 
+        if(currentAmmo > maxAmmo)
+            currentAmmo.OverrideValue(maxAmmo.Value);
+
         if (_input) TryToShoot();
     }
 

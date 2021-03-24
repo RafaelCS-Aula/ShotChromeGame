@@ -23,6 +23,8 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         if (PlayerHP <= 0) Die();
+        if(PlayerHP > MaxPlayerHP)
+            PlayerHP.SetValue(MaxPlayerHP.Value);
     }
 
     public void GetDamaged(float damageValue)
