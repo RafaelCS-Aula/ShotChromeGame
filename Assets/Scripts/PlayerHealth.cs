@@ -15,9 +15,11 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField] private UnityEvent OnDeathEvent;
 
-    // Start is called before the first frame update
+    void Start()
+    {
+        PlayerHP.SetValue(MaxPlayerHP.Value);
+    }
 
-    // Update is called once per frame
     void Update()
     {
         if (PlayerHP <= 0) Die();
@@ -33,5 +35,5 @@ public class PlayerHealth : MonoBehaviour
         SceneManager.LoadScene(deathScene);
     }
 
-  
+
 }
