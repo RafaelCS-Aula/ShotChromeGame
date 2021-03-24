@@ -26,6 +26,8 @@ public class ProximityDetector : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other) {
 
+        /*if(!gameObject.activeSelf)
+            return;*/
         print($"touched {other.gameObject.name} of layer {1<<other.gameObject.layer} but i only care about {detectLayers.value}");
         if(1<<other.gameObject.layer == detectLayers.value &&
             !_triggered)
