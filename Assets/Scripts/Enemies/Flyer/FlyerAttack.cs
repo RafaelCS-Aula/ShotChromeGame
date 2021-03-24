@@ -103,7 +103,7 @@ public class FlyerAttack : MonoBehaviour
         Ray rayshow = new Ray(originP, targetH.Target.position - originP);
         RaycastHit hitinfo;
 
-        if (Physics.Raycast(rayshow, out hitinfo, 3000))
+        if (Physics.Raycast(rayshow, out hitinfo, 3000, layerMask: playerLayer))
         {
             if (hitinfo.collider != null)
             {
