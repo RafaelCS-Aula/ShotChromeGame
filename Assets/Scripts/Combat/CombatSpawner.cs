@@ -154,6 +154,7 @@ public class CombatSpawner : MonoBehaviour
         }
     }
 
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
 
@@ -181,4 +182,5 @@ public class CombatSpawner : MonoBehaviour
             }
         }
     }
+    #endif
 }

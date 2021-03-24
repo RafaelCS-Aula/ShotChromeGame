@@ -31,7 +31,7 @@ public class CombatEncounter : MonoBehaviour
 
 
     [Button]
-    public IEnumerator StartEncounter()
+    public void StartEncounter()
     {
         _currentWaveIndex = 0;
         OnEncounterStart.Invoke();
@@ -46,7 +46,7 @@ public class CombatEncounter : MonoBehaviour
         }
 
         _currentWave.enemyTarget = encounterTarget;
-        yield return new WaitForSeconds(timeFromStartToFirstWave);
+        //yield return new WaitForSeconds(timeFromStartToFirstWave);
         _currentWave.BeginWave();
         ongoing = true;
     }
@@ -57,12 +57,13 @@ public class CombatEncounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!ongoing)
-            return;
-        if(_currentWave == null || _allWavesComplete)
+        if(_allWavesComplete)
         {
             OnEncounterComplete.Invoke();
         }
+        if(!ongoing)
+            return;
+        
         
         if(_currentWave.locked)
         {

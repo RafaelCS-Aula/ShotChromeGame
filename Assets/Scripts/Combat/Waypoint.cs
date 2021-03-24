@@ -126,7 +126,7 @@ public class Waypoint : MonoBehaviour
             other.outgoingConnections.Add(this);
         }
     }
-
+#if UNITY_EDITOR
     private void OnDrawGizmos() {
         if(!drawPathGizmos)
             return;
@@ -151,4 +151,6 @@ public class Waypoint : MonoBehaviour
 
         }
     }
+
+    #endif
 }
