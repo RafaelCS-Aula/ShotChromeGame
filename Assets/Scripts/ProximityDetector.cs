@@ -13,17 +13,36 @@ public class ProximityDetector : MonoBehaviour
     [SerializeField]
     private LayerMask detectLayers;
 
+    [SerializeField]
+    private bool singleActivation = true;
+    private bool _triggered;
     private void Awake() {
         _collider = GetComponent<SphereCollider>();
 
         if(_collider != null)
             _collider.isTrigger = true;
+
+        _triggered = false;
     }
     private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.layer == detectLayers)
+
+        print($"touched {other.gameObject.name} of layer {1<<other.gameObject.layer} but i only care about {detectLayers.value}");
+        if(1<<other.gameObject.layer == detectLayers.value &&
+            !_triggered)
         {
+            print("Player Entered Area");
             OnDetection.Invoke();
+            _triggered = true;
         }
+    }
+
+    private void OnTriggerExit(Collider other) {
+        if(1<<other.gameObject.layer == detectLayers.value &&
+            !singleActivation)
+            {
+                _triggered = false;
+            }
+
     }
 
     private void OnDrawGizmos() {
