@@ -18,3 +18,13 @@ MonoBehaviour:
 
 '
   variableValue: 3
+  WholeNumbers: 0
+  clampValue: 0
+  UpperBound:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
+  LowerBound:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}

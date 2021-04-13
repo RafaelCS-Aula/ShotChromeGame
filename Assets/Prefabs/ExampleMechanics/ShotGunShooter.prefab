@@ -103,7 +103,7 @@ MonoBehaviour:
   pelletsPerShot:
     UseInspectorValue: 0
     InspectorValue: 0
-    Variable: {fileID: 11400000, guid: 86102a97b29bb4f41928690c85523130, type: 2}
+    Variable: {fileID: 11400000, guid: d58268ec914fab54aad178ff1cb2d3f5, type: 2}
   maxPelletDamage:
     UseInspectorValue: 0
     InspectorValue: 0
@@ -143,13 +143,9 @@ MonoBehaviour:
     InspectorValue: 0
     Variable: {fileID: 11400000, guid: 7ed4469312883544da6834cb38ca1cae, type: 2}
   maxAmmo:
-    UseInspectorValue: 1
-    InspectorValue: 0
-    Variable: {fileID: 0}
-  chargedAmmo:
     UseInspectorValue: 0
     InspectorValue: 0
-    Variable: {fileID: 11400000, guid: 0bc9871b9d7ecca449496a33c71bebec, type: 2}
+    Variable: {fileID: 11400000, guid: 35aeefe442b320740ae2c3781cae0f85, type: 2}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 512

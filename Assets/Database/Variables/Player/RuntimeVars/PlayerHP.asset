@@ -14,3 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DevDescription: 
   variableValue: 100
+  WholeNumbers: 1
+  clampValue: 1
+  UpperBound:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: 1ee1ed70d6d510e4586e34461631f0c5, type: 2}
+  LowerBound:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}

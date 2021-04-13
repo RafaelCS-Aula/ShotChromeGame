@@ -20,4 +20,9 @@ public class FloatVariable : GameVariable<FloatData, float>
     {
         return reference.Value;
     }
+
+    public static implicit operator int(FloatVariable reference)
+    {
+        return (int)Math.Round(reference.Value);
+    }
 }

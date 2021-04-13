@@ -1372,7 +1372,7 @@ PrefabInstance:
     - target: {fileID: 6493709729378717134, guid: da23aac0a88e3e14abdf841028ff0603, type: 3}
       propertyPath: cameraShotOrigin
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 964286053442102846}
     - target: {fileID: 6493709729378717134, guid: da23aac0a88e3e14abdf841028ff0603, type: 3}
       propertyPath: OnShootEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 

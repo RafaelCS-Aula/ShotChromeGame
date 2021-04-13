@@ -15,18 +15,10 @@ public class NumberDrawer : MonoBehaviour
     [SerializeField] private FloatData value;
     [HideIf("useInt")]
     [SerializeField] private FloatData maxValue;
-
-    [ShowIf("useInt")]
-    [SerializeField] private IntData valueInt;
-
-    [ShowIf("useInt")]
-    [SerializeField] private IntData maxValueInt;
     
     [SerializeField] private string valueName;
     [SerializeField] private bool isSlider;
     [SerializeField] private bool isText;
-
-    [SerializeField] private bool useInt;
 
     private float? _displayVal;
     private float? _displayValMax;
@@ -56,10 +48,10 @@ public class NumberDrawer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(value != null || valueInt != null) 
-            _displayVal = useInt ? valueInt.Value : value.Value;
+        if(value != null ) 
+            _displayVal = value.Value;
         if(maxValue!= null)
-            _displayValMax = useInt ? maxValueInt.Value : maxValue.Value;
+            _displayValMax = maxValue.Value;
             
         if(isText && (_text != null || _pText != null))
         {

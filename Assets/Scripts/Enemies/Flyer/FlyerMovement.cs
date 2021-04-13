@@ -22,7 +22,7 @@ public class FlyerMovement : MonoBehaviour
 
     [SerializeField] private FloatVariable timeToMove;
 
-    [SerializeField] private IntVariable attackDelayOnArrival;
+    [SerializeField] private FloatVariable attackDelayOnArrival;
 
 
     private Vector3 movDest;
