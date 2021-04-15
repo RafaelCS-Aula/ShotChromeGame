@@ -33,7 +33,7 @@ using NaughtyAttributes;
 
         public Vector2 Bounds => new Vector2(LowerBound, UpperBound);
 
-        public override float Value { get => WholeNumbers ? base.Value : (int)Math.Round(base.Value) ; protected set => base.Value = value; }
+        public override float Value { get => !WholeNumbers ? base.Value : (int)Math.Round(base.Value) ; protected set => base.Value = value; }
 
         public void ApplyChange(float amount)
         {
