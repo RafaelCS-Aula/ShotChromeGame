@@ -29,6 +29,10 @@ public class GroundChecker : MonoBehaviour
     [ShowIf("showGizmos")]
     [Range(0,1)]
     [SerializeField] private float gizmoTransparency;
+
+    [ShowNativeProperty]
+    private bool grounded => OnGround();
+    
     public bool OnGround()
     {
 
