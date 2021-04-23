@@ -14,6 +14,7 @@ public class TotemBehaviour : MonoBehaviour
 
     [SerializeField] private FloatVariable birthToCoverDelay;
 
+    private GameObject _spawnedCover;
     // Start is called before the first frame update
     IEnumerator Start()
     {
@@ -27,12 +28,16 @@ public class TotemBehaviour : MonoBehaviour
     {
         if(ThunderCover)
         {
-            Instantiate(ThunderCover.gameObject, transform.position + transform.up*coverHeight, Quaternion.identity);
+            _spawnedCover = Instantiate(ThunderCover.gameObject, transform.position + transform.up*coverHeight, Quaternion.identity);
             ThunderCover.isTrigger = true;
             ThunderCover.radius = coverRadius;
 
         }
 
+    }
+
+    private void OnDestroy() {
+        Destroy(_spawnedCover);
     }
 #if UNITY_EDITOR
     private void OnDrawGizmos() {

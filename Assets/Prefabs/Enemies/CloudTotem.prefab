@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155095e26f19d564da138cae5bb4e889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThunderCover: {fileID: 0}
+  ThunderCover: {fileID: 771685703382045714, guid: eee159778ca0e8349987a835997a27d9, type: 3}
   coverHeight:
     UseInspectorValue: 1
     InspectorValue: 10
