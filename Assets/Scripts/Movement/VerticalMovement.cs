@@ -201,4 +201,10 @@ public class VerticalMovement : MovementBase
         _currentCrowdCollider = _newCrowdCollider;
 
     }
+
+    private void OnDrawGizmos() {
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position + bonkCheckRayOrigin, transform.position + bonkCheckRayOrigin + transform.up*bonkCheckRayRange );
+    }
 }
