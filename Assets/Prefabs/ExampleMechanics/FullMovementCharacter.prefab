@@ -339,7 +339,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 67.68079
   orthographic: 0
@@ -413,10 +413,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f97d3bf8eaad47f4ca7c49438d1febe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorKey:
-    UseInspectorValue: 1
-    InspectorValue: 122
-    Variable: {fileID: 0}
   fieldOfView:
     UseInspectorValue: 0
     InspectorValue: 60
@@ -728,6 +724,14 @@ MonoBehaviour:
     UseInspectorValue: 0
     InspectorValue: 10
     Variable: {fileID: 11400000, guid: a175e7920e205c5479f53c6c1542843e, type: 2}
+  bonkCheckRayRange:
+    UseInspectorValue: 1
+    InspectorValue: 0.5
+    Variable: {fileID: 11400000, guid: cbfa1a3a7baa8e1478c937ed57cc1281, type: 2}
+  bonkCheckRayOrigin:
+    UseInspectorValue: 1
+    InspectorValue: {x: 0, y: 0.8, z: 0}
+    Variable: {fileID: 0}
   canCrowdHop: 1
   steppingOffHop: 0
   hopUpwardForce:
