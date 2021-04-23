@@ -23,6 +23,11 @@ public class VerticalMovement : MovementBase
     [SerializeField]
     private FloatVariable jumpForce;
 
+    [SerializeField]
+    private FloatVariable bonkCheckRayRange;
+
+    [SerializeField]
+    private Vector3Variable bonkCheckRayOrigin;
 
 
 
@@ -55,6 +60,8 @@ public class VerticalMovement : MovementBase
 
     private Collider _currentCrowdCollider;
     private Collider _newCrowdCollider;
+
+    private bool _bonkingHead;
 
     // Start is called before the first frame update
     void Start()
@@ -109,7 +116,16 @@ public class VerticalMovement : MovementBase
             _mov.z = 0;
         }
 
+        if(!_GChecker.OnGround())
+        {
+            _bonkingHead = _GChecker.CheckRay(bonkCheckRayOrigin,transform.up,bonkCheckRayRange);
+        }
 
+        if(_bonkingHead)
+        {
+            _fact.x = 1;
+            _mov.y = 0;
+        }
 
         MovementVector = _mov;
         FactorVector = _fact;
@@ -184,5 +200,11 @@ public class VerticalMovement : MovementBase
         }
         _currentCrowdCollider = _newCrowdCollider;
 
+    }
+
+    private void OnDrawGizmos() {
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position + bonkCheckRayOrigin, transform.position + bonkCheckRayOrigin + transform.up*bonkCheckRayRange );
     }
 }

@@ -55,17 +55,26 @@ public class GroundChecker : MonoBehaviour
 
     }
 
-    private bool CheckSphere(Vector3 origin, float radius, LayerMask layer)
+    public bool CheckSphere(Vector3 origin, float radius, LayerMask layer)
     {
         //print(Physics.OverlapSphere(origin, radius, layer).Length);
         return (Physics.OverlapSphere(transform.localPosition + origin, radius, layer).Length > 0);
     }
-    private bool CheckRay(Vector3 origin, Vector3 direction, float range, LayerMask layer)
+
+    
+    public bool CheckRay(Vector3 origin, Vector3 direction, float range, LayerMask layer)
     {
         //RaycastHit hit;
         //print( Physics.Raycast(origin, direction, out hit, range, layer));
         //if(hit.collider != null)print(hit.collider.name);
         return Physics.Raycast(transform.localPosition + origin, direction, range, layer);
+    }
+    public bool CheckRay(Vector3 origin, Vector3 direction, float range)
+    {
+        //RaycastHit hit;
+        //print( Physics.Raycast(origin, direction, out hit, range, layer));
+        //if(hit.collider != null)print(hit.collider.name);
+        return Physics.Raycast(transform.localPosition + origin, direction, range, groundLayer);
     }
     public bool CheckRay(out RaycastHit hitInfo, LayerMask layer)
     {
