@@ -6,7 +6,7 @@ using UnityEngine;
 public class FirstPersonCameraSetting : MonoBehaviour
 {
 
-    [SerializeField] private KeycodeVariable cursorKey;
+    //[SerializeField] private KeycodeVariable cursorKey;
     [SerializeField] private FloatVariable fieldOfView;
     
     private bool _cursorLock;
