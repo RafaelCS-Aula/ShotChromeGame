@@ -202,7 +202,7 @@ public class CombatWave
             float percentage = (totalLiving * 100)/_totalEnemies;
             //Debug.Log(totalLiving);
             //Debug.Log($"Percentage: {percentage}");
-            if(Mathf.FloorToInt(percentage) <= totalKillPercentage)
+            if(Mathf.RoundToInt(percentage) <= totalKillPercentage)
             {
 
                 locked = false;
@@ -243,7 +243,7 @@ public class CombatWave
                     }
                 }
                 float percentage = (typeAlive * 100) / typeTotal;
-                if(Mathf.FloorToInt(percentage) <= typeKillPercentage)
+                if(Mathf.RoundToInt(percentage) <= typeKillPercentage)
                 {
                     locked = false;
                     return;
