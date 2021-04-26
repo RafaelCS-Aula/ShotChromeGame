@@ -19,6 +19,8 @@ public class ThunderStrike : InputReceiverBase
     [SerializeField] private FloatVariable summonToStrikeDelay;
     [SerializeField] private LayerMask impactLayer;
 
+    [SerializeField] private LayerMask blockedByLayer;
+
     [SerializeField] private Transform originPoint;
 
     private const float _originHeight = 1500;
@@ -62,6 +64,12 @@ public class ThunderStrike : InputReceiverBase
                 Debug.DrawLine(originPoint.position, hitInfo.point, Color.green, 3);
 
 
+
+                if(Physics.Raycast(hitInfo.point,Vector3.up,1500, blockedByLayer))
+                {
+                    Debug.Log("Thunder Summoning Blocked!");
+                    return;
+                }
                 StartCoroutine(SummonThunder(hitInfo.point));
 
             }
