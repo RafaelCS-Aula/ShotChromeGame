@@ -10673,9 +10673,9 @@ MonoBehaviour:
     InspectorValue: 0
     Variable: {fileID: 11400000, guid: b4a64e11bc82d884094cf4358685d7c8, type: 2}
   ThunderPowerGift:
-    UseInspectorValue: 1
+    UseInspectorValue: 0
     InspectorValue: 20
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 8269e532a1c278845b089196e59ae6e0, type: 2}
   currentThunderPower: {fileID: 11400000, guid: acab311c951432448842d576a5e833e4, type: 2}
   isFlyer: 1
 --- !u!114 &4295951126621810640
@@ -10717,7 +10717,7 @@ MonoBehaviour:
   attackDelayOnArrival:
     UseInspectorValue: 0
     InspectorValue: 0
-    Variable: {fileID: 11400000, guid: d3e8a592881e52c478e05d689e576442, type: 2}
+    Variable: {fileID: 11400000, guid: 0e4932b2552abe14eab02d85b14bf083, type: 2}
   CloneFrebab: {fileID: 6459844819246533812, guid: 0c833b16449cafb46b486c879cee6e07, type: 3}
 --- !u!114 &4295951126621810641
 MonoBehaviour:

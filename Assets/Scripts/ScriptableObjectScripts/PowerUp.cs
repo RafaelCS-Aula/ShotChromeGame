@@ -33,15 +33,10 @@ public class PowerUp : ScriptableObject
     [SerializeField][ShowNativeProperty]
     private bool affectedBoolValue => affectedBoolData ?? false;
 
-    [SerializeField][HideIf("IsInt")]
+    [SerializeField]
     private FloatData affectedFloatData;
     [SerializeField][ShowNativeProperty]
     private float affectedFloatValue => affectedFloatData ?? 0.0f;
-
-    [SerializeField][HideIf("IsFloat")]
-    private IntData affectedIntData;
-    [SerializeField][ShowNativeProperty]
-    private int affectedIntValue => affectedIntData ?? 0;
 
     [SerializeField]
     private bool returnToDefaultOnEnd;
@@ -57,11 +52,8 @@ public class PowerUp : ScriptableObject
 
 
 
-    [SerializeField][ShowIf("IsFloat")]
+    [SerializeField][ShowIf("IsNumerical")]
     private FloatVariable immediateFloatChange;
-
-    [SerializeField][ShowIf("IsInt")]
-    private IntVariable immediateIntChange;
 
     [SerializeField][ShowIf(EConditionOperator.And,"IsNotInstant","IsNumerical")]
     private FloatVariable changeOverTime;
@@ -71,10 +63,9 @@ public class PowerUp : ScriptableObject
 
     [ShowNativeProperty][SerializeField]
     private bool IsNotInstant => duration > 0;
-    private bool IsNumerical => (affectedFloatData != null || affectedIntData != null);
+    private bool IsNumerical => (affectedFloatData != null);
 
-    private bool IsFloat => affectedFloatData != null;
-    private bool IsInt => affectedIntData != null;
+
     private bool IsBoolean => affectedBoolData != null;
 
     private float _beginningTime;
@@ -89,16 +80,12 @@ public class PowerUp : ScriptableObject
        // Debug.Log("Power Activation!");
         isFinished = false;
         _defaultBoolValue = affectedBoolData ?? false;
-        if(IsFloat)
+        if(IsNumerical)
         {
             _defaultNumberValue = affectedFloatData.Value;
             affectedFloatData.ApplyChange(immediateFloatChange);
         }
-        else if(IsInt)
-        {
-            _defaultNumberValue = affectedIntData.Value;
-            affectedIntData.ApplyChange((int)immediateIntChange.Value);
-        }
+
         
        
         affectedBoolData?.SetValue(newValue);
@@ -127,12 +114,8 @@ public class PowerUp : ScriptableObject
         }
         else
         {
-            if(IsFloat)
-                    affectedFloatData.ApplyChange(changeOverTime * Time.deltaTime);
-            else if(IsInt)
-                    affectedIntData.ApplyChange((int)(changeOverTime * Time.deltaTime));
-                
-            
+            if(IsNumerical)
+                affectedFloatData.ApplyChange(changeOverTime * Time.deltaTime);
         }
 
 
@@ -176,10 +159,9 @@ public class PowerUp : ScriptableObject
         if(returnToDefaultOnEnd)
         {
             affectedBoolData?.SetValue(_defaultBoolValue);
-            if(IsFloat)
+            if(IsNumerical)
                 affectedFloatData.SetValue(_defaultNumberValue);
-            else if(IsInt)
-                affectedIntData.SetValue((int)_defaultNumberValue);
+
                 
                 
         }  

@@ -13,7 +13,7 @@ public class Shotgun : InputReceiverBase
     [Foldout("Events")]
     [SerializeField] private UnityEvent OnChargedShootEvent;
 
-    [SerializeField] IntVariable pelletsPerShot;
+    [SerializeField] FloatVariable pelletsPerShot;
 
     [SerializeField] FloatVariable maxPelletDamage;
     [SerializeField] FloatVariable maxShotDistance;

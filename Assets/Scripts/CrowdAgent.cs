@@ -21,7 +21,7 @@ public class CrowdAgent : MonoBehaviour
     //[SerializeField] FloatVariable timeUntilColiderReset;
 
     [ShowIf("useProximityEffects")]
-    [SerializeField] private IntVariable maxFriendsForEffect;
+    [SerializeField] private FloatVariable maxFriendsForEffect;
     [ShowIf("useProximityEffects")]
     [SerializeField] private CurveVariable tresholdCrowdDensityCurve;
     
