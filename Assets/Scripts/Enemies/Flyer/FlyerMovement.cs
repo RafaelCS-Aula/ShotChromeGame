@@ -128,7 +128,7 @@ public class FlyerMovement : MonoBehaviour
     {
         if (isRotating) RotateToPoint(movDest);
 
-        else
+        else if (isMoving)
         {
             float secsToMove = Vector3.Distance(movStart, end) / moveSpeed;
             float timeSinceStarted = Time.time - moveLerpStartTime;
@@ -193,4 +193,7 @@ public class FlyerMovement : MonoBehaviour
 
     public void SetCurrentWaypoint(Waypoint wp) { currWP = wp; }
     public Waypoint GetCurrentWaypoint() { return currWP; }
+
+    public void SetMoving(bool value) { isMoving = value; }
+
 }

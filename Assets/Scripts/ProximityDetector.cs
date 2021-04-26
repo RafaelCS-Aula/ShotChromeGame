@@ -28,11 +28,11 @@ public class ProximityDetector : MonoBehaviour
 
         /*if(!gameObject.activeSelf)
             return;*/
-        print($"touched {other.gameObject.name} of layer {1<<other.gameObject.layer} but i only care about {detectLayers.value}");
+        //print($"touched {other.gameObject.name} of layer {1<<other.gameObject.layer} but i only care about {detectLayers.value}");
         if(1<<other.gameObject.layer == detectLayers.value &&
             !_triggered)
         {
-            print("Player Entered Area");
+            //print("Player Entered Area");
             OnDetection.Invoke();
             _triggered = true;
         }

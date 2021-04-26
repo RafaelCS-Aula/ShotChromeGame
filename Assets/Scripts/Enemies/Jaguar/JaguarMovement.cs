@@ -9,31 +9,29 @@ public class JaguarMovement : MonoBehaviour
     private TargetHolder targetH;
 
     private NavMeshAgent agent;
-
-    private bool hasPath = false;
-
     private NavMeshPath path;
+    private bool hasPath = false;
 
     [SerializeField] private FloatVariable chaseSpeed;
     [SerializeField] private FloatVariable stopDist;
 
-
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        path = new NavMeshPath();
         targetH = GetComponent<TargetHolder>();
 
-        agent.speed = chaseSpeed;
+        path = new NavMeshPath();
 
         agent.stoppingDistance = stopDist;
+        agent.acceleration = float.MaxValue;
+        agent.speed = chaseSpeed;
+        agent.SetDestination(targetH.Target.position);
+        StartCoroutine(GetDestinationWithDelay(0.1f));
     }
 
     void Update()
     {
-        hasPath = CheckForPath(targetH.Target.position);
-
-        Chase();
+        
     }
 
     void LateUpdate()
@@ -41,15 +39,6 @@ public class JaguarMovement : MonoBehaviour
         Vector3 dir = new Vector3(targetH.Target.position.x, transform.position.y, targetH.Target.position.z);
 
         transform.LookAt(dir);
-    }
-    private void Chase()
-    {
-        Vector3 wantedPos = RoundVecTo1D(targetH.Target.position);
-
-        if (agent.destination != wantedPos)
-        {
-            if (CheckForPath(wantedPos)) agent.SetDestination(wantedPos);
-        }
     }
 
     private Vector3 RoundVecTo1D(Vector3 vec)
@@ -61,13 +50,12 @@ public class JaguarMovement : MonoBehaviour
         return new Vector3(f1, f2, f3);
     }
 
-    public bool CheckForPath(Vector3 destination)
+    private IEnumerator GetDestinationWithDelay(float time)
     {
-        agent.CalculatePath(destination, path);
-
-        if (path.status == NavMeshPathStatus.PathComplete) return true;
-
-        else return false;
+        yield return new WaitForSeconds(time);
+        print("DESTINATION UPDATE");
+        agent.SetDestination(targetH.Target.position);
+        StartCoroutine(GetDestinationWithDelay(time));
     }
 
     private void DrawDebugRays()

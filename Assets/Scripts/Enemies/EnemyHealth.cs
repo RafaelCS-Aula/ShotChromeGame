@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using NaughtyAttributes;
+using UnityEngine.AI;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -29,17 +30,22 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] FloatData currentThunderPower;
 
     [SerializeField] private bool isFlyer;
+    [SerializeField] private bool usesNavmesh;
 
     private float health = 100;
     private MonoBehaviour lastDamageSource = null;
+    private bool died = false;
+
+    private Collider col;
 
     private void Start()
     {
         health = MaxHealth;
+        col = GetComponent<Collider>();
     }
     private void Update()
     {
-        if (health <= 0) EnemyDeath();
+        if (health <= 0 && !died) EnemyDeath();
     }
 
     public void OnDamaged(float damage, MonoBehaviour source = null)
@@ -66,9 +72,17 @@ public class EnemyHealth : MonoBehaviour
 
     public void EnemyDeath()
     {
+        died = true;
+
         if (isFlyer)
         {
             GetComponent<FlyerMovement>().GetCurrentWaypoint().ToggleOccupation();
+            GetComponent<FlyerMovement>().SetMoving(false);
+
+        }
+        else if (usesNavmesh)
+        {
+            GetComponent<NavMeshAgent>().enabled = false;
         }
 
         if (lastDamageSource is Shotgun)
