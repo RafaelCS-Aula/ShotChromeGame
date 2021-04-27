@@ -16,6 +16,15 @@ public class ThunderStrike : InputReceiverBase
     [Foldout("Events")]
     [SerializeField] private StrikeEvent OnStrikeEvent;
 
+    [Foldout("Positional Events")]
+    [SerializeField] private UnityEvent<Vector3, Vector3> OnBlockedEventPos;
+
+   // [Foldout("Positional Events")]
+    // [SerializeField] private StrikeEvent OnBlockedEventTargetPos;
+
+    [Foldout("Events")]
+    [SerializeField] private UnityEvent OnBlockedEvent;
+
     [SerializeField] private FloatVariable summonToStrikeDelay;
     [SerializeField] private LayerMask impactLayer;
 
@@ -64,12 +73,14 @@ public class ThunderStrike : InputReceiverBase
                 Debug.DrawLine(originPoint.position, hitInfo.point, Color.green, 3);
 
 
-
-                if(Physics.Raycast(hitInfo.point,Vector3.up,1500, blockedByLayer))
+                RaycastHit blockerInfo;
+                if(Physics.Raycast(hitInfo.point,Vector3.up,out blockerInfo, 1500, blockedByLayer))
                 {
-                    Debug.Log("Thunder Summoning Blocked!");
+                    
+                    StartCoroutine(SummonBlocked(hitInfo.point,blockerInfo));
                     return;
                 }
+                
                 StartCoroutine(SummonThunder(hitInfo.point));
 
             }
@@ -82,11 +93,13 @@ public class ThunderStrike : InputReceiverBase
 
     public IEnumerator SummonThunder(Vector3 landingSpot)
     {
+        
         //DEBUG///////////////////////////
         Debug.DrawLine(new Vector3(landingSpot.x + 1, landingSpot.y + 1, landingSpot.z), new Vector3(landingSpot.x - 1, landingSpot.y - 1, landingSpot.z), Color.red, 3);
         Debug.DrawLine(new Vector3(landingSpot.x + 1, landingSpot.y - 1, landingSpot.z), new Vector3(landingSpot.x - 1, landingSpot.y + 1, landingSpot.z), Color.red, 3);
         //////////////////////////////////////////
-
+        
+        
         if (summonToStrikeDelay > 0)
         {
             OnSummonEvent.Invoke();
@@ -113,46 +126,26 @@ public class ThunderStrike : InputReceiverBase
         Debug.DrawLine(new Vector3(strikeInfo.point.x + 1, strikeInfo.point.y - 1, strikeInfo.point.z), new Vector3(strikeInfo.point.x - 1, strikeInfo.point.y + 1, strikeInfo.point.z), Color.yellow, 3);
         //////////////////////////////////////////
 
-
+        yield return null;
     }
 
-    [Button]
-    private void TestSummon()
+    public IEnumerator SummonBlocked(Vector3 originalLanding, RaycastHit blocker)
     {
-        /*
-        RaycastHit hitInfo;
-        if (Physics.SphereCast(originPoint.position, 0.05f, originPoint.forward, out hitInfo, 1500, impactLayer))
+        if (summonToStrikeDelay > 0)
         {
-            Debug.DrawLine(originPoint.position, hitInfo.point, Color.green, 3);
-
-
-
-            if (summonToStrikeDelay > 0)
-            {
-                OnSummonEvent.Invoke();
-            }
-
-
-            Vector3 origin = hitInfo.point;
-            origin.y += _originHeight;
-
-            //DEBUG///////////////////////////
-            Debug.DrawLine(new Vector3(hitInfo.point.x + 1, hitInfo.point.y + 1, hitInfo.point.z), new Vector3(hitInfo.point.x - 1, hitInfo.point.y - 1, hitInfo.point.z), Color.red, 3);
-            Debug.DrawLine(new Vector3(hitInfo.point.x + 1, hitInfo.point.y - 1, hitInfo.point.z), new Vector3(hitInfo.point.x - 1, hitInfo.point.y + 1, hitInfo.point.z), Color.red, 3);
-            //////////////////////////////////////////
-
-            RaycastHit strikeInfo;
-            Physics.Raycast(origin, Vector3.down, out strikeInfo, _originHeight, impactLayer);
-
-            OnStrikeEvent.Invoke(strikeInfo.point);
-
-            ///DEBUG///////////////////////////////////////
-            Debug.DrawLine(origin, strikeInfo.point, Color.yellow, 2);
-
-            Debug.DrawLine(new Vector3(strikeInfo.point.x + 1, strikeInfo.point.y + 1, strikeInfo.point.z), new Vector3(strikeInfo.point.x - 1, strikeInfo.point.y - 1, strikeInfo.point.z), Color.yellow, 3);
-            Debug.DrawLine(new Vector3(strikeInfo.point.x + 1, strikeInfo.point.y - 1, strikeInfo.point.z), new Vector3(strikeInfo.point.x - 1, strikeInfo.point.y + 1, strikeInfo.point.z), Color.yellow, 3);
-            //////////////////////////////////////////
+            OnSummonEvent.Invoke();
         }
-        */
+        yield return new WaitForSeconds(summonToStrikeDelay);
+
+        Debug.DrawLine(originalLanding, originalLanding + Vector3.up * _originHeight, Color.blue, 3);
+
+        OnBlockedEvent.Invoke();
+        OnBlockedEventPos.Invoke(originalLanding + Vector3.up * _originHeight,blocker.collider.gameObject.transform.position);
+
+        
+        yield return null;
     }
+
+   
 }
+

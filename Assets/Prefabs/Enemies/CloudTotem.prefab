@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5450035982229882635}
   - component: {fileID: 5450035982229882634}
   - component: {fileID: 5450035982229882633}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CloudTotem
   m_TagString: Untagged
   m_Icon: {fileID: 0}

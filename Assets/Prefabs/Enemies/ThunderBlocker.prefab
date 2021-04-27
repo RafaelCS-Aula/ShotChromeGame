@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 771685703382045713}
   - component: {fileID: 771685703382045714}
-  m_Layer: 14
+  m_Layer: 15
   m_Name: ThunderBlocker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
