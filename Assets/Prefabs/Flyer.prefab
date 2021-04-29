@@ -10678,6 +10678,7 @@ MonoBehaviour:
     Variable: {fileID: 11400000, guid: 8269e532a1c278845b089196e59ae6e0, type: 2}
   currentThunderPower: {fileID: 11400000, guid: acab311c951432448842d576a5e833e4, type: 2}
   isFlyer: 1
+  usesNavmesh: 0
 --- !u!114 &4295951126621810640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10773,6 +10774,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
+  sightBlockLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  _targetLayer:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!65 &5304893641163248135
 BoxCollider:
   m_ObjectHideFlags: 0

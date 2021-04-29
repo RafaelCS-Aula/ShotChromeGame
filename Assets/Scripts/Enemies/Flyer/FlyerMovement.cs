@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class FlyerMovement : MonoBehaviour
 {
@@ -57,7 +58,7 @@ public class FlyerMovement : MonoBehaviour
 
         if (!isMoving)
         {
-            if (!CheckForVisual(true, transform.position)) 
+            if (!targetH.HasLineOfSightToTarget(shotOrigin.transform)) 
             {
                 visualTimer -= Time.deltaTime;
             }
@@ -83,9 +84,15 @@ public class FlyerMovement : MonoBehaviour
         for (int i = 0; i < currWP.outgoingConnections.Count; i++)
         {
             if ((isStart && !currWP.outgoingConnections[i].isOccupied) ||
-                (!currWP.outgoingConnections[i].isOccupied && CheckForVisual(false, currWP.outgoingConnections[i].transform.position)))
+                (!currWP.outgoingConnections[i].isOccupied))
             {
-                canGo.Add(currWP.outgoingConnections[i]);
+                Transform originP = SendCloneToPoint(currWP.outgoingConnections[i].transform.position);        
+                if(targetH.HasLineOfSightToTarget(originP))
+                {
+                    
+                    canGo.Add(currWP.outgoingConnections[i]);
+                }
+                
             }
         }
 
@@ -97,10 +104,17 @@ public class FlyerMovement : MonoBehaviour
                 {
                     for (int j = 0; j < currWP.outgoingConnections[i].outgoingConnections.Count; j++)
                     {
-                        if (!currWP.outgoingConnections[i].outgoingConnections[j].isOccupied &&
-                            CheckForVisual(false, currWP.outgoingConnections[i].outgoingConnections[j].transform.position))
+                        if (!currWP.outgoingConnections[i].outgoingConnections[j].isOccupied)
                         {
-                            canGo.Add(currWP.outgoingConnections[i]);
+
+                            Transform originP = SendCloneToPoint(currWP.outgoingConnections[i].outgoingConnections[j].transform.position);
+
+                            // Test if clone has line of sight
+                            if(targetH.HasLineOfSightToTarget(originP))
+                            {
+                                canGo.Add(currWP.outgoingConnections[i]);
+                            }
+                            
                         }
                     }
                 }
@@ -146,7 +160,7 @@ public class FlyerMovement : MonoBehaviour
 
     }
 
-    private bool CheckForVisual(bool thiWP, Vector3 pos)
+    /*private bool CheckForVisual(bool thiWP, Vector3 pos)
     {
         Vector3 originP;
 
@@ -175,6 +189,20 @@ public class FlyerMovement : MonoBehaviour
             }
         }
         return false;
+    }*/
+
+    /// <summary>
+    /// Sends clone to a point and returns the transform of the first child 
+    /// object
+    /// </summary>
+    /// <param name="destiny"></param>
+    /// <returns>Transform of the first child object of the clone</returns>
+    private Transform SendCloneToPoint(Vector3 destiny)
+    {
+        // Send clone
+        clone.transform.position = destiny;
+        clone.transform.LookAt(targetH.Target);
+        return clone.transform.GetChild(0).transform;
     }
 
     private void RotateToPoint(Vector3 point)
@@ -196,4 +224,15 @@ public class FlyerMovement : MonoBehaviour
 
     public void SetMoving(bool value) { isMoving = value; }
 
+#if UNITY_EDITOR
+    private void OnDrawGizmos() 
+    {
+    
+        if(clone == null)
+            return;
+       // Gizmos.DrawWireSphere(clone.transform.position,0.3f);
+        //Handles.Label(clone.transform.position,"Clone");
+        
+    }
+#endif
 }

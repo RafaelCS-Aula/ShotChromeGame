@@ -46,7 +46,7 @@ public class FlyerAttack : MonoBehaviour
 
             float distToTarget = Vector3.Distance(targetH.Target.position, transform.position);
 
-            if (attackTimer <= 0 && CheckForVisual())
+            if (attackTimer <= 0 && targetH.HasLineOfSightToTarget(projOrigin))
             {
                 if (shootWhileMoving) Attack();
                 else if (!CheckMovement()) Attack();
@@ -97,21 +97,4 @@ public class FlyerAttack : MonoBehaviour
         attackLocked = false;
     }
 
-    private bool CheckForVisual()
-    {
-        Vector3 originP = projOrigin.position;
-
-        Ray rayshow = new Ray(originP, targetH.Target.position - originP);
-        RaycastHit hitinfo;
-
-        if (Physics.Raycast(rayshow, out hitinfo, 3000, layerMask: ~ignoreLayer))
-        {
-            if (hitinfo.collider != null)
-            {
-                if (playerLayer == (playerLayer | (1 << hitinfo.collider.gameObject.layer))) return true;
-                else return false;
-            }
-        }
-        return false;
-    }
 }
