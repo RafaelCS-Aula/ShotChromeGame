@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using NaughtyAttributes;
 using UnityEngine.AI;
+using UnityEditor;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private UnityEvent OnDefaultKill;
     [Foldout("Events")]
     [SerializeField] private UnityEvent OnDefaultDamaged;
+    [Foldout("Events")]
+    [SerializeField] private UnityEvent OnHealed;
 
     [Foldout("Positional Events")]
     [SerializeField] private UnityEvent<Vector3> OnShotgunDamaged;
@@ -26,34 +29,42 @@ public class EnemyHealth : MonoBehaviour
 
 
     [SerializeField] FloatVariable MaxHealth;
+    [SerializeField] FloatVariable OverHealAmount;
     [SerializeField] FloatVariable ThunderPowerGift;
     [SerializeField] FloatData currentThunderPower;
+
+    [SerializeField] private bool blockHealing;
 
     private bool _usesWaypointMovement;
     [SerializeField] private bool usesNavmesh;
 
-    private float health = 100;
-    private MonoBehaviour lastDamageSource = null;
-    private bool died = false;
+    private float _health;
+    private MonoBehaviour _lastDamageSource = null;
+    private bool _died = false;
 
-    private Collider col;
+    private Collider _col;
 
+    public bool isBuffed = false;
     private void Start()
     {
-        health = MaxHealth;
-        col = GetComponent<Collider>();
+        _health = MaxHealth;
+        _col = GetComponent<Collider>();
         _usesWaypointMovement = GetComponent<WaypointMovement>();
     }
     private void Update()
     {
-        if (health <= 0 && !died) EnemyDeath();
+        if (_health <= 0 && !_died) EnemyDeath();
+        if(_health > MaxHealth + OverHealAmount)
+        {
+            _health = MaxHealth + OverHealAmount;
+        }
     }
 
     public void OnDamaged(float damage, MonoBehaviour source = null)
     {
         //print("Damage: " + damage);
-        health -= damage;
-        lastDamageSource = source;
+        _health -= damage;
+        _lastDamageSource = source;
         Vector3 sourceDir = Vector3.zero;
 
         if (source == null)
@@ -71,9 +82,16 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    public void ReceiveHeal(float value)
+    {
+        if(blockHealing)
+            return;
+        _health += value;
+    }
+
     public void EnemyDeath()
     {
-        died = true;
+        _died = true;
 
         if (_usesWaypointMovement)
         {
@@ -86,12 +104,12 @@ public class EnemyHealth : MonoBehaviour
             GetComponent<NavMeshAgent>().enabled = false;
         }
 
-        if (lastDamageSource is Shotgun)
+        if (_lastDamageSource is Shotgun)
         {
             currentThunderPower.ApplyChange(ThunderPowerGift);
             OnShotgunKill.Invoke();
         }
-        else if (lastDamageSource is AreaofEffect)
+        else if (_lastDamageSource is AreaofEffect)
         {
             OnAoEKill.Invoke();
         }
@@ -108,4 +126,12 @@ public class EnemyHealth : MonoBehaviour
         yield return new WaitForSeconds(time);
         Destroy(gameObject);
     }
+
+#if UNITY_EDITOR
+    private void OnDrawGizmos() 
+    {
+        
+        Handles.Label(transform.position + Vector3.up * 2, $"{_health}/{MaxHealth.Value}");
+    }
+#endif
 }

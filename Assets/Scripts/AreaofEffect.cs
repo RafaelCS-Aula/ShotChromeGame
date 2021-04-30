@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.Events;
 using NaughtyAttributes;
+
+public enum AoEEffects {NOTHING, APPLY_DAMAGE, HEAL}
 
 public class AreaofEffect : MonoBehaviour
 {
@@ -16,9 +19,9 @@ public class AreaofEffect : MonoBehaviour
     [Foldout("Events")]
     [SerializeField] private UnityEvent<Vector3, Vector3[]> OnFindAffected;
 
-    [SerializeField] private ResourceTypes AffectedResource;
     [SerializeField] private bool useEffectFallOff = true;
 
+    [SerializeField] private AoEEffects _effectOnEnemiesFound;
     [SerializeField] private FloatVariable effectAmount;
     [SerializeField] private FloatVariable maxRadius;
     [SerializeField] private LayerMask affectedLayers;
@@ -109,25 +112,61 @@ public class AreaofEffect : MonoBehaviour
             //Get the Health component of the hit colliders and affect them.
 
         }
+        StartCoroutine(GiveAoEDebugInfo(center,maxRadius));
         OnFindAffected.Invoke(center, hitPositions.ToArray() );
-        foreach (var hit in HitsAndAffect)
-        {
-            EnemyHealth enemyHealth = hit.Key.transform.gameObject.GetComponent<EnemyHealth>();
-            if (enemyHealth == null) enemyHealth = hit.Key.transform.gameObject.GetComponentInParent<EnemyHealth>();
+       
+        //TODO: Refactor
 
-            if(enemyHealth != null)
+        if(_effectOnEnemiesFound == AoEEffects.APPLY_DAMAGE)
+        {
+            foreach (var hit in HitsAndAffect)
+            {
+                EnemyHealth enemyHealth = hit.Key.transform.gameObject.GetComponent<EnemyHealth>();
+                if (enemyHealth == null) enemyHealth = hit.Key.transform.gameObject.GetComponentInParent<EnemyHealth>();
+
+                if(enemyHealth != null)
                 enemyHealth.OnDamaged(hit.Value);
+            }
         }
+        else if(_effectOnEnemiesFound == AoEEffects.HEAL)
+        {
+            foreach (var hit in HitsAndAffect)
+            {
+                EnemyHealth enemyHealth = hit.Key.transform.gameObject.GetComponent<EnemyHealth>();
+                if (enemyHealth == null) enemyHealth = hit.Key.transform.gameObject.GetComponentInParent<EnemyHealth>();
+
+                if(enemyHealth != null)
+                enemyHealth.ReceiveHeal(hit.Value);
+            }
+
+        }
+        
     }
 
     
 
     private List<(Vector3 pos, bool hit, float eff)> debugPoints = 
     new List<(Vector3 pos, bool hit, float eff)>();
-    private void OnDrawGizmosSelected() 
+
+    private Vector3 _currentCenter = Vector3.zero;
+    private float _currentRadius = 0;
+
+    private IEnumerator GiveAoEDebugInfo(Vector3 center, float radius)
+    {
+        _currentCenter = center;
+        _currentRadius = radius;
+        yield return new WaitForSeconds(1);
+        _currentCenter = transform.position;
+        _currentRadius = 0;
+    }
+
+#if UNITY_EDITOR
+    private void OnDrawGizmos() 
     {
         if(!showGizmos)
             return;
+
+        
         gizmoHitColor.a = gizmoTransparency;
         
         if(debugPoints.Count > 0)
@@ -144,7 +183,20 @@ public class AreaofEffect : MonoBehaviour
             }
         }
 
-            
+        if(!maxRadius.UseInspectorValue  && maxRadius == null)
+            return;
+
+        Gizmos.color = gizmoHitColor;
+        Gizmos.DrawWireSphere(transform.position, maxRadius);
+        Handles.color = Color.black;
+        Vector3 labelPos = transform.position + transform.up * (maxRadius + 1);
+        Handles.Label(labelPos, "Area of Effect Radius");
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(_currentCenter, _currentRadius);
+        Handles.color = Color.yellow;
+        Handles.DrawSolidDisc(_currentCenter, transform.up, _currentRadius);
+
+#endif
         
 
     }
