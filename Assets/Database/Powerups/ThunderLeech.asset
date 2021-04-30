@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: ThunderLeech
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
-  powerName: Name must be unique among all other powerups
+  powerName: Thunder Power Leech
   description: 
-  overwriteActive: 1
+  overwriteActive: 0
   isFinished: 0
   baseChance: 0
   affectedBoolData: {fileID: 0}
-  affectedFloatData: {fileID: 0}
+  affectedFloatData: {fileID: 11400000, guid: acab311c951432448842d576a5e833e4, type: 2}
   returnToDefaultOnEnd: 0
   _defaultNumberValue: 0
   _defaultBoolValue: 0
@@ -32,11 +32,11 @@ MonoBehaviour:
     InspectorValue: 0
     Variable: {fileID: 0}
   changeOverTime:
-    UseInspectorValue: 1
+    UseInspectorValue: 0
     InspectorValue: 0
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: bdd6ee355886c8140995c781621b97fa, type: 2}
   duration:
     UseInspectorValue: 1
-    InspectorValue: 0
+    InspectorValue: 9999
     Variable: {fileID: 0}
   _elapsed: 0
