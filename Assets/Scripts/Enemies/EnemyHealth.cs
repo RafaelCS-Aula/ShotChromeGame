@@ -29,7 +29,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] FloatVariable ThunderPowerGift;
     [SerializeField] FloatData currentThunderPower;
 
-    [SerializeField] private bool isFlyer;
+    private bool _usesWaypointMovement;
     [SerializeField] private bool usesNavmesh;
 
     private float health = 100;
@@ -42,6 +42,7 @@ public class EnemyHealth : MonoBehaviour
     {
         health = MaxHealth;
         col = GetComponent<Collider>();
+        _usesWaypointMovement = GetComponent<WaypointMovement>();
     }
     private void Update()
     {
@@ -74,10 +75,10 @@ public class EnemyHealth : MonoBehaviour
     {
         died = true;
 
-        if (isFlyer)
+        if (_usesWaypointMovement)
         {
-            GetComponent<FlyerMovement>().GetCurrentWaypoint().ToggleOccupation();
-            GetComponent<FlyerMovement>().SetMoving(false);
+            GetComponent<WaypointMovement>().GetCurrentWaypoint().ToggleOccupation();
+            GetComponent<WaypointMovement>().SetMoving(false);
 
         }
         else if (usesNavmesh)
