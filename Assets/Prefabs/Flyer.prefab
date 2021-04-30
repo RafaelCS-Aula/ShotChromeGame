@@ -10500,10 +10500,10 @@ GameObject:
   - component: {fileID: 3989944181943285132}
   - component: {fileID: 4295951126621810642}
   - component: {fileID: 4295951126621810643}
-  - component: {fileID: 4295951126621810640}
   - component: {fileID: 4295951126621810641}
   - component: {fileID: 4295951126621810638}
   - component: {fileID: 5304893641163248135}
+  - component: {fileID: 5486198805020326010}
   m_Layer: 9
   m_Name: Flyer
   m_TagString: Untagged
@@ -10679,47 +10679,6 @@ MonoBehaviour:
   currentThunderPower: {fileID: 11400000, guid: acab311c951432448842d576a5e833e4, type: 2}
   isFlyer: 1
   usesNavmesh: 0
---- !u!114 &4295951126621810640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4295951126621810639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3e99e0119439bc44b3e19bef2498a43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currWP: {fileID: 0}
-  shotOrigin: {fileID: 7336319277925646370}
-  moveSpeed:
-    UseInspectorValue: 0
-    InspectorValue: 0
-    Variable: {fileID: 11400000, guid: 49ef5f9dbdc714f49b80ebc1ab28a4df, type: 2}
-  turnSpeed:
-    UseInspectorValue: 0
-    InspectorValue: 0
-    Variable: {fileID: 11400000, guid: 9cb3ca4d1a859064395387de52f3e3fe, type: 2}
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  visualCheckLayers:
-    serializedVersion: 2
-    m_Bits: 1280
-  shootWhileMoving:
-    UseInspectorValue: 1
-    InspectorValue: 0
-    Variable: {fileID: 0}
-  timeToMove:
-    UseInspectorValue: 0
-    InspectorValue: 0
-    Variable: {fileID: 11400000, guid: aac1c0b3cf9e0bb4281c946220f1df0b, type: 2}
-  attackDelayOnArrival:
-    UseInspectorValue: 0
-    InspectorValue: 0
-    Variable: {fileID: 11400000, guid: 0e4932b2552abe14eab02d85b14bf083, type: 2}
-  CloneFrebab: {fileID: 6459844819246533812, guid: 0c833b16449cafb46b486c879cee6e07, type: 3}
 --- !u!114 &4295951126621810641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10732,6 +10691,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c90526fa768c424cbdf36fd16b40ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allowAttackWhileMoving:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
+  attackOrigin: {fileID: 7336319277925646370}
   attackDamage:
     UseInspectorValue: 0
     InspectorValue: 0
@@ -10748,19 +10712,8 @@ MonoBehaviour:
     UseInspectorValue: 1
     InspectorValue: 5
     Variable: {fileID: 0}
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  ignoreLayer:
-    serializedVersion: 2
-    m_Bits: 1
   DamagePlayer: {fileID: 11400000, guid: 8252108987d608d428fc4e8e1ed6e974, type: 2}
-  projOrigin: {fileID: 7336319277925646370}
   projPrefab: {fileID: 2637331313813923962, guid: 2dd9c93511a709e43af7f8d6f643b834, type: 3}
-  shootWhileMoving:
-    UseInspectorValue: 1
-    InspectorValue: 0
-    Variable: {fileID: 0}
 --- !u!114 &4295951126621810638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10777,9 +10730,6 @@ MonoBehaviour:
   sightBlockLayers:
     serializedVersion: 2
     m_Bits: 256
-  _targetLayer:
-    serializedVersion: 2
-    m_Bits: 1024
 --- !u!65 &5304893641163248135
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10793,6 +10743,41 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.99723566, y: 2.420322, z: 0.7282671}
   m_Center: {x: 0.0013813878, y: 1.2296984, z: -0.013922121}
+--- !u!114 &5486198805020326010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4295951126621810639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa09c809647497042aa11c750a705148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWayPoint: {fileID: 0}
+  lineOfSightSource: {fileID: 7336319277925646370}
+  moveSpeed:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: 49ef5f9dbdc714f49b80ebc1ab28a4df, type: 2}
+  turnSpeed:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: 9cb3ca4d1a859064395387de52f3e3fe, type: 2}
+  turnToTargetWhileMoving:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
+  timeToMove:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: aac1c0b3cf9e0bb4281c946220f1df0b, type: 2}
+  attackDelayOnArrival:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: 0e4932b2552abe14eab02d85b14bf083, type: 2}
+  CloneFrebab: {fileID: 6459844819246533812, guid: 0c833b16449cafb46b486c879cee6e07, type: 3}
 --- !u!1 &4664260613456280364
 GameObject:
   m_ObjectHideFlags: 0
