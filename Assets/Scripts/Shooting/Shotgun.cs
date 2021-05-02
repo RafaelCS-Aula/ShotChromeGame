@@ -31,19 +31,26 @@ public class Shotgun : InputReceiverBase
 
     [SerializeField] private FloatVariable currentAmmo;
     [SerializeField] private FloatVariable maxAmmo;
+
+    [SerializeField] private Vector3Variable recoilForce;
+
     //[SerializeField] private IntVariable chargedAmmo;
     #endregion
 
     private List<Quaternion> pellets;
 
-    private float shotInterval;
     private float shotTimer;
+    Vector3 originalRotation;
+
 
     [SerializeField] private LayerMask enemyLayer;
+
+    [SerializeField] GameObject shotgun;
 
     private void OnEnable()
     {
         RegisterForInput();
+        originalRotation = shotgun.transform.localEulerAngles;
     }
 
     protected override void RegisterForInput()
@@ -67,9 +74,6 @@ public class Shotgun : InputReceiverBase
 
     private void Update()
     {
-        
-        shotInterval = GetShotInterval();
-
         if (shotTimer > 0) shotTimer -= Time.deltaTime;
 
         if(currentAmmo > maxAmmo)
@@ -90,22 +94,12 @@ public class Shotgun : InputReceiverBase
     [Button("Test Shoot")]
     private void Shoot()
     {
-        
-        currentAmmo.OverrideValue(currentAmmo - 1);
         // Consume Ammo
-        if(isSuperCharged)
-        {
+        currentAmmo.OverrideValue(currentAmmo - 1);
 
-            //chargedAmmo.OverrideValue(chargedAmmo -  1);
-            OnChargedShootEvent.Invoke();
-        }  
-        else
-        {
-
-            OnShootEvent.Invoke();
-        }
+        if(isSuperCharged) OnChargedShootEvent.Invoke();
+        else OnShootEvent.Invoke();
             
-
         int numberOfHits = 0;
 
         for (int i = 0; i < pellets.Count; i++)
@@ -143,7 +137,6 @@ public class Shotgun : InputReceiverBase
                     if(enemyHealth != null)
                         enemyHealth.OnDamaged(dealtDamage, this);
                 }
-
                 #region Damage Using Formula
                 /*
                 float damageDropPU = maxPelletDamage / maxShotDistance;      
@@ -155,8 +148,41 @@ public class Shotgun : InputReceiverBase
             }
         }
         //print("HITS: " + numberOfHits);
-        shotTimer = shotInterval;
+        shotTimer = GetShotInterval();
+
+        StartCoroutine(ApplyRecoil());
     }
+
+    private  IEnumerator ApplyRecoil()
+    {
+
+        float upTimer, downTimer;
+
+        if (!isSuperCharged) upTimer = downTimer = shotTimer /16;
+
+        else upTimer = downTimer = shotTimer;
+
+        while (upTimer > 0)
+        {
+            shotgun.transform.localEulerAngles += recoilForce;
+            upTimer -= Time.deltaTime;
+
+            yield return null;
+        }
+
+
+        while (downTimer > 0)
+        {
+            shotgun.transform.localEulerAngles -= recoilForce;
+            downTimer -= Time.deltaTime;
+
+            yield return null;
+        }
+
+        shotgun.transform.localEulerAngles = originalRotation;
+    }
+
+
 
     private float GetShotInterval()
     {
