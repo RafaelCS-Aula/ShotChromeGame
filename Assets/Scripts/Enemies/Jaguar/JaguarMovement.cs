@@ -53,7 +53,6 @@ public class JaguarMovement : MonoBehaviour
     private IEnumerator GetDestinationWithDelay(float time)
     {
         yield return new WaitForSeconds(time);
-        print("DESTINATION UPDATE");
         agent.SetDestination(targetH.Target.position);
         StartCoroutine(GetDestinationWithDelay(time));
     }
