@@ -114,4 +114,6 @@ public class EnemyHealth : MonoBehaviour
         yield return new WaitForSeconds(time);
         Destroy(gameObject);
     }
+
+    public bool Died() => died;
 }
