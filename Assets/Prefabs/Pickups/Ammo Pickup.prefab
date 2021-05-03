@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5501309246333494223}
   - component: {fileID: 5501309246333494222}
   - component: {fileID: 5090863774226949089}
+  - component: {fileID: -6265597197631358295}
   m_Layer: 0
   m_Name: Ammo Pickup
   m_TagString: Untagged
@@ -77,6 +78,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUp: {fileID: 11400000, guid: 7944c8fbf0713e642b8207d83653ad75, type: 2}
   lifeTime: 0
+--- !u!114 &-6265597197631358295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5501309246333494220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e61b814249f4e4ca46672291b8f9cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed:
+    UseInspectorValue: 1
+    InspectorValue: {x: 0, y: 2, z: 0}
+    Variable: {fileID: 0}
 --- !u!1001 &4932362414290020210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -90,7 +107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eef7307c9f73c2c45b183f8d74b3314b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.471
+      value: 0.978
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eef7307c9f73c2c45b183f8d74b3314b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -128,9 +145,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -47745067934453596, guid: eef7307c9f73c2c45b183f8d74b3314b, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: eef7307c9f73c2c45b183f8d74b3314b, type: 3}
       propertyPath: m_Name
       value: Shells
+      objectReference: {fileID: 0}
+    - target: {fileID: 3925587123146960668, guid: eef7307c9f73c2c45b183f8d74b3314b, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eef7307c9f73c2c45b183f8d74b3314b, type: 3}
