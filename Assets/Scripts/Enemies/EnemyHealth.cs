@@ -7,6 +7,7 @@ using UnityEngine.AI;
 
 public class EnemyHealth : MonoBehaviour
 {
+    private Animator anim;
 
     [Foldout("Events")]
     [SerializeField] private UnityEvent OnShotgunKill;
@@ -31,6 +32,7 @@ public class EnemyHealth : MonoBehaviour
 
     [SerializeField] private bool isFlyer;
     [SerializeField] private bool usesNavmesh;
+    [SerializeField] bool hasDeathAnimation;
 
     private float health = 100;
     private MonoBehaviour lastDamageSource = null;
@@ -40,6 +42,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Start()
     {
+        if (hasDeathAnimation) anim = GetComponentInChildren<Animator>();
         health = MaxHealth;
         col = GetComponent<Collider>();
     }
@@ -72,7 +75,11 @@ public class EnemyHealth : MonoBehaviour
 
     public void EnemyDeath()
     {
-        died = true;
+        if (!died)
+        {
+            died = true;
+            if (hasDeathAnimation) anim.SetTrigger("Die");
+        }
 
         if (isFlyer)
         {

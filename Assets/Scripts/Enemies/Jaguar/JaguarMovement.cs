@@ -15,6 +15,9 @@ public class JaguarMovement : MonoBehaviour
     [SerializeField] private FloatVariable chaseSpeed;
     [SerializeField] private FloatVariable stopDist;
 
+    public bool globMoving = true;
+    private bool moving = true;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -31,7 +34,16 @@ public class JaguarMovement : MonoBehaviour
 
     void Update()
     {
-        
+        if (!globMoving && moving)
+        {
+            moving = false;
+            StopAllCoroutines();
+        }
+        if (globMoving && !moving)
+        {
+            moving = true;
+            StartCoroutine(GetDestinationWithDelay(0.1f));
+        }
     }
 
     void LateUpdate()
