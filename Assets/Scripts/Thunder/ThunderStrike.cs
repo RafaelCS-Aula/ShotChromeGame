@@ -72,9 +72,9 @@ public class ThunderStrike : InputReceiverBase
             {
                 Debug.DrawLine(originPoint.position, hitInfo.point, Color.green, 3);
 
-
+                // Cast from the top incase the player is inside the cover collider
                 RaycastHit blockerInfo;
-                if(Physics.Raycast(hitInfo.point,Vector3.up,out blockerInfo, 1500, blockedByLayer))
+                if(Physics.Raycast(hitInfo.point + Vector3.up * _originHeight ,Vector3.down,out blockerInfo, _originHeight, blockedByLayer))
                 {
                     
                     StartCoroutine(SummonBlocked(hitInfo.point,blockerInfo));

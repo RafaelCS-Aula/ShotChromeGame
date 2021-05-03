@@ -29,8 +29,8 @@ public class TotemBehaviour : MonoBehaviour
         if(ThunderCover)
         {
             _spawnedCover = Instantiate(ThunderCover.gameObject, transform.position + transform.up*coverHeight, Quaternion.identity);
-            ThunderCover.isTrigger = true;
-            ThunderCover.radius = coverRadius;
+            _spawnedCover.GetComponent<SphereCollider>().isTrigger = true;
+            _spawnedCover.GetComponent<SphereCollider>().radius = coverRadius;
 
         }
 
