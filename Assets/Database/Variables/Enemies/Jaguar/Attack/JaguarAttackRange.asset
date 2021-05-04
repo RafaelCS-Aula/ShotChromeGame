@@ -14,3 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DevDescription: Distance from which the unit can attack the target
   variableValue: 1.5
+  WholeNumbers: 0
+  clampValue: 0
+  UpperBound:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
+  LowerBound:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}

@@ -8,6 +8,7 @@ using UnityEditor;
 
 public class EnemyHealth : MonoBehaviour
 {
+    private Animator anim;
 
     [Foldout("Events")]
     [SerializeField] private UnityEvent OnShotgunKill;
@@ -33,6 +34,11 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] FloatVariable ThunderPowerGift;
     [SerializeField] FloatData currentThunderPower;
 
+
+    [SerializeField] private bool isFlyer;
+    [SerializeField] private bool usesNavmesh;
+    [SerializeField] bool hasDeathAnimation;
+
     [SerializeField] private bool blockHealing;
 
     private bool _usesWaypointMovement;
@@ -47,6 +53,8 @@ public class EnemyHealth : MonoBehaviour
     private Collider _col;
     private void Start()
     {
+
+        if (hasDeathAnimation) anim = GetComponentInChildren<Animator>();
         _health = MaxHealth;
         _col = GetComponent<Collider>();
         _usesWaypointMovement = GetComponent<WaypointMovement>();
@@ -97,7 +105,13 @@ public class EnemyHealth : MonoBehaviour
 
     public void EnemyDeath()
     {
-        _died = true;
+
+        if (!died)
+        {
+            died = true;
+            if (hasDeathAnimation) anim.SetTrigger("Die");
+        }
+
 
         if (_usesWaypointMovement)
         {
