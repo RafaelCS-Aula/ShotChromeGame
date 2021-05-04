@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f25694c1e7482b48a1ef7f715245d18, type: 3}
-  m_Name: TestThunderPower
+  m_Name: Totem_ThunderGift
   m_EditorClassIdentifier: 
   DevDescription: 
-  variableValue: 17.994324
+  variableValue: 0
   WholeNumbers: 0
-  clampValue: 1
+  clampValue: 0
   UpperBound:
-    UseInspectorValue: 0
-    InspectorValue: 20
-    Variable: {fileID: 11400000, guid: 413f8a89812ea4e4a89fe6a488fb6060, type: 2}
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
   LowerBound:
     UseInspectorValue: 1
     InspectorValue: 0

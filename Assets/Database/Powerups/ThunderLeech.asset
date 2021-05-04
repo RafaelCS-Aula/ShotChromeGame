@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773d0728e8f55244a91156d806761601, type: 3}
+  m_Name: ThunderLeech
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  powerName: Thunder Power Leech
+  description: 
+  overwriteActive: 0
+  isFinished: 0
+  baseChance: 0
+  affectedBoolData: {fileID: 0}
+  affectedFloatData: {fileID: 11400000, guid: acab311c951432448842d576a5e833e4, type: 2}
+  returnToDefaultOnEnd: 0
+  _defaultNumberValue: 0
+  _defaultBoolValue: 0
+  newValue:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
+  immediateFloatChange:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
+  changeOverTime:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: bdd6ee355886c8140995c781621b97fa, type: 2}
+  duration:
+    UseInspectorValue: 1
+    InspectorValue: 9999
+    Variable: {fileID: 0}
+  _elapsed: 0

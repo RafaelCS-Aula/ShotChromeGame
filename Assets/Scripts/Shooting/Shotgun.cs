@@ -13,6 +13,9 @@ public class Shotgun : InputReceiverBase
     [Foldout("Events")]
     [SerializeField] private UnityEvent OnChargedShootEvent;
 
+    [Foldout("Events")]
+    [SerializeField] private UnityEvent<Vector3> OnPelletImpact;
+
     [SerializeField] FloatVariable pelletsPerShot;
 
     [SerializeField] FloatVariable maxPelletDamage;
@@ -125,6 +128,7 @@ public class Shotgun : InputReceiverBase
 
             if (Physics.Raycast(pelletRay, out hitInfo, Mathf.Infinity, layersToHit))
             {
+                OnPelletImpact.Invoke(hitInfo.point);
                 if ((enemyLayer | (1 << hitInfo.transform.gameObject.layer)) == enemyLayer)
                 {
                     numberOfHits++;
