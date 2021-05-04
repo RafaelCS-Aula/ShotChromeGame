@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DevDescription: Amount of thunder power drained from the player each second draining
     is active.
-  variableValue: 5
+  variableValue: 20
   WholeNumbers: 0
   clampValue: 0
   UpperBound:
