@@ -38,13 +38,13 @@ public class EnemyHealth : MonoBehaviour
     private bool _usesWaypointMovement;
     [SerializeField] private bool usesNavmesh;
 
+    [SerializeField][ReadOnly]
     private float _health;
     private MonoBehaviour _lastDamageSource = null;
     private bool _died = false;
 
+    [ReadOnly][SerializeField]
     private Collider _col;
-
-    public bool isBuffed = false;
     private void Start()
     {
         _health = MaxHealth;
@@ -57,6 +57,10 @@ public class EnemyHealth : MonoBehaviour
         if(_health > MaxHealth + OverHealAmount)
         {
             _health = MaxHealth + OverHealAmount;
+        }
+        if(_health > MaxHealth)
+        {
+            _health -= Time.deltaTime;
         }
     }
 
@@ -86,6 +90,8 @@ public class EnemyHealth : MonoBehaviour
     {
         if(blockHealing)
             return;
+
+        
         _health += value;
     }
 
