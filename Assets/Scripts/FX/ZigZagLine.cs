@@ -93,9 +93,9 @@ public class ZigZagLine : MonoBehaviour
             
         }
         lineRenderer.SetPositions(positions);
-        //widthFactor = widthCurrentVal / witdthMaxVal;
+        widthFactor = 0.8f;
         //print("line width:" + widthFactor);
-        //lineRenderer.widthMultiplier = widthFactor;
+        lineRenderer.widthMultiplier = widthFactor;
         lineRenderer.enabled = true;
         Debug.Log($"Drawing zigzag from {startPoint} to {endPoint}");
         StartCoroutine(StopThunder(duration));

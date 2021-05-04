@@ -16,7 +16,7 @@ public class CombatSpawner : MonoBehaviour
 
     private Waypoint flyerWaypoint = null;
 
-    private bool _isFlyer => enemy == EnemyTypes.FLYER;
+    private bool _usesWayPointMovement => enemy == EnemyTypes.FLYER;
     private bool _openForSpawning;
     private CombatWave _callerWave;
     private float _minDistanceToNext;
@@ -33,7 +33,7 @@ public class CombatSpawner : MonoBehaviour
     [Button]
     public void ConnectWithFlyerWaypoints()
     {
-        if (!_isFlyer)
+        if (!_usesWayPointMovement)
         {
             Debug.Log("Only flyer types spawners make use of flyer waypoints");
             return;
@@ -72,10 +72,10 @@ public class CombatSpawner : MonoBehaviour
         }
         else Debug.LogError($"Enemy from {_lastSpawned.name} doesn't have a TargetHolder Component");
 
-        if (_isFlyer)
+        if (_lastSpawned.GetComponent<WaypointMovement>())
         {
             GetComponent<Waypoint>().ToggleOccupation();
-            _lastSpawned.GetComponent<FlyerMovement>().SetCurrentWaypoint(GetComponent<Waypoint>());
+            _lastSpawned.GetComponent<WaypointMovement>().SetCurrentWaypoint(GetComponent<Waypoint>());
         }
 
         if (spawnQueue.Count > 0)
@@ -91,7 +91,7 @@ public class CombatSpawner : MonoBehaviour
         {
             bool _canSpawn = false;
 
-            if (!_isFlyer)
+            if (!_usesWayPointMovement)
             {
                 if (_lastSpawned == null)
                 {
@@ -138,10 +138,10 @@ public class CombatSpawner : MonoBehaviour
                 else Debug.LogError($"Enemy from {_lastSpawned.name} doesn't have a TargetHolder Component");
 
 
-                if (_isFlyer)
+                if (_usesWayPointMovement)
                 {
                     GetComponent<Waypoint>().ToggleOccupation();
-                    _lastSpawned.GetComponent<FlyerMovement>().SetCurrentWaypoint(GetComponent<Waypoint>());
+                    _lastSpawned.GetComponent<WaypointMovement>().SetCurrentWaypoint(GetComponent<Waypoint>());
                 }
 
                 _lastSpawned.layer = 9;
@@ -164,7 +164,7 @@ public class CombatSpawner : MonoBehaviour
         Handles.ConeHandleCap(GetInstanceID(), transform.position + transform.forward, transform.rotation, 0.3f, EventType.Repaint);
 
         Gizmos.DrawRay(transform.position, transform.forward);
-        if (flyerWaypoint != null && _isFlyer)
+        if (flyerWaypoint != null && _usesWayPointMovement)
         {
             Handles.color = Color.blue;
             foreach (Waypoint wp in flyerWaypoint.outgoingConnections)
