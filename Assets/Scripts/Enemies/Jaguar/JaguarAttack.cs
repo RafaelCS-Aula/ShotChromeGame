@@ -9,7 +9,6 @@ public class JaguarAttack : MonoBehaviour
     private JaguarMovement jagMov;
 
     [SerializeField] FloatVariable attackDamage;
-    [SerializeField] FloatVariable attackInterval;
     [SerializeField] FloatVariable attackRange;
 
 
@@ -32,6 +31,16 @@ public class JaguarAttack : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        //if (anim.GetCurrentAnimatorStateInfo(0).IsName("Run")) print("Run");
+        //if (anim.GetCurrentAnimatorStateInfo(0).IsName("PunchIdle")) print("PunchIdle");
+        //if (anim.GetCurrentAnimatorStateInfo(0).IsName("PunchLeft")) print("PunchLeft");
+        //if (anim.GetCurrentAnimatorStateInfo(0).IsName("PunchRight")) print("PunchRight");
+
+
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Run")) jagMov.globMoving = false;
+
+
+
         if (targetH.Target != null && !isAttacking)
         {
             float distToTarget = Vector3.Distance(transform.position, targetH.Target.position);
@@ -40,21 +49,23 @@ public class JaguarAttack : MonoBehaviour
                 if (!alreadyClose)
                 {
                     alreadyClose = true;
-                    jagMov.globMoving = false;
-                    anim.SetTrigger("Intermediary");
+                    anim.SetTrigger("PunchIdle");
                 }
-                if (anim.GetCurrentAnimatorStateInfo(0).IsName("Intermediary")
+                if (anim.GetCurrentAnimatorStateInfo(0).IsName("PunchIdle")
                     || anim.GetCurrentAnimatorStateInfo(0).IsName("Run"))
                 {
                     StartCoroutine(Attack());
-                    StartCoroutine(WalkDelay());
+                    StartCoroutine(RunDelay());
                 }
             }
-            else if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Run"))
+            else
             {
                 alreadyClose = false;
-                anim.SetTrigger("Run");
-                jagMov.globMoving = true;
+                if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Run"))
+                {
+                    jagMov.globMoving = true;
+                    anim.SetTrigger("Run");
+                }
             }
         }
     }
@@ -63,17 +74,19 @@ public class JaguarAttack : MonoBehaviour
     {
         float delay = 0;
         float forgiveness = 1.5f;
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Run")) delay = 0.25f;
-        print(delay);
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Run")) delay = 0.05f;
+
         isAttacking = true;
         int dir = Random.Range(0, 2);
         if (dir == 0)
         {
-            anim.SetTrigger("AttackLeft");
+            anim.SetTrigger("PunchLeft");
+            print("PunchLeft");
         }
         if (dir == 1)
         {
-            anim.SetTrigger("AttackRight");
+            anim.SetTrigger("PunchRight");
+            print("PunchRight");
         }
         yield return new WaitForSeconds(timeToAttack + delay);
 
@@ -81,7 +94,7 @@ public class JaguarAttack : MonoBehaviour
         if (distToTarget <= attackRange + forgiveness) DamagePlayer.RaiseDamageArg(attackDamage);
 
     }
-    private IEnumerator WalkDelay()
+    private IEnumerator RunDelay()
     {
         yield return new WaitForSeconds(attackDuration);
         isAttacking = false;

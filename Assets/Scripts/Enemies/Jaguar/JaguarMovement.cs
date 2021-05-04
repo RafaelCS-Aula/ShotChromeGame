@@ -7,6 +7,7 @@ using NaughtyAttributes;
 public class JaguarMovement : MonoBehaviour
 {
     private TargetHolder targetH;
+    private EnemyHealth eHealth;
 
     private NavMeshAgent agent;
     private NavMeshPath path;
@@ -22,6 +23,7 @@ public class JaguarMovement : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         targetH = GetComponent<TargetHolder>();
+        eHealth = GetComponent<EnemyHealth>();
 
         path = new NavMeshPath();
 
@@ -34,11 +36,13 @@ public class JaguarMovement : MonoBehaviour
 
     void Update()
     {
-        if (!globMoving && moving)
+        if (!globMoving)
         {
             moving = false;
             StopAllCoroutines();
+            if ((!eHealth.Died())) agent.ResetPath();
         }
+
         if (globMoving && !moving)
         {
             moving = true;
@@ -65,8 +69,11 @@ public class JaguarMovement : MonoBehaviour
     private IEnumerator GetDestinationWithDelay(float time)
     {
         yield return new WaitForSeconds(time);
-        agent.SetDestination(targetH.Target.position);
-        StartCoroutine(GetDestinationWithDelay(time));
+        if ((!eHealth.Died()))
+        {
+            agent.SetDestination(targetH.Target.position);
+            StartCoroutine(GetDestinationWithDelay(time));
+        }
     }
 
     private void DrawDebugRays()

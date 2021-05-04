@@ -105,11 +105,9 @@ public class EnemyHealth : MonoBehaviour
     public void EnemyDeath()
     {
 
-        if (!_died)
-        {
-            _died = true;
-            if (hasDeathAnimation) anim.SetTrigger("Die");
-        }
+        if (!_died) _died = true;
+
+        if (hasDeathAnimation) anim.SetTrigger("Die");
 
 
         if (_usesWaypointMovement)
@@ -146,6 +144,7 @@ public class EnemyHealth : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public bool Died() => _died;
 #if UNITY_EDITOR
     private void OnDrawGizmos() 
     {

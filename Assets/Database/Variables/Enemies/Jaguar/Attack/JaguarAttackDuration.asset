@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: JaguarAttackDuration
   m_EditorClassIdentifier: 
   DevDescription: 
-  variableValue: 1.88
+  variableValue: 1.2
   WholeNumbers: 0
   clampValue: 0
   UpperBound:

@@ -5,6 +5,8 @@ using NaughtyAttributes;
 
 public class ObjectToggler : MonoBehaviour
 {
+    [SerializeField] private float toggleDelay;
+
     [ShowAssetPreview(64,64)][SerializeField]
     private GameObject[] affectedSceneObjects;
 
@@ -14,8 +16,14 @@ public class ObjectToggler : MonoBehaviour
     [Button]
     public void ToggleState()
     {
-    
-        foreach(GameObject g in affectedSceneObjects)
+        StartCoroutine(ToggleStateWithDelay());
+    }
+
+    private IEnumerator ToggleStateWithDelay()
+    {
+        yield return new WaitForSeconds(toggleDelay);
+
+        foreach (GameObject g in affectedSceneObjects)
         {
             bool newState = g.activeSelf ? false : true;
             g.SetActive(newState);
