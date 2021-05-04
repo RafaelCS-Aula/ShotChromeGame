@@ -233,9 +233,6 @@ public class CombatWave
                                 if(enemyObject.activeSelf)
                                 {
                                     typeAlive++;
-
-                                    
-                                    
                                 }
                             }
                         }

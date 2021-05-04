@@ -35,14 +35,13 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] FloatData currentThunderPower;
 
 
-    [SerializeField] private bool isFlyer;
+    //[SerializeField] private bool isFlyer;
     [SerializeField] private bool usesNavmesh;
     [SerializeField] bool hasDeathAnimation;
 
     [SerializeField] private bool blockHealing;
 
     private bool _usesWaypointMovement;
-    [SerializeField] private bool usesNavmesh;
 
     [SerializeField][ReadOnly]
     private float _health;
@@ -106,9 +105,9 @@ public class EnemyHealth : MonoBehaviour
     public void EnemyDeath()
     {
 
-        if (!died)
+        if (!_died)
         {
-            died = true;
+            _died = true;
             if (hasDeathAnimation) anim.SetTrigger("Die");
         }
 
