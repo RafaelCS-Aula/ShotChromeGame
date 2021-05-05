@@ -34,7 +34,6 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] FloatVariable ThunderPowerGift;
     [SerializeField] FloatData currentThunderPower;
 
-
     //[SerializeField] private bool isFlyer;
     [SerializeField] private bool usesNavmesh;
     [SerializeField] bool hasDeathAnimation;
@@ -100,6 +99,7 @@ public class EnemyHealth : MonoBehaviour
 
         
         _health += value;
+        OnHealed.Invoke();
     }
 
     public void EnemyDeath()

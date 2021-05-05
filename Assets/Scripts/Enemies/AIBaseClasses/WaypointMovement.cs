@@ -79,6 +79,9 @@ public class WaypointMovement : MonoBehaviour
 
         for (int i = 0; i < currentWayPoint.outgoingConnections.Count; i++)
         {
+            if(currentWayPoint.outgoingConnections[i] == null)
+                continue;
+
             if ((isStart && !currentWayPoint.outgoingConnections[i].isOccupied) ||
                 (!currentWayPoint.outgoingConnections[i].isOccupied))
             {
@@ -96,6 +99,8 @@ public class WaypointMovement : MonoBehaviour
         {
             for (int i = 0; i < currentWayPoint.outgoingConnections.Count; i++)
             {
+                if(currentWayPoint.outgoingConnections[i] == null)
+                    continue;
                 if (!currentWayPoint.outgoingConnections[i].isOccupied)
                 {
                     for (int j = 0; j < currentWayPoint.outgoingConnections[i].outgoingConnections.Count; j++)

@@ -33,7 +33,7 @@ public class ProximityDetector : MonoBehaviour
             !_triggered)
         {
             //print("Player Entered Area");
-            OnDetection.Invoke();
+            StartCoroutine(GetTriggered());
             _triggered = true;
         }
     }
@@ -46,6 +46,13 @@ public class ProximityDetector : MonoBehaviour
             }
 
     }
+
+private IEnumerator GetTriggered()
+{
+    yield return new WaitForFixedUpdate();
+    OnDetection.Invoke();
+
+}
 
 #if UNITY_EDITOR
     private void OnDrawGizmos() {

@@ -10528,6 +10528,7 @@ Transform:
   - {fileID: 3501736664160970109}
   - {fileID: 7644135757747142074}
   - {fileID: 5461931178449670738}
+  - {fileID: 198993430764467751}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10638,6 +10639,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnHealed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4541589332360986194}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnShotgunDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -10672,13 +10688,20 @@ MonoBehaviour:
     UseInspectorValue: 0
     InspectorValue: 0
     Variable: {fileID: 11400000, guid: b4a64e11bc82d884094cf4358685d7c8, type: 2}
+  OverHealAmount:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
   ThunderPowerGift:
     UseInspectorValue: 0
     InspectorValue: 20
     Variable: {fileID: 11400000, guid: 8269e532a1c278845b089196e59ae6e0, type: 2}
   currentThunderPower: {fileID: 11400000, guid: acab311c951432448842d576a5e833e4, type: 2}
-  isFlyer: 1
   usesNavmesh: 0
+  hasDeathAnimation: 0
+  blockHealing: 0
+  _health: 0
+  _col: {fileID: 0}
 --- !u!114 &4295951126621810641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10691,6 +10714,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c90526fa768c424cbdf36fd16b40ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStartAttackTrans:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStartAttackPos:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStartAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStopAttack:
+    m_PersistentCalls:
+      m_Calls: []
   allowAttackWhileMoving:
     UseInspectorValue: 1
     InspectorValue: 0
@@ -17271,3 +17306,70 @@ Transform:
   m_Father: {fileID: 5495424980450768915}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &5895245492657683907
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3518886245298812277}
+    m_Modifications:
+    - target: {fileID: 5986104080803515364, guid: 678307764ca1f1d42942e05f61142eb7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986104080803515364, guid: 678307764ca1f1d42942e05f61142eb7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986104080803515364, guid: 678307764ca1f1d42942e05f61142eb7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986104080803515364, guid: 678307764ca1f1d42942e05f61142eb7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986104080803515364, guid: 678307764ca1f1d42942e05f61142eb7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986104080803515364, guid: 678307764ca1f1d42942e05f61142eb7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986104080803515364, guid: 678307764ca1f1d42942e05f61142eb7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986104080803515364, guid: 678307764ca1f1d42942e05f61142eb7, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986104080803515364, guid: 678307764ca1f1d42942e05f61142eb7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986104080803515364, guid: 678307764ca1f1d42942e05f61142eb7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986104080803515364, guid: 678307764ca1f1d42942e05f61142eb7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019421034588271844, guid: 678307764ca1f1d42942e05f61142eb7, type: 3}
+      propertyPath: m_Name
+      value: HealFX
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 678307764ca1f1d42942e05f61142eb7, type: 3}
+--- !u!4 &198993430764467751 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5986104080803515364, guid: 678307764ca1f1d42942e05f61142eb7, type: 3}
+  m_PrefabInstance: {fileID: 5895245492657683907}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4541589332360986194 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7986828163147694993, guid: 678307764ca1f1d42942e05f61142eb7, type: 3}
+  m_PrefabInstance: {fileID: 5895245492657683907}
+  m_PrefabAsset: {fileID: 0}

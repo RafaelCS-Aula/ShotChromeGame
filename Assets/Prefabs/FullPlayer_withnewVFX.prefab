@@ -6493,7 +6493,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3486693321017895703}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.626, z: 0}
+  m_LocalPosition: {x: 0, y: 0.9500003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8992256916424366346}
@@ -6965,7 +6965,7 @@ CharacterController:
   m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0.6
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
@@ -7462,7 +7462,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -32888,9 +32888,9 @@ MonoBehaviour:
     InspectorValue: 30
     Variable: {fileID: 11400000, guid: 35aeefe442b320740ae2c3781cae0f85, type: 2}
   recoilForce:
-    UseInspectorValue: 1
+    UseInspectorValue: 0
     InspectorValue: {x: 0, y: 0, z: 0}
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 59a596946cc1f8b4e80553084081376b, type: 2}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -33001,6 +33001,10 @@ PrefabInstance:
     - target: {fileID: -8808041736091302281, guid: c38f1db1626a4d44c872ead4898051e9, type: 3}
       propertyPath: m_Layer
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: -8808041736091302281, guid: c38f1db1626a4d44c872ead4898051e9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c38f1db1626a4d44c872ead4898051e9, type: 3}
       propertyPath: m_LocalPosition.x

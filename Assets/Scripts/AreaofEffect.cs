@@ -52,6 +52,7 @@ public class AreaofEffect : MonoBehaviour
     
     public void ApplyAoE(Vector3 center)
     {
+        print("AOE Sent");
         List<Vector3> hitPositions = new List<Vector3>();
         OnActivateAoE.Invoke();
         OnActivateAoEPosition.Invoke(center);
@@ -136,7 +137,7 @@ public class AreaofEffect : MonoBehaviour
                 if (enemyHealth == null) enemyHealth = hit.Key.transform.gameObject.GetComponentInParent<EnemyHealth>();
 
                 if(enemyHealth != null)
-                enemyHealth.ReceiveHeal(hit.Value);
+                    enemyHealth.ReceiveHeal(hit.Value);
             }
 
         }

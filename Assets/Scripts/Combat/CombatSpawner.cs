@@ -70,7 +70,7 @@ public class CombatSpawner : MonoBehaviour
         {
             target.Target = _callerWave.enemyTarget;
         }
-        else Debug.LogError($"Enemy from {_lastSpawned.name} doesn't have a TargetHolder Component");
+        else Debug.LogWarning($"Enemy from {_lastSpawned.name} doesn't have a TargetHolder Component");
 
         if (_lastSpawned.GetComponent<WaypointMovement>())
         {

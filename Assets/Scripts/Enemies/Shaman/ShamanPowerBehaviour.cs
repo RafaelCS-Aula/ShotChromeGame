@@ -13,6 +13,7 @@ public class ShamanPowerBehaviour : LineOfSightAttack
     private float _minimumThunderToBuff = 1.00f;
     private AreaofEffect _AoEComponent; 
 
+    private float _healCooldownCr = 0;
 
 
     // Start is called before the first frame update
@@ -20,6 +21,7 @@ public class ShamanPowerBehaviour : LineOfSightAttack
     {
         base.Start();
         _AoEComponent = GetComponent<AreaofEffect>();
+
     }
 
     // Update is called once per frame
@@ -27,11 +29,16 @@ public class ShamanPowerBehaviour : LineOfSightAttack
     {
         base.Update();
 
-        if(thunderPowerData < 1)
+        
+        if(thunderPowerData < 1 && _healCooldownCr < 0)
         {
-            StartCoroutine(SendAoE());
-
+            SendAoE();
+            _healCooldownCr = buffPulseInterval;
         }
+
+        _healCooldownCr -= Time.deltaTime;
+
+        
 
 
 
@@ -42,10 +49,13 @@ public class ShamanPowerBehaviour : LineOfSightAttack
         thunderPowerData.ApplyChange(-thunderLeechRate * Time.deltaTime);
     }
 
-    private IEnumerator SendAoE()
+    private void SendAoE()
     {
-        yield return new WaitForSeconds(buffPulseInterval);
-        _AoEComponent.ApplyAoE(transform.position);
+
+            
+            print("heal aura");
+            _AoEComponent.ApplyAoE(transform.position);
+    
         
 
     }
