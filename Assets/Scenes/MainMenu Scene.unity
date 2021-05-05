@@ -1201,6 +1201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 435b556695d1a664cb78f628bd83f0de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toggleDelay: 0
   affectedSceneObjects:
   - {fileID: 1109127263}
   - {fileID: 6844793350322564758}
@@ -1354,6 +1355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 435b556695d1a664cb78f628bd83f0de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toggleDelay: 0
   affectedSceneObjects:
   - {fileID: 6844793350322564758}
   - {fileID: 1109127263}
@@ -5691,7 +5693,7 @@ MonoBehaviour:
   keyTriggered: 0
   triggerKey: 0
   QuitApplication: 0
-  targetScene: BlockMap
+  targetScene: NewAreas
 --- !u!224 &6844793349364546119
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6131,6 +6133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 435b556695d1a664cb78f628bd83f0de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toggleDelay: 0
   affectedSceneObjects:
   - {fileID: 8024270397346218996}
   - {fileID: 6844793350322564758}
@@ -6835,6 +6838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 435b556695d1a664cb78f628bd83f0de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toggleDelay: 0
   affectedSceneObjects:
   - {fileID: 8024270397346218996}
   - {fileID: 6844793350322564758}
