@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DefaultVSens
   m_EditorClassIdentifier: 
   DevDescription: 
-  variableValue: 400
+  variableValue: 100
   WholeNumbers: 0
   clampValue: 0
   UpperBound:

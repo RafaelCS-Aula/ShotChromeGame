@@ -58,6 +58,10 @@ public class CombatSpawner : MonoBehaviour
     /// <returns></returns>
     public GameObject StartSpawning(CombatWave callerWave, float minDistanceToNext)
     {
+        if(spawnQueue.Count == 0)
+        {
+            return null;
+        }
 
         _callerWave = callerWave;
         _minDistanceToNext = minDistanceToNext;

@@ -13,4 +13,14 @@ MonoBehaviour:
   m_Name: DefaultHSens
   m_EditorClassIdentifier: 
   DevDescription: 
-  variableValue: 500
+  variableValue: 180
+  WholeNumbers: 0
+  clampValue: 0
+  UpperBound:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
+  LowerBound:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
