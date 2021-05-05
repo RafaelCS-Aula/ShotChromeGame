@@ -197,10 +197,11 @@ public class AreaofEffect : MonoBehaviour
         Handles.color = Color.yellow;
         Handles.DrawSolidDisc(_currentCenter, transform.up, _currentRadius);
 
-#endif
+
         
 
     }
+#endif
 
 
 }
