@@ -8,6 +8,7 @@ public class MainMenuControl : MonoBehaviour
     void Awake()
     {
         gPC = GetComponent<GamePauseControl>();
+        Time.timeScale = 1;
     }
     // Start is called before the first frame update
     void Start()
