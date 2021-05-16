@@ -12,5 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f25694c1e7482b48a1ef7f715245d18, type: 3}
   m_Name: FlyerTimeToMove
   m_EditorClassIdentifier: 
-  DevDescription: 
+  DevDescription: Time that the flyer can't see the player until it tries to move
   variableValue: 1
+  WholeNumbers: 0
+  clampValue: 0
+  UpperBound:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
+  LowerBound:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}

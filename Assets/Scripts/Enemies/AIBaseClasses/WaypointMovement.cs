@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 [RequireComponent(typeof(TargetHolder))]
 public class WaypointMovement : MonoBehaviour
@@ -33,6 +34,11 @@ public class WaypointMovement : MonoBehaviour
     [SerializeField] protected GameObject CloneFrebab;
     protected GameObject clone;
 
+    [Button]
+    public void ShowDebugs()
+    {
+        print(targetHolder.HasLineOfSightToTarget(lineOfSightSource.transform));
+    }
 
     private void Start()
     {
