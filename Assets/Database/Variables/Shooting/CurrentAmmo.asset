@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CurrentAmmo
   m_EditorClassIdentifier: 
   DevDescription: 
-  variableValue: 0
+  variableValue: 15
   WholeNumbers: 1
   clampValue: 1
   UpperBound:

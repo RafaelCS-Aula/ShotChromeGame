@@ -14,4 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DevDescription: Distance from the player at which the Jaguar will stop chasing
     the player
-  variableValue: 1.25
+  variableValue: 2
+  WholeNumbers: 0
+  clampValue: 0
+  UpperBound:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
+  LowerBound:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}

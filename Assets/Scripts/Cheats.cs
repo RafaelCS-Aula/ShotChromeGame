@@ -6,7 +6,7 @@ using NaughtyAttributes;
 public class Cheats : MonoBehaviour
 {
     #region Inputs
-    [Header("------------ INPUTS ------------")]
+    [Header("------------- INPUTS -------------")]
     [SerializeField] KeyCode immortalityCheatKey;
     [SerializeField] KeyCode infiniteAmmoCheatKey;
     [SerializeField] KeyCode maxThunderCheatKey;
@@ -14,7 +14,7 @@ public class Cheats : MonoBehaviour
     #endregion
 
     #region Influenced Variables
-    [Header("----- INFLUENCED VARIABLES -----")]
+    [Header("------ INFLUENCED VARIABLES ------")]
 
     [Header("---- Immortality ----")]
     [SerializeField] private FloatData PlayerHP;
