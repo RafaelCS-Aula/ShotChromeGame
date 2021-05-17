@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ShamanMoveSpeed
   m_EditorClassIdentifier: 
   DevDescription: 
-  variableValue: 0
+  variableValue: 5
   WholeNumbers: 0
   clampValue: 0
   UpperBound:

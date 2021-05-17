@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: JaguarAttackRange
   m_EditorClassIdentifier: 
   DevDescription: Distance from which the unit can attack the target
-  variableValue: 1.5
+  variableValue: 2
   WholeNumbers: 0
   clampValue: 0
   UpperBound:

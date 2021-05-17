@@ -7,6 +7,7 @@ using System;
 public class ThunderPower : MonoBehaviour
 {
     [SerializeField] private FloatVariable maxPower;
+    [SerializeField] private FloatVariable maxReplenishedPower;
     [SerializeField] private FloatData currentPower;
 
     [SerializeField] private FloatData lastSpentPower;
@@ -28,11 +29,12 @@ public class ThunderPower : MonoBehaviour
 
     [SerializeField] private CurveVariable ReplenishmentCurve;
 
+
     [SerializeField] private bool consumeOnUse;
     private void Update() 
     {
 
-        currentPower.ApplyChange(ReplenishmentCurve.Value.Evaluate((currentPower.Value / maxPower.Value))* Time.deltaTime);
+        if (currentPower < maxReplenishedPower.Value) currentPower.ApplyChange(ReplenishmentCurve.Value.Evaluate((currentPower.Value / maxPower.Value))* Time.deltaTime);
 
         if(currentPower.Value > maxPower.Value  )
         {
