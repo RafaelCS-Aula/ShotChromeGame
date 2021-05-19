@@ -18,6 +18,8 @@ public class WaypointMovement : MonoBehaviour
 
     [SerializeField] protected BoolVariable turnToTargetWhileMoving;
 
+    [SerializeField] protected BoolVariable staysDistantFromTarget;
+
     [SerializeField] protected FloatVariable timeToMove;
 
     [SerializeField] protected FloatVariable attackDelayOnArrival;
@@ -82,6 +84,7 @@ public class WaypointMovement : MonoBehaviour
     {
         Waypoint nextWaypoint;
         List<Waypoint> canGo = new List<Waypoint>();
+        List<float> canGoDist = new List<float>();
 
         for (int i = 0; i < currentWayPoint.outgoingConnections.Count; i++)
         {
@@ -96,6 +99,9 @@ public class WaypointMovement : MonoBehaviour
                 {
                     
                     canGo.Add(currentWayPoint.outgoingConnections[i]);
+                    canGoDist.Add(Vector3.Distance(currentWayPoint.outgoingConnections[i].transform.position, targetHolder.Target.position));
+                    print($"ADDED {currentWayPoint.outgoingConnections[i].name}; DISTANCE TO TARGET IS: {Vector3.Distance(currentWayPoint.outgoingConnections[i].transform.position, targetHolder.Target.position)}");
+
                 }
                 
             }
@@ -120,8 +126,12 @@ public class WaypointMovement : MonoBehaviour
                             if(targetHolder.HasLineOfSightToTarget(originP))
                             {
                                 canGo.Add(currentWayPoint.outgoingConnections[i]);
+                                canGoDist.Add(Vector3.Distance(currentWayPoint.outgoingConnections[i].transform.position, targetHolder.Target.position));
+                                print($"ADDED {currentWayPoint.outgoingConnections[i].name}; DISTANCE TO TARGET IS: {Vector3.Distance(currentWayPoint.outgoingConnections[i].transform.position, targetHolder.Target.position)}");
+
+
                             }
-                            
+
                         }
                     }
                 }
@@ -132,7 +142,17 @@ public class WaypointMovement : MonoBehaviour
 
         visualTimer = timeToMove;
 
-        nextWaypoint = canGo[Random.Range(0, canGo.Count)];
+        if (!staysDistantFromTarget) nextWaypoint = canGo[Random.Range(0, canGo.Count)];
+
+        else
+        {
+            int furthest = 0;
+            for (int i = 1; i < canGoDist.Count; i++)
+            {
+                if (canGoDist[i] > canGoDist[i - 1]) furthest = i;
+            }
+            nextWaypoint = canGo[furthest];
+        }
 
         movDest = nextWaypoint.transform.position;
         movStart = currentWayPoint.transform.position;

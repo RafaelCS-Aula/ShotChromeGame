@@ -10504,7 +10504,7 @@ GameObject:
   - component: {fileID: 5304893641163248135}
   - component: {fileID: 5486198805020326010}
   m_Layer: 9
-  m_Name: Flyer
+  m_Name: FlyerPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10787,6 +10787,10 @@ MonoBehaviour:
   turnToTargetWhileMoving:
     UseInspectorValue: 1
     InspectorValue: 0
+    Variable: {fileID: 0}
+  staysDistantFromTarget:
+    UseInspectorValue: 1
+    InspectorValue: 1
     Variable: {fileID: 0}
   timeToMove:
     UseInspectorValue: 0
