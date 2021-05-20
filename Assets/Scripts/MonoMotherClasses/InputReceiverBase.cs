@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 
+[RequireComponent(typeof(InputManager))]
 public abstract class InputReceiverBase : MonoBehaviour, ISeekInput
 {
     
