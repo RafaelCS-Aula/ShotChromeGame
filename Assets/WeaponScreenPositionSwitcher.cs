@@ -37,9 +37,5 @@ public class WeaponScreenPositionSwitcher : MonoBehaviour
 
     public void MatchCurrentPosition() => _currentWeaponPosition = transform.position;
 
-    private void OnDrawGizmos() {
-        Vector3 parentPos = transform.parent.position;
-        Gizmos.DrawCube(parentPos + rightSidePosition, Vector3.one * 0.2f);
-        Gizmos.DrawCube(parentPos + rightSidePosition, Vector3.one * 0.2f);
-    }
+    
 }
