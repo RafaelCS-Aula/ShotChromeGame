@@ -10712,7 +10712,7 @@ MonoBehaviour:
       m_Calls: []
   allowAttackWhileMoving:
     UseInspectorValue: 1
-    InspectorValue: 0
+    InspectorValue: 1
     Variable: {fileID: 0}
   attackOrigin: {fileID: 7336319277925646370}
   attackDamage:
@@ -10760,8 +10760,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.99723566, y: 2.420322, z: 0.7282671}
-  m_Center: {x: 0.0013813878, y: 1.2296984, z: -0.013922121}
+  m_Size: {x: 1.088617, y: 2.8856733, z: 0.8059161}
+  m_Center: {x: 0.007894066, y: 1.2120734, z: 0.024902586}
 --- !u!114 &5486198805020326010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10784,10 +10784,6 @@ MonoBehaviour:
     UseInspectorValue: 0
     InspectorValue: 0
     Variable: {fileID: 11400000, guid: 9cb3ca4d1a859064395387de52f3e3fe, type: 2}
-  turnToTargetWhileMoving:
-    UseInspectorValue: 1
-    InspectorValue: 0
-    Variable: {fileID: 0}
   staysDistantFromTarget:
     UseInspectorValue: 1
     InspectorValue: 1
@@ -10800,6 +10796,16 @@ MonoBehaviour:
     UseInspectorValue: 0
     InspectorValue: 0
     Variable: {fileID: 11400000, guid: 0e4932b2552abe14eab02d85b14bf083, type: 2}
+  fleeWhenClose: 1
+  fleeDistance:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: 7feacbbee8b95ec409c90da5c3c23b8a, type: 2}
+  slowDownWhileAttacking: 0
+  slowDownModifier:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
   CloneFrebab: {fileID: 6459844819246533812, guid: 0c833b16449cafb46b486c879cee6e07, type: 3}
 --- !u!1 &4664260613456280364
 GameObject:
