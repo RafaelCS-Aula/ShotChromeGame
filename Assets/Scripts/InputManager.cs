@@ -12,10 +12,14 @@ public sealed class InputManager : MonoBehaviour
     [SerializeField] private KeycodeVariable shootKey;
     [SerializeField] private KeycodeVariable thunderKey;
 
+    [SerializeField] private KeycodeVariable bloodAmmoKey;
+
     public TwoDAxis InpDirection = delegate(Vector2 v){};
     public KeyPress InpJump = delegate(bool b){};
     public KeyPress InpShoot = delegate(bool b){};
     public KeyPress InpThunder = delegate(bool b){};
+
+    public KeyPress InpBloodAmmo = delegate(bool b){};
 
     //[SerializeField] private StringVariable  
 
@@ -33,6 +37,7 @@ public sealed class InputManager : MonoBehaviour
         InpJump.Invoke(Input.GetKey(jumpKey));
         InpShoot.Invoke(Input.GetKeyDown(shootKey));
         InpThunder.Invoke(Input.GetKeyDown(thunderKey));
+        InpBloodAmmo.Invoke(Input.GetKeyDown(bloodAmmoKey));
 
 
 
