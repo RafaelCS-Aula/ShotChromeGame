@@ -53,7 +53,7 @@ public class ShamanPowerBehaviour : LineOfSightAttack
     {
 
             
-            print("heal aura");
+            //print("heal aura");
             _AoEComponent.ApplyAoE(transform.position);
     
         

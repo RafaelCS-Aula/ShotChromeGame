@@ -113,8 +113,6 @@ public class EnemyHealth : MonoBehaviour
         if (_usesWaypointMovement)
         {
             GetComponent<WaypointMovement>().GetCurrentWaypoint().ToggleOccupation();
-            GetComponent<WaypointMovement>().SetMoving(false);
-
         }
         else if (usesNavmesh)
         {

@@ -16,13 +16,18 @@ public class WaypointMovement : MonoBehaviour
     [SerializeField] protected FloatVariable moveSpeed;
     [SerializeField] protected FloatVariable turnSpeed;
 
-    [SerializeField] protected BoolVariable turnToTargetWhileMoving;
-
     [SerializeField] protected BoolVariable staysDistantFromTarget;
 
     [SerializeField] protected FloatVariable timeToMove;
 
     [SerializeField] protected FloatVariable attackDelayOnArrival;
+
+    [SerializeField] protected bool fleeWhenClose;
+    [SerializeField, ShowIf("fleeWhenClose")] protected FloatVariable fleeDistance;
+
+
+    [SerializeField] protected bool slowDownWhileAttacking;
+    [SerializeField, ShowIf("slowDownWhileAttacking")] protected FloatVariable slowDownModifier;
 
 
     protected Vector3 movDest;
@@ -39,7 +44,7 @@ public class WaypointMovement : MonoBehaviour
     [Button]
     public void ShowDebugs()
     {
-        print(targetHolder.HasLineOfSightToTarget(lineOfSightSource.transform));
+        //print(targetHolder.HasLineOfSightToTarget(lineOfSightSource.transform));
     }
 
     private void Start()
@@ -62,7 +67,12 @@ public class WaypointMovement : MonoBehaviour
 
         if (!isMoving)
         {
-            if (!targetHolder.HasLineOfSightToTarget(lineOfSightSource.transform)) 
+            if (fleeWhenClose)
+            {
+                if (Vector3.Distance(transform.position, targetHolder.Target.position) <= fleeDistance) ChangeWaypoint(false);
+            }
+
+            if (!targetHolder.HasLineOfSightToTarget(lineOfSightSource.transform))
             {
                 visualTimer -= Time.deltaTime;
             }
@@ -76,8 +86,9 @@ public class WaypointMovement : MonoBehaviour
 
         if (isMoving) Move(movDest);
 
-        if (turnToTargetWhileMoving) RotateToPoint(targetHolder.Target.position);
-        else if (!isMoving) RotateToPoint(targetHolder.Target.position);
+        RotateToPoint(targetHolder.Target.position);
+
+
     }
 
     protected void ChangeWaypoint(bool isStart)
@@ -100,8 +111,6 @@ public class WaypointMovement : MonoBehaviour
                     
                     canGo.Add(currentWayPoint.outgoingConnections[i]);
                     canGoDist.Add(Vector3.Distance(currentWayPoint.outgoingConnections[i].transform.position, targetHolder.Target.position));
-                    print($"ADDED {currentWayPoint.outgoingConnections[i].name}; DISTANCE TO TARGET IS: {Vector3.Distance(currentWayPoint.outgoingConnections[i].transform.position, targetHolder.Target.position)}");
-
                 }
                 
             }
@@ -127,9 +136,6 @@ public class WaypointMovement : MonoBehaviour
                             {
                                 canGo.Add(currentWayPoint.outgoingConnections[i]);
                                 canGoDist.Add(Vector3.Distance(currentWayPoint.outgoingConnections[i].transform.position, targetHolder.Target.position));
-                                print($"ADDED {currentWayPoint.outgoingConnections[i].name}; DISTANCE TO TARGET IS: {Vector3.Distance(currentWayPoint.outgoingConnections[i].transform.position, targetHolder.Target.position)}");
-
-
                             }
 
                         }
@@ -149,7 +155,7 @@ public class WaypointMovement : MonoBehaviour
             int furthest = 0;
             for (int i = 1; i < canGoDist.Count; i++)
             {
-                if (canGoDist[i] > canGoDist[i - 1]) furthest = i;
+                if (canGoDist[i] > canGoDist[furthest]) furthest = i;
             }
             nextWaypoint = canGo[furthest];
         }
@@ -161,17 +167,19 @@ public class WaypointMovement : MonoBehaviour
         currentWayPoint = nextWaypoint;
         currentWayPoint.ToggleOccupation();
 
-        isMoving = true;
-        if (turnToTargetWhileMoving) moveLerpStartTime = Time.time;
-        else isRotating = true;
+        SetMoving(true);
+        moveLerpStartTime = Time.time;
     }
     protected virtual void Move(Vector3 end)
     {
-        if (isRotating) RotateToPoint(movDest);
+        float currentMovespeed = moveSpeed;
+        if (slowDownWhileAttacking && targetHolder.HasLineOfSightToTarget(lineOfSightSource.transform)) currentMovespeed *= slowDownModifier;
+        
+        print("SPEED: " + currentMovespeed);
 
-        else if (isMoving)
+        if (isMoving)
         {
-            float secsToMove = Vector3.Distance(movStart, end) / moveSpeed;
+            float secsToMove = Vector3.Distance(movStart, end) / currentMovespeed;
             float timeSinceStarted = Time.time - moveLerpStartTime;
             float percentageComplete = timeSinceStarted / secsToMove;
 
@@ -179,12 +187,10 @@ public class WaypointMovement : MonoBehaviour
 
             if (percentageComplete >= 1.0f)
             {
-                isMoving = false;
-
+                SetMoving(false);
                 StartCoroutine(GetComponent<LineOfSightAttack>().LockAttackForSeconds(attackDelayOnArrival));
             }
         }
-
     }
 
     /// <summary>
@@ -207,12 +213,6 @@ public class WaypointMovement : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-
-        if (isMoving && Mathf.Abs(lookRotation.eulerAngles.y - transform.rotation.eulerAngles.y) <= 0.01f)
-        {
-            isRotating = false;
-            moveLerpStartTime = Time.time;
-        }
     }
 
     public void SetCurrentWaypoint(Waypoint wp) { currentWayPoint = wp; }

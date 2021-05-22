@@ -10330,7 +10330,7 @@ MonoBehaviour:
         m_CallState: 2
   allowAttackWhileMoving:
     UseInspectorValue: 1
-    InspectorValue: 0
+    InspectorValue: 1
     Variable: {fileID: 0}
   attackOrigin: {fileID: 7478965352801338864}
   thunderPowerData: {fileID: 11400000, guid: acab311c951432448842d576a5e833e4, type: 2}
@@ -10364,10 +10364,6 @@ MonoBehaviour:
     UseInspectorValue: 0
     InspectorValue: 30
     Variable: {fileID: 11400000, guid: 254b8fcc4caeb2545a61896f29e8ee97, type: 2}
-  turnToTargetWhileMoving:
-    UseInspectorValue: 1
-    InspectorValue: 0
-    Variable: {fileID: 0}
   staysDistantFromTarget:
     UseInspectorValue: 1
     InspectorValue: 1
@@ -10380,6 +10376,16 @@ MonoBehaviour:
     UseInspectorValue: 0
     InspectorValue: 0
     Variable: {fileID: 11400000, guid: be2f29b7ec458fb468200c469fa3e161, type: 2}
+  fleeWhenClose: 0
+  fleeDistance:
+    UseInspectorValue: 1
+    InspectorValue: 0
+    Variable: {fileID: 0}
+  slowDownWhileAttacking: 0
+  slowDownModifier:
+    UseInspectorValue: 1
+    InspectorValue: 0.5
+    Variable: {fileID: 0}
   CloneFrebab: {fileID: 7672996985952727253, guid: c1b0e960731b9be4aacb1105b854c800, type: 3}
 --- !u!114 &7478965351814732491
 MonoBehaviour:

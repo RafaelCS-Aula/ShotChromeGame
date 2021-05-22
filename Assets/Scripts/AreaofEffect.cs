@@ -52,7 +52,7 @@ public class AreaofEffect : MonoBehaviour
     
     public void ApplyAoE(Vector3 center)
     {
-        print("AOE Sent");
+        //print("AOE Sent");
         List<Vector3> hitPositions = new List<Vector3>();
         OnActivateAoE.Invoke();
         OnActivateAoEPosition.Invoke(center);
@@ -107,7 +107,7 @@ public class AreaofEffect : MonoBehaviour
             if(showGizmos)
                 Debug.DrawLine(center, c.ClosestPoint(center), gizmoHitColor,4);
 
-             print(c.gameObject.name);
+             //print(c.gameObject.name);
             /////////////////
             hitPositions.Add(c.ClosestPoint(center));
             //Get the Health component of the hit colliders and affect them.
