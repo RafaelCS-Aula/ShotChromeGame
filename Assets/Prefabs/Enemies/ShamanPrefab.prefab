@@ -10339,9 +10339,13 @@ MonoBehaviour:
     InspectorValue: 0
     Variable: {fileID: 11400000, guid: bdd6ee355886c8140995c781621b97fa, type: 2}
   buffPulseInterval:
-    UseInspectorValue: 1
+    UseInspectorValue: 0
     InspectorValue: 5
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 1b908b9d997e1954d9fdd54864ab70c0, type: 2}
+  minimumThunder:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: 92a044270d6c2a84ca8ddbee65d5909d, type: 2}
 --- !u!114 &7478965351814732490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10411,13 +10415,13 @@ MonoBehaviour:
   useEffectFallOff: 0
   _effectOnEnemiesFound: 2
   effectAmount:
-    UseInspectorValue: 1
+    UseInspectorValue: 0
     InspectorValue: 1
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 3815d2cd154e7cf46829eb01b402c9c9, type: 2}
   maxRadius:
-    UseInspectorValue: 1
+    UseInspectorValue: 0
     InspectorValue: 35
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 8234cd28c2f90ef45ad4e2b3a68799c5, type: 2}
   affectedLayers:
     serializedVersion: 2
     m_Bits: 512
@@ -10428,7 +10432,25 @@ MonoBehaviour:
     UseInspectorValue: 1
     InspectorValue:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -10650,7 +10672,7 @@ MonoBehaviour:
   ThunderPowerGift:
     UseInspectorValue: 0
     InspectorValue: 3
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 1f96c501954872643a20d5a4fc50a24d, type: 2}
   currentThunderPower: {fileID: 11400000, guid: acab311c951432448842d576a5e833e4, type: 2}
   usesNavmesh: 0
   hasDeathAnimation: 0

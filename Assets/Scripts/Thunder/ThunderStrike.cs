@@ -118,6 +118,15 @@ public class ThunderStrike : InputReceiverBase
 
         OnStrikeEvent.Invoke(strikeInfo.point);
 
+        ThunderReactor impactReactor = 
+            strikeInfo.transform.GetComponent<ThunderReactor>();
+
+        // Activate any thunder specific reactions the hit object might have
+        if(impactReactor)
+        {
+            impactReactor.OnHitByThunder.Invoke();
+            impactReactor.OnSpotHitByThunder.Invoke(strikeInfo.point);
+        }
 
         ///DEBUG///////////////////////////////////////
         Debug.DrawLine(origin, strikeInfo.point, Color.yellow, 2);
@@ -141,7 +150,17 @@ public class ThunderStrike : InputReceiverBase
 
         OnBlockedEvent.Invoke();
         OnBlockedEventPos.Invoke(originalLanding + Vector3.up * _originHeight,blocker.collider.gameObject.transform.position);
+        
+        ThunderReactor impactReactor = 
+            blocker.transform.GetComponent<ThunderReactor>();
 
+        // Activate any thunder specific reactions the hit object might have
+        if(impactReactor != null)
+        {
+            print("Invoking reactors on blocker");
+            impactReactor.OnHitByThunder.Invoke();
+            impactReactor.OnSpotHitByThunder.Invoke(blocker.point);
+        }
         
         yield return null;
     }
