@@ -214,17 +214,17 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   MaxHealth:
-    UseInspectorValue: 1
+    UseInspectorValue: 0
     InspectorValue: 5
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 7d03a9c66d96b1043b34e1f0c4ada759, type: 2}
   OverHealAmount:
-    UseInspectorValue: 1
+    UseInspectorValue: 0
     InspectorValue: 4
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 4343006680aa8064782825dc2ca3c2e9, type: 2}
   ThunderPowerGift:
-    UseInspectorValue: 1
+    UseInspectorValue: 0
     InspectorValue: 1
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 8576892b904123a4cb751b73fbcbf031, type: 2}
   currentThunderPower: {fileID: 11400000, guid: acab311c951432448842d576a5e833e4, type: 2}
   usesNavmesh: 0
   hasDeathAnimation: 0

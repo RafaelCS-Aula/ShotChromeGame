@@ -12131,9 +12131,9 @@ MonoBehaviour:
     InspectorValue: 0
     Variable: {fileID: 11400000, guid: 87d31b55ee0f58d46b5ed1025dda5ba8, type: 2}
   OverHealAmount:
-    UseInspectorValue: 1
+    UseInspectorValue: 0
     InspectorValue: 0
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: b64a9fb67aae26e4598881a5747ea4ea, type: 2}
   ThunderPowerGift:
     UseInspectorValue: 0
     InspectorValue: 15
