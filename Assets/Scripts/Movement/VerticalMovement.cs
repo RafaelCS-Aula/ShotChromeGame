@@ -15,6 +15,9 @@ public class VerticalMovement : MovementBase
     [Foldout("Events")]
     [SerializeField] private UnityEvent OnLandEvent;
 
+    [Foldout("Events")]
+    [SerializeField] private UnityEvent<float> OnLandAirtimeEvent;
+
     private GroundChecker _GChecker;
     private CharacterGravity _cGrav;
     private float _gravPull;
@@ -63,6 +66,8 @@ public class VerticalMovement : MovementBase
 
     private bool _bonkingHead;
 
+    private float _airTime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -108,16 +113,22 @@ public class VerticalMovement : MovementBase
         {
             // Was moving vertically before hitting ground
             if (_mov.y != 0)
+            {
+                OnLandAirtimeEvent.Invoke(_airTime);
                 OnLandEvent.Invoke();
+            }
+                
 
             _fact.x = 1;
             _fact.z = 1;
             _mov.y = 0;
             _mov.z = 0;
+            _airTime = 0;
         }
 
         if(!_GChecker.OnGround())
         {
+            _airTime += Time.deltaTime;
             _bonkingHead = _GChecker.CheckRay(bonkCheckRayOrigin,transform.up,bonkCheckRayRange);
         }
 
