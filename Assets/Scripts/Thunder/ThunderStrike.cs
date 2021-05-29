@@ -18,6 +18,8 @@ public class ThunderStrike : InputReceiverBase
 
     [Foldout("Positional Events")]
     [SerializeField] private UnityEvent<Vector3, Vector3> OnBlockedEventPos;
+    [Foldout("Positional Events")]
+    [SerializeField] private UnityEvent<Vector3> OnSummonEventPos;
 
    // [Foldout("Positional Events")]
     // [SerializeField] private StrikeEvent OnBlockedEventTargetPos;
@@ -99,13 +101,6 @@ public class ThunderStrike : InputReceiverBase
         Debug.DrawLine(new Vector3(landingSpot.x + 1, landingSpot.y - 1, landingSpot.z), new Vector3(landingSpot.x - 1, landingSpot.y + 1, landingSpot.z), Color.red, 3);
         //////////////////////////////////////////
         
-        
-        if (summonToStrikeDelay > 0)
-        {
-            OnSummonEvent.Invoke();
-        }
-        yield return new WaitForSeconds(summonToStrikeDelay);
-
         Vector3 origin = landingSpot;
         //print("Landing place " +  origin);
         origin.y += _originHeight;
@@ -113,6 +108,16 @@ public class ThunderStrike : InputReceiverBase
 
         RaycastHit strikeInfo;
         Physics.Raycast(origin, Vector3.down, out strikeInfo, _originHeight * 5, impactLayer);
+
+        OnSummonEventPos.Invoke(strikeInfo.point);
+        
+        if (summonToStrikeDelay > 0)
+        {
+            OnSummonEvent.Invoke();
+        }
+        yield return new WaitForSeconds(summonToStrikeDelay);
+
+        
 
         //print("StrikePoint " +  strikeInfo.point);
 
