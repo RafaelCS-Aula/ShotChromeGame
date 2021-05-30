@@ -10,30 +10,41 @@ public class SceneSwitcher : MonoBehaviour
     [SerializeField]
     private bool keyTriggered = false;
 
-    [SerializeField][ShowIf("keyTriggered")]
+    [SerializeField]
+    [ShowIf("keyTriggered")]
     private KeyCode triggerKey;
 
     [SerializeField]
     private bool QuitApplication = false;
 
-    [Scene][HideIf("QuitApplication")][SerializeField]
+    [Scene]
+    [HideIf("QuitApplication")]
+    [SerializeField]
     private string targetScene;
 
-    private void Update() {
-        if(!keyTriggered)
+    private void Update()
+    {
+        if (!keyTriggered)
             return;
-        if(Input.GetKeyDown(triggerKey))
+        if (Input.GetKeyDown(triggerKey))
             SwitchToTargetScene();
     }
 
     [Button]
     public void SwitchToTargetScene()
     {
-        if(QuitApplication)
+#if UNITY_EDITOR
+        if (Application.isEditor && QuitApplication) UnityEditor.EditorApplication.isPlaying = false;
+#endif
+
+        if (QuitApplication)
+        {
             Application.Quit();
+        }
+
         else
             SceneManager.LoadScene(targetScene);
 
-    } 
-    
+    }
+
 }

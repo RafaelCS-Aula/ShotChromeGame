@@ -85,6 +85,7 @@ public class EnemyHealth : MonoBehaviour
         if (source is Shotgun)
         {
             OnShotgunDamaged.Invoke(sourceDir);
+            anim.SetTrigger("Hit");
         }
         else if (source is AreaofEffect)
         {

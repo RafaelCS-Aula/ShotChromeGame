@@ -7,6 +7,7 @@ public class JaguarAttack : MonoBehaviour
     private Animator anim;
     private TargetHolder targetH;
     private JaguarMovement jagMov;
+    private EnemyHealth eH;
 
     [SerializeField] FloatVariable attackDamage;
     [SerializeField] FloatVariable attackRange;
@@ -25,21 +26,19 @@ public class JaguarAttack : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         targetH = GetComponent<TargetHolder>();
         jagMov = GetComponent<JaguarMovement>();
+        eH = GetComponent<EnemyHealth>();
 
     }
 
     // Update is called once per frame
     private void Update()
     {
-        //if (anim.GetCurrentAnimatorStateInfo(0).IsName("Run")) print("Run");
-        //if (anim.GetCurrentAnimatorStateInfo(0).IsName("PunchIdle")) print("PunchIdle");
-        //if (anim.GetCurrentAnimatorStateInfo(0).IsName("PunchLeft")) print("PunchLeft");
-        //if (anim.GetCurrentAnimatorStateInfo(0).IsName("PunchRight")) print("PunchRight");
-
-
         if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Run")) jagMov.globMoving = false;
+        else jagMov.globMoving = true;
 
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Hit")) jagMov.globMoving = false;
 
+        print(jagMov.globMoving);
 
         if (targetH.Target != null && !isAttacking)
         {
@@ -63,7 +62,6 @@ public class JaguarAttack : MonoBehaviour
                 alreadyClose = false;
                 if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Run"))
                 {
-                    jagMov.globMoving = true;
                     anim.SetTrigger("Run");
                 }
             }
