@@ -5,6 +5,12 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: -203655887218126122
+    second: ShotgunHit
+  - first:
+      74: 2470040727774595254
+    second: LightningHit
+  - first:
+      74: -1304387373167265313
     second: Hit
   externalObjects: {}
   materials:
@@ -38,8 +44,8 @@ ModelImporter:
       name: Hit
       takeName: mixamo.com
       internalID: 0
-      firstFrame: 0
-      lastFrame: 20
+      firstFrame: 14.95
+      lastFrame: 15
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

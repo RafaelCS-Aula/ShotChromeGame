@@ -46,6 +46,7 @@ public class EnemyHealth : MonoBehaviour
     private float _health;
     private MonoBehaviour _lastDamageSource = null;
     private bool _died = false;
+    private bool _hit = false;
 
     [ReadOnly][SerializeField]
     private Collider _col;
@@ -78,18 +79,22 @@ public class EnemyHealth : MonoBehaviour
         Vector3 sourceDir = Vector3.zero;
 
         if (source == null)
+        {
             OnDefaultDamaged.Invoke();
+            _hit = true;
+        }
         else
             sourceDir = transform.position - source.gameObject.transform.position;
 
         if (source is Shotgun)
         {
             OnShotgunDamaged.Invoke(sourceDir);
-            anim.SetTrigger("Hit");
+            _hit = true;
         }
         else if (source is AreaofEffect)
         {
             OnAoEDamaged.Invoke(sourceDir);
+            _hit = true;
         }
     }
 
@@ -144,6 +149,11 @@ public class EnemyHealth : MonoBehaviour
     }
 
     public bool Died() => _died;
+    public bool Hit() => _hit;
+    public void SetHit(bool value) { _hit = value; }
+
+    public MonoBehaviour GetLastDamageSource() => _lastDamageSource;
+
 #if UNITY_EDITOR
     private void OnDrawGizmos() 
     {

@@ -144,7 +144,7 @@ public class ZigZagLine : MonoBehaviour
         lineRenderer.positionCount = positions.Count;
         lineRenderer.SetPositions(positions.ToArray());
         widthFactor = widthCurrentVal.Value / witdthMaxVal.Value;
-        print("line width:" + widthFactor);
+        //print("line width:" + widthFactor);
         lineRenderer.widthMultiplier = widthFactor;
         lineRenderer.enabled = true;
         //Debug.Log($"Drawing zigzag from {startPoint} to {endPoint}");

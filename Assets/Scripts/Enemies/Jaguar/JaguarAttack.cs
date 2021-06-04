@@ -16,10 +16,18 @@ public class JaguarAttack : MonoBehaviour
     [SerializeField] FloatVariable timeToAttack;
     [SerializeField] FloatVariable attackDuration;
 
+
+    [SerializeField] FloatVariable shotgunHitDuration;
+    [SerializeField] FloatVariable lightningHitDuration;
+
     [SerializeField] GameEvent DamagePlayer;
 
     private bool isAttacking = false;
     private bool alreadyClose = false;
+
+    private bool isHit = false;
+    private bool running = true;
+    private bool idlePunching = false;
 
     private void Start()
     {
@@ -33,14 +41,8 @@ public class JaguarAttack : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Run")) jagMov.globMoving = false;
-        else jagMov.globMoving = true;
 
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Hit")) jagMov.globMoving = false;
-
-        print(jagMov.globMoving);
-
-        if (targetH.Target != null && !isAttacking)
+        if (targetH.Target != null && !isAttacking && !isHit)
         {
             float distToTarget = Vector3.Distance(transform.position, targetH.Target.position);
             if (distToTarget <= attackRange)
@@ -48,11 +50,14 @@ public class JaguarAttack : MonoBehaviour
                 if (!alreadyClose)
                 {
                     alreadyClose = true;
+                    running = false;
                     anim.SetTrigger("PunchIdle");
+                    idlePunching = true;
                 }
-                if (anim.GetCurrentAnimatorStateInfo(0).IsName("PunchIdle")
-                    || anim.GetCurrentAnimatorStateInfo(0).IsName("Run"))
+                if (idlePunching || running)
                 {
+                    running = false;
+                    idlePunching = false;
                     StartCoroutine(Attack());
                     StartCoroutine(RunDelay());
                 }
@@ -60,11 +65,22 @@ public class JaguarAttack : MonoBehaviour
             else
             {
                 alreadyClose = false;
-                if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Run"))
+                if (!running)
                 {
                     anim.SetTrigger("Run");
+                    jagMov.globMoving = true;
+                    running = true;
                 }
             }
+        }
+
+        if (eH.Hit() && !isHit)
+        {
+            isHit = true;
+            jagMov.globMoving = false;
+            running = false;
+            anim.SetTrigger("Hit");
+            StartCoroutine(HitStop());
         }
     }
 
@@ -78,24 +94,46 @@ public class JaguarAttack : MonoBehaviour
         int dir = Random.Range(0, 2);
         if (dir == 0)
         {
-            anim.SetTrigger("PunchLeft");
-            print("PunchLeft");
+            if (!isHit)
+            {
+                jagMov.globMoving = false;
+                anim.SetTrigger("PunchLeft");
+            }
         }
         if (dir == 1)
         {
-            anim.SetTrigger("PunchRight");
-            print("PunchRight");
+            if (!isHit)
+            {
+                jagMov.globMoving = false;
+                anim.SetTrigger("PunchRight");
+            }
         }
         yield return new WaitForSeconds(timeToAttack + delay);
 
         float distToTarget = Vector3.Distance(transform.position, targetH.Target.position);
         if (distToTarget <= attackRange + forgiveness) DamagePlayer.RaiseDamageArg(attackDamage);
 
+
     }
     private IEnumerator RunDelay()
     {
         yield return new WaitForSeconds(attackDuration);
         isAttacking = false;
+        alreadyClose = false;
+    }
 
+    private IEnumerator HitStop()
+    {
+        MonoBehaviour source = eH.GetLastDamageSource();
+        float delay = 10;
+
+        if (source is Shotgun) delay = shotgunHitDuration.Value;
+        else delay = lightningHitDuration.Value;
+        yield return new WaitForSeconds(delay);
+        jagMov.globMoving = true;
+        anim.SetTrigger("Run");
+        running = true;
+        eH.SetHit(false);
+        isHit = false;
     }
 }

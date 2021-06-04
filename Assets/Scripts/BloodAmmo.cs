@@ -49,7 +49,7 @@ public class BloodAmmo : InputReceiverBase
     // Update is called once per frame
     void Update()
     {
-        print(_input);
+        //print(_input);
         if(_input && _coolDownTimer > useCoolDown)
         {
             TradeBloodForAmmo(HPConsumedOnUse);
