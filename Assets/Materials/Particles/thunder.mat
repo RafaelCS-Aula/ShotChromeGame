@@ -61,6 +61,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BlendOp: 0
+    - _BoltWidth: 2.905882
     - _BoltWidth1: 2.905882
     - _BumpScale: 1
     - _CameraFadingEnabled: 0
@@ -89,8 +90,11 @@ Material:
     - _LightingEnabled: 1
     - _Metallic: 0
     - _Mode: 0
+    - _NoiseAngle: 2.88
+    - _NoiseScale: 5.22
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _Radius: 0
     - _Radius1: 0
     - _SmoothnessTextureChannel: 0
     - _SoftParticlesEnabled: 1
@@ -105,8 +109,10 @@ Material:
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
     - _Color: {r: 1, g: 0.77447987, b: 0, a: 1}
     - _ColorAddSubDiff: {r: -1, g: 0, b: 0, a: 0}
+    - _Colour: {r: 0.02352941, g: 0.177663, b: 0.282353, a: 1}
     - _CoreColour: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 137.187, g: 115.667465, b: 0, a: 1}
+    - _RingSpeed: {r: 1, g: 1, b: 0, a: 0}
     - _ShineColour: {r: 1, g: 0.8213265, b: 0.1745283, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []

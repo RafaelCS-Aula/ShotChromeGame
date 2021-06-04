@@ -11,7 +11,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: 7d5e3ed662e504240a1059b153258203, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 0
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -83,15 +83,15 @@ Material:
     - _AlphaClip: 1
     - _Blend: 1
     - _BlendOp: 0
-    - _BoltWidth: 0.824
-    - _BoltWidth1: 2.5
+    - _BoltWidth: 1.69
+    - _BoltWidth1: 1.39
     - _BumpScale: 1
     - _CameraFadingEnabled: 0
     - _CameraFarFadeDistance: 2
     - _CameraNearFadeDistance: 1
     - _ChromaticAberration: 0.1
     - _ColorMode: 0
-    - _CoreBoltWidth: 0.69
+    - _CoreBoltWidth: 0.165
     - _CoreRadius: 0
     - _Cull: 0
     - _Cutoff: 0.5
@@ -112,16 +112,19 @@ Material:
     - _Glossiness: 0.5
     - _GlossinessSource: 0
     - _GlossyReflections: 1
-    - _GlowPower: 20
+    - _GlowPower: 7.27
+    - _GlowStrength: 40
+    - _Height: 0
     - _InvFade: 1
     - _LightingEnabled: 1
     - _Metallic: 0.755
     - _Mode: 0
+    - _NoiseScale: 179.6
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _Radius: 0
-    - _Radius1: 0
+    - _Radius1: 1.02
     - _ReceiveShadows: 0
     - _SampleGI: 0
     - _Shininess: 0
@@ -142,6 +145,7 @@ Material:
     - _TransShadow: 0.9
     - _Translucency: 1
     - _UVSec: 0
+    - _WIdth: 1
     - _WidthNoiseScale: 0.5
     - _ZWrite: 1
     - __dirty: 0
@@ -150,12 +154,14 @@ Material:
     - _BaseColorAddSubDiff: {r: 1, g: 0, b: 0, a: 0}
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color0: {r: 1, g: 0.051886797, b: 0.051886797, a: 0}
     - _ColorAddSubDiff: {r: 1, g: 0, b: 0, a: 0}
-    - _CoreColour: {r: 1, g: 1, b: 1, a: 0}
+    - _CoreColour: {r: 0.99767673, g: 1, b: 0.9481132, a: 0}
     - _EmissionColor: {r: 25.992079, g: 23.406479, b: 0, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _PanSpeed: {r: 0, g: 0, b: 0, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ShineColour: {r: 1, g: 0.8213265, b: 0.1745283, a: 1}
+    - _ShineColour: {r: 1, g: 0.85389155, b: 0.16509432, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
     - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
