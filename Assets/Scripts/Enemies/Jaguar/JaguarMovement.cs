@@ -18,6 +18,7 @@ public class JaguarMovement : MonoBehaviour
 
     public bool globMoving = true;
     private bool moving = true;
+    private bool hit = false;
 
     void Start()
     {
@@ -39,11 +40,11 @@ public class JaguarMovement : MonoBehaviour
         if (!globMoving)
         {
             moving = false;
-            StopAllCoroutines();
+            if (!hit) StopAllCoroutines();
             if ((!eHealth.Died())) agent.ResetPath();
         }
 
-        if (globMoving && !moving)
+        if (globMoving && !moving && !hit)
         {
             moving = true;
             StartCoroutine(GetDestinationWithDelay(0.1f));
@@ -76,6 +77,26 @@ public class JaguarMovement : MonoBehaviour
         }
     }
 
+    public NavMeshAgent GetAgent() => agent;
+    public float GetDefaultSpeed() => chaseSpeed;
+
+    public void StopCR() { StopAllCoroutines(); }
+    public IEnumerator HitKnockback(float secs)
+    {
+        print("HITKNOCKBACK");
+        hit = true;
+        Vector3 direction = -(targetH.Target.position - transform.position);
+
+
+        agent.SetDestination(direction);
+        agent.speed = chaseSpeed *5;
+
+        yield return new WaitForSeconds(secs);
+        print("CONTINUE");
+        agent.speed = chaseSpeed;
+        hit = false;
+
+    }
     private void DrawDebugRays()
     {
 

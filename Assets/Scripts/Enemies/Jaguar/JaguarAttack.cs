@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class JaguarAttack : MonoBehaviour
 {
@@ -80,7 +81,15 @@ public class JaguarAttack : MonoBehaviour
             jagMov.globMoving = false;
             running = false;
             anim.SetTrigger("Hit");
-            StartCoroutine(HitStop());
+
+            MonoBehaviour source = eH.GetLastDamageSource();
+
+            if (source is Shotgun)
+            {
+                jagMov.StopCR();
+                StartCoroutine(HitKnockback());
+            }
+            else StartCoroutine(HitStop());
         }
     }
 
@@ -124,16 +133,41 @@ public class JaguarAttack : MonoBehaviour
 
     private IEnumerator HitStop()
     {
-        MonoBehaviour source = eH.GetLastDamageSource();
+        print("HITSTOP");
         float delay = 10;
+
+        MonoBehaviour source = eH.GetLastDamageSource();
 
         if (source is Shotgun) delay = shotgunHitDuration.Value;
         else delay = lightningHitDuration.Value;
+
         yield return new WaitForSeconds(delay);
         jagMov.globMoving = true;
         anim.SetTrigger("Run");
         running = true;
         eH.SetHit(false);
         isHit = false;
+    }
+
+    public IEnumerator HitKnockback()
+    {
+        print("HITKNOCKBACK");
+        NavMeshAgent agent = jagMov.GetAgent();
+        isHit = true;
+        Vector3 direction = -(targetH.Target.position - transform.position);
+
+        jagMov.globMoving = true;
+        agent.SetDestination(direction);
+        agent.speed = jagMov.GetDefaultSpeed() * 5;
+
+        yield return new WaitForSeconds(shotgunHitDuration.Value);
+        print("CONTINUE");
+        agent.speed = jagMov.GetDefaultSpeed();
+        anim.SetTrigger("Run");
+        running = true;
+        eH.SetHit(false);
+        isHit = false;
+
+
     }
 }
