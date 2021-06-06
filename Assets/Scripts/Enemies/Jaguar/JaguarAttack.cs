@@ -82,14 +82,7 @@ public class JaguarAttack : MonoBehaviour
             running = false;
             anim.SetTrigger("Hit");
 
-            MonoBehaviour source = eH.GetLastDamageSource();
-
-            if (source is Shotgun)
-            {
-                jagMov.StopCR();
-                StartCoroutine(HitKnockback());
-            }
-            else StartCoroutine(HitStop());
+            StartCoroutine(HitStop());
         }
     }
 
@@ -133,7 +126,6 @@ public class JaguarAttack : MonoBehaviour
 
     private IEnumerator HitStop()
     {
-        print("HITSTOP");
         float delay = 10;
 
         MonoBehaviour source = eH.GetLastDamageSource();
@@ -147,27 +139,5 @@ public class JaguarAttack : MonoBehaviour
         running = true;
         eH.SetHit(false);
         isHit = false;
-    }
-
-    public IEnumerator HitKnockback()
-    {
-        print("HITKNOCKBACK");
-        NavMeshAgent agent = jagMov.GetAgent();
-        isHit = true;
-        Vector3 direction = -(targetH.Target.position - transform.position);
-
-        jagMov.globMoving = true;
-        agent.SetDestination(direction);
-        agent.speed = jagMov.GetDefaultSpeed() * 5;
-
-        yield return new WaitForSeconds(shotgunHitDuration.Value);
-        print("CONTINUE");
-        agent.speed = jagMov.GetDefaultSpeed();
-        anim.SetTrigger("Run");
-        running = true;
-        eH.SetHit(false);
-        isHit = false;
-
-
     }
 }
