@@ -10,6 +10,8 @@ public class ShamanPowerBehaviour : LineOfSightAttack
 
     [SerializeField] private FloatVariable buffPulseInterval;
 
+    [SerializeField] private FloatVariable minimumThunder;
+
     private float _minimumThunderToBuff = 1.00f;
     private AreaofEffect _AoEComponent; 
 
@@ -30,7 +32,7 @@ public class ShamanPowerBehaviour : LineOfSightAttack
         base.Update();
 
         
-        if(thunderPowerData < 1 && _healCooldownCr < 0)
+        if(thunderPowerData <= minimumThunder + 1 && _healCooldownCr < 0)
         {
             SendAoE();
             _healCooldownCr = buffPulseInterval;
@@ -46,7 +48,10 @@ public class ShamanPowerBehaviour : LineOfSightAttack
 
     protected override void Attack()
     {
+        if(thunderPowerData < minimumThunder)
+            return;
         thunderPowerData.ApplyChange(-thunderLeechRate * Time.deltaTime);
+
     }
 
     private void SendAoE()

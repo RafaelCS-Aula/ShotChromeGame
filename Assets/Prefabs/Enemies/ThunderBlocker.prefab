@@ -9715,6 +9715,7 @@ GameObject:
   - component: {fileID: 3196522531752478943}
   - component: {fileID: 7487895547459209419}
   - component: {fileID: 2574316332778872520}
+  - component: {fileID: 9083146414813464660}
   m_Layer: 15
   m_Name: ThunderBlocker
   m_TagString: Untagged
@@ -9763,3 +9764,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cloudParticles: {fileID: 6750818960018310907}
+--- !u!114 &9083146414813464660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3276925438060870865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78097c51c89eea345b96a121b2518ab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

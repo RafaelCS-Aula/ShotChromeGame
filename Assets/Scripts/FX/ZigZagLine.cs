@@ -70,7 +70,7 @@ public class ZigZagLine : MonoBehaviour
             lineRenderer = GetComponent<LineRenderer>();
         if(!lineRenderer) return;
         
-        Debug.Log($"Drawing zigzag from {startPoint} to {endPoint}");
+        //Debug.Log($"Drawing zigzag from {startPoint} to {endPoint}");
 
         lineRenderer.enabled = false;
         _end = endPoint;
@@ -97,7 +97,7 @@ public class ZigZagLine : MonoBehaviour
         //print("line width:" + widthFactor);
         lineRenderer.widthMultiplier = widthFactor;
         lineRenderer.enabled = true;
-        Debug.Log($"Drawing zigzag from {startPoint} to {endPoint}");
+        //Debug.Log($"Drawing zigzag from {startPoint} to {endPoint}");
         StartCoroutine(StopThunder(duration));
 
     }

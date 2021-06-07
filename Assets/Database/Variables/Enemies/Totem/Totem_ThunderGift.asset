@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Totem_ThunderGift
   m_EditorClassIdentifier: 
   DevDescription: 
-  variableValue: 0
+  variableValue: 1
   WholeNumbers: 0
   clampValue: 0
   UpperBound:
