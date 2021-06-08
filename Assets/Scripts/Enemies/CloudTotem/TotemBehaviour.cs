@@ -19,7 +19,9 @@ public class TotemBehaviour : MonoBehaviour
 
     [SerializeField] private FloatVariable birthToCoverDelay;
 
-    [SerializeField] private Vector3 ammoSpawnLocation;
+    [SerializeField] private float ammoSpawnRange;
+
+    [SerializeField] private LayerMask geometrylayer;
 
     private GameObject _spawnedCover;
     // Start is called before the first frame update
@@ -33,9 +35,15 @@ public class TotemBehaviour : MonoBehaviour
     [Button]
     public void SpawnCover()
     {
+       
+        
         if(ThunderCover)
         {
-            _spawnedCover = Instantiate(ThunderCover.gameObject, transform.position + transform.up*coverHeight, Quaternion.identity);
+            _spawnedCover = Instantiate(ThunderCover.gameObject, transform.position + transform.up * coverHeight, Quaternion.identity);
+             Transform spawnTrn = _spawnedCover.transform;
+            if(GetComponent<ParticleAttractor>())
+                GetComponent<ParticleAttractor>().attractionPoint = spawnTrn;
+
             _spawnedCover.GetComponent<SphereCollider>().isTrigger = true;
             _spawnedCover.GetComponent<SphereCollider>().radius = coverRadius;
 
@@ -54,7 +62,42 @@ public class TotemBehaviour : MonoBehaviour
     private void SpawnAmmo()
     {
         print("Spawning Ammo");
-        OnCoverHit.Invoke(transform.position + ammoSpawnLocation);
+
+        bool spotFound = false;
+        int wallHitCount = 0;
+
+        Vector3 spawnPoint = transform.position;
+        
+        while(!spotFound)
+        {
+            spawnPoint.x += Random.Range(-ammoSpawnRange, ammoSpawnRange);
+            spawnPoint.z += Random.Range(-ammoSpawnRange, ammoSpawnRange);
+            spawnPoint.y += 1;
+
+            RaycastHit hitInfo;
+            if(Physics.Raycast(transform.position, (transform.position - spawnPoint).normalized,out hitInfo, ammoSpawnRange + 5, geometrylayer))
+            {
+                wallHitCount++;
+                if(wallHitCount > 10)
+                {
+                    spawnPoint = hitInfo.point - (spawnPoint - transform.position).normalized;
+                    spotFound = true;
+                }
+                else
+                {
+                    wallHitCount = 0;
+                    spotFound = true;
+                }
+                
+
+            }
+            else
+            {
+                spotFound = true;
+            }
+
+        }
+        OnCoverHit.Invoke(spawnPoint);
     }
 
     private void OnDestroy() {
@@ -71,8 +114,8 @@ public class TotemBehaviour : MonoBehaviour
         Handles.color = Color.white;
         Handles.Label(transform.position + transform.up* (coverHeight + 2), "Thunder Cover");
 
-        Gizmos.DrawSphere(transform.position + ammoSpawnLocation, 0.2f);
-        Handles.Label(transform.position + ammoSpawnLocation,"Spits ammo from here");
+        Handles.DrawWireDisc(transform.position + transform.up, transform.up,ammoSpawnRange);
+        
     }
 #endif
 }

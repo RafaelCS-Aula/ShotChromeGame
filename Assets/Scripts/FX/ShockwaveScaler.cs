@@ -14,6 +14,7 @@ public class ShockwaveScaler : MonoBehaviour
     void Awake()
     {
         ps = GetComponent<ParticleSystem>();
+        ApplySpeed();
     }
 
     public void ApplySpeed(float speed)

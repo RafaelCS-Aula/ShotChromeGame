@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -58,6 +58,7 @@ public class ZigZagLine : MonoBehaviour
         //print("line width:" + widthFactor);
         lineRenderer.widthMultiplier = widthFactor;
         lineRenderer.enabled = true;
+        lineRenderer.UpdateGIMaterials();
         
         StartCoroutine(StopThunder(duration));
 
@@ -154,6 +155,7 @@ public class ZigZagLine : MonoBehaviour
 
     private IEnumerator StopThunder(float seconds)
     {
+        
         yield return new WaitForSeconds(seconds);
         lineRenderer.enabled = false;
     }

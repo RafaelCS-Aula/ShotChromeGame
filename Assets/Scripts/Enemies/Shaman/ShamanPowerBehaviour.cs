@@ -6,6 +6,8 @@ using UnityEngine;
 public class ShamanPowerBehaviour : LineOfSightAttack
 {
     [SerializeField] private FloatData thunderPowerData;
+
+    [SerializeField] private BoolData isLeeching;
     [SerializeField] private FloatVariable thunderLeechRate;
 
     [SerializeField] private FloatVariable buffPulseInterval;
@@ -49,7 +51,12 @@ public class ShamanPowerBehaviour : LineOfSightAttack
     protected override void Attack()
     {
         if(thunderPowerData < minimumThunder)
+        {
             return;
+        }
+            
+
+        isLeeching.SetValue(true);
         thunderPowerData.ApplyChange(-thunderLeechRate * Time.deltaTime);
 
     }
@@ -63,5 +70,9 @@ public class ShamanPowerBehaviour : LineOfSightAttack
     
         
 
+    }
+
+    private void OnDestroy() {
+        isLeeching.SetValue(false);
     }
 }

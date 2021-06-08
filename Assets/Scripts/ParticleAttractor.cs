@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ParticleAttractor : MonoBehaviour
 {
-    [SerializeField] private Transform attractionPoint;
+    public Transform attractionPoint;
     [SerializeField] private ParticleSystem system;
     [SerializeField] private float attractionForce;
     
