@@ -11,14 +11,21 @@ public class ThunderVisuals : MonoBehaviour
     [SerializeField] private float lifeTime;
     [SerializeField] private float expandTime;
 
-    [SerializeField] private FloatData thunderPower;
+    [SerializeField] private FloatData usedThunderPower;
+    [SerializeField] private FloatData maxPower;
 
-    [SerializeField] private float maxWidth;
+    [SerializeField] private float maxPowerWidth;
+    [SerializeField] private float minPowerWidth;
+
+    private float _currentWidth;
 
 
     private float _counter;
     public void ThunderStrike(Vector3 hitLocation)
     {
+        _currentWidth =  Mathf.Max(maxPowerWidth * (usedThunderPower/maxPower), minPowerWidth);
+        
+
         GameObject inst = Instantiate(planePrefab,hitLocation,Quaternion.identity);
         inst.transform.LookAt(view.transform,transform.up);
         inst.transform.rotation *= Quaternion.Euler(0, 180, 0);
@@ -33,7 +40,7 @@ public class ThunderVisuals : MonoBehaviour
     private IEnumerator UpdateThunder(GameObject obj)
     {
         Vector3 originalScale = obj.transform.localScale;
-        Vector3 finalScale = new Vector3(maxWidth, originalScale.y, originalScale.z);
+        Vector3 finalScale = new Vector3(_currentWidth, originalScale.y, originalScale.z);
         do
         {
             
