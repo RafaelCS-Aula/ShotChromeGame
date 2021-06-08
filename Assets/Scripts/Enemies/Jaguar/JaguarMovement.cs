@@ -18,6 +18,7 @@ public class JaguarMovement : MonoBehaviour
 
     public bool globMoving = true;
     private bool moving = true;
+    private bool hit = false;
 
     void Start()
     {
@@ -31,7 +32,7 @@ public class JaguarMovement : MonoBehaviour
         agent.acceleration = float.MaxValue;
         agent.speed = chaseSpeed;
         agent.SetDestination(targetH.Target.position);
-        StartCoroutine(GetDestinationWithDelay(0.1f));
+        StartCoroutine(GetDestinationWithDelay(true, targetH.Target.position, 0.1f));
     }
 
     void Update()
@@ -39,14 +40,14 @@ public class JaguarMovement : MonoBehaviour
         if (!globMoving)
         {
             moving = false;
-            StopAllCoroutines();
+            if (!hit) StopAllCoroutines();
             if ((!eHealth.Died())) agent.ResetPath();
         }
 
-        if (globMoving && !moving)
+        if (globMoving && !moving && !hit)
         {
             moving = true;
-            StartCoroutine(GetDestinationWithDelay(0.1f));
+            StartCoroutine(GetDestinationWithDelay(true, targetH.Target.position, 0.1f));
         }
     }
 
@@ -66,16 +67,38 @@ public class JaguarMovement : MonoBehaviour
         return new Vector3(f1, f2, f3);
     }
 
-    private IEnumerator GetDestinationWithDelay(float time)
+    public IEnumerator GetDestinationWithDelay(bool playerTarget, Vector3 destination, float delay)
     {
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(delay);
         if ((!eHealth.Died()))
         {
-            agent.SetDestination(targetH.Target.position);
-            StartCoroutine(GetDestinationWithDelay(time));
+            print(destination);
+            if (playerTarget) agent.SetDestination(targetH.Target.position);
+            else agent.SetDestination(destination);
+            StartCoroutine(GetDestinationWithDelay(playerTarget, destination, delay));
         }
     }
 
+    public NavMeshAgent GetAgent() => agent;
+    public float GetDefaultSpeed() => chaseSpeed;
+
+    public void StopCR() { StopAllCoroutines(); }
+    public IEnumerator HitKnockback(float secs)
+    {
+        print("HITKNOCKBACK");
+        hit = true;
+        Vector3 direction = -(targetH.Target.position - transform.position);
+
+
+        agent.SetDestination(direction);
+        agent.speed = chaseSpeed *5;
+
+        yield return new WaitForSeconds(secs);
+        print("CONTINUE");
+        agent.speed = chaseSpeed;
+        hit = false;
+
+    }
     private void DrawDebugRays()
     {
 

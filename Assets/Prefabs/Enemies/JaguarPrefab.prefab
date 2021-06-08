@@ -253,7 +253,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897086085310076039}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.991, z: 0}
+  m_LocalPosition: {x: 0, y: -1.069, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3793616705521668349}
@@ -11988,6 +11988,14 @@ MonoBehaviour:
     UseInspectorValue: 0
     InspectorValue: 0
     Variable: {fileID: 11400000, guid: aa761a6c16e14244eac917be11280664, type: 2}
+  shotgunHitDuration:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: 50a3308f42633a647982952877b5b43f, type: 2}
+  lightningHitDuration:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: 76f123004b6d31b4c922d4615315746d, type: 2}
   DamagePlayer: {fileID: 11400000, guid: 8252108987d608d428fc4e8e1ed6e974, type: 2}
 --- !u!114 &1351261197603441579
 MonoBehaviour:

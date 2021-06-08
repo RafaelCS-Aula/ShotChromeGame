@@ -94,7 +94,7 @@ public class PowerUp : ScriptableObject
 
         if(!IsNotInstant)
             isFinished = true;
-        Debug.Log($"Activate: {powerName}");
+        //Debug.Log($"Activate: {powerName}");
     }
 
     public void ApplyOverTime()
