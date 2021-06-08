@@ -6,6 +6,7 @@ using UnityEngine.ParticleSystemJobs;
 public class DestroyObjectAfterTime : MonoBehaviour
 {
     [SerializeField] private FloatVariable LifeTime;
+    [SerializeField] private bool stopParticles;
     private ParticleSystem _particleSystem;
 
     private void OnEnable() 
@@ -19,12 +20,14 @@ public class DestroyObjectAfterTime : MonoBehaviour
     {
         if(LifeTime == null)
             yield return null;
-        yield return new WaitForSeconds(LifeTime.Value);
-        if(_particleSystem)
+
+        yield return new WaitForSecondsRealtime(LifeTime.Value);
+
+        if(stopParticles && _particleSystem)
         {
             var emiss = _particleSystem.emission;
             emiss.enabled = false;
-            yield return new WaitForSeconds(_particleSystem.main.startLifetime.constant);
+            yield return new WaitForSecondsRealtime(_particleSystem.main.startLifetime.constant);
 
 
         }
