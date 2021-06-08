@@ -13,7 +13,11 @@ public class SliderValueSetter : MonoBehaviour
     [SerializeField]
     private bool updateConstantly;
 
+
+
     private Slider slider;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +30,8 @@ public class SliderValueSetter : MonoBehaviour
         {
             slider.value = referenceValue.Value;
         }
+
+       
     }
     // Update is called once per frame
     public void UpdateSliderValue()
