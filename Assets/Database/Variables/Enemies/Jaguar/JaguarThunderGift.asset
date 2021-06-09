@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: JaguarThunderGift
   m_EditorClassIdentifier: 
   DevDescription: Thunder power given to player on jaguar death
-  variableValue: 2
+  variableValue: 5
   WholeNumbers: 0
   clampValue: 0
   UpperBound:

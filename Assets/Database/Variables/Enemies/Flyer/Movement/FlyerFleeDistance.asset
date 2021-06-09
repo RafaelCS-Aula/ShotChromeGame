@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FlyerFleeDistance
   m_EditorClassIdentifier: 
   DevDescription: Distance at which the Flyer will flee from the player
-  variableValue: 10
+  variableValue: 5
   WholeNumbers: 0
   clampValue: 0
   UpperBound:

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FlyerThunderPowerGift
   m_EditorClassIdentifier: 
   DevDescription: Thunder power gifted to player when enemy is killed
-  variableValue: 5
+  variableValue: 10
   WholeNumbers: 0
   clampValue: 0
   UpperBound:

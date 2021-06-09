@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ShotgunHitFreezeDuration
   m_EditorClassIdentifier: 
   DevDescription: 
-  variableValue: 1
+  variableValue: 0.25
   WholeNumbers: 0
   clampValue: 0
   UpperBound:
