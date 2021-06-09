@@ -134,10 +134,8 @@ public class EnemyHealth : MonoBehaviour
         {
             OnAoEKill.Invoke();
         }
-        else
-        {
-            OnDefaultKill.Invoke();
-        }
+        OnDefaultKill.Invoke();
+        
 
         StartCoroutine(DestroyInSecs(0.4f));
     }

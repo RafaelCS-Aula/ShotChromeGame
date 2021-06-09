@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class JaguarAttack : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class JaguarAttack : MonoBehaviour
     private TargetHolder targetH;
     private JaguarMovement jagMov;
     private EnemyHealth eH;
+
+    public UnityEvent OnAttack;
 
     [SerializeField] FloatVariable attackDamage;
     [SerializeField] FloatVariable attackRange;
@@ -110,6 +113,7 @@ public class JaguarAttack : MonoBehaviour
                 anim.SetTrigger("PunchRight");
             }
         }
+        OnAttack.Invoke();
         yield return new WaitForSeconds(timeToAttack + delay);
 
         float distToTarget = Vector3.Distance(transform.position, targetH.Target.position);

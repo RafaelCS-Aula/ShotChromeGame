@@ -26245,30 +26245,6 @@ MonoBehaviour:
   frequency: 9.32
   traumaExponent: 1
   recoverySpeed: 5.73
---- !u!114 &4318877991392945126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7264412032415727724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0993756808456394ea48fc9f6e6f7139, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rightSidePosition:
-    UseInspectorValue: 1
-    InspectorValue: {x: 0.406, y: -0.373, z: 0.76}
-    Variable: {fileID: 0}
-  centerPosition:
-    UseInspectorValue: 1
-    InspectorValue: {x: -0.024, y: -0.389, z: 0.759}
-    Variable: {fileID: 0}
-  centerWeapon:
-    UseInspectorValue: 0
-    InspectorValue: 0
-    Variable: {fileID: 11400000, guid: 3ea7486875b6aee47b69bcbceb23ad38, type: 2}
 --- !u!1 &4318877993033128933
 GameObject:
   m_ObjectHideFlags: 0
@@ -26764,7 +26740,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 52f6565b773437240816d9fc45b4d2f3, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: 51dd494f818ed2744b3e721aaaf1c32a, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -26802,6 +26778,21 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDryFire:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1106028804993658161}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 09427a77aa0097a4b86cd4d9b60f4344, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -32226,6 +32217,30 @@ MonoBehaviour:
     UseInspectorValue: 1
     InspectorValue: 5
     Variable: {fileID: 0}
+--- !u!114 &4318877991392945126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7264412032415727724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0993756808456394ea48fc9f6e6f7139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightSidePosition:
+    UseInspectorValue: 1
+    InspectorValue: {x: 0.406, y: -0.373, z: 0.76}
+    Variable: {fileID: 0}
+  centerPosition:
+    UseInspectorValue: 1
+    InspectorValue: {x: -0.024, y: -0.389, z: 0.759}
+    Variable: {fileID: 0}
+  centerWeapon:
+    UseInspectorValue: 0
+    InspectorValue: 0
+    Variable: {fileID: 11400000, guid: 3ea7486875b6aee47b69bcbceb23ad38, type: 2}
 --- !u!1 &7498785371288479795
 GameObject:
   m_ObjectHideFlags: 0
