@@ -126,7 +126,7 @@ public class AreaofEffect : MonoBehaviour
                 if (enemyHealth == null) enemyHealth = hit.Key.transform.gameObject.GetComponentInParent<EnemyHealth>();
 
                 if(enemyHealth != null)
-                enemyHealth.OnDamaged(hit.Value);
+                enemyHealth.OnDamaged(hit.Value,this);
             }
         }
         else if(_effectOnEnemiesFound == AoEEffects.HEAL)

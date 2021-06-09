@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuTest/MainMenuTest.unity
     guid: 8767acebedce6aa4ab60cbd8e3679f50
   - enabled: 1
+    path: Assets/Scenes/Enviormentfinal.unity
+    guid: b07219562ef547247ad44d6325196f9d
+  - enabled: 0
     path: Assets/Scenes/A_S2_D2/NewAreas.unity
     guid: 3d3b5f4ca322acf4691eb6c2f6fe9a87
   - enabled: 0
