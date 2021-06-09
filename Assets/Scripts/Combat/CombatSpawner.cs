@@ -66,7 +66,7 @@ public class CombatSpawner : MonoBehaviour
         _callerWave = callerWave;
         _minDistanceToNext = minDistanceToNext;
 
-        _lastSpawned = Instantiate(spawnQueue.Peek(), transform.position, transform.rotation);
+        _lastSpawned = Instantiate(spawnQueue.Peek(), transform.position, transform.rotation, transform);
         spawnQueue.Dequeue();
 
         TargetHolder target = _lastSpawned.GetComponent<TargetHolder>();
@@ -132,7 +132,7 @@ public class CombatSpawner : MonoBehaviour
 
             if (_canSpawn)
             {
-                _lastSpawned = Instantiate(spawnQueue.Peek(), transform.position, transform.rotation);
+                _lastSpawned = Instantiate(spawnQueue.Peek(), transform.position, transform.rotation, transform);
                 TargetHolder target =
                     _lastSpawned.GetComponent<TargetHolder>();
                 if (target != null)

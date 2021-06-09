@@ -75,4 +75,7 @@ public class ShamanPowerBehaviour : LineOfSightAttack
     private void OnDestroy() {
         isLeeching.SetValue(false);
     }
+    private void OnDisable() {
+        isLeeching.SetValue(false);
+    }
 }
