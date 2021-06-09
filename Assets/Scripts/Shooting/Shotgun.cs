@@ -14,6 +14,9 @@ public class Shotgun : InputReceiverBase
     [SerializeField] private UnityEvent OnChargedShootEvent;
 
     [Foldout("Events")]
+    [SerializeField] private UnityEvent OnDryFire;
+
+    [Foldout("Events")]
     [SerializeField] private UnityEvent<Vector3> OnPelletImpact;
 
     [SerializeField] FloatVariable pelletsPerShot;
@@ -87,9 +90,14 @@ public class Shotgun : InputReceiverBase
 
     private void TryToShoot()
     {
-        if (shotTimer <= 0 && currentAmmo > 0)
+        if (shotTimer <= 0)
         {
-            Shoot();
+            if(currentAmmo > 0)
+            {
+                Shoot();
+            }
+            else
+                OnDryFire.Invoke();
         }
             
     }
