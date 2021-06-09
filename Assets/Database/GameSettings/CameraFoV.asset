@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CameraFoV
   m_EditorClassIdentifier: 
   DevDescription: Field of View of player camera
-  variableValue: 90
+  variableValue: 60
   WholeNumbers: 0
   clampValue: 0
   UpperBound:

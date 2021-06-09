@@ -35,14 +35,14 @@ public class PowerUpThunder : MonoBehaviour
 
         Vector3 spawnPlace;
         float powerPercentage = _thunderPower/_maxThunderPower;
-        Debug.Log($"{_thunderPower.Value}");
+        //Debug.Log($"{_thunderPower.Value}");
         //powerPercentage = Mathf.Clamp01(powerPercentage);
         float myProbability = strikeProbabilityCurve.Evaluate(powerPercentage);
         //myProbability = Mathf.Clamp01(myProbability);
         
         float rngRoll = Random.Range(0.0f,1.0f);
 
-        Debug.Log($"Try Power strike: rng:{rngRoll.ToString("n3")} probability: {myProbability.ToString("n3")} power percentage: {powerPercentage.ToString("n3")}");
+        //Debug.Log($"Try Power strike: rng:{rngRoll.ToString("n3")} probability: {myProbability.ToString("n3")} power percentage: {powerPercentage.ToString("n3")}");
         if(rngRoll < myProbability)
         {
             //Find place to spawn powerup
@@ -72,8 +72,8 @@ public class PowerUpThunder : MonoBehaviour
             StrikePowerUp(spawnPlace);
             OnPowerupSpawn.Invoke(center,spawnPlace);
         }
-        else
-            Debug.Log("No powerup spawn");
+        //else
+            //Debug.Log("No powerup spawn");
 
     }
 

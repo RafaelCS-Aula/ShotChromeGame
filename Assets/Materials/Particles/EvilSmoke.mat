@@ -7,11 +7,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Spark
-  m_Shader: {fileID: 4800000, guid: 846604e4d2bc1bb44aa4ff5309f6710d, type: 3}
+  m_Name: EvilSmoke
+  m_Shader: {fileID: 4800000, guid: a640f562a523df745926461f38449ec8, type: 3}
   m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_LightmapFlags: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -47,6 +47,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -55,37 +59,53 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _TextureSample0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample12:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _texcoord:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _ASEOutlineWidth: 0
     - _BumpScale: 1
+    - _ChromaticAberration: 0.1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _Distort: 0
     - _DstBlend: 0
+    - _Float0: 1.33
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _GlowStrength: 75.43
-    - _Height: 1
-    - _InvFade: 1
     - _Metallic: 0
     - _Mode: 0
+    - _NoiseAngle: 45.19
+    - _NoiseScale: 1.45
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Radius: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _TransAmbient: 0.2
+    - _TransDirect: 1
+    - _TransNormalDistortion: 0.1
+    - _TransScattering: 2
+    - _TransShadow: 0.9
+    - _Translucency: 1
     - _UVSec: 0
-    - _WIdth: 0.2
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
+    - _ASEOutlineColor: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color0: {r: 0.92653286, g: 1, b: 0, a: 1}
+    - _Color0: {r: 1, g: 0.39112693, b: 0.3443396, a: 0}
+    - _Colour: {r: 0.01059096, g: 0.13207549, b: 0.035560563, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _PanSpeed: {r: 0.001, g: 0.003, b: 0, a: 0}
-    - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+    - _RingSpeed: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []

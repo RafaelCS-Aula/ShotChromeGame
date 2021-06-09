@@ -6,7 +6,8 @@ using NaughtyAttributes;
 [RequireComponent(typeof(GamePauseControl), typeof(ObjectToggler))]
 public class GamePauseCaller : MonoBehaviour
 {
-    [SerializeField] private KeycodeVariable pauseKey;
+    [SerializeField] private KeycodeVariable editorPauseKey;
+    [SerializeField] private KeycodeVariable buildPauseKey;
     private GamePauseControl _pauseCtrl;
 
     [SerializeField][ReadOnly]
@@ -20,8 +21,9 @@ public class GamePauseCaller : MonoBehaviour
 
     private void Update() 
     {
+
         //print(GamePauseControl.IsPaused);
-        if(Input.GetKeyDown(pauseKey.Value))
+        if (Input.GetKeyDown(Application.isEditor ? editorPauseKey : buildPauseKey))
         {
             _pauseCtrl.TogglePause();
             _menuToggle.ToggleState();

@@ -7,8 +7,12 @@ public class ObjectToggler : MonoBehaviour
 {
     [SerializeField] private float toggleDelay;
 
-    [ShowAssetPreview(64,64)][SerializeField]
+    [ShowAssetPreview(64,64), SerializeField]
     private GameObject[] affectedSceneObjects;
+    [ShowAssetPreview(64,64), SerializeField]
+    private GameObject[] enabledObjects;
+    [ShowAssetPreview(64,64), SerializeField]
+    private GameObject[] disabledObjects;
 
     /// <summary>
     /// Toggles the objects' active states
@@ -27,6 +31,16 @@ public class ObjectToggler : MonoBehaviour
         {
             bool newState = g.activeSelf ? false : true;
             g.SetActive(newState);
+        }
+
+        foreach (GameObject g in enabledObjects)
+        {
+            g.SetActive(true);
+        }
+        
+        foreach (GameObject g in disabledObjects)
+        {
+            g.SetActive(false);
         }
     }
 }
