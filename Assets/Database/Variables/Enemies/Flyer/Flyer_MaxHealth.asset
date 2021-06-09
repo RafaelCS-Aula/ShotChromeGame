@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Flyer_MaxHealth
   m_EditorClassIdentifier: 
   DevDescription: 
-  variableValue: 75
+  variableValue: 70
   WholeNumbers: 1
   clampValue: 0
   UpperBound:
