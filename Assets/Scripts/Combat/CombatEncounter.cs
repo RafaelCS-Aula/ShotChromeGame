@@ -30,6 +30,13 @@ public class CombatEncounter : MonoBehaviour
     public Transform encounterTarget;
 
 
+    public bool startOnAwake = false;
+
+    private void Awake() {
+        if(startOnAwake)
+            StartEncounter();
+    }
+
     [Button]
     public void StartEncounter()
     {
