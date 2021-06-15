@@ -15,16 +15,8 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField] private UnityEvent OnDeathEvent;
 
-
-    private AudioSource aS;
-    [SerializeField] AudioClip[] hitSounds;
-
-    [SerializeField] private bool playRandom;
-    [SerializeField] private int defaultClip;
-
     void Start()
     {
-        aS = GetComponent<AudioSource>();
         PlayerHP.SetValue(MaxPlayerHP.Value);
     }
 
@@ -45,13 +37,5 @@ public class PlayerHealth : MonoBehaviour
         SceneManager.LoadScene(deathScene);
     }
 
-    public void HitNoise()
-    {
-        if (playRandom)
-        {
-            int clip = Random.Range(0, hitSounds.Length);
-            aS.PlayOneShot(hitSounds[clip]);
-        }
-        else aS.PlayOneShot(hitSounds[defaultClip]);
-    }
+
 }

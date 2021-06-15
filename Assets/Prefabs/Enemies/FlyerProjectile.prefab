@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8621628379104292930}
   - component: {fileID: -8736966319832169065}
   - component: {fileID: 7953698899553380524}
-  - component: {fileID: 2873435848498834454}
+  - component: {fileID: 8409474415038343320}
   m_Layer: 12
   m_Name: FlyerProjectile
   m_TagString: Untagged
@@ -119,18 +119,17 @@ MonoBehaviour:
   damageEvent: {fileID: 0}
   layersToHit:
     serializedVersion: 2
-    m_Bits: 1296
---- !u!64 &2873435848498834454
-MeshCollider:
+    m_Bits: 1335
+--- !u!135 &8409474415038343320
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2637331313813923962}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Radius: 0.2385689
+  m_Center: {x: 0, y: 0, z: 0.2614311}
