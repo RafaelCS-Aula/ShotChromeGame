@@ -11,12 +11,8 @@ public class PowerUpApplier : MonoBehaviour
 
     public static PowerUpApplier Instance;
 
-    private AudioSource aS;
-
     private void Awake() 
     {
-        aS = GetComponent<AudioSource>();
-
         if(Instance == null)
         {
             Instance = this;
@@ -30,10 +26,7 @@ public class PowerUpApplier : MonoBehaviour
     }
     public void ActivatePower(PowerUp power)
     {
-        aS.clip = power.GetClip();
-        aS.Play();
-
-        if (power.overwriteActive)
+        if(power.overwriteActive)
         {
             foreach(KeyValuePair<string,PowerUp> pu in activePowers)
             {

@@ -68,15 +68,9 @@ public class VerticalMovement : MovementBase
 
     private float _airTime;
 
-    private AudioSource aS;
-    [SerializeField] AudioClip[] jumpSounds;
-
-    [SerializeField] private bool playRandom;
-    [SerializeField] private int defaultClip;
-
+    // Start is called before the first frame update
     void Start()
     {
-        aS = GetComponent<AudioSource>();
         FactorVector = Vector3.one;
         _GChecker = GetComponent<GroundChecker>();
         _cGrav = GetComponent<CharacterGravity>();
@@ -223,15 +217,5 @@ public class VerticalMovement : MovementBase
 
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position + bonkCheckRayOrigin, transform.position + bonkCheckRayOrigin + transform.up*bonkCheckRayRange );
-    }
-
-    public void JumpNoise()
-    {
-        if (playRandom)
-        {
-            int clip = Random.Range(0, jumpSounds.Length);
-            aS.PlayOneShot(jumpSounds[clip]);
-        }
-        else aS.PlayOneShot(jumpSounds[defaultClip]);
     }
 }
