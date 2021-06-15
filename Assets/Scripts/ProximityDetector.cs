@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEditor;
 
-[RequireComponent(typeof(SphereCollider))]
+[RequireComponent(typeof(Collider))]
 public class ProximityDetector : MonoBehaviour
 {
     public UnityEvent OnDetection;
-    private SphereCollider _collider;
+    private Collider _collider;
 
     [SerializeField]
     private LayerMask detectLayers;
@@ -17,7 +17,7 @@ public class ProximityDetector : MonoBehaviour
     private bool singleActivation = true;
     private bool _triggered;
     private void Awake() {
-        _collider = GetComponent<SphereCollider>();
+        _collider = GetComponent<Collider>();
 
         if(_collider != null)
             _collider.isTrigger = true;
@@ -35,6 +35,8 @@ public class ProximityDetector : MonoBehaviour
             //print("Player Entered Area");
             StartCoroutine(GetTriggered());
             _triggered = true;
+
+            if (singleActivation) Destroy(gameObject);
         }
     }
 

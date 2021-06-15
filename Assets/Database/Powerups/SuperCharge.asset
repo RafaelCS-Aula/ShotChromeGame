@@ -21,7 +21,6 @@ MonoBehaviour:
   baseChance: 1
   affectedBoolData: {fileID: 11400000, guid: 006e1f5915136c546a0be6764b061696, type: 2}
   affectedFloatData: {fileID: 0}
-  affectedIntData: {fileID: 0}
   returnToDefaultOnEnd: 1
   _defaultNumberValue: 150
   _defaultBoolValue: 0
@@ -33,10 +32,6 @@ MonoBehaviour:
     UseInspectorValue: 1
     InspectorValue: 0
     Variable: {fileID: 0}
-  immediateIntChange:
-    UseInspectorValue: 1
-    InspectorValue: 0
-    Variable: {fileID: 0}
   changeOverTime:
     UseInspectorValue: 1
     InspectorValue: 5
@@ -45,4 +40,5 @@ MonoBehaviour:
     UseInspectorValue: 1
     InspectorValue: 3
     Variable: {fileID: 0}
-  _elapsed: 2.0052147
+  _elapsed: 3.0027084
+  pickupSound: {fileID: 8300000, guid: d502e4d43d892ac47b89c629211d155c, type: 3}
