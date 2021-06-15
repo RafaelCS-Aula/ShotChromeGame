@@ -69,8 +69,17 @@ public class HorizontalMovement : MovementBase
     private float _slowDownTimer;
 
 
+    [SerializeField] private AudioSource aS;
 
+    [SerializeField] private AudioClip[] footstepClips;
+    [SerializeField] private bool playRandom;
+    [SerializeField] private int defaultClip;
+
+    [SerializeField] private float footstepDelay;
     
+
+    private float nextFootstep = 0;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -198,6 +207,7 @@ public class HorizontalMovement : MovementBase
             
         AccelerateX();
         AccelerateZ();
+        Footsteps();
 
         FactorVector = Vector3.one;
         MovementVector = _velocity * _currentVelMod;
@@ -239,4 +249,23 @@ public class HorizontalMovement : MovementBase
         //Gizmos.DrawLine(transform.position, new Vector3(transform.position.x * transform.right.x, transform.position.y, transform.position.z * transform.forward.z) * 40);
     }
 
+    public void Footsteps()
+    {
+        if ((_direction.x != 0 || _direction.y != 0) && _GChecker.OnGround())
+        {
+            nextFootstep -= Time.deltaTime;
+            if (nextFootstep <= 0)
+            {
+
+                if (playRandom)
+                {
+                    int clip = Random.Range(0, footstepClips.Length);
+                    aS.PlayOneShot(footstepClips[clip]);
+                }
+                else aS.PlayOneShot(footstepClips[defaultClip]);
+
+                nextFootstep += footstepDelay;
+            }
+        }
+    }
 }
