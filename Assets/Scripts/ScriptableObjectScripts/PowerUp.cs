@@ -74,6 +74,8 @@ public class PowerUp : ScriptableObject
     [ReadOnly]
     public float _elapsed;
 
+    [SerializeField] private AudioClip pickupSound;
+
 
     public void Activate()
     {
@@ -168,4 +170,6 @@ public class PowerUp : ScriptableObject
         isFinished = true;  
         Debug.Log($"Finishing: {powerName}");
     }
+
+    public AudioClip GetClip() => pickupSound;
 }
