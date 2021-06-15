@@ -16,13 +16,12 @@ MonoBehaviour:
   powerName: Health Bonus
   description: Small health pack
   overwriteActive: 0
-  isFinished: 0
+  isFinished: 1
   baseChance: 0.904
   affectedBoolData: {fileID: 0}
   affectedFloatData: {fileID: 11400000, guid: b78d3a7b10555dc4d93832de30c422cd, type: 2}
-  affectedIntData: {fileID: 0}
   returnToDefaultOnEnd: 0
-  _defaultNumberValue: 0
+  _defaultNumberValue: 100
   _defaultBoolValue: 0
   newValue:
     UseInspectorValue: 1
@@ -32,10 +31,6 @@ MonoBehaviour:
     UseInspectorValue: 1
     InspectorValue: 10
     Variable: {fileID: 0}
-  immediateIntChange:
-    UseInspectorValue: 1
-    InspectorValue: 0
-    Variable: {fileID: 0}
   changeOverTime:
     UseInspectorValue: 1
     InspectorValue: 5
@@ -44,4 +39,5 @@ MonoBehaviour:
     UseInspectorValue: 1
     InspectorValue: 2
     Variable: {fileID: 0}
-  _elapsed: 0
+  _elapsed: 2.0062408
+  pickupSound: {fileID: 8300000, guid: a32c1fa278fdaaa4e8430f7af952df3c, type: 3}
